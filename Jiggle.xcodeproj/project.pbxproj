@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5332664D006C40E82A76613A /* Pods_Jiggle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3738220477A0D1C5AE43B1 /* Pods_Jiggle.framework */; };
 		79189E00274672900023628A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79189DFF274672900023628A /* Logger.swift */; };
 		791B7BE727469FFF00EF6886 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B7BDE27469FFF00EF6886 /* UICollectionView+Extensions.swift */; };
 		791B7BE827469FFF00EF6886 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B7BDF27469FFF00EF6886 /* Collection+Extensions.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11CEED87185E67AAB103638B /* Pods-Jiggle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jiggle.release.xcconfig"; path = "Target Support Files/Pods-Jiggle/Pods-Jiggle.release.xcconfig"; sourceTree = "<group>"; };
 		79189DFF274672900023628A /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		791B7BDE27469FFF00EF6886 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		791B7BDF27469FFF00EF6886 /* Collection+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
@@ -58,6 +60,8 @@
 		79F913BC2746501900771FFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79F913BF2746501900771FFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79F913C12746501900771FFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A3738220477A0D1C5AE43B1 /* Pods_Jiggle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jiggle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1587FEF8190C1BAA52A8B83 /* Pods-Jiggle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jiggle.debug.xcconfig"; path = "Target Support Files/Pods-Jiggle/Pods-Jiggle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5332664D006C40E82A76613A /* Pods_Jiggle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +181,8 @@
 				79F913B22746501500771FFE /* Module */,
 				79F913C92746509E00771FFE /* Resources */,
 				79F913B12746501500771FFE /* Products */,
+				F3A9A8E51B2FEBA1F4B295EC /* Pods */,
+				D196C30986E6D2C25E6FF13F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,6 +237,24 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		D196C30986E6D2C25E6FF13F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A3738220477A0D1C5AE43B1 /* Pods_Jiggle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3A9A8E51B2FEBA1F4B295EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E1587FEF8190C1BAA52A8B83 /* Pods-Jiggle.debug.xcconfig */,
+				11CEED87185E67AAB103638B /* Pods-Jiggle.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,17 +262,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 79F913C42746501900771FFE /* Build configuration list for PBXNativeTarget "Jiggle" */;
 			buildPhases = (
+				50C9D117F376A0615821A405 /* [CP] Check Pods Manifest.lock */,
+				802C2DE2FC45C67BC700E9E6 /* [CP] Prepare Artifacts */,
 				79F913AC2746501500771FFE /* Sources */,
 				79F913AD2746501500771FFE /* Frameworks */,
 				79F913AE2746501500771FFE /* Resources */,
+				D93785F8908E9EF6FDDC1F9D /* [CP] Embed Pods Frameworks */,
+				1004C6021CECEF5733067082 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Jiggle;
-			packageProductDependencies = (
-			);
 			productName = Jiggle;
 			productReference = 79F913B02746501500771FFE /* Jiggle.app */;
 			productType = "com.apple.product-type.application";
@@ -275,8 +302,6 @@
 				Base,
 			);
 			mainGroup = 79F913A72746501500771FFE;
-			packageReferences = (
-			);
 			productRefGroup = 79F913B12746501500771FFE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -299,6 +324,82 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1004C6021CECEF5733067082 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jiggle/Pods-Jiggle-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jiggle/Pods-Jiggle-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jiggle/Pods-Jiggle-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50C9D117F376A0615821A405 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Jiggle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		802C2DE2FC45C67BC700E9E6 /* [CP] Prepare Artifacts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jiggle/Pods-Jiggle-artifacts-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Prepare Artifacts";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jiggle/Pods-Jiggle-artifacts-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jiggle/Pods-Jiggle-artifacts.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D93785F8908E9EF6FDDC1F9D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jiggle/Pods-Jiggle-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jiggle/Pods-Jiggle-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jiggle/Pods-Jiggle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		79F913AC2746501500771FFE /* Sources */ = {
@@ -459,6 +560,7 @@
 		};
 		79F913C52746501900771FFE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1587FEF8190C1BAA52A8B83 /* Pods-Jiggle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -478,6 +580,7 @@
 		};
 		79F913C62746501900771FFE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11CEED87185E67AAB103638B /* Pods-Jiggle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
