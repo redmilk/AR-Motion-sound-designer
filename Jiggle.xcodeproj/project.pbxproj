@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,73 @@
 		791B7C072746A79700EF6886 /* ModuleTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 791B7C032746A79700EF6886 /* ModuleTwoViewController.xib */; };
 		7963FC4227466F6F007B8449 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963FC4127466F6F007B8449 /* ApplicationCoordinator.swift */; };
 		7963FC4627466FAD007B8449 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963FC4527466FAD007B8449 /* CoordinatorProtocol.swift */; };
+		796A59F32747A02B008BA88B /* UserDefaultsPropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A59F22747A02B008BA88B /* UserDefaultsPropertyWrapper.swift */; };
+		796A59F92747A12D008BA88B /* MasksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A59F72747A12D008BA88B /* MasksManager.swift */; };
+		796A59FA2747A12D008BA88B /* Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A59F82747A12D008BA88B /* Mask.swift */; };
+		796A5A022747A1B7008BA88B /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A59FD2747A1B6008BA88B /* Array.swift */; };
+		796A5A032747A1B7008BA88B /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A59FE2747A1B6008BA88B /* CGRect.swift */; };
+		796A5A042747A1B7008BA88B /* MLKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A59FF2747A1B6008BA88B /* MLKitExtensions.swift */; };
+		796A5A052747A1B7008BA88B /* NSMutableData+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A002747A1B7008BA88B /* NSMutableData+Extensions.swift */; };
+		796A5A062747A1B7008BA88B /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A012747A1B7008BA88B /* UIImage.swift */; };
+		796A5A0B2747A20A008BA88B /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A092747A20A008BA88B /* Detector.swift */; };
+		796A5A0C2747A20A008BA88B /* Landmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A0A2747A20A008BA88B /* Landmarks.swift */; };
+		796A5A142747A26C008BA88B /* FeedbackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A0F2747A26B008BA88B /* FeedbackView.xib */; };
+		796A5A152747A26C008BA88B /* CountdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A102747A26B008BA88B /* CountdownView.xib */; };
+		796A5A162747A26C008BA88B /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A112747A26B008BA88B /* Onboarding.storyboard */; };
+		796A5A172747A26C008BA88B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A122747A26B008BA88B /* Main.storyboard */; };
+		796A5A182747A26C008BA88B /* ProcessingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A132747A26C008BA88B /* ProcessingView.xib */; };
+		796A5A1C2747A2A7008BA88B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A1B2747A2A7008BA88B /* LaunchScreen.storyboard */; };
+		796A5A452747A9CB008BA88B /* SoundPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A442747A9CB008BA88B /* SoundPickerVC.swift */; };
+		796A5A4A2747A9F1008BA88B /* SettingsTableViewCellWithSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A472747A9F1008BA88B /* SettingsTableViewCellWithSwitcher.swift */; };
+		796A5A4B2747A9F1008BA88B /* SettingsTableViewCellWithSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A482747A9F1008BA88B /* SettingsTableViewCellWithSlider.swift */; };
+		796A5A4C2747A9F1008BA88B /* SetiingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A492747A9F1008BA88B /* SetiingsVC.swift */; };
+		796A5A502747AA0B008BA88B /* VideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A4E2747AA0B008BA88B /* VideoVC.swift */; };
+		796A5A512747AA0B008BA88B /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A4F2747AA0B008BA88B /* OnboardingVC.swift */; };
+		796A5A5A2747AA5A008BA88B /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A542747AA58008BA88B /* HomeVC.swift */; };
+		796A5A5B2747AA5A008BA88B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A552747AA59008BA88B /* CollectionViewCell.swift */; };
+		796A5A5C2747AA5A008BA88B /* HomeVC+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A562747AA59008BA88B /* HomeVC+Extensions.swift */; };
+		796A5A5D2747AA5A008BA88B /* ProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A572747AA59008BA88B /* ProcessingView.swift */; };
+		796A5A5E2747AA5A008BA88B /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A582747AA59008BA88B /* FeedbackView.swift */; };
+		796A5A5F2747AA5A008BA88B /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A592747AA5A008BA88B /* CountdownView.swift */; };
+		796A5A652747AAC7008BA88B /* MovementBasedSoundUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A642747AAC7008BA88B /* MovementBasedSoundUtility.swift */; };
+		796A5A6D2747AAF3008BA88B /* ZoneBasedUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A672747AAF2008BA88B /* ZoneBasedUtility.swift */; };
+		796A5A6E2747AAF3008BA88B /* ZoneBasedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A682747AAF2008BA88B /* ZoneBasedAudio.swift */; };
+		796A5A6F2747AAF3008BA88B /* KungFuMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A692747AAF3008BA88B /* KungFuMask.swift */; };
+		796A5A702747AAF3008BA88B /* SoundBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A6A2747AAF3008BA88B /* SoundBox.swift */; };
+		796A5A712747AAF3008BA88B /* SquidMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A6B2747AAF3008BA88B /* SquidMask.swift */; };
+		796A5A722747AAF3008BA88B /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A6C2747AAF3008BA88B /* Zone.swift */; };
+		796A5A772747AB38008BA88B /* AdjustVolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A752747AB37008BA88B /* AdjustVolumeView.swift */; };
+		796A5A782747AB38008BA88B /* AdjustVolumeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A762747AB38008BA88B /* AdjustVolumeView.xib */; };
+		796A5A7D2747AB6C008BA88B /* JiggleAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A7A2747AB6B008BA88B /* JiggleAnalytics.swift */; };
+		796A5A7E2747AB6C008BA88B /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A7B2747AB6C008BA88B /* UIUtilities.swift */; };
+		796A5A7F2747AB6C008BA88B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A7C2747AB6C008BA88B /* Utils.swift */; };
+		796A5A892747ABCF008BA88B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A872747ABCF008BA88B /* Constants.swift */; };
+		796A5A8A2747ABCF008BA88B /* FileUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A882747ABCF008BA88B /* FileUploader.swift */; };
+		796A5AAC2747AC40008BA88B /* kung-fu Jiggle2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A8E2747AC3B008BA88B /* kung-fu Jiggle2.mp3 */; };
+		796A5AAD2747AC40008BA88B /* vox A.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A902747AC3C008BA88B /* vox A.wav */; };
+		796A5AAE2747AC40008BA88B /* boom D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A912747AC3C008BA88B /* boom D.wav */; };
+		796A5AAF2747AC40008BA88B /* squidBeat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A922747AC3C008BA88B /* squidBeat.wav */; };
+		796A5AB02747AC40008BA88B /* vox B.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A932747AC3C008BA88B /* vox B.wav */; };
+		796A5AB12747AC40008BA88B /* boom C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A942747AC3C008BA88B /* boom C.wav */; };
+		796A5AB22747AC40008BA88B /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A962747AC3C008BA88B /* WorkSans-Regular.ttf */; };
+		796A5AB32747AC40008BA88B /* WorkSans-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A972747AC3C008BA88B /* WorkSans-VariableFont_wght.ttf */; };
+		796A5AB42747AC40008BA88B /* jiggleBeat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A992747AC3D008BA88B /* jiggleBeat.wav */; };
+		796A5AB52747AC40008BA88B /* jiggleA.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A9A2747AC3D008BA88B /* jiggleA.wav */; };
+		796A5AB62747AC40008BA88B /* jiggleC.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A9B2747AC3D008BA88B /* jiggleC.wav */; };
+		796A5AB72747AC40008BA88B /* jiggleB.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A9C2747AC3D008BA88B /* jiggleB.wav */; };
+		796A5AB82747AC40008BA88B /* jiggleD.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A9D2747AC3D008BA88B /* jiggleD.wav */; };
+		796A5AB92747AC40008BA88B /* scratch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5A9F2747AC3E008BA88B /* scratch.wav */; };
+		796A5ABA2747AC40008BA88B /* vox.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5AA02747AC3E008BA88B /* vox.wav */; };
+		796A5ABB2747AC40008BA88B /* synth.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5AA12747AC3E008BA88B /* synth.wav */; };
+		796A5ABC2747AC40008BA88B /* beat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5AA22747AC3E008BA88B /* beat.wav */; };
+		796A5ABD2747AC40008BA88B /* bass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5AA32747AC3E008BA88B /* bass.wav */; };
+		796A5ABE2747AC40008BA88B /* kung-fu melody.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5AA52747AC3E008BA88B /* kung-fu melody.wav */; };
+		796A5ABF2747AC40008BA88B /* kung-fu 5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5AA62747AC3E008BA88B /* kung-fu 5.wav */; };
+		796A5AC02747AC40008BA88B /* kung-fu 4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5AA72747AC3E008BA88B /* kung-fu 4.wav */; };
+		796A5AC12747AC40008BA88B /* kung-fu 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5AA82747AC3E008BA88B /* kung-fu 1.wav */; };
+		796A5AC22747AC40008BA88B /* kung-fu 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 796A5AA92747AC3E008BA88B /* kung-fu 3.wav */; };
+		796A5AC32747AC40008BA88B /* sample jiggle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 796A5AAA2747AC3E008BA88B /* sample jiggle.mp3 */; };
+		796A5AC42747AC40008BA88B /* App_short.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 796A5AAB2747AC40008BA88B /* App_short.mp4 */; };
 		799AFB84274680EB00C37A6D /* ExampleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFB80274680EB00C37A6D /* ExampleCoordinator.swift */; };
 		799AFB85274680EB00C37A6D /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFB81274680EB00C37A6D /* ExampleViewController.swift */; };
 		799AFB86274680EB00C37A6D /* ExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799AFB82274680EB00C37A6D /* ExampleViewModel.swift */; };
@@ -30,7 +97,6 @@
 		79F913B42746501500771FFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F913B32746501500771FFE /* AppDelegate.swift */; };
 		79F913B62746501500771FFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F913B52746501500771FFE /* SceneDelegate.swift */; };
 		79F913BD2746501900771FFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79F913BC2746501900771FFE /* Assets.xcassets */; };
-		79F913C02746501900771FFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79F913BE2746501900771FFE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +116,75 @@
 		791B7C032746A79700EF6886 /* ModuleTwoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModuleTwoViewController.xib; sourceTree = "<group>"; };
 		7963FC4127466F6F007B8449 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		7963FC4527466FAD007B8449 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		796A59F22747A02B008BA88B /* UserDefaultsPropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsPropertyWrapper.swift; sourceTree = "<group>"; };
+		796A59F72747A12D008BA88B /* MasksManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasksManager.swift; sourceTree = "<group>"; };
+		796A59F82747A12D008BA88B /* Mask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mask.swift; sourceTree = "<group>"; };
+		796A59FD2747A1B6008BA88B /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		796A59FE2747A1B6008BA88B /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
+		796A59FF2747A1B6008BA88B /* MLKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLKitExtensions.swift; sourceTree = "<group>"; };
+		796A5A002747A1B7008BA88B /* NSMutableData+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableData+Extensions.swift"; sourceTree = "<group>"; };
+		796A5A012747A1B7008BA88B /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		796A5A092747A20A008BA88B /* Detector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
+		796A5A0A2747A20A008BA88B /* Landmarks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Landmarks.swift; sourceTree = "<group>"; };
+		796A5A0F2747A26B008BA88B /* FeedbackView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedbackView.xib; sourceTree = "<group>"; };
+		796A5A102747A26B008BA88B /* CountdownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountdownView.xib; sourceTree = "<group>"; };
+		796A5A112747A26B008BA88B /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		796A5A122747A26B008BA88B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		796A5A132747A26C008BA88B /* ProcessingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProcessingView.xib; sourceTree = "<group>"; };
+		796A5A1B2747A2A7008BA88B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		796A5A442747A9CB008BA88B /* SoundPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPickerVC.swift; sourceTree = "<group>"; };
+		796A5A472747A9F1008BA88B /* SettingsTableViewCellWithSwitcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellWithSwitcher.swift; sourceTree = "<group>"; };
+		796A5A482747A9F1008BA88B /* SettingsTableViewCellWithSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCellWithSlider.swift; sourceTree = "<group>"; };
+		796A5A492747A9F1008BA88B /* SetiingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetiingsVC.swift; sourceTree = "<group>"; };
+		796A5A4E2747AA0B008BA88B /* VideoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoVC.swift; sourceTree = "<group>"; };
+		796A5A4F2747AA0B008BA88B /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		796A5A542747AA58008BA88B /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		796A5A552747AA59008BA88B /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		796A5A562747AA59008BA88B /* HomeVC+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HomeVC+Extensions.swift"; sourceTree = "<group>"; };
+		796A5A572747AA59008BA88B /* ProcessingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProcessingView.swift; sourceTree = "<group>"; };
+		796A5A582747AA59008BA88B /* FeedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
+		796A5A592747AA5A008BA88B /* CountdownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
+		796A5A642747AAC7008BA88B /* MovementBasedSoundUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementBasedSoundUtility.swift; sourceTree = "<group>"; };
+		796A5A672747AAF2008BA88B /* ZoneBasedUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneBasedUtility.swift; sourceTree = "<group>"; };
+		796A5A682747AAF2008BA88B /* ZoneBasedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneBasedAudio.swift; sourceTree = "<group>"; };
+		796A5A692747AAF3008BA88B /* KungFuMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KungFuMask.swift; sourceTree = "<group>"; };
+		796A5A6A2747AAF3008BA88B /* SoundBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundBox.swift; sourceTree = "<group>"; };
+		796A5A6B2747AAF3008BA88B /* SquidMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquidMask.swift; sourceTree = "<group>"; };
+		796A5A6C2747AAF3008BA88B /* Zone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
+		796A5A752747AB37008BA88B /* AdjustVolumeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjustVolumeView.swift; sourceTree = "<group>"; };
+		796A5A762747AB38008BA88B /* AdjustVolumeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdjustVolumeView.xib; sourceTree = "<group>"; };
+		796A5A7A2747AB6B008BA88B /* JiggleAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JiggleAnalytics.swift; sourceTree = "<group>"; };
+		796A5A7B2747AB6C008BA88B /* UIUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
+		796A5A7C2747AB6C008BA88B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		796A5A812747ABA6008BA88B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		796A5A822747ABA6008BA88B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		796A5A872747ABCF008BA88B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		796A5A882747ABCF008BA88B /* FileUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUploader.swift; sourceTree = "<group>"; };
+		796A5A8E2747AC3B008BA88B /* kung-fu Jiggle2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "kung-fu Jiggle2.mp3"; sourceTree = "<group>"; };
+		796A5A902747AC3C008BA88B /* vox A.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "vox A.wav"; sourceTree = "<group>"; };
+		796A5A912747AC3C008BA88B /* boom D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "boom D.wav"; sourceTree = "<group>"; };
+		796A5A922747AC3C008BA88B /* squidBeat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = squidBeat.wav; sourceTree = "<group>"; };
+		796A5A932747AC3C008BA88B /* vox B.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "vox B.wav"; sourceTree = "<group>"; };
+		796A5A942747AC3C008BA88B /* boom C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "boom C.wav"; sourceTree = "<group>"; };
+		796A5A962747AC3C008BA88B /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.ttf"; sourceTree = "<group>"; };
+		796A5A972747AC3C008BA88B /* WorkSans-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		796A5A992747AC3D008BA88B /* jiggleBeat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jiggleBeat.wav; sourceTree = "<group>"; };
+		796A5A9A2747AC3D008BA88B /* jiggleA.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jiggleA.wav; sourceTree = "<group>"; };
+		796A5A9B2747AC3D008BA88B /* jiggleC.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jiggleC.wav; sourceTree = "<group>"; };
+		796A5A9C2747AC3D008BA88B /* jiggleB.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jiggleB.wav; sourceTree = "<group>"; };
+		796A5A9D2747AC3D008BA88B /* jiggleD.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jiggleD.wav; sourceTree = "<group>"; };
+		796A5A9F2747AC3E008BA88B /* scratch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = scratch.wav; sourceTree = "<group>"; };
+		796A5AA02747AC3E008BA88B /* vox.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = vox.wav; sourceTree = "<group>"; };
+		796A5AA12747AC3E008BA88B /* synth.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth.wav; sourceTree = "<group>"; };
+		796A5AA22747AC3E008BA88B /* beat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beat.wav; sourceTree = "<group>"; };
+		796A5AA32747AC3E008BA88B /* bass.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bass.wav; sourceTree = "<group>"; };
+		796A5AA52747AC3E008BA88B /* kung-fu melody.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu melody.wav"; sourceTree = "<group>"; };
+		796A5AA62747AC3E008BA88B /* kung-fu 5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu 5.wav"; sourceTree = "<group>"; };
+		796A5AA72747AC3E008BA88B /* kung-fu 4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu 4.wav"; sourceTree = "<group>"; };
+		796A5AA82747AC3E008BA88B /* kung-fu 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu 1.wav"; sourceTree = "<group>"; };
+		796A5AA92747AC3E008BA88B /* kung-fu 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu 3.wav"; sourceTree = "<group>"; };
+		796A5AAA2747AC3E008BA88B /* sample jiggle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sample jiggle.mp3"; sourceTree = "<group>"; };
+		796A5AAB2747AC40008BA88B /* App_short.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = App_short.mp4; sourceTree = "<group>"; };
 		799AFB80274680EB00C37A6D /* ExampleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCoordinator.swift; sourceTree = "<group>"; };
 		799AFB81274680EB00C37A6D /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		799AFB82274680EB00C37A6D /* ExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewModel.swift; sourceTree = "<group>"; };
@@ -58,7 +193,6 @@
 		79F913B32746501500771FFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79F913B52746501500771FFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		79F913BC2746501900771FFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		79F913BF2746501900771FFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		79F913C12746501900771FFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A3738220477A0D1C5AE43B1 /* Pods_Jiggle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jiggle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1587FEF8190C1BAA52A8B83 /* Pods-Jiggle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jiggle.debug.xcconfig"; path = "Target Support Files/Pods-Jiggle/Pods-Jiggle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +243,7 @@
 		791B7BF72746A11800EF6886 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				796A59F22747A02B008BA88B /* UserDefaultsPropertyWrapper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -173,6 +308,200 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		796A59B327479DCC008BA88B /* OldFiles */ = {
+			isa = PBXGroup;
+			children = (
+				796A5A8C2747ABF6008BA88B /* Other */,
+				796A5A742747AB01008BA88B /* Utils */,
+				796A5A612747AA86008BA88B /* Audio */,
+				796A5A432747A9AF008BA88B /* Controllers */,
+				796A5A0E2747A218008BA88B /* Views */,
+				796A5A082747A1C6008BA88B /* Landmarks */,
+				796A59FC2747A166008BA88B /* Extensions */,
+				796A59F62747A12D008BA88B /* Models */,
+			);
+			path = OldFiles;
+			sourceTree = "<group>";
+		};
+		796A59F62747A12D008BA88B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				796A59F72747A12D008BA88B /* MasksManager.swift */,
+				796A59F82747A12D008BA88B /* Mask.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		796A59FC2747A166008BA88B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				796A59FD2747A1B6008BA88B /* Array.swift */,
+				796A59FE2747A1B6008BA88B /* CGRect.swift */,
+				796A59FF2747A1B6008BA88B /* MLKitExtensions.swift */,
+				796A5A002747A1B7008BA88B /* NSMutableData+Extensions.swift */,
+				796A5A012747A1B7008BA88B /* UIImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		796A5A082747A1C6008BA88B /* Landmarks */ = {
+			isa = PBXGroup;
+			children = (
+				796A5A092747A20A008BA88B /* Detector.swift */,
+				796A5A0A2747A20A008BA88B /* Landmarks.swift */,
+			);
+			path = Landmarks;
+			sourceTree = "<group>";
+		};
+		796A5A0E2747A218008BA88B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				796A5A752747AB37008BA88B /* AdjustVolumeView.swift */,
+				796A5A762747AB38008BA88B /* AdjustVolumeView.xib */,
+				796A5A102747A26B008BA88B /* CountdownView.xib */,
+				796A5A0F2747A26B008BA88B /* FeedbackView.xib */,
+				796A5A122747A26B008BA88B /* Main.storyboard */,
+				796A5A112747A26B008BA88B /* Onboarding.storyboard */,
+				796A5A132747A26C008BA88B /* ProcessingView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		796A5A432747A9AF008BA88B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				796A5A532747AA18008BA88B /* Home */,
+				796A5A492747A9F1008BA88B /* SetiingsVC.swift */,
+				796A5A482747A9F1008BA88B /* SettingsTableViewCellWithSlider.swift */,
+				796A5A472747A9F1008BA88B /* SettingsTableViewCellWithSwitcher.swift */,
+				796A5A442747A9CB008BA88B /* SoundPickerVC.swift */,
+				796A5A4F2747AA0B008BA88B /* OnboardingVC.swift */,
+				796A5A4E2747AA0B008BA88B /* VideoVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		796A5A532747AA18008BA88B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				796A5A552747AA59008BA88B /* CollectionViewCell.swift */,
+				796A5A592747AA5A008BA88B /* CountdownView.swift */,
+				796A5A582747AA59008BA88B /* FeedbackView.swift */,
+				796A5A542747AA58008BA88B /* HomeVC.swift */,
+				796A5A562747AA59008BA88B /* HomeVC+Extensions.swift */,
+				796A5A572747AA59008BA88B /* ProcessingView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		796A5A612747AA86008BA88B /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				796A5A632747AAAD008BA88B /* ZoneBased */,
+				796A5A622747AAA1008BA88B /* MovementBased */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		796A5A622747AAA1008BA88B /* MovementBased */ = {
+			isa = PBXGroup;
+			children = (
+				796A5A642747AAC7008BA88B /* MovementBasedSoundUtility.swift */,
+			);
+			path = MovementBased;
+			sourceTree = "<group>";
+		};
+		796A5A632747AAAD008BA88B /* ZoneBased */ = {
+			isa = PBXGroup;
+			children = (
+				796A5A692747AAF3008BA88B /* KungFuMask.swift */,
+				796A5A6A2747AAF3008BA88B /* SoundBox.swift */,
+				796A5A6B2747AAF3008BA88B /* SquidMask.swift */,
+				796A5A6C2747AAF3008BA88B /* Zone.swift */,
+				796A5A682747AAF2008BA88B /* ZoneBasedAudio.swift */,
+				796A5A672747AAF2008BA88B /* ZoneBasedUtility.swift */,
+			);
+			path = ZoneBased;
+			sourceTree = "<group>";
+		};
+		796A5A742747AB01008BA88B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				796A5A7A2747AB6B008BA88B /* JiggleAnalytics.swift */,
+				796A5A7B2747AB6C008BA88B /* UIUtilities.swift */,
+				796A5A7C2747AB6C008BA88B /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		796A5A8C2747ABF6008BA88B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				796A5A822747ABA6008BA88B /* GoogleService-Info.plist */,
+				796A5A812747ABA6008BA88B /* Info.plist */,
+				796A5A872747ABCF008BA88B /* Constants.swift */,
+				796A5A882747ABCF008BA88B /* FileUploader.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		796A5A8F2747AC3C008BA88B /* Squid */ = {
+			isa = PBXGroup;
+			children = (
+				796A5A902747AC3C008BA88B /* vox A.wav */,
+				796A5A912747AC3C008BA88B /* boom D.wav */,
+				796A5A922747AC3C008BA88B /* squidBeat.wav */,
+				796A5A932747AC3C008BA88B /* vox B.wav */,
+				796A5A942747AC3C008BA88B /* boom C.wav */,
+			);
+			path = Squid;
+			sourceTree = "<group>";
+		};
+		796A5A952747AC3C008BA88B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				796A5A962747AC3C008BA88B /* WorkSans-Regular.ttf */,
+				796A5A972747AC3C008BA88B /* WorkSans-VariableFont_wght.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		796A5A982747AC3D008BA88B /* Jiggle */ = {
+			isa = PBXGroup;
+			children = (
+				796A5A992747AC3D008BA88B /* jiggleBeat.wav */,
+				796A5A9A2747AC3D008BA88B /* jiggleA.wav */,
+				796A5A9B2747AC3D008BA88B /* jiggleC.wav */,
+				796A5A9C2747AC3D008BA88B /* jiggleB.wav */,
+				796A5A9D2747AC3D008BA88B /* jiggleD.wav */,
+			);
+			path = Jiggle;
+			sourceTree = "<group>";
+		};
+		796A5A9E2747AC3E008BA88B /* Waves */ = {
+			isa = PBXGroup;
+			children = (
+				796A5A9F2747AC3E008BA88B /* scratch.wav */,
+				796A5AA02747AC3E008BA88B /* vox.wav */,
+				796A5AA12747AC3E008BA88B /* synth.wav */,
+				796A5AA22747AC3E008BA88B /* beat.wav */,
+				796A5AA32747AC3E008BA88B /* bass.wav */,
+			);
+			path = Waves;
+			sourceTree = "<group>";
+		};
+		796A5AA42747AC3E008BA88B /* KungFu */ = {
+			isa = PBXGroup;
+			children = (
+				796A5AA52747AC3E008BA88B /* kung-fu melody.wav */,
+				796A5AA62747AC3E008BA88B /* kung-fu 5.wav */,
+				796A5AA72747AC3E008BA88B /* kung-fu 4.wav */,
+				796A5AA82747AC3E008BA88B /* kung-fu 1.wav */,
+				796A5AA92747AC3E008BA88B /* kung-fu 3.wav */,
+			);
+			path = KungFu;
+			sourceTree = "<group>";
+		};
 		79F913A72746501500771FFE = {
 			isa = PBXGroup;
 			children = (
@@ -208,8 +537,8 @@
 			children = (
 				79F913B32746501500771FFE /* AppDelegate.swift */,
 				79F913B52746501500771FFE /* SceneDelegate.swift */,
+				796A5A1B2747A2A7008BA88B /* LaunchScreen.storyboard */,
 				7963FC4127466F6F007B8449 /* ApplicationCoordinator.swift */,
-				79F913BE2746501900771FFE /* LaunchScreen.storyboard */,
 				79F913C12746501900771FFE /* Info.plist */,
 			);
 			path = Application;
@@ -218,6 +547,14 @@
 		79F913C92746509E00771FFE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				796A5AAB2747AC40008BA88B /* App_short.mp4 */,
+				796A5A952747AC3C008BA88B /* Fonts */,
+				796A5A982747AC3D008BA88B /* Jiggle */,
+				796A5A8E2747AC3B008BA88B /* kung-fu Jiggle2.mp3 */,
+				796A5AA42747AC3E008BA88B /* KungFu */,
+				796A5AAA2747AC3E008BA88B /* sample jiggle.mp3 */,
+				796A5A8F2747AC3C008BA88B /* Squid */,
+				796A5A9E2747AC3E008BA88B /* Waves */,
 				79F913BC2746501900771FFE /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -226,6 +563,7 @@
 		79F913CD274652E200771FFE /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				796A59B327479DCC008BA88B /* OldFiles */,
 				791B7BFE2746A71E00EF6886 /* Services */,
 				791B7BF82746A12600EF6886 /* BaseClasses */,
 				791B7BF72746A11800EF6886 /* Utils */,
@@ -251,7 +589,6 @@
 				E1587FEF8190C1BAA52A8B83 /* Pods-Jiggle.debug.xcconfig */,
 				11CEED87185E67AAB103638B /* Pods-Jiggle.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -316,10 +653,41 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79F913C02746501900771FFE /* LaunchScreen.storyboard in Resources */,
+				796A5A1C2747A2A7008BA88B /* LaunchScreen.storyboard in Resources */,
+				796A5ABD2747AC40008BA88B /* bass.wav in Resources */,
 				799AFB87274680EB00C37A6D /* ExampleViewController.xib in Resources */,
+				796A5AAC2747AC40008BA88B /* kung-fu Jiggle2.mp3 in Resources */,
+				796A5AC02747AC40008BA88B /* kung-fu 4.wav in Resources */,
+				796A5AB72747AC40008BA88B /* jiggleB.wav in Resources */,
+				796A5AB62747AC40008BA88B /* jiggleC.wav in Resources */,
+				796A5AB02747AC40008BA88B /* vox B.wav in Resources */,
+				796A5AAF2747AC40008BA88B /* squidBeat.wav in Resources */,
+				796A5AC32747AC40008BA88B /* sample jiggle.mp3 in Resources */,
+				796A5AB92747AC40008BA88B /* scratch.wav in Resources */,
+				796A5AB32747AC40008BA88B /* WorkSans-VariableFont_wght.ttf in Resources */,
+				796A5AAD2747AC40008BA88B /* vox A.wav in Resources */,
+				796A5ABA2747AC40008BA88B /* vox.wav in Resources */,
+				796A5ABE2747AC40008BA88B /* kung-fu melody.wav in Resources */,
+				796A5AB12747AC40008BA88B /* boom C.wav in Resources */,
 				79F913BD2746501900771FFE /* Assets.xcassets in Resources */,
+				796A5A182747A26C008BA88B /* ProcessingView.xib in Resources */,
+				796A5A172747A26C008BA88B /* Main.storyboard in Resources */,
+				796A5AAE2747AC40008BA88B /* boom D.wav in Resources */,
+				796A5AB82747AC40008BA88B /* jiggleD.wav in Resources */,
+				796A5ABF2747AC40008BA88B /* kung-fu 5.wav in Resources */,
+				796A5A782747AB38008BA88B /* AdjustVolumeView.xib in Resources */,
 				791B7C072746A79700EF6886 /* ModuleTwoViewController.xib in Resources */,
+				796A5AC12747AC40008BA88B /* kung-fu 1.wav in Resources */,
+				796A5AC42747AC40008BA88B /* App_short.mp4 in Resources */,
+				796A5AB52747AC40008BA88B /* jiggleA.wav in Resources */,
+				796A5AC22747AC40008BA88B /* kung-fu 3.wav in Resources */,
+				796A5A162747A26C008BA88B /* Onboarding.storyboard in Resources */,
+				796A5AB42747AC40008BA88B /* jiggleBeat.wav in Resources */,
+				796A5A152747A26C008BA88B /* CountdownView.xib in Resources */,
+				796A5ABB2747AC40008BA88B /* synth.wav in Resources */,
+				796A5ABC2747AC40008BA88B /* beat.wav in Resources */,
+				796A5AB22747AC40008BA88B /* WorkSans-Regular.ttf in Resources */,
+				796A5A142747A26C008BA88B /* FeedbackView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,39 +775,63 @@
 			buildActionMask = 2147483647;
 			files = (
 				79F913B42746501500771FFE /* AppDelegate.swift in Sources */,
+				796A59FA2747A12D008BA88B /* Mask.swift in Sources */,
 				799AFB86274680EB00C37A6D /* ExampleViewModel.swift in Sources */,
+				796A5A4C2747A9F1008BA88B /* SetiingsVC.swift in Sources */,
+				796A5A5F2747AA5A008BA88B /* CountdownView.swift in Sources */,
+				796A5A8A2747ABCF008BA88B /* FileUploader.swift in Sources */,
 				7963FC4627466FAD007B8449 /* CoordinatorProtocol.swift in Sources */,
+				796A59F32747A02B008BA88B /* UserDefaultsPropertyWrapper.swift in Sources */,
 				79189E00274672900023628A /* Logger.swift in Sources */,
+				796A5A7D2747AB6C008BA88B /* JiggleAnalytics.swift in Sources */,
+				796A5A062747A1B7008BA88B /* UIImage.swift in Sources */,
+				796A5A022747A1B7008BA88B /* Array.swift in Sources */,
+				796A5A032747A1B7008BA88B /* CGRect.swift in Sources */,
 				791B7BEF27469FFF00EF6886 /* UIView+Extensions.swift in Sources */,
+				796A5A6F2747AAF3008BA88B /* KungFuMask.swift in Sources */,
+				796A5A0C2747A20A008BA88B /* Landmarks.swift in Sources */,
+				796A5A6D2747AAF3008BA88B /* ZoneBasedUtility.swift in Sources */,
 				791B7C052746A79700EF6886 /* ModuleTwoViewController.swift in Sources */,
+				796A5A5D2747AA5A008BA88B /* ProcessingView.swift in Sources */,
+				796A5A722747AAF3008BA88B /* Zone.swift in Sources */,
+				796A5A452747A9CB008BA88B /* SoundPickerVC.swift in Sources */,
 				799AFB84274680EB00C37A6D /* ExampleCoordinator.swift in Sources */,
 				791B7BE727469FFF00EF6886 /* UICollectionView+Extensions.swift in Sources */,
+				796A5A4A2747A9F1008BA88B /* SettingsTableViewCellWithSwitcher.swift in Sources */,
 				791B7BF42746A0C900EF6886 /* MarketBoardDisplayManager.swift in Sources */,
+				796A5A042747A1B7008BA88B /* MLKitExtensions.swift in Sources */,
+				796A5A0B2747A20A008BA88B /* Detector.swift in Sources */,
+				796A5A5E2747AA5A008BA88B /* FeedbackView.swift in Sources */,
+				796A5A502747AA0B008BA88B /* VideoVC.swift in Sources */,
+				796A5A5A2747AA5A008BA88B /* HomeVC.swift in Sources */,
+				796A5A4B2747A9F1008BA88B /* SettingsTableViewCellWithSlider.swift in Sources */,
 				791B7C062746A79700EF6886 /* ModuleTwoViewModel.swift in Sources */,
+				796A5A7F2747AB6C008BA88B /* Utils.swift in Sources */,
 				791B7BEC27469FFF00EF6886 /* UIBarButtonItem+Extensions.swift in Sources */,
 				791B7BED27469FFF00EF6886 /* KeyedDecodingContainer+Extensions.swift in Sources */,
+				796A5A052747A1B7008BA88B /* NSMutableData+Extensions.swift in Sources */,
 				799AFB85274680EB00C37A6D /* ExampleViewController.swift in Sources */,
+				796A5A512747AA0B008BA88B /* OnboardingVC.swift in Sources */,
 				791B7BEB27469FFF00EF6886 /* UIControl+Extensions.swift in Sources */,
+				796A5A652747AAC7008BA88B /* MovementBasedSoundUtility.swift in Sources */,
+				796A5A5B2747AA5A008BA88B /* CollectionViewCell.swift in Sources */,
+				796A59F92747A12D008BA88B /* MasksManager.swift in Sources */,
+				796A5A712747AAF3008BA88B /* SquidMask.swift in Sources */,
 				791B7C042746A79700EF6886 /* ModuleTwoCoordinator.swift in Sources */,
+				796A5A5C2747AA5A008BA88B /* HomeVC+Extensions.swift in Sources */,
 				79F913B62746501500771FFE /* SceneDelegate.swift in Sources */,
+				796A5A772747AB38008BA88B /* AdjustVolumeView.swift in Sources */,
+				796A5A6E2747AAF3008BA88B /* ZoneBasedAudio.swift in Sources */,
+				796A5A7E2747AB6C008BA88B /* UIUtilities.swift in Sources */,
 				7963FC4227466F6F007B8449 /* ApplicationCoordinator.swift in Sources */,
+				796A5A702747AAF3008BA88B /* SoundBox.swift in Sources */,
+				796A5A892747ABCF008BA88B /* Constants.swift in Sources */,
 				791B7BEE27469FFF00EF6886 /* Publisher+Extensions.swift in Sources */,
 				791B7BE827469FFF00EF6886 /* Collection+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		79F913BE2746501900771FFE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				79F913BF2746501900771FFE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		79F913C22746501900771FFE /* Debug */ = {

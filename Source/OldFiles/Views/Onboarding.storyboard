@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--VideoVC-->
+        <scene sceneID="xrn-e3-cro">
+            <objects>
+                <viewController storyboardIdentifier="VideoVC" id="56D-6y-Vru" customClass="VideoVC" customModule="Jiggle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sg1-Il-s01">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zzD-03-5hF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m8E-Pq-Egp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-787" y="74"/>
+        </scene>
+        <!--OnboardingVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingVC" id="Y6W-OH-hqX" customClass="OnboardingVC" customModule="Jiggle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qRh-N6-iLR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXF-mP-WZS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lighting" translatesAutoresizingMaskIntoConstraints="NO" id="XMe-XP-Jle">
+                                <rect key="frame" x="82" y="220" width="250" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="4pM-wg-Tjg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMX-a3-XDP">
+                                <rect key="frame" x="160" y="580" width="94" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xu7-Bo-FCs">
+                                <rect key="frame" x="182" y="678" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="kAe-Oj-wBG"/>
+                                    <constraint firstAttribute="height" constant="50" id="zQw-mZ-fgt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Y8P-N8-MAC"/>
+                        <constraints>
+                            <constraint firstItem="Y8P-N8-MAC" firstAttribute="trailing" secondItem="XXF-mP-WZS" secondAttribute="trailing" id="0tF-8W-VOa"/>
+                            <constraint firstItem="aMX-a3-XDP" firstAttribute="centerX" secondItem="XMe-XP-Jle" secondAttribute="centerX" id="1ov-Yi-DbG"/>
+                            <constraint firstItem="XXF-mP-WZS" firstAttribute="leading" secondItem="Y8P-N8-MAC" secondAttribute="leading" id="8zy-1C-0kl"/>
+                            <constraint firstItem="xu7-Bo-FCs" firstAttribute="centerX" secondItem="Y8P-N8-MAC" secondAttribute="centerX" id="C3d-Q3-47S"/>
+                            <constraint firstAttribute="top" secondItem="XXF-mP-WZS" secondAttribute="top" id="Ez7-TB-xqz"/>
+                            <constraint firstItem="aMX-a3-XDP" firstAttribute="top" secondItem="XMe-XP-Jle" secondAttribute="bottom" constant="120" id="T4U-i1-01M"/>
+                            <constraint firstItem="XMe-XP-Jle" firstAttribute="centerX" secondItem="Y8P-N8-MAC" secondAttribute="centerX" id="V9z-KI-oBl"/>
+                            <constraint firstItem="XXF-mP-WZS" firstAttribute="bottom" secondItem="qRh-N6-iLR" secondAttribute="bottom" id="gfO-VA-hT9"/>
+                            <constraint firstItem="xu7-Bo-FCs" firstAttribute="top" secondItem="aMX-a3-XDP" secondAttribute="bottom" constant="50" id="gxA-GF-2Uj"/>
+                            <constraint firstItem="aMX-a3-XDP" firstAttribute="centerX" secondItem="Y8P-N8-MAC" secondAttribute="centerX" id="pmu-Hc-WPz"/>
+                            <constraint firstItem="XMe-XP-Jle" firstAttribute="top" secondItem="qRh-N6-iLR" secondAttribute="top" constant="220" id="qvT-nt-ocp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="XMe-XP-Jle" id="lxy-6h-rN7"/>
+                        <outlet property="placeholderView" destination="xu7-Bo-FCs" id="BjF-DY-QWN"/>
+                        <outlet property="titleLabel" destination="aMX-a3-XDP" id="3jR-k1-P9h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="74"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="lighting" width="250" height="252"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

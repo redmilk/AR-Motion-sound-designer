@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="AdjustVolumeView" customModule="Jiggle" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jdX-rD-QKP">
+                    <rect key="frame" x="48" y="433" width="318" height="31"/>
+                    <connections>
+                        <action selector="volumeChanged:" destination="i5M-Pr-FkT" eventType="valueChanged" id="XhD-RN-MdG"/>
+                    </connections>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjust volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dek-gD-aGP">
+                    <rect key="frame" x="135" y="164" width="144" height="24.5"/>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to apply" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l91-JT-B7l">
+                    <rect key="frame" x="145" y="717" width="124" height="25"/>
+                    <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="l91-JT-B7l" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Bpv-BB-eKN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jdX-rD-QKP" secondAttribute="trailing" constant="50" id="DCy-5F-296"/>
+                <constraint firstItem="dek-gD-aGP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="Ht7-vG-iKP"/>
+                <constraint firstItem="jdX-rD-QKP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="S27-tD-NnU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="l91-JT-B7l" secondAttribute="bottom" constant="120" id="eQE-ps-paB"/>
+                <constraint firstItem="jdX-rD-QKP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="h6f-ve-4ce"/>
+                <constraint firstItem="jdX-rD-QKP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="jh6-nG-pLs"/>
+                <constraint firstItem="dek-gD-aGP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="sLZ-hP-Xtq"/>
+            </constraints>
+            <connections>
+                <outlet property="volumeSlider" destination="jdX-rD-QKP" id="klr-CK-gxw"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="95.758928571428569"/>
+        </view>
+    </objects>
+</document>
