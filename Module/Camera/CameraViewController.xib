@@ -20,8 +20,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIf-sD-syV">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIf-sD-syV" userLabel="Camera View">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </subviews>
@@ -29,8 +29,8 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="bIf-sD-syV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1uL-y2-nlm"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bIf-sD-syV" secondAttribute="bottom" id="2YX-f7-n9w"/>
-                <constraint firstItem="bIf-sD-syV" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Pgs-IG-Ejk"/>
+                <constraint firstAttribute="bottom" secondItem="bIf-sD-syV" secondAttribute="bottom" id="2YX-f7-n9w"/>
+                <constraint firstItem="bIf-sD-syV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Pgs-IG-Ejk"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bIf-sD-syV" secondAttribute="trailing" id="drn-18-ejX"/>
             </constraints>
             <point key="canvasLocation" x="139" y="153"/>

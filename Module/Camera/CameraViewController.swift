@@ -24,6 +24,7 @@ final class CameraViewController: UIViewController {
     private let viewModel: CameraViewModel
     private var bag = Set<AnyCancellable>()
 
+    /// capture session views
     private var videoPreviewView: CaptureVideoPreviewView!
     private var annotationOverlayView: AnnotationsOverlayView!
     
@@ -62,8 +63,8 @@ final class CameraViewController: UIViewController {
             switch state {
             case .captureSessionReceived(let captureSession):
                 guard let self = self else { return }
-                self.videoPreviewView = CaptureVideoPreviewView(captureSession: captureSession, superView: self.view)
-                self.annotationOverlayView = AnnotationsOverlayView(superView: self.view)
+                self.videoPreviewView = CaptureVideoPreviewView(captureSession: captureSession, superView: self.cameraView)
+                self.annotationOverlayView = AnnotationsOverlayView(superView: self.cameraView)
             }
         })
         .store(in: &bag)
