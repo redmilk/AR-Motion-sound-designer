@@ -19,7 +19,7 @@ final class CameraViewController: UIViewController {
         case captureSessionReceived(AVCaptureSession)
     }
     
-    @IBOutlet weak var cameraView: UIView!
+    @IBOutlet private weak var cameraView: UIView!
         
     private let viewModel: CameraViewModel
     private var bag = Set<AnyCancellable>()
@@ -42,6 +42,7 @@ final class CameraViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         handleStates()
+        /// module entry point
         viewModel.input.send(.configureSession)
     }
     
@@ -58,15 +59,16 @@ final class CameraViewController: UIViewController {
     }
     
     private func handleStates() {
-        viewModel.output.receive(on: RunLoop.main)
+        viewModel.output
+            .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] state in
-            switch state {
-            case .captureSessionReceived(let captureSession):
-                guard let self = self else { return }
-                self.videoPreviewView = CaptureVideoPreviewView(captureSession: captureSession, superView: self.cameraView)
-                self.annotationOverlayView = AnnotationsOverlayView(superView: self.cameraView)
-            }
-        })
-        .store(in: &bag)
+                switch state {
+                case .captureSessionReceived(let captureSession):
+                    guard let self = self else { return }
+                    self.videoPreviewView = CaptureVideoPreviewView(captureSession: captureSession, superView: self.cameraView)
+                    self.annotationOverlayView = AnnotationsOverlayView(superView: self.cameraView)
+                }
+            })
+            .store(in: &bag)
     }
 }

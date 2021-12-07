@@ -19,6 +19,10 @@
 		791B7BF42746A0C900EF6886 /* MarketBoardDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B7BF32746A0C900EF6886 /* MarketBoardDisplayManager.swift */; };
 		7920E0C8275FF3C9001A8366 /* ErrorHandlerProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920E0C7275FF3C9001A8366 /* ErrorHandlerProvidable.swift */; };
 		7920E0CA275FFD5B001A8366 /* AnnotationsOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920E0C9275FFD5B001A8366 /* AnnotationsOverlayView.swift */; };
+		7920E0CF27600F1E001A8366 /* SessionInputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920E0CE27600F1E001A8366 /* SessionInputManager.swift */; };
+		7920E0D127600F62001A8366 /* Typealies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920E0D027600F62001A8366 /* Typealies.swift */; };
+		7920E0D32760152A001A8366 /* CaptureSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920E0D22760152A001A8366 /* CaptureSessionService.swift */; };
+		7920E0D527601AAB001A8366 /* SessionOutputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920E0CC2760094A001A8366 /* SessionOutputManager.swift */; };
 		7922B2F8275FE65A00273D8B /* CaptureVideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922B2F7275FE65A00273D8B /* CaptureVideoPreviewView.swift */; };
 		7922B2FB275FED1C00273D8B /* JiggleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922B2FA275FED1C00273D8B /* JiggleError.swift */; };
 		7963FC4227466F6F007B8449 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963FC4127466F6F007B8449 /* ApplicationCoordinator.swift */; };
@@ -87,6 +91,10 @@
 		791B7BF32746A0C900EF6886 /* MarketBoardDisplayManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketBoardDisplayManager.swift; sourceTree = "<group>"; };
 		7920E0C7275FF3C9001A8366 /* ErrorHandlerProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlerProvidable.swift; sourceTree = "<group>"; };
 		7920E0C9275FFD5B001A8366 /* AnnotationsOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationsOverlayView.swift; sourceTree = "<group>"; };
+		7920E0CC2760094A001A8366 /* SessionOutputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionOutputManager.swift; sourceTree = "<group>"; };
+		7920E0CE27600F1E001A8366 /* SessionInputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionInputManager.swift; sourceTree = "<group>"; };
+		7920E0D027600F62001A8366 /* Typealies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealies.swift; sourceTree = "<group>"; };
+		7920E0D22760152A001A8366 /* CaptureSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureSessionService.swift; sourceTree = "<group>"; };
 		7922B2F7275FE65A00273D8B /* CaptureVideoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureVideoPreviewView.swift; sourceTree = "<group>"; };
 		7922B2FA275FED1C00273D8B /* JiggleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiggleError.swift; sourceTree = "<group>"; };
 		7963FC4127466F6F007B8449 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
@@ -194,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				796A59F22747A02B008BA88B /* UserDefaultsPropertyWrapper.swift */,
+				7920E0D027600F62001A8366 /* Typealies.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -210,6 +219,16 @@
 			children = (
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		7920E0CB276008D6001A8366 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7920E0D22760152A001A8366 /* CaptureSessionService.swift */,
+				7920E0CC2760094A001A8366 /* SessionOutputManager.swift */,
+				7920E0CE27600F1E001A8366 /* SessionInputManager.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		7922B2F6275FE61700273D8B /* View */ = {
@@ -246,6 +265,7 @@
 				7965FCFA275E44D0002C1C1B /* CameraCoordinator.swift */,
 				7965FCFD275E44D0002C1C1B /* CameraViewController.xib */,
 				7922B2F6275FE61700273D8B /* View */,
+				7920E0CB276008D6001A8366 /* Domain */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -397,6 +417,7 @@
 				79F913B12746501500771FFE /* Products */,
 				F3A9A8E51B2FEBA1F4B295EC /* Pods */,
 				D196C30986E6D2C25E6FF13F /* Frameworks */,
+				796A59B327479DCC008BA88B /* OldFiles */,
 			);
 			sourceTree = "<group>";
 		};
@@ -440,7 +461,6 @@
 			isa = PBXGroup;
 			children = (
 				7922B2F9275FED0900273D8B /* Errors */,
-				796A59B327479DCC008BA88B /* OldFiles */,
 				791B7BFE2746A71E00EF6886 /* Services */,
 				791B7BF82746A12600EF6886 /* BaseClasses */,
 				791B7BF72746A11800EF6886 /* Utils */,
@@ -632,6 +652,7 @@
 				796A5A5F2747AA5A008BA88B /* CountdownView.swift in Sources */,
 				7922B2F8275FE65A00273D8B /* CaptureVideoPreviewView.swift in Sources */,
 				796A5A8A2747ABCF008BA88B /* FileUploader.swift in Sources */,
+				7920E0D527601AAB001A8366 /* SessionOutputManager.swift in Sources */,
 				7963FC4627466FAD007B8449 /* CoordinatorProtocol.swift in Sources */,
 				796A59F32747A02B008BA88B /* UserDefaultsPropertyWrapper.swift in Sources */,
 				79189E00274672900023628A /* Logger.swift in Sources */,
@@ -664,9 +685,12 @@
 				796A5A052747A1B7008BA88B /* NSMutableData+Extensions.swift in Sources */,
 				796A5A512747AA0B008BA88B /* OnboardingVC.swift in Sources */,
 				791B7BEB27469FFF00EF6886 /* UIControl+Extensions.swift in Sources */,
+				7920E0D32760152A001A8366 /* CaptureSessionService.swift in Sources */,
 				796A5A652747AAC7008BA88B /* MovementBasedSoundUtility.swift in Sources */,
 				7920E0C8275FF3C9001A8366 /* ErrorHandlerProvidable.swift in Sources */,
 				796A5A5B2747AA5A008BA88B /* CollectionViewCell.swift in Sources */,
+				7920E0CF27600F1E001A8366 /* SessionInputManager.swift in Sources */,
+				7920E0D127600F62001A8366 /* Typealies.swift in Sources */,
 				796A59F92747A12D008BA88B /* MasksManager.swift in Sources */,
 				796A5A712747AAF3008BA88B /* SquidMask.swift in Sources */,
 				796A5A5C2747AA5A008BA88B /* HomeVC+Extensions.swift in Sources */,

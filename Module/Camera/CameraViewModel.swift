@@ -25,9 +25,8 @@ final class CameraViewModel: ErrorHandlerProvidable {
     private let coordinator: CameraCoordinatorProtocol & CoordinatorProtocol
     private var bag = Set<AnyCancellable>()
     
-    /// capture session members
-    private let captureSession = AVCaptureSession()
-    private let sessionQueue = DispatchQueue(label: "capture-session-queue", qos: .userInteractive)
+    /// capture session service
+    private let sessionService = CaptureSessionService()
 
     init(coordinator: CameraCoordinatorProtocol & CoordinatorProtocol) {
         self.coordinator = coordinator
@@ -41,53 +40,16 @@ final class CameraViewModel: ErrorHandlerProvidable {
         input.sink(receiveValue: { [weak self] action in
             switch action {
             case .configureSession: self?.configureCaptureSession()
-            case .startSession: self?.controlSession(shouldStart: true)
-            case .stopSession: self?.controlSession(shouldStart: false)
+            case .startSession: self?.sessionService.controlSession(shouldStart: true)
+            case .stopSession: self?.sessionService.controlSession(shouldStart: false)
             }
         })
         .store(in: &bag)
     }
-}
-
-// MARK: - Private
-
-private extension CameraViewModel {
-
-    func controlSession(shouldStart: Bool) {
-        sessionQueue.async {
-            shouldStart ? self.captureSession.startRunning() : self.captureSession.stopRunning()
-        }
-    }
     
-    // MARK: - Configure capture session
-    
-    func configureCaptureSession() {
-        sessionQueue.async {
-            self.captureSession.beginConfiguration()
-            do {
-                try self.addVideoInputToCaptureSession()
-            } catch {
-                self.handleError(error)
-            }
-            self.captureSession.commitConfiguration()
-        }
-        self.output.send(.captureSessionReceived(self.captureSession))
-    }
-    
-    func addVideoInputToCaptureSession() throws {
-        let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .unspecified)
-        let device = discoverySession.devices.first { $0.position == .front }
-        do {
-            for input in captureSession.inputs {
-                captureSession.removeInput(input)
-            }
-            let input = try AVCaptureDeviceInput(device: device!)
-            guard captureSession.canAddInput(input) else {
-                throw JiggleError.givenInputCantBeAddedToTheSession
-            }
-            captureSession.addInput(input)
-        } catch {
-            throw JiggleError.captureDeviceInputInitialization(error)
-        }
+    private func configureCaptureSession() {
+        sessionService.configure(configCompletion: { [weak self] configuredSession in
+            self?.output.send(.captureSessionReceived(configuredSession))
+        })
     }
 }
