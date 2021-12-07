@@ -10,7 +10,7 @@ import UIKit.UIWindow
 
 final class ApplicationCoordinator: CoordinatorProtocol {
     
-    let window: UIWindow
+    unowned let window: UIWindow
     var navigationController: UINavigationController?
     
     init(window: UIWindow) {
@@ -18,18 +18,18 @@ final class ApplicationCoordinator: CoordinatorProtocol {
     }
     
     func start() {
-        /// we fetch from somewhere if it's user's first app launch
+        navigationController = UINavigationController()
+        window.rootViewController = navigationController
         var isFirstLaunch: Bool = true
         isFirstLaunch ? self.showAppTutorial() : self.showContent()
     }
     
     private func showAppTutorial() {
-        let appTutorialModule = ExampleCoordinator(window: window)
+        let appTutorialModule = CameraCoordinator(navigationController: navigationController)
         appTutorialModule.start()
     }
     
     private func showContent() {
-//        let homeScreenModule = HomeScreenCoordinator(window: window)
-//        homeScreenModule.start()
+
     }
 }
