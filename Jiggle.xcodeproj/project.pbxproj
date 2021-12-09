@@ -73,6 +73,11 @@
 		796A5A7F2747AB6C008BA88B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A7C2747AB6C008BA88B /* Utils.swift */; };
 		796A5A892747ABCF008BA88B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A872747ABCF008BA88B /* Constants.swift */; };
 		796A5A8A2747ABCF008BA88B /* FileUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A882747ABCF008BA88B /* FileUploader.swift */; };
+		79A6FFE427628BC3002E78E0 /* PointProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6FFE327628BC3002E78E0 /* PointProcessor.swift */; };
+		79A6FFE727628E27002E78E0 /* OneEuroFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6FFE627628E27002E78E0 /* OneEuroFilter.swift */; };
+		79A6FFEC27629E50002E78E0 /* UtilsForDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6FFEB27629E50002E78E0 /* UtilsForDrawing.swift */; };
+		79A6FFEE27629EAB002E78E0 /* UtilsForPoseDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6FFED27629EAB002E78E0 /* UtilsForPoseDetection.swift */; };
+		79A6FFF12762A3F0002E78E0 /* DetectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6FFE827628FAD002E78E0 /* DetectionManager.swift */; };
 		79F913B42746501500771FFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F913B32746501500771FFE /* AppDelegate.swift */; };
 		79F913B62746501500771FFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F913B52746501500771FFE /* SceneDelegate.swift */; };
 		79F913BD2746501900771FFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79F913BC2746501900771FFE /* Assets.xcassets */; };
@@ -147,6 +152,11 @@
 		796A5A822747ABA6008BA88B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		796A5A872747ABCF008BA88B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		796A5A882747ABCF008BA88B /* FileUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUploader.swift; sourceTree = "<group>"; };
+		79A6FFE327628BC3002E78E0 /* PointProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointProcessor.swift; sourceTree = "<group>"; };
+		79A6FFE627628E27002E78E0 /* OneEuroFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneEuroFilter.swift; sourceTree = "<group>"; };
+		79A6FFE827628FAD002E78E0 /* DetectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionManager.swift; sourceTree = "<group>"; };
+		79A6FFEB27629E50002E78E0 /* UtilsForDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsForDrawing.swift; sourceTree = "<group>"; };
+		79A6FFED27629EAB002E78E0 /* UtilsForPoseDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsForPoseDetection.swift; sourceTree = "<group>"; };
 		79F913B02746501500771FFE /* Jiggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jiggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F913B32746501500771FFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79F913B52746501500771FFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,8 +235,8 @@
 			isa = PBXGroup;
 			children = (
 				7920E0D22760152A001A8366 /* CaptureSessionService.swift */,
-				7920E0CC2760094A001A8366 /* SessionOutputManager.swift */,
-				7920E0CE27600F1E001A8366 /* SessionInputManager.swift */,
+				79A6FFF02762A392002E78E0 /* Entity */,
+				79A6FFEA27629DF5002E78E0 /* Utils */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -405,6 +415,35 @@
 				796A5A882747ABCF008BA88B /* FileUploader.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		79A6FFE527628E0F002E78E0 /* PointProcessor */ = {
+			isa = PBXGroup;
+			children = (
+				79A6FFE327628BC3002E78E0 /* PointProcessor.swift */,
+				79A6FFE627628E27002E78E0 /* OneEuroFilter.swift */,
+			);
+			path = PointProcessor;
+			sourceTree = "<group>";
+		};
+		79A6FFEA27629DF5002E78E0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				79A6FFEB27629E50002E78E0 /* UtilsForDrawing.swift */,
+				79A6FFED27629EAB002E78E0 /* UtilsForPoseDetection.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		79A6FFF02762A392002E78E0 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7920E0CC2760094A001A8366 /* SessionOutputManager.swift */,
+				7920E0CE27600F1E001A8366 /* SessionInputManager.swift */,
+				79A6FFE827628FAD002E78E0 /* DetectionManager.swift */,
+				79A6FFE527628E0F002E78E0 /* PointProcessor */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		79F913A72746501500771FFE = {
@@ -656,11 +695,13 @@
 				7963FC4627466FAD007B8449 /* CoordinatorProtocol.swift in Sources */,
 				796A59F32747A02B008BA88B /* UserDefaultsPropertyWrapper.swift in Sources */,
 				79189E00274672900023628A /* Logger.swift in Sources */,
+				79A6FFF12762A3F0002E78E0 /* DetectionManager.swift in Sources */,
 				796A5A7D2747AB6C008BA88B /* JiggleAnalytics.swift in Sources */,
 				796A5A062747A1B7008BA88B /* UIImage.swift in Sources */,
 				796A5A022747A1B7008BA88B /* Array.swift in Sources */,
 				7965FCFE275E44D0002C1C1B /* CameraCoordinator.swift in Sources */,
 				796A5A032747A1B7008BA88B /* CGRect.swift in Sources */,
+				79A6FFEC27629E50002E78E0 /* UtilsForDrawing.swift in Sources */,
 				791B7BEF27469FFF00EF6886 /* UIView+Extensions.swift in Sources */,
 				796A5A6F2747AAF3008BA88B /* KungFuMask.swift in Sources */,
 				796A5A0C2747A20A008BA88B /* Landmarks.swift in Sources */,
@@ -671,6 +712,7 @@
 				796A5A452747A9CB008BA88B /* SoundPickerVC.swift in Sources */,
 				791B7BE727469FFF00EF6886 /* UICollectionView+Extensions.swift in Sources */,
 				796A5A4A2747A9F1008BA88B /* SettingsTableViewCellWithSwitcher.swift in Sources */,
+				79A6FFE427628BC3002E78E0 /* PointProcessor.swift in Sources */,
 				791B7BF42746A0C900EF6886 /* MarketBoardDisplayManager.swift in Sources */,
 				796A5A042747A1B7008BA88B /* MLKitExtensions.swift in Sources */,
 				796A5A0B2747A20A008BA88B /* Detector.swift in Sources */,
@@ -682,6 +724,7 @@
 				791B7BEC27469FFF00EF6886 /* UIBarButtonItem+Extensions.swift in Sources */,
 				791B7BED27469FFF00EF6886 /* KeyedDecodingContainer+Extensions.swift in Sources */,
 				7965FD00275E44D0002C1C1B /* CameraViewModel.swift in Sources */,
+				79A6FFEE27629EAB002E78E0 /* UtilsForPoseDetection.swift in Sources */,
 				796A5A052747A1B7008BA88B /* NSMutableData+Extensions.swift in Sources */,
 				796A5A512747AA0B008BA88B /* OnboardingVC.swift in Sources */,
 				791B7BEB27469FFF00EF6886 /* UIControl+Extensions.swift in Sources */,
@@ -693,6 +736,7 @@
 				7920E0D127600F62001A8366 /* Typealies.swift in Sources */,
 				796A59F92747A12D008BA88B /* MasksManager.swift in Sources */,
 				796A5A712747AAF3008BA88B /* SquidMask.swift in Sources */,
+				79A6FFE727628E27002E78E0 /* OneEuroFilter.swift in Sources */,
 				796A5A5C2747AA5A008BA88B /* HomeVC+Extensions.swift in Sources */,
 				79F913B62746501500771FFE /* SceneDelegate.swift in Sources */,
 				7965FCFF275E44D0002C1C1B /* CameraViewController.swift in Sources */,

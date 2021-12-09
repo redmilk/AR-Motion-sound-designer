@@ -7,12 +7,16 @@
 
 import Foundation
 import AVFoundation
+import Combine
 
 final class SessionOutputManager: NSObject, ErrorHandlerProvidable {
     
+    var output: AnyPublisher<CMSampleBuffer, Never> { _output.eraseToAnyPublisher() }
+
     private let videoDataOutput = AVCaptureVideoDataOutput()
     private let audioDataOutput = AVCaptureAudioDataOutput()
     private let outputQueueForVideoAndAudio = DispatchQueue(label: "video-output-queue", qos: .userInteractive)
+    private let _output = PassthroughSubject<CMSampleBuffer, Never>()
 
     init(captureSession: AVCaptureSession,
          sessionQueue: DispatchQueue,
@@ -67,25 +71,6 @@ extension SessionOutputManager: AVCaptureVideoDataOutputSampleBufferDelegate, AV
         didOutput sampleBuffer: CMSampleBuffer,
         from connection: AVCaptureConnection
     ) {
-        print("got frame")
-//        setActiveFrameProcessing(with: sampleBuffer)
-//
-//        guard isRecording else { return }
-//
-//        let writable = canWrite()
-//
-//        if writable, sessionAtSourceTime == nil {
-//            // Start Writing
-//            sessionAtSourceTime = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
-//            videoWriter.startSession(atSourceTime: sessionAtSourceTime)
-//        }
-//
-//        if output == videoDataOutput {
-//            if videoWriterInput.isReadyForMoreMediaData {
-//                videoWriterInput.append(sampleBuffer)
-//            }
-//        } else if writable, output == audioDataOutput, audioWriterInput.isReadyForMoreMediaData {
-//            audioWriterInput.append(sampleBuffer)
-//        }
+        _output.send(sampleBuffer)
     }
 }

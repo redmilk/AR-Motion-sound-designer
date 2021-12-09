@@ -12,9 +12,8 @@ import AVFoundation.AVCaptureSession
 
 final class CaptureVideoPreviewView: UIView {
     
-    required init(captureSession: AVCaptureSession, superView: UIView) {
+    required init(superView: UIView) {
         super.init(frame: .zero)
-        videoPreviewLayer.session = captureSession
         videoPreviewLayer.videoGravity = .resizeAspectFill
         
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -27,6 +26,10 @@ final class CaptureVideoPreviewView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupWithCaptureSession(_ captureSession: AVCaptureSession) {
+        videoPreviewLayer.session = captureSession
     }
     
     var videoPreviewLayer: AVCaptureVideoPreviewLayer {

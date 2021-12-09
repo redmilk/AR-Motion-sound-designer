@@ -25,13 +25,25 @@ final class CameraViewController: UIViewController {
     private var bag = Set<AnyCancellable>()
 
     /// capture session views
-    private var videoPreviewView: CaptureVideoPreviewView!
-    private var annotationOverlayView: AnnotationsOverlayView!
+    private lazy var videoPreviewView = CaptureVideoPreviewView(superView: self.cameraView)
+    private lazy var annotationOverlayView = AnnotationsOverlayView(superView: self.cameraView)
     
     init(viewModel: CameraViewModel) {
         self.viewModel = viewModel
         super.init(nibName: String(describing: CameraViewController.self), bundle: nil)
+        
+        /// handling view model's response
+        viewModel.output
+            .receive(on: RunLoop.main)
+            .sink(receiveValue: { [weak self] state in
+                switch state {
+                case .captureSessionReceived(let captureSession):
+                    self?.videoPreviewView.setupWithCaptureSession(captureSession)
+                }
+            })
+            .store(in: &bag)
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -39,11 +51,12 @@ final class CameraViewController: UIViewController {
         Logger.log(String(describing: self), type: .deinited)
     }
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        handleStates()
-        /// module entry point
-        viewModel.input.send(.configureSession)
+        /// entry point
+        viewModel.input.send(.configureSession(videoPreview: videoPreviewView, annotationsPreview: annotationOverlayView))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,18 +70,10 @@ final class CameraViewController: UIViewController {
         /// stop session
         viewModel.input.send(.stopSession)
     }
+}
+
+// MARK: - Private
+
+private extension CameraViewController {
     
-    private func handleStates() {
-        viewModel.output
-            .receive(on: RunLoop.main)
-            .sink(receiveValue: { [weak self] state in
-                switch state {
-                case .captureSessionReceived(let captureSession):
-                    guard let self = self else { return }
-                    self.videoPreviewView = CaptureVideoPreviewView(captureSession: captureSession, superView: self.cameraView)
-                    self.annotationOverlayView = AnnotationsOverlayView(superView: self.cameraView)
-                }
-            })
-            .store(in: &bag)
-    }
 }
