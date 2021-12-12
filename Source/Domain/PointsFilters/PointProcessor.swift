@@ -10,7 +10,7 @@ import MLKit
 import QuartzCore
 import AVFoundation.AVCaptureVideoPreviewLayer
 
-class PointProcessor {
+final class PointProcessor {
     
     /// Average Dots
     var shouldFindAverageDot : Bool {

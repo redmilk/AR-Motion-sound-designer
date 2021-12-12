@@ -32,7 +32,7 @@ final class DetectionManagerConfig {
 
 // MARK: - DetectionManager
 
-final class DetectionManager: ErrorHandlerProvidable {
+final class PoseRocognizer: ErrorHandlerProvidable {
     /// API
     let input = PassthroughSubject<Action, Never>()
     let output = PassthroughSubject<Response, Never>()
@@ -106,7 +106,7 @@ final class DetectionManager: ErrorHandlerProvidable {
 
 // MARK: - Private
 
-private extension DetectionManager {
+private extension PoseRocognizer {
     
     func processFrameWithSampleBuffer(_ sampleBuffer: CMSampleBuffer) {
         do {
@@ -125,7 +125,7 @@ private extension DetectionManager {
         if isNeedToSkipFrame() {
             
             let visionImage = VisionImage(buffer: sampleBuffer)
-            let orientation = UIUtilities.imageOrientation(fromDevicePosition: .front)
+            let orientation = UtilsForPoseDetection.imageOrientation(fromDevicePosition: .front)
             
             visionImage.orientation = orientation
             let imageWidth = CGFloat(CVPixelBufferGetWidth(imageBuffer))
@@ -149,7 +149,7 @@ private extension DetectionManager {
                 self.removeDetectionAnnotations()
                 poses.forEach { pose in
                     var dots = [CGPoint]()
-                    for (_, (startLandmarkType, endLandmarkTypesArray)) in UIUtilities.poseConnections().enumerated() {
+                    for (_, (startLandmarkType, endLandmarkTypesArray)) in UtilsForPoseDetection.poseConnections().enumerated() {
                         let startLandmark = pose.landmark(ofType: startLandmarkType)
                         for endLandmarkType in endLandmarkTypesArray {
                             let endLandmark = pose.landmark(ofType: endLandmarkType)
@@ -173,7 +173,6 @@ private extension DetectionManager {
                         }
                     }
                     
-                    /// instead of zoneBasedSoundUtility?.process(dots)
                     output.send(.dotsList(dots))
                     drawLandmarksForPose(pose, width: width, height: height, shouldDrawCircle: self.configuration.shouldDrawCircle)
                 }
@@ -207,12 +206,12 @@ private extension DetectionManager {
                 landmark.type == .leftIndexFinger ||
                 landmark.type == .rightIndexFinger {
                 if shouldDrawCircle {
-                    UIUtilities.addCircleImage(atPoint: landmarkPoint,to: self.configuration.annotationOverlayView, radius: Constant.bigDotRadius)
+                    UtilsForDrawing.addCircleImage(atPoint: landmarkPoint,to: self.configuration.annotationOverlayView, radius: Constant.bigDotRadius)
                 }
             }
             
             if configuration.shouldDrawSkeleton {
-                UIUtilities.addCircle(
+                UtilsForDrawing.addCircle(
                     atPoint: landmarkPoint,
                     to: configuration.annotationOverlayView,
                     color: UIColor.blue,
@@ -224,7 +223,7 @@ private extension DetectionManager {
     
     func drawSkeletonIfNeeded(startLandmarkPoint: CGPoint, endLandmarkPoint: CGPoint) {
         if configuration.shouldDrawSkeleton {
-            UIUtilities.addLineSegment(
+            UtilsForDrawing.addLineSegment(
                 fromPoint: startLandmarkPoint,
                 toPoint: endLandmarkPoint,
                 inView: configuration.annotationOverlayView,

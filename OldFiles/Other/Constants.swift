@@ -38,5 +38,5 @@ struct Constant {
     static let appsFlyerDevKey = "4reqDkMpTSShBu4UmQesD6"
     static let appsFlyerAppId = "id1590011462"
     
-    static var allSettings = [SettingsOption]()
+    //static var allSettings = [SettingsOption]()
 }

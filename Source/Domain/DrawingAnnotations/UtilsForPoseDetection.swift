@@ -9,6 +9,13 @@ import Foundation
 import MLKit
 import AVFoundation.AVCaptureDevice
 
+extension CGRect {
+  /// Returns a `Bool` indicating whether the rectangle has any value that is `NaN`.
+  func isNaN()  -> Bool {
+    return origin.x.isNaN || origin.y.isNaN || width.isNaN || height.isNaN
+  }
+}
+
 struct UtilsForPoseDetection {
     
     public static func imageOrientation(

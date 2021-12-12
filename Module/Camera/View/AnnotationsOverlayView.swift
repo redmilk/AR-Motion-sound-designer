@@ -13,6 +13,7 @@ final class AnnotationsOverlayView: UIView {
     required init(superView: UIView) {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
+        //superView.insertSubview(self, at: 0)
         superView.addSubview(self)
         self.topAnchor.constraint(equalTo: superView.topAnchor).isActive = true
         self.bottomAnchor.constraint(equalTo: superView.bottomAnchor).isActive = true

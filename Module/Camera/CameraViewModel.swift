@@ -12,10 +12,15 @@ import Combine
 import AVFoundation
 import UIKit
 
-final class CameraViewModel: ErrorHandlerProvidable {
+/// MARK: - Dependencies
+extension CameraViewModel: ErrorHandlerProvidable, SoundWithHandposeMechanicsProvidable { }
+
+final class CameraViewModel {
     enum Action {
         /// entry point for module
-        case configureSession(videoPreview: CaptureVideoPreviewView, annotationsPreview: AnnotationsOverlayView)
+        case configureSession(videoPreview: CaptureVideoPreviewView,
+                              annotationsPreview: AnnotationsOverlayView,
+                              collectionMatrix: UICollectionView)
         case startSession
         case stopSession
     }
@@ -25,10 +30,7 @@ final class CameraViewModel: ErrorHandlerProvidable {
     
     private let coordinator: CameraCoordinatorProtocol & CoordinatorProtocol
     private var bag = Set<AnyCancellable>()
-    
-    /// capture session service
-    private let sessionService = CaptureSessionService()
-
+        
     init(coordinator: CameraCoordinatorProtocol & CoordinatorProtocol) {
         self.coordinator = coordinator
         
@@ -36,31 +38,32 @@ final class CameraViewModel: ErrorHandlerProvidable {
         input
             .sink(receiveValue: { [weak self] action in
                 switch action {
-                case .configureSession(let previewView, let anotationsView):
-                    let detectionConfig = DetectionManagerConfig(
-                        capturePreviewLayer: previewView.layer as! AVCaptureVideoPreviewLayer,
-                        annotationOverlayView: anotationsView,
-                        shouldDrawSkeleton: true,
-                        shouldDrawCircle: true)
-                    self?.sessionService.input.send(.configure(detectionConfig))
+                case .configureSession(let videPreview, let annotationsPreview, let collectionMatrix):
+                    self?.handposeMechanics.input.send(.configure(
+                        collection: collectionMatrix,
+                        videoPreview: videPreview,
+                        annotationsPreview: annotationsPreview))
                 case .startSession:
-                    self?.sessionService.input.send(.startSession)
+                    self?.handposeMechanics.input.send(.startSession)
                 case .stopSession:
-                    self?.sessionService.input.send(.stopSession)
+                    self?.handposeMechanics.input.send(.stopSession)
                 }
             })
             .store(in: &bag)
         
-        /// session service response
-        sessionService.output
-            .sink(receiveValue: { [weak self] sessionServiceResponse in
-                switch sessionServiceResponse {
-                case .configurationFinished(let configuredSession):
-                    self?.output.send(.captureSessionReceived(configuredSession))
+        /// handle response from handpose mechanicsb
+        handposeMechanics.output
+            .sink(receiveValue: { [weak self] response in
+                switch response {
+                case .affectedNode(let cell, _):
+                    cell.trigger()
+                case .captureSessionReceived(let preconfiguredCaptureSession):
+                    self?.output.send(.captureSessionReceived(preconfiguredCaptureSession))
                 }
             })
-            .store(in: &bag)
+            .store(in: &self.bag)
     }
+    
     deinit {
         Logger.log(String(describing: self), type: .deinited)
     }

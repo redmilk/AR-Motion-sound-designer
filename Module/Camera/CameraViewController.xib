@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CameraViewController" customModule="Jiggle" customModuleProvider="target">
             <connections>
                 <outlet property="cameraView" destination="bIf-sD-syV" id="gHf-O0-8wn"/>
+                <outlet property="collectionView" destination="pqY-jX-LiO" id="Jff-WJ-pka"/>
                 <outlet property="view" destination="iN0-l3-epB" id="3g6-7y-mUc"/>
             </connections>
         </placeholder>
@@ -20,23 +21,71 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIf-sD-syV" userLabel="Camera View">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ea-Xv-bdq" userLabel="ContainerView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                    <subviews>
+                        <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIf-sD-syV" userLabel="Camera View">
+                            <rect key="frame" x="0.0" y="40.5" width="414" height="772.5"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pqY-jX-LiO">
+                            <rect key="frame" x="0.0" y="40.5" width="414" height="772.5"/>
+                            <color key="backgroundColor" systemColor="linkColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y5D-rR-qss">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="bIf-sD-syV" firstAttribute="centerY" secondItem="pqY-jX-LiO" secondAttribute="centerY" id="2pT-PX-GPT"/>
+                        <constraint firstItem="bIf-sD-syV" firstAttribute="width" secondItem="pqY-jX-LiO" secondAttribute="width" id="GCx-a8-Q5C"/>
+                        <constraint firstItem="bIf-sD-syV" firstAttribute="centerX" secondItem="pqY-jX-LiO" secondAttribute="centerX" id="KT4-yg-dGT"/>
+                        <constraint firstItem="pqY-jX-LiO" firstAttribute="height" secondItem="3ea-Xv-bdq" secondAttribute="height" multiplier="0.95" id="a6w-N6-6Bb"/>
+                        <constraint firstItem="pqY-jX-LiO" firstAttribute="centerX" secondItem="3ea-Xv-bdq" secondAttribute="centerX" id="oWk-Mi-0Y3"/>
+                        <constraint firstItem="pqY-jX-LiO" firstAttribute="width" secondItem="3ea-Xv-bdq" secondAttribute="width" id="rF2-vL-w9O"/>
+                        <constraint firstItem="bIf-sD-syV" firstAttribute="height" secondItem="pqY-jX-LiO" secondAttribute="height" id="u0A-hF-Tmg"/>
+                    </constraints>
                 </view>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbb-6U-gVb">
+                    <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                    <items>
+                        <barButtonItem style="plain" systemItem="camera" id="wXM-Aq-JWc"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="AuL-LT-gNn"/>
+                        <barButtonItem systemItem="save" id="4Gc-u5-foe"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="eU3-sX-Q2A"/>
+                        <barButtonItem systemItem="refresh" id="xep-hQ-BgM"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="QnH-GD-FC9"/>
+                        <barButtonItem systemItem="action" id="HMD-vU-QPx"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="tRB-s3-dhA"/>
+                        <barButtonItem systemItem="rewind" id="Pea-hd-lSG"/>
+                        <barButtonItem tag="1" title="512" style="plain" id="ATg-Ze-PJD"/>
+                        <barButtonItem systemItem="fastForward" id="IV0-LO-JXb"/>
+                    </items>
+                </toolbar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="bIf-sD-syV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1uL-y2-nlm"/>
-                <constraint firstAttribute="bottom" secondItem="bIf-sD-syV" secondAttribute="bottom" id="2YX-f7-n9w"/>
-                <constraint firstItem="bIf-sD-syV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Pgs-IG-Ejk"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bIf-sD-syV" secondAttribute="trailing" id="drn-18-ejX"/>
+                <constraint firstItem="tbb-6U-gVb" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="7br-PO-b4g"/>
+                <constraint firstItem="3ea-Xv-bdq" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="K9d-oP-05u"/>
+                <constraint firstItem="tbb-6U-gVb" firstAttribute="top" secondItem="3ea-Xv-bdq" secondAttribute="bottom" id="PsS-Jb-h8W"/>
+                <constraint firstItem="tbb-6U-gVb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="VTz-Ua-Yxr"/>
+                <constraint firstItem="3ea-Xv-bdq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="f1a-WB-xQI"/>
+                <constraint firstItem="tbb-6U-gVb" firstAttribute="top" secondItem="pqY-jX-LiO" secondAttribute="bottom" id="f9w-7X-pKl"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="leading" secondItem="3ea-Xv-bdq" secondAttribute="leading" id="j6Z-T5-kZC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tbb-6U-gVb" secondAttribute="trailing" id="pCe-3V-GMk"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="153"/>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
