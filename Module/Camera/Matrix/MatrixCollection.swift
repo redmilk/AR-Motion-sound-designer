@@ -97,7 +97,6 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: String(describing: MatrixNodeCell.self),
                     for: indexPath) as! MatrixNodeCell
-                cell.backgroundColor = indexPath.row % 2 == 0 ? .orange : .lightGray
                 return cell
             })
         return dataSource
@@ -106,17 +105,15 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
     private func layoutCollectionAsGrid() {
         let layout = UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
             /// item
-            let size = NSCollectionLayoutSize(widthDimension: .absolute(20.0), heightDimension: .absolute(20.0))
+            let size = NSCollectionLayoutSize(widthDimension: .absolute(10.0), heightDimension: .absolute(10.0))
             let item = NSCollectionLayoutItem(layoutSize: size)
             item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
             /// group
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(20))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 16)
-            group.interItemSpacing = .fixed(1)
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 32)
             /// section
             let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-            section.interGroupSpacing = 1
+            section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
             return section
         })
         let config = UICollectionViewCompositionalLayoutConfiguration()
@@ -144,7 +141,6 @@ extension MatrixCollection: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? MatrixNodeCell else { return }
         cell.trigger()
-        //output.send(.didPressNode(matrixNode))
     }
 }
 

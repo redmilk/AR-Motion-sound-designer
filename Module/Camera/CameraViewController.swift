@@ -37,7 +37,6 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvidabl
         overrideUserInterfaceStyle = .dark
         /// handling view model's response
         viewModel.output
-            //.receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] state in
                 guard let self = self else { return }
                 switch state {
@@ -61,7 +60,6 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvidabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.collectionView.isHidden = true
         self.viewModel.input.send(.configureSession(
             videoPreview: self.videoPreviewView,
             annotationsPreview: self.annotationOverlayView,
@@ -76,23 +74,14 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvidabl
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //collectionView.layer.zPosition = 1000
+
         var nodes: [MatrixNode] = []
-        for _ in 0...511 {
+        for _ in 0...1023 {
             let node = MatrixNode()
             nodes.append(node)
         }
         matrixCollection.input.send(.configure)
         matrixCollection.input.send(.replaceAllWithNewNodes(nodes))
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 30, execute: {
-//            //self.containerView.bringSubviewToFront(self.collectionView)
-//            self.collectionView.layer.zPosition = 999
-//        })
-//
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 25, execute: {
-//            self.containerView.bringSubviewToFront(self.collectionView)
-//        })
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -106,6 +95,5 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvidabl
 
 private extension CameraViewController {
     func configureView() {
-        collectionView.contentInset = UIEdgeInsets(top: 150, left: 0, bottom: 0, right:  0)
     }
 }

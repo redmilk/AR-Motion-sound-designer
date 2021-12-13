@@ -12,17 +12,10 @@ final class MatrixNodeCell: UICollectionViewCell {
     @IBOutlet weak var containerView: UIView!
     var node: MatrixNode?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.contentView.layer.borderColor = UIColor.black.cgColor
-        self.contentView.layer.borderWidth = 1
-        self.contentView.layer.masksToBounds = true
-    }
-    
     func trigger() {
-        containerView.backgroundColor = .black
+        containerView.backgroundColor = .yellow
         UIView.animate(withDuration: 1, animations: { [weak self] in
-            self?.containerView.backgroundColor = .yellow
+            self?.containerView.backgroundColor = .clear
         })
     }
 }

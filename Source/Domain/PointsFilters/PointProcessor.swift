@@ -12,10 +12,6 @@ import AVFoundation.AVCaptureVideoPreviewLayer
 
 final class PointProcessor {
     
-    /// Average Dots
-    var shouldFindAverageDot : Bool {
-        UserDefaults.standard.bool(forKey: "averageDots")
-    }
     private var lastThreeDots: [String: [CGPoint]] = [:]
     
     /// One Euro Filter
@@ -25,6 +21,7 @@ final class PointProcessor {
     func normalizedPoint(
         fromVisionPoint point: VisionPoint,
         videoPreviewLayer: AVCaptureVideoPreviewLayer,
+        shouldFindAverageDot: Bool,
         width: CGFloat,
         height: CGFloat,
         type: PoseLandmarkType
@@ -43,6 +40,7 @@ final class PointProcessor {
     func normalizedPoint(
         fromPoint cgPoint: CGPoint,
         videoPreviewLayer: AVCaptureVideoPreviewLayer,
+        shouldFindAverageDot: Bool,
         width: CGFloat,
         height: CGFloat,
         type: PoseLandmarkType

@@ -23,15 +23,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ea-Xv-bdq" userLabel="ContainerView">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                     <subviews>
                         <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bIf-sD-syV" userLabel="Camera View">
-                            <rect key="frame" x="0.0" y="40.5" width="414" height="772.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="pqY-jX-LiO">
-                            <rect key="frame" x="0.0" y="40.5" width="414" height="772.5"/>
-                            <color key="backgroundColor" systemColor="linkColor"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="769"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y5D-rR-qss">
                                 <size key="itemSize" width="128" height="128"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -42,13 +42,14 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="bIf-sD-syV" firstAttribute="centerY" secondItem="pqY-jX-LiO" secondAttribute="centerY" id="2pT-PX-GPT"/>
-                        <constraint firstItem="bIf-sD-syV" firstAttribute="width" secondItem="pqY-jX-LiO" secondAttribute="width" id="GCx-a8-Q5C"/>
-                        <constraint firstItem="bIf-sD-syV" firstAttribute="centerX" secondItem="pqY-jX-LiO" secondAttribute="centerX" id="KT4-yg-dGT"/>
-                        <constraint firstItem="pqY-jX-LiO" firstAttribute="height" secondItem="3ea-Xv-bdq" secondAttribute="height" multiplier="0.95" id="a6w-N6-6Bb"/>
-                        <constraint firstItem="pqY-jX-LiO" firstAttribute="centerX" secondItem="3ea-Xv-bdq" secondAttribute="centerX" id="oWk-Mi-0Y3"/>
-                        <constraint firstItem="pqY-jX-LiO" firstAttribute="width" secondItem="3ea-Xv-bdq" secondAttribute="width" id="rF2-vL-w9O"/>
-                        <constraint firstItem="bIf-sD-syV" firstAttribute="height" secondItem="pqY-jX-LiO" secondAttribute="height" id="u0A-hF-Tmg"/>
+                        <constraint firstAttribute="trailing" secondItem="bIf-sD-syV" secondAttribute="trailing" id="9Yg-Jp-uup"/>
+                        <constraint firstAttribute="trailing" secondItem="pqY-jX-LiO" secondAttribute="trailing" id="9f2-cn-zbW"/>
+                        <constraint firstItem="bIf-sD-syV" firstAttribute="leading" secondItem="3ea-Xv-bdq" secondAttribute="leading" id="N7u-EE-IYt"/>
+                        <constraint firstItem="pqY-jX-LiO" firstAttribute="top" secondItem="3ea-Xv-bdq" secondAttribute="top" id="URT-Xu-ywP"/>
+                        <constraint firstItem="bIf-sD-syV" firstAttribute="top" secondItem="3ea-Xv-bdq" secondAttribute="top" id="bbY-uY-Elw"/>
+                        <constraint firstItem="pqY-jX-LiO" firstAttribute="leading" secondItem="3ea-Xv-bdq" secondAttribute="leading" id="bt7-Kp-aVV"/>
+                        <constraint firstAttribute="bottom" secondItem="bIf-sD-syV" secondAttribute="bottom" id="f9H-Yk-RbP"/>
+                        <constraint firstAttribute="bottom" secondItem="pqY-jX-LiO" secondAttribute="bottom" id="ne8-lz-ODG"/>
                     </constraints>
                 </view>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbb-6U-gVb">
@@ -75,8 +76,7 @@
                 <constraint firstItem="3ea-Xv-bdq" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="K9d-oP-05u"/>
                 <constraint firstItem="tbb-6U-gVb" firstAttribute="top" secondItem="3ea-Xv-bdq" secondAttribute="bottom" id="PsS-Jb-h8W"/>
                 <constraint firstItem="tbb-6U-gVb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="VTz-Ua-Yxr"/>
-                <constraint firstItem="3ea-Xv-bdq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="f1a-WB-xQI"/>
-                <constraint firstItem="tbb-6U-gVb" firstAttribute="top" secondItem="pqY-jX-LiO" secondAttribute="bottom" id="f9w-7X-pKl"/>
+                <constraint firstItem="3ea-Xv-bdq" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="f1a-WB-xQI"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="leading" secondItem="3ea-Xv-bdq" secondAttribute="leading" id="j6Z-T5-kZC"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tbb-6U-gVb" secondAttribute="trailing" id="pCe-3V-GMk"/>
             </constraints>
@@ -84,9 +84,6 @@
         </view>
     </objects>
     <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

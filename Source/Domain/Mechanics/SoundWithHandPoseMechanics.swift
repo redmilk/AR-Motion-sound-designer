@@ -40,7 +40,8 @@ final class SoundWithHandposeMechanics: PoseDetectorProvideble, SessionMediaServ
                         capturePreviewLayer: videoPreview.layer as! AVCaptureVideoPreviewLayer,
                         annotationOverlayView: annotationsPreview,
                         shouldDrawSkeleton: false,
-                        shouldDrawCircle: true)
+                        shouldDrawCircle: true,
+                        shouldFindAverageDot: true)
                     self?.poseDetector.input.send(.configure(detectionConfig))
                     self?.sessionMediaService.input.send(.configure)
                 case .startSession:
@@ -63,11 +64,11 @@ final class SoundWithHandposeMechanics: PoseDetectorProvideble, SessionMediaServ
                            let cell = self.matrixCollection.cellForItem(at: indexPath) as? MatrixNodeCell {
                             self.output.send(.affectedNode(cell: cell, indePath: indexPath))
 
-                            let zoneHitTest = ZoneTriggerHitTest(zone: cell.bounds, dot: point)
-                            if zoneHitTest.validateConditions() {
-                                
-                              //  self.output.send(.affectedNode(cell: cell, indePath: indexPath))
-                            }
+//                            let zoneHitTest = ZoneTriggerHitTest(zone: cell.bounds, dot: point)
+//                            if zoneHitTest.validateConditions() {
+//
+//                              //  self.output.send(.affectedNode(cell: cell, indePath: indexPath))
+//                            }
                         }
                     }
                 }
