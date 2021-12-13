@@ -22,7 +22,11 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvidabl
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var cameraView: UIView!
     @IBOutlet private weak var collectionView: UICollectionView!
-
+    
+    @IBOutlet weak var scaleUpGridButton: UIBarButtonItem!
+    @IBOutlet weak var currentGridScaleLabel: UIBarButtonItem!
+    @IBOutlet weak var scaleDownGridButton: UIBarButtonItem!
+    
     private lazy var matrixCollection = MatrixCollection(collectionView: collectionView)
     private let viewModel: CameraViewModel
     private var bag = Set<AnyCancellable>()
@@ -60,28 +64,29 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvidabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel.input.send(.configureSession(
-            videoPreview: self.videoPreviewView,
-            annotationsPreview: self.annotationOverlayView,
-            collectionMatrix: self.collectionView))
+        
+        configureView()
+        
+        viewModel.input.send(
+            .configureSession(
+                videoPreview: videoPreviewView,
+                annotationsPreview: annotationOverlayView,
+                collectionMatrix: collectionView
+            )
+        )
+        matrixCollection.input.send(.initialSetup)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         /// start session
         self.viewModel.input.send(.startSession)
+        matrixCollection.input.send(.configureScaling(.scale128))
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        var nodes: [MatrixNode] = []
-        for _ in 0...1023 {
-            let node = MatrixNode()
-            nodes.append(node)
-        }
-        matrixCollection.input.send(.configure)
-        matrixCollection.input.send(.replaceAllWithNewNodes(nodes))
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -95,5 +100,36 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvidabl
 
 private extension CameraViewController {
     func configureView() {
+        scaleUpGridButton.publisher()
+            .sink(receiveValue: { [weak self] _ in
+                self?.matrixCollection.input.send(.scaleUp)
+            })
+            .store(in: &bag)
+        
+        scaleDownGridButton.publisher()
+            .sink(receiveValue: { [weak self] _ in
+                self?.matrixCollection.input.send(.scaleDown)
+            })
+            .store(in: &bag)
+        
+        matrixCollection.output
+            .sink(receiveValue: { [weak self] matrixResponse in
+                switch matrixResponse {
+                case .currentScale(let scale):
+                    self?.updateScalefactorLabel(scale)
+                case _: break
+                }
+            })
+            .store(in: &bag)
+    }
+    
+    func updateScalefactorLabel(_ scale: MatrixCollection.GridScale) {
+        switch scale {
+        case .scale2048: currentGridScaleLabel.title = "2048"
+        case .scale1024: currentGridScaleLabel.title = "1024"
+        case .scale512: currentGridScaleLabel.title = "512"
+        case .scale256: currentGridScaleLabel.title = "256"
+        case .scale128: currentGridScaleLabel.title = "128"
+        }
     }
 }

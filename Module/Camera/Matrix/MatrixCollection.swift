@@ -9,15 +9,48 @@ import Foundation
 import Combine
 import UIKit
 
+/// 2048
+let itemSize2048: CGFloat = 5
+let groupHeight2048: CGFloat = 5
+let groupItemsCount2048: Int = 64
+/// 1024
+let itemSize1024: CGFloat = 10
+let groupHeight1024: CGFloat = 10
+let groupItemsCount1024: Int = 32
+/// 512
+let itemSize512: CGFloat = 20
+let groupHeight512: CGFloat = 20
+let groupItemsCount512: Int = 16
+/// 256
+let itemSize256: CGFloat = 40
+let groupHeight256: CGFloat = 40
+let groupItemsCount256: Int = 8
+/// 128
+let itemSize128: CGFloat = 80
+let groupHeight128: CGFloat = 80
+let groupItemsCount128: Int = 4
+
 final class MatrixCollection: NSObject { /// NSObject for collection delegate
+    
+    enum GridScale {
+        case scale2048
+        case scale1024
+        case scale512
+        case scale256
+        case scale128
+    }
+    
     enum Action {
-        case configure
-        case replaceAllWithNewNodes([MatrixNode])
-        case removeNodes([MatrixNode])
+        case initialSetup
+        case configureScaling(GridScale)
+        case scaleUp
+        case scaleDown
+        ///case removeNodes([MatrixNode])
     }
     
     enum Response {
         case didPressNode(MatrixNode)
+        case currentScale(GridScale)
     }
     
     typealias DataSource = UICollectionViewDiffableDataSource<MatrixSection, MatrixNode>
@@ -29,7 +62,8 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
     private unowned let collectionView: UICollectionView
     private var dataSource: DataSource!
     private var bag = Set<AnyCancellable>()
-
+    private var currentScaleType: GridScale!
+    
     init(collectionView: UICollectionView) {
         self.collectionView = collectionView
         super.init()
@@ -44,25 +78,80 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
         collectionView.register(cellClassName: MatrixNodeCell.self)
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.isScrollEnabled = false
+        collectionView.isScrollEnabled = true
         collectionView.isPagingEnabled = false
         dataSource = buildDataSource()
-        layoutCollectionAsGrid()
     }
     
     private func handleInput() {
         input.sink(receiveValue: { [weak self] action in
             guard let self = self else { return }
             switch action {
-            case .configure:
+            case .initialSetup:
                 self.configure()
-            case .replaceAllWithNewNodes(let nodes):
-                self.replaceAllWithNewNodes(nodes)
-            case .removeNodes(let nodes):
-                self.removeNodes(nodes)
+            case .configureScaling(let scaleType):
+                self.setupScaleType(scaleType)
+            case .scaleUp:
+                switch self.currentScaleType! {
+                case .scale2048:
+                    self.setupScaleType(.scale128)
+                case .scale1024:
+                    self.setupScaleType(.scale2048)
+                case .scale512:
+                    self.setupScaleType(.scale1024)
+                case .scale256:
+                    self.setupScaleType(.scale512)
+                case .scale128:
+                    self.setupScaleType(.scale256)
+                }
+            case .scaleDown:
+                switch self.currentScaleType! {
+                case .scale2048:
+                    self.setupScaleType(.scale1024)
+                case .scale1024:
+                    self.setupScaleType(.scale512)
+                case .scale512:
+                    self.setupScaleType(.scale256)
+                case .scale256:
+                    self.setupScaleType(.scale128)
+                case .scale128:
+                    self.setupScaleType(.scale1024)
+                }
             }
         })
         .store(in: &bag)
+    }
+    
+    private func emitNodes(_ count: Int) -> [MatrixNode] {
+        var nodes: [MatrixNode] = []
+        for _ in 1...count {
+            let node = MatrixNode()
+            nodes.append(node)
+        }
+        return nodes
+    }
+    
+    private func setupScaleType(_ scaleType: GridScale) {
+        self.currentScaleType = scaleType
+        switch scaleType {
+        case .scale2048:
+            self.layoutCollectionAsGrid(itemSize: itemSize2048, groupHeight: groupHeight2048, groupItemsCount: groupItemsCount2048)
+            self.replaceAllWithNewNodes(self.emitNodes(4096 * 2))
+        case .scale1024:
+            self.layoutCollectionAsGrid(itemSize: itemSize1024, groupHeight: groupHeight1024, groupItemsCount: groupItemsCount1024)
+            self.replaceAllWithNewNodes(self.emitNodes(2048))
+        case .scale512:
+            self.layoutCollectionAsGrid(itemSize: itemSize512, groupHeight: groupHeight512, groupItemsCount: groupItemsCount512)
+            self.replaceAllWithNewNodes(self.emitNodes(1024))
+        case .scale256:
+            self.layoutCollectionAsGrid(itemSize: itemSize256, groupHeight: groupHeight256, groupItemsCount: groupItemsCount256)
+            self.replaceAllWithNewNodes(self.emitNodes(256))
+        case .scale128:
+            self.layoutCollectionAsGrid(itemSize: itemSize128, groupHeight: groupHeight128, groupItemsCount: groupItemsCount128)
+            self.replaceAllWithNewNodes(self.emitNodes(64))
+        }
+        self.collectionView.reloadData()
+        output.send(.currentScale(scaleType))
     }
 
     private func replaceAllWithNewNodes(_ nodes: [MatrixNode]) {
@@ -102,15 +191,15 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
         return dataSource
     }
 
-    private func layoutCollectionAsGrid() {
+    private func layoutCollectionAsGrid(itemSize: CGFloat, groupHeight: CGFloat, groupItemsCount: Int) {
         let layout = UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
             /// item
-            let size = NSCollectionLayoutSize(widthDimension: .absolute(10.0), heightDimension: .absolute(10.0))
+            let size = NSCollectionLayoutSize(widthDimension: .absolute(itemSize), heightDimension: .absolute(itemSize))
             let item = NSCollectionLayoutItem(layoutSize: size)
             item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
             /// group
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(20))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 32)
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(groupHeight))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: groupItemsCount)
             /// section
             let section = NSCollectionLayoutSection(group: group)
             section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)

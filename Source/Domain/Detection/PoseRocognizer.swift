@@ -83,6 +83,7 @@ final class PoseRocognizer: ErrorHandlerProvidable {
     private var posesForPlayingSound: [PoseLandmarkType] = [
         .leftWrist,
         .rightWrist,
+        //.leftEye, .rightEye, .leftEar, .rightEar, .mouthLeft, .mouthRight, .leftEyeOuter, .rightEyeOuter, .leftEyeInner, .rightEyeInner, .nose
         //.rightAnkle, .rightHeel, .rightToe, /// Left leg
         //.leftAnkle, .leftHeel, .leftToe     /// Right leg
     ]
@@ -179,8 +180,12 @@ private extension PoseRocognizer {
                 width: width,
                 height: height,
                 type: landmark.type)
-            if landmark.type == .leftWrist || /// landmark.type == .leftAnkle || landmark.type == .rightAnkle || was here
-                landmark.type == .rightWrist {
+            if landmark.type == .leftWrist ||
+                landmark.type == .leftPinkyFinger ||
+                landmark.type == .leftIndexFinger ||
+                landmark.type == .rightPinkyFinger ||
+                landmark.type == .rightIndexFinger ||
+                landmark.type == .rightWrist { /// landmark.type == .leftAnkle || landmark.type == .rightAnkle || was here
                 if shouldDrawCircle {
                     UtilsForDrawing.addCircleImage(atPoint: landmarkPoint,to: self.configuration.annotationOverlayView, radius: Constant.bigDotRadius)
                 }

@@ -14,6 +14,9 @@
                 <outlet property="cameraView" destination="bIf-sD-syV" id="gHf-O0-8wn"/>
                 <outlet property="collectionView" destination="pqY-jX-LiO" id="Jff-WJ-pka"/>
                 <outlet property="containerView" destination="3ea-Xv-bdq" id="fkz-98-m1w"/>
+                <outlet property="currentGridScaleLabel" destination="ATg-Ze-PJD" id="TH0-z5-XID"/>
+                <outlet property="scaleDownGridButton" destination="Pea-hd-lSG" id="2Et-3a-jpv"/>
+                <outlet property="scaleUpGridButton" destination="IV0-LO-JXb" id="eUp-FR-JQM"/>
                 <outlet property="view" destination="iN0-l3-epB" id="3g6-7y-mUc"/>
             </connections>
         </placeholder>
