@@ -21,10 +21,8 @@ final class MatrixNodeCell: UICollectionViewCell {
     
     func trigger() {
         containerView.backgroundColor = .black
-        UIView.animate(withDuration: 0.5, animations: { [weak self] in
+        UIView.animate(withDuration: 1, animations: { [weak self] in
             self?.containerView.backgroundColor = .yellow
         })
     }
-    
-    
 }

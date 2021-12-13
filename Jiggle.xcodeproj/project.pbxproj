@@ -207,11 +207,11 @@
 			isa = PBXGroup;
 			children = (
 				791CC44C2764BE0900813FAC /* EntityContainer.swift */,
-				791CC44B2764B89500813FAC /* MediaCapture */,
+				791CC4512764C97C00813FAC /* Mechanics */,
+				791CC4502764C8E000813FAC /* DrawingAnnotations */,
 				791CC44E2764C21400813FAC /* Detection */,
 				791CC44F2764C40B00813FAC /* PointsFilters */,
-				791CC4502764C8E000813FAC /* DrawingAnnotations */,
-				791CC4512764C97C00813FAC /* Mechanics */,
+				791CC44B2764B89500813FAC /* MediaCapture */,
 				791CC4552764CB8E00813FAC /* UserInteractionValidators */,
 			);
 			path = Domain;

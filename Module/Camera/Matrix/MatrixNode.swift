@@ -14,7 +14,6 @@ final class MatrixNode: Hashable, Equatable {
         
     init() {
         id = UUID().uuidString
-        print("Node id: \(id)")
     }
     
     func hash(into hasher: inout Hasher) {

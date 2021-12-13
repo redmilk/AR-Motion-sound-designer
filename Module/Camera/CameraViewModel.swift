@@ -56,7 +56,9 @@ final class CameraViewModel {
             .sink(receiveValue: { [weak self] response in
                 switch response {
                 case .affectedNode(let cell, _):
-                    cell.trigger()
+                    DispatchQueue.main.async {
+                        cell.trigger()
+                    }
                 case .captureSessionReceived(let preconfiguredCaptureSession):
                     self?.output.send(.captureSessionReceived(preconfiguredCaptureSession))
                 }

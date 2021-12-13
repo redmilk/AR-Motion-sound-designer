@@ -27,6 +27,12 @@ class UtilsForDrawing {
         circleView.alpha = Constant.circleImageAlpha
         view.addSubview(circleView)
         circleView.bringSubviewToFront(view)
+        
+        // TODO: -
+//        DispatchQueue.main.async {
+//            view.addSubview(circleView)
+//            circleView.bringSubviewToFront(view)
+//        }
     }
     
     static func addCircle(

@@ -39,7 +39,7 @@ final class SoundWithHandposeMechanics: PoseDetectorProvideble, SessionMediaServ
                     let detectionConfig = DetectionManagerConfig(
                         capturePreviewLayer: videoPreview.layer as! AVCaptureVideoPreviewLayer,
                         annotationOverlayView: annotationsPreview,
-                        shouldDrawSkeleton: true,
+                        shouldDrawSkeleton: false,
                         shouldDrawCircle: true)
                     self?.poseDetector.input.send(.configure(detectionConfig))
                     self?.sessionMediaService.input.send(.configure)
@@ -52,19 +52,21 @@ final class SoundWithHandposeMechanics: PoseDetectorProvideble, SessionMediaServ
             .store(in: &self.bag)
         
         /// handle detection manager output
-        poseDetector.output
+        poseDetector.output.receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] detectionResponse in
                 guard let self = self else { return }
                 switch detectionResponse {
                 case .dotsList(let dots):
-                    Logger.log("Got new dots: \(dots.count)")
                     /// play sound with dots
                     dots.forEach { point in
                         if let indexPath = self.matrixCollection.indexPathForItem(at: point),
                            let cell = self.matrixCollection.cellForItem(at: indexPath) as? MatrixNodeCell {
+                            self.output.send(.affectedNode(cell: cell, indePath: indexPath))
+
                             let zoneHitTest = ZoneTriggerHitTest(zone: cell.bounds, dot: point)
                             if zoneHitTest.validateConditions() {
-                                self.output.send(.affectedNode(cell: cell, indePath: indexPath))
+                                
+                              //  self.output.send(.affectedNode(cell: cell, indePath: indexPath))
                             }
                         }
                     }
