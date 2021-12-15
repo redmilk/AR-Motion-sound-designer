@@ -30,6 +30,7 @@
 		7920E0D527601AAB001A8366 /* SessionOutputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920E0CC2760094A001A8366 /* SessionOutputManager.swift */; };
 		7922B2F8275FE65A00273D8B /* CaptureVideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922B2F7275FE65A00273D8B /* CaptureVideoPreviewView.swift */; };
 		7922B2FB275FED1C00273D8B /* JiggleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922B2FA275FED1C00273D8B /* JiggleError.swift */; };
+		7953DE2C2768DEA40003DF71 /* PoseRecognizerNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7953DE2B2768DEA40003DF71 /* PoseRecognizerNative.swift */; };
 		7963FC4227466F6F007B8449 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963FC4127466F6F007B8449 /* ApplicationCoordinator.swift */; };
 		7963FC4627466FAD007B8449 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963FC4527466FAD007B8449 /* CoordinatorProtocol.swift */; };
 		7965FCFE275E44D0002C1C1B /* CameraCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7965FCFA275E44D0002C1C1B /* CameraCoordinator.swift */; };
@@ -76,6 +77,7 @@
 		7920E0D22760152A001A8366 /* SessionMediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMediaService.swift; sourceTree = "<group>"; };
 		7922B2F7275FE65A00273D8B /* CaptureVideoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureVideoPreviewView.swift; sourceTree = "<group>"; };
 		7922B2FA275FED1C00273D8B /* JiggleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiggleError.swift; sourceTree = "<group>"; };
+		7953DE2B2768DEA40003DF71 /* PoseRecognizerNative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseRecognizerNative.swift; sourceTree = "<group>"; };
 		7963FC4127466F6F007B8449 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		7963FC4527466FAD007B8449 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		7965FCFA275E44D0002C1C1B /* CameraCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCoordinator.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				79A6FFE827628FAD002E78E0 /* PoseRocognizer.swift */,
+				7953DE2B2768DEA40003DF71 /* PoseRecognizerNative.swift */,
 			);
 			path = Detection;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 				79A6FFE427628BC3002E78E0 /* PointProcessor.swift in Sources */,
 				791B7BF42746A0C900EF6886 /* MarketBoardDisplayManager.swift in Sources */,
 				791CC4542764CB5E00813FAC /* SoundWithHandPoseMechanics.swift in Sources */,
+				7953DE2C2768DEA40003DF71 /* PoseRecognizerNative.swift in Sources */,
 				791B7BEC27469FFF00EF6886 /* UIBarButtonItem+Extensions.swift in Sources */,
 				791CC4582764E38000813FAC /* Constants.swift in Sources */,
 				791B7BED27469FFF00EF6886 /* KeyedDecodingContainer+Extensions.swift in Sources */,
@@ -834,13 +838,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C23K8VGFDE;
+				DEVELOPMENT_TEAM = 476NTDT6B9;
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kefirtest2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kefirtest3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

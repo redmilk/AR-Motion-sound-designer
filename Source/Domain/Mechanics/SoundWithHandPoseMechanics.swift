@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 import AVFoundation.AVCaptureVideoPreviewLayer
 
-final class SoundWithHandposeMechanics: PoseDetectorProvideble, SessionMediaServiceProvidable {
+final class SoundWithHandposeMechanics: PoseDetectorProvidable,
+                                        SessionMediaServiceProvidable {
     enum Action {
         
         case configure(collection: UICollectionView,

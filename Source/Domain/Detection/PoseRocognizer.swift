@@ -122,7 +122,6 @@ private extension PoseRocognizer {
     func detectPose(in image: VisionImage, width: CGFloat, height: CGFloat) throws {
         poseDetectorQueue.async {
             guard let pose = try? self.poseDetector.results(in: image).first else { return }
-          
             DispatchQueue.main.async {
                 self.removeDetectionAnnotations()
                 var dots = [CGPoint]()
@@ -134,6 +133,9 @@ private extension PoseRocognizer {
                         if startLandmarkType.rawValue == poseType.rawValue {
                             for endLandmarkType in endLandmarkTypesArray {
                                 let landmark = pose.landmark(ofType: endLandmarkType)
+                                guard landmark.inFrameLikelihood > 0.1 else { return }
+                                print(landmark.inFrameLikelihood.description)
+                                
                                 let filteredPoint = self.pointProcessor.applyOneEuroFilter(for: landmark)
                                 let normalizedPoint = self.pointProcessor.normalizedPoint(
                                     fromPoint: filteredPoint,

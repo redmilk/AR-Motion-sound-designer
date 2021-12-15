@@ -14,6 +14,7 @@ fileprivate let container = EntityContainer()
 
 final class EntityContainer {
     lazy var poseDetector = PoseRocognizer(pointProcessor: PointProcessor())
+    lazy var poseDetectorNative = PoseRecognizerNative()
     lazy var sessionMediaService = SessionMediaService()
     lazy var handposeMechanics = SoundWithHandposeMechanics()
 }
@@ -25,9 +26,15 @@ extension SessionMediaServiceProvidable {
 }
 
 /// Pose detector
-protocol PoseDetectorProvideble { }
-extension PoseDetectorProvideble {
+protocol PoseDetectorProvidable { }
+extension PoseDetectorProvidable {
     var poseDetector: PoseRocognizer { container.poseDetector }
+}
+
+/// Pose detector native
+protocol NativePoseDetectorProvidable { }
+extension NativePoseDetectorProvidable {
+    var poseDetectorNative: PoseRecognizerNative { container.poseDetectorNative }
 }
 
 // MARK: - Various application mechanics
