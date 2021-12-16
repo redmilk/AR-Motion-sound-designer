@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5332664D006C40E82A76613A /* Pods_Jiggle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A3738220477A0D1C5AE43B1 /* Pods_Jiggle.framework */; };
+		790CFEE6276A7BE000C355C5 /* PerformanceMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790CFEE5276A7BE000C355C5 /* PerformanceMeasurement.swift */; };
 		79189E00274672900023628A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79189DFF274672900023628A /* Logger.swift */; };
 		791B7BE727469FFF00EF6886 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B7BDE27469FFF00EF6886 /* UICollectionView+Extensions.swift */; };
 		791B7BE827469FFF00EF6886 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B7BDF27469FFF00EF6886 /* Collection+Extensions.swift */; };
@@ -22,7 +23,7 @@
 		791CC44D2764BE0900813FAC /* EntityContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791CC44C2764BE0900813FAC /* EntityContainer.swift */; };
 		791CC4542764CB5E00813FAC /* SoundWithHandPoseMechanics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791CC4532764CB5E00813FAC /* SoundWithHandPoseMechanics.swift */; };
 		791CC4582764E38000813FAC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A872747ABCF008BA88B /* Constants.swift */; };
-		7920E0C8275FF3C9001A8366 /* ErrorHandlerProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920E0C7275FF3C9001A8366 /* ErrorHandlerProvidable.swift */; };
+		7920E0C8275FF3C9001A8366 /* ErrorHandlerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920E0C7275FF3C9001A8366 /* ErrorHandlerProvider.swift */; };
 		7920E0CA275FFD5B001A8366 /* AnnotationsOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920E0C9275FFD5B001A8366 /* AnnotationsOverlayView.swift */; };
 		7920E0CF27600F1E001A8366 /* SessionInputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920E0CE27600F1E001A8366 /* SessionInputManager.swift */; };
 		7920E0D127600F62001A8366 /* Typealies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920E0D027600F62001A8366 /* Typealies.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		11CEED87185E67AAB103638B /* Pods-Jiggle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jiggle.release.xcconfig"; path = "Target Support Files/Pods-Jiggle/Pods-Jiggle.release.xcconfig"; sourceTree = "<group>"; };
+		790CFEE5276A7BE000C355C5 /* PerformanceMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceMeasurement.swift; sourceTree = "<group>"; };
 		79189DFF274672900023628A /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		791B7BDE27469FFF00EF6886 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		791B7BDF27469FFF00EF6886 /* Collection+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
@@ -69,7 +71,7 @@
 		791CC4452764A6D600813FAC /* HitTestValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitTestValidations.swift; sourceTree = "<group>"; };
 		791CC44C2764BE0900813FAC /* EntityContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityContainer.swift; sourceTree = "<group>"; };
 		791CC4532764CB5E00813FAC /* SoundWithHandPoseMechanics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWithHandPoseMechanics.swift; sourceTree = "<group>"; };
-		7920E0C7275FF3C9001A8366 /* ErrorHandlerProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlerProvidable.swift; sourceTree = "<group>"; };
+		7920E0C7275FF3C9001A8366 /* ErrorHandlerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlerProvider.swift; sourceTree = "<group>"; };
 		7920E0C9275FFD5B001A8366 /* AnnotationsOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationsOverlayView.swift; sourceTree = "<group>"; };
 		7920E0CC2760094A001A8366 /* SessionOutputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionOutputManager.swift; sourceTree = "<group>"; };
 		7920E0CE27600F1E001A8366 /* SessionInputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionInputManager.swift; sourceTree = "<group>"; };
@@ -159,6 +161,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		790CFEE4276A7B9700C355C5 /* Measure */ = {
+			isa = PBXGroup;
+			children = (
+				790CFEE5276A7BE000C355C5 /* PerformanceMeasurement.swift */,
+			);
+			path = Measure;
+			sourceTree = "<group>";
+		};
 		79189DFE274672420023628A /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +211,7 @@
 		791B7BFE2746A71E00EF6886 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				790CFEE4276A7B9700C355C5 /* Measure */,
 				791CC44C2764BE0900813FAC /* EntityContainer.swift */,
 				791CC4512764C97C00813FAC /* Mechanics */,
 				791CC4502764C8E000813FAC /* DrawingAnnotations */,
@@ -286,7 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				7963FC4527466FAD007B8449 /* CoordinatorProtocol.swift */,
-				7920E0C7275FF3C9001A8366 /* ErrorHandlerProvidable.swift */,
+				7920E0C7275FF3C9001A8366 /* ErrorHandlerProvider.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -695,7 +706,7 @@
 				79A6FFEE27629EAB002E78E0 /* UtilsForPoseDetection.swift in Sources */,
 				791B7BEB27469FFF00EF6886 /* UIControl+Extensions.swift in Sources */,
 				7920E0D32760152A001A8366 /* SessionMediaService.swift in Sources */,
-				7920E0C8275FF3C9001A8366 /* ErrorHandlerProvidable.swift in Sources */,
+				7920E0C8275FF3C9001A8366 /* ErrorHandlerProvider.swift in Sources */,
 				798F2BB2276392C500A47CC2 /* MatrixCollection.swift in Sources */,
 				7920E0CF27600F1E001A8366 /* SessionInputManager.swift in Sources */,
 				7920E0D127600F62001A8366 /* Typealies.swift in Sources */,
@@ -707,6 +718,7 @@
 				791CC44427649E4700813FAC /* MatrixConfigurator.swift in Sources */,
 				798F2BB52763939F00A47CC2 /* MatrixSection.swift in Sources */,
 				791B7BEE27469FFF00EF6886 /* Publisher+Extensions.swift in Sources */,
+				790CFEE6276A7BE000C355C5 /* PerformanceMeasurement.swift in Sources */,
 				791B7BE827469FFF00EF6886 /* Collection+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -838,13 +850,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 476NTDT6B9;
+				DEVELOPMENT_TEAM = C23K8VGFDE;
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kefirtest3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kefirtest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

@@ -17,31 +17,38 @@ final class EntityContainer {
     lazy var poseDetectorNative = PoseRecognizerNative()
     lazy var sessionMediaService = SessionMediaService()
     lazy var handposeMechanics = SoundWithHandposeMechanics()
+    lazy var performanceMeasurment = PerfmormanceMeasurment()
+}
+
+/// Performance measurement
+protocol PerformanceMeasurmentProvider { }
+extension PerformanceMeasurmentProvider {
+    var performanceMeasurment: PerfmormanceMeasurment { container.performanceMeasurment }
 }
 
 /// Camera capture service media service
-protocol SessionMediaServiceProvidable { }
-extension SessionMediaServiceProvidable {
+protocol SessionMediaServiceProvider { }
+extension SessionMediaServiceProvider {
     var sessionMediaService: SessionMediaService { container.sessionMediaService }
 }
 
 /// Pose detector
-protocol PoseDetectorProvidable { }
-extension PoseDetectorProvidable {
+protocol PoseDetectorProvider { }
+extension PoseDetectorProvider {
     var poseDetector: PoseRocognizer { container.poseDetector }
 }
 
 /// Pose detector native
-protocol NativePoseDetectorProvidable { }
-extension NativePoseDetectorProvidable {
+protocol NativePoseDetectorProvider { }
+extension NativePoseDetectorProvider {
     var poseDetectorNative: PoseRecognizerNative { container.poseDetectorNative }
 }
 
 // MARK: - Various application mechanics
 
 /// Sound with Handpose Mechanics
-protocol SoundWithHandposeMechanicsProvidable { }
-extension SoundWithHandposeMechanicsProvidable {
+protocol SoundWithHandposeMechanicsProvider { }
+extension SoundWithHandposeMechanicsProvider {
     var handposeMechanics: SoundWithHandposeMechanics { container.handposeMechanics }
 }
 

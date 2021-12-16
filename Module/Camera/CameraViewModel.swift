@@ -13,7 +13,7 @@ import AVFoundation
 import UIKit
 
 /// MARK: - Dependencies
-extension CameraViewModel: ErrorHandlerProvidable, SoundWithHandposeMechanicsProvidable { }
+extension CameraViewModel: ErrorHandlerProvider, SoundWithHandposeMechanicsProvider { }
 
 final class CameraViewModel {
     enum Action {
@@ -55,10 +55,10 @@ final class CameraViewModel {
         handposeMechanics.output
             .sink(receiveValue: { [weak self] response in
                 switch response {
-                case .affectedNode(let cell, _):
-                    DispatchQueue.main.async {
-                        cell.trigger()
-                    }
+                case .affectedNode(let cell, _): break
+//                    DispatchQueue.main.async {
+//                        cell.trigger()
+//                    }
                 case .captureSessionReceived(let preconfiguredCaptureSession):
                     self?.output.send(.captureSessionReceived(preconfiguredCaptureSession))
                 }

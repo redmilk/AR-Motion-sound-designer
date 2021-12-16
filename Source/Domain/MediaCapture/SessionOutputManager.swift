@@ -9,7 +9,7 @@ import Foundation
 import AVFoundation
 import Combine
 
-final class SessionOutputManager: NSObject, ErrorHandlerProvidable {
+final class SessionOutputManager: NSObject, ErrorHandlerProvider {
     
     var output: AnyPublisher<CMSampleBuffer, Never> { _output.eraseToAnyPublisher() }
 
@@ -18,6 +18,9 @@ final class SessionOutputManager: NSObject, ErrorHandlerProvidable {
     private let outputQueueForVideoAndAudio = DispatchQueue(label: "video-output-queue", qos: .userInteractive)
     private let _output = PassthroughSubject<CMSampleBuffer, Never>()
 
+    private var fps = 30
+    private var lastTimestamp = CMTime()
+    
     init(captureSession: AVCaptureSession,
          sessionQueue: DispatchQueue,
          configCompletion: @escaping VoidClosure
@@ -47,7 +50,7 @@ final class SessionOutputManager: NSObject, ErrorHandlerProvidable {
     }
     
     private func addOutputToCaptureSession(captureSession: AVCaptureSession) throws {
-        captureSession.sessionPreset = AVCaptureSession.Preset.medium
+        captureSession.sessionPreset = AVCaptureSession.Preset.high
         videoDataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as String): kCVPixelFormatType_32BGRA]
         videoDataOutput.alwaysDiscardsLateVideoFrames = true
         videoDataOutput.setSampleBufferDelegate(self, queue: outputQueueForVideoAndAudio)
@@ -71,6 +74,13 @@ extension SessionOutputManager: AVCaptureVideoDataOutputSampleBufferDelegate, AV
         didOutput sampleBuffer: CMSampleBuffer,
         from connection: AVCaptureConnection
     ) {
+        /// we capture at full speed, but only call delegate at its desired framerate
+        let timestamp = CMSampleBufferGetDecodeTimeStamp(sampleBuffer)
+        let deltaTime = timestamp - lastTimestamp
+        if deltaTime >= CMTimeMake(value: 1, timescale: Int32(fps)) {
+            lastTimestamp = timestamp
+        }
+        
         _output.send(sampleBuffer)
     }
 }

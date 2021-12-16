@@ -14,7 +14,7 @@ import AVFoundation
 
 // MARK: - CameraViewController
 
-final class CameraViewController: UIViewController, SessionMediaServiceProvidable {
+final class CameraViewController: UIViewController, SessionMediaServiceProvider, PerformanceMeasurmentProvider {
     enum State {
         case captureSessionReceived(AVCaptureSession)
     }
@@ -26,6 +26,13 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvidabl
     @IBOutlet weak var scaleUpGridButton: UIBarButtonItem!
     @IBOutlet weak var currentGridScaleLabel: UIBarButtonItem!
     @IBOutlet weak var scaleDownGridButton: UIBarButtonItem!
+    
+    @IBOutlet weak var fpsButton: UIBarButtonItem!
+    @IBOutlet weak var debugStackView: UIStackView!
+    @IBOutlet weak var detectionTimeLabel: UILabel!
+    @IBOutlet weak var executionTimeLabel: UILabel!
+    @IBOutlet weak var fpsLabel: UILabel!
+    
     
     private lazy var matrixCollection = MatrixCollection(collectionView: collectionView)
     private let viewModel: CameraViewModel
@@ -48,6 +55,17 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvidabl
                     self.videoPreviewView.setupWithCaptureSession(captureSession)
                     self.viewModel.input.send(.startSession)
                     self.containerView.bringSubviewToFront(self.collectionView)
+                }
+            })
+            .store(in: &bag)
+        
+        performanceMeasurment.output.receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] response in
+                switch response {
+                case .measurement(let inferenceTime, let executionTime, let fps):
+                    self?.detectionTimeLabel.text = inferenceTime
+                    self?.executionTimeLabel.text = executionTime
+                    self?.fpsLabel.text = fps
                 }
             })
             .store(in: &bag)
@@ -119,6 +137,12 @@ private extension CameraViewController {
                     self?.updateScalefactorLabel(scale)
                 case _: break
                 }
+            })
+            .store(in: &bag)
+        
+        fpsButton.publisher()
+            .sink(receiveValue: { [weak self] _ in
+                self?.debugStackView.isHidden.toggle()
             })
             .store(in: &bag)
     }

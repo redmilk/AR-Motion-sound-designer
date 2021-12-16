@@ -10,6 +10,59 @@ import MLKit
 import QuartzCore
 import AVFoundation.AVCaptureVideoPreviewLayer
 
+extension CGPoint {
+    static func +(lhs: CGPoint, rhs: CGPoint) -> CGPoint {
+        return CGPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
+    }
+    
+    static func /(lhs: CGPoint, rhs: CGFloat) -> CGPoint {
+        guard rhs != 0.0 else { return lhs }
+        return CGPoint(x: lhs.x / rhs, y: lhs.y / rhs)
+    }
+}
+
+class MovingAverageFilter {
+    var elements: [PredictedPoint?] = []
+    private var limit: Int
+    
+    init(limit: Int) {
+        guard limit > 0 else { fatalError("limit should be uppered than 0 in MovingAverageFilter init(limit:)") }
+        self.elements = []
+        self.limit = limit
+    }
+    
+    func add(element: PredictedPoint?) {
+        elements.append(element)
+        while self.elements.count > self.limit {
+            self.elements.removeFirst()
+        }
+    }
+    
+    func averagedValue() -> PredictedPoint? {
+        let nonoptionalPoints: [CGPoint] = elements.compactMap{ $0?.maxPoint }
+        let nonoptionalConfidences: [Float] = elements.compactMap{ $0?.maxConfidence }
+        guard !nonoptionalPoints.isEmpty && !nonoptionalConfidences.isEmpty else { return nil }
+        let sumPoint = nonoptionalPoints.reduce( CGPoint.zero ) { $0 + $1 }
+        let sumConfidence = nonoptionalConfidences.reduce( 0.0 ) { $0 + $1 }
+        return PredictedPoint(maxPoint: sumPoint / CGFloat(nonoptionalPoints.count), maxConfidence: sumConfidence)
+    }
+}
+
+struct PredictedPoint {
+    let maxPoint: CGPoint
+    let maxConfidence: Float
+    
+    init(maxPoint: CGPoint, maxConfidence: Float) {
+        self.maxPoint = maxPoint
+        self.maxConfidence = maxConfidence
+    }
+    
+    init(capturedPoint: CGPoint) {
+        self.maxPoint = capturedPoint
+        self.maxConfidence = 1
+    }
+}
+
 final class PointProcessor {
     
     private var lastThreeDots: [String: [CGPoint]] = [:]
@@ -17,6 +70,20 @@ final class PointProcessor {
     /// One Euro Filter
     var oneEuroFiltersForBodyParts: [PoseLandmarkType: (x: OneEuroFilter, y: OneEuroFilter)] = [:]
     var initialTime: Double?
+    
+    var mvfilters: [MovingAverageFilter] = []
+    
+    /// to try in pose detector
+    ///         let mvaPoints = self.pointProcessor.mvaFilter(predictedPoints: dots.map { PredictedPoint(maxPoint: $0.0, maxConfidence: $0.1) })
+    func mvaFilter(predictedPoints: [PredictedPoint]) -> [PredictedPoint?] {
+        if predictedPoints.count != mvfilters.count {
+            mvfilters = predictedPoints.map { _ in MovingAverageFilter(limit: 3) }
+        }
+        for (predictedPoint, filter) in zip(predictedPoints, mvfilters) {
+            filter.add(element: predictedPoint)
+        }
+        return mvfilters.map { $0.averagedValue() }
+    }
     
     func normalizedPoint(
         fromVisionPoint point: VisionPoint,

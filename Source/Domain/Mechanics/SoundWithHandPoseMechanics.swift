@@ -9,9 +9,11 @@ import Combine
 import Foundation
 import UIKit
 import AVFoundation.AVCaptureVideoPreviewLayer
+import MLKit
 
-final class SoundWithHandposeMechanics: PoseDetectorProvidable,
-                                        SessionMediaServiceProvidable {
+final class SoundWithHandposeMechanics: PoseDetectorProvider,
+                                        SessionMediaServiceProvider,
+                                        PerformanceMeasurmentProvider {
     enum Action {
         
         case configure(collection: UICollectionView,
@@ -29,6 +31,7 @@ final class SoundWithHandposeMechanics: PoseDetectorProvidable,
     let output = PassthroughSubject<Response, Never>()
     private var bag = Set<AnyCancellable>()
     private var matrixCollection: UICollectionView!
+    private var configuration: DetectionManagerConfig!
     
     init() {
         /// handle actions input
@@ -37,13 +40,14 @@ final class SoundWithHandposeMechanics: PoseDetectorProvidable,
                 switch action {
                 case .configure(let matrixCollection, let videoPreview, let annotationsPreview):
                     self?.matrixCollection = matrixCollection
-                    let detectionConfig = DetectionManagerConfig(
+                    let configuration = DetectionManagerConfig(
                         capturePreviewLayer: videoPreview.layer as! AVCaptureVideoPreviewLayer,
                         annotationOverlayView: annotationsPreview,
                         shouldDrawSkeleton: false,
                         shouldDrawCircle: true,
                         shouldFindAverageDot: true)
-                    self?.poseDetector.input.send(.configure(detectionConfig))
+                    self?.configuration = configuration
+                    self?.poseDetector.input.send(.configure(configuration))
                     self?.sessionMediaService.input.send(.configure)
                 case .startSession:
                     self?.sessionMediaService.input.send(.startSession)
@@ -54,24 +58,28 @@ final class SoundWithHandposeMechanics: PoseDetectorProvidable,
             .store(in: &self.bag)
         
         /// handle detection manager output
-        poseDetector.output.receive(on: DispatchQueue.main)
+        poseDetector.output.receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] detectionResponse in
                 guard let self = self else { return }
                 switch detectionResponse {
-                case .dotsList(let dots):
-                    /// play sound with dots
-                    dots.forEach { point in
-                        if let indexPath = self.matrixCollection.indexPathForItem(at: point),
-                           let cell = self.matrixCollection.cellForItem(at: indexPath) as? MatrixNodeCell {
-                            self.output.send(.affectedNode(cell: cell, indePath: indexPath))
+                case .result(let dots, _):
+                        self.removeDetectionAnnotations()
+                        /// play sound with dots
+                        dots.forEach { point in
+                            self.drawLandmarksForPose(atPoint: point)
+                            if let indexPath = self.matrixCollection.indexPathForItem(at: point),
+                               let cell = self.matrixCollection.cellForItem(at: indexPath) as? MatrixNodeCell {
+                                cell.trigger()
+                                //self.output.send(.affectedNode(cell: cell, indePath: indexPath))
 
-//                            let zoneHitTest = ZoneTriggerHitTest(zone: cell.bounds, dot: point)
-//                            if zoneHitTest.validateConditions() {
-//
-//                              //  self.output.send(.affectedNode(cell: cell, indePath: indexPath))
-//                            }
+    //                            let zoneHitTest = ZoneTriggerHitTest(zone: cell.bounds, dot: point)
+    //                            if zoneHitTest.validateConditions() {
+    //
+    //                              //  self.output.send(.affectedNode(cell: cell, indePath: indexPath))
+    //                            }
+                            }
                         }
-                    }
+                    self.performanceMeasurment.stopMeasure()
                 }
             })
             .store(in: &self.bag)
@@ -89,5 +97,59 @@ final class SoundWithHandposeMechanics: PoseDetectorProvidable,
             })
             .store(in: &self.bag)
     }
+}
+
+// MARK: - Landmarks drawing
+
+private extension SoundWithHandposeMechanics {
+    func drawLandmarksForPose(atPoint point: CGPoint) {
+        if configuration.shouldDrawCircle {
+            UtilsForDrawing.addCircleImage(atPoint: point, to: self.configuration.annotationOverlayView, radius: Constant.bigDotRadius)
+        }
+        
+        if configuration.shouldDrawSkeleton {
+            UtilsForDrawing.addCircle(
+                atPoint: point,
+                to: configuration.annotationOverlayView,
+                color: UIColor.blue,
+                radius: Constant.smallDotRadius
+            )
+        }
+    }
     
+    func removeDetectionAnnotations() {
+        for annotationView in configuration.annotationOverlayView.subviews {
+            annotationView.removeFromSuperview()
+        }
+    }
+    
+    func drawSkeletonIfNeeded(startLandmarkPoint: CGPoint, endLandmarkPoint: CGPoint) {
+        if configuration.shouldDrawSkeleton {
+        //    let startLandmark = pose.landmark(ofType: startLandmarkType)
+        //                    for endLandmarkType in endLandmarkTypesArray {
+        //                        let endLandmark = pose.landmark(ofType: endLandmarkType)
+        //                        let startLandmarkPoint = self.pointProcessor.normalizedPoint(
+        //                            fromVisionPoint: startLandmark.position,
+        //                            videoPreviewLayer: self.configuration.capturePreviewLayer,
+        //                            shouldFindAverageDot: self.configuration.shouldFingAverageDot,
+        //                            width: width,
+        //                            height: height,
+        //                            type: startLandmark.type)
+        //                        let endLandmarkPoint = self.pointProcessor.normalizedPoint(
+        //                            fromVisionPoint: endLandmark.position,
+        //                            videoPreviewLayer: self.configuration.capturePreviewLayer,
+        //                            shouldFindAverageDot: self.configuration.shouldFingAverageDot,
+        //                            width: width,
+        //                            height: height,
+        //                            type: endLandmark.type)
+        //                        self.drawSkeletonIfNeeded(startLandmarkPoint: startLandmarkPoint, endLandmarkPoint: endLandmarkPoint)
+        //                    }
+            UtilsForDrawing.addLineSegment(
+                fromPoint: startLandmarkPoint,
+                toPoint: endLandmarkPoint,
+                inView: configuration.annotationOverlayView,
+                color: UIColor.green,
+                width: Constant.lineWidth)
+        }
+    }
 }

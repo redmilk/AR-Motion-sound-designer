@@ -35,7 +35,7 @@ final class DetectionManagerConfig {
 
 // MARK: - DetectionManager
 
-final class PoseRocognizer: ErrorHandlerProvidable {
+final class PoseRocognizer: ErrorHandlerProvider, PerformanceMeasurmentProvider {
     /// API
     let input = PassthroughSubject<Action, Never>()
     let output = PassthroughSubject<Response, Never>()
@@ -46,7 +46,7 @@ final class PoseRocognizer: ErrorHandlerProvidable {
         case buffer(CMSampleBuffer)
     }
     enum Response {
-        case dotsList([CGPoint])
+        case result(dotsList: [CGPoint], pose: Pose)
     }
     
     init(pointProcessor: PointProcessor = PointProcessor()) {
@@ -57,6 +57,7 @@ final class PoseRocognizer: ErrorHandlerProvidable {
             case .configure(let configuration):
                 self?.configuration = configuration
             case .buffer(let sampleBuffer):
+                self?.performanceMeasurment.startMeasure()
                 self?.processFrameWithSampleBuffer(sampleBuffer)
             }
         })
@@ -72,20 +73,21 @@ final class PoseRocognizer: ErrorHandlerProvidable {
     private var countOfFramesForSkipping = 1
     private var currentProcessedFrameNumber = 0
     private var currentSkippedFrameNumber = 0
- 
+    private var isInferencing = false
     private let poseDetectorQueue = DispatchQueue(label: "com.google.mlkit.pose", qos: .userInteractive)
+    
     private lazy var poseDetector: PoseDetector = {
-        let options = PoseDetectorOptions()
-        options.detectorMode = .stream
+        let options = AccuratePoseDetectorOptions()
         return PoseDetector.poseDetector(options: options)
     }()
 
     private var posesForPlayingSound: [PoseLandmarkType] = [
-        .leftWrist,
-        .rightWrist,
+        //.leftWrist, .rightWrist,
+        .leftPinkyFinger, .rightPinkyFinger,
+        .leftIndexFinger, .rightIndexFinger,
+        //.rightAnkle, .rightHeel, .rightToe, // Left leg
+        //.leftAnkle, .leftHeel, .leftToe     // Right leg
         //.leftEye, .rightEye, .leftEar, .rightEar, .mouthLeft, .mouthRight, .leftEyeOuter, .rightEyeOuter, .leftEyeInner, .rightEyeInner, .nose
-        //.rightAnkle, .rightHeel, .rightToe, /// Left leg
-        //.leftAnkle, .leftHeel, .leftToe     /// Right leg
     ]
     private var bag = Set<AnyCancellable>()
 }
@@ -122,38 +124,35 @@ private extension PoseRocognizer {
     func detectPose(in image: VisionImage, width: CGFloat, height: CGFloat) throws {
         poseDetectorQueue.async {
             guard let pose = try? self.poseDetector.results(in: image).first else { return }
-            DispatchQueue.main.async {
-                self.removeDetectionAnnotations()
-                var dots = [CGPoint]()
-                for (_, (startLandmarkType, endLandmarkTypesArray)) in UtilsForPoseDetection.poseConnections().enumerated() {
-                    /// draw skeleton was here
-                    
-                    /// Zone Based - by dot - ??
-                    self.posesForPlayingSound.forEach { poseType in
-                        if startLandmarkType.rawValue == poseType.rawValue {
-                            for endLandmarkType in endLandmarkTypesArray {
-                                let landmark = pose.landmark(ofType: endLandmarkType)
-                                guard landmark.inFrameLikelihood > 0.1 else { return }
-                                print(landmark.inFrameLikelihood.description)
-                                
-                                let filteredPoint = self.pointProcessor.applyOneEuroFilter(for: landmark)
-                                let normalizedPoint = self.pointProcessor.normalizedPoint(
-                                    fromPoint: filteredPoint,
-                                    videoPreviewLayer: self.configuration.capturePreviewLayer,
-                                    shouldFindAverageDot: self.configuration.shouldFingAverageDot,
-                                    width: width,
-                                    height: height,
-                                    type: landmark.type)
-                                dots.append(normalizedPoint)
-                            }
+            var dots = [CGPoint]()
+            for (_, (startLandmarkType, endLandmarkTypesArray)) in UtilsForPoseDetection.poseConnections().enumerated() {
+                /// draw skeleton was here
+                
+                /// Zone Based - by dot - ??
+                self.posesForPlayingSound.forEach { poseType in
+                    if startLandmarkType.rawValue == poseType.rawValue {
+                        for endLandmarkType in endLandmarkTypesArray {
+                            let landmark = pose.landmark(ofType: endLandmarkType)
+                            print(landmark.inFrameLikelihood)
+                            guard landmark.inFrameLikelihood > 0.1 else { return }
+                        
+                            let filteredPoint = self.pointProcessor.applyOneEuroFilter(for: landmark)
+                            let normalizedPoint = self.pointProcessor.normalizedPoint(
+                                fromPoint: filteredPoint,
+                                videoPreviewLayer: self.configuration.capturePreviewLayer,
+                                shouldFindAverageDot: self.configuration.shouldFingAverageDot,
+                                width: width,
+                                height: height,
+                                type: landmark.type)
+                                        
+                            dots.append(normalizedPoint)
                         }
                     }
                 }
-                self.drawLandmarksForPose(pose, width: width, height: height, shouldDrawCircle: self.configuration.shouldDrawCircle)
-                self.output.send(.dotsList(dots))
             }
+            self.performanceMeasurment.labelMeasurment(with: "endInference")
+            self.output.send(.result(dotsList: dots, pose: pose))
         }
-        
     }
     
     func isNeedToSkipFrame() -> Bool {
@@ -169,74 +168,6 @@ private extension PoseRocognizer {
         } else {
             currentProcessedFrameNumber += 1
             return false
-        }
-    }
-    
-    func drawLandmarksForPose(_ pose: Pose, width: CGFloat, height: CGFloat, shouldDrawCircle: Bool) {
-        for landmark in pose.landmarks {
-            let filteredPoint = pointProcessor.applyOneEuroFilter(for: landmark)
-            let landmarkPoint = pointProcessor.normalizedPoint(
-                fromPoint: filteredPoint,
-                videoPreviewLayer: configuration.capturePreviewLayer,
-                shouldFindAverageDot: configuration.shouldFingAverageDot,
-                width: width,
-                height: height,
-                type: landmark.type)
-            if landmark.type == .leftWrist ||
-                landmark.type == .leftPinkyFinger ||
-                landmark.type == .leftIndexFinger ||
-                landmark.type == .rightPinkyFinger ||
-                landmark.type == .rightIndexFinger ||
-                landmark.type == .rightWrist { /// landmark.type == .leftAnkle || landmark.type == .rightAnkle || was here
-                if shouldDrawCircle {
-                    UtilsForDrawing.addCircleImage(atPoint: landmarkPoint,to: self.configuration.annotationOverlayView, radius: Constant.bigDotRadius)
-                }
-            }
-            
-            if configuration.shouldDrawSkeleton {
-                UtilsForDrawing.addCircle(
-                    atPoint: landmarkPoint,
-                    to: configuration.annotationOverlayView,
-                    color: UIColor.blue,
-                    radius: Constant.smallDotRadius
-                )
-            }
-        }
-    }
-    
-    func drawSkeletonIfNeeded(startLandmarkPoint: CGPoint, endLandmarkPoint: CGPoint) {
-        if configuration.shouldDrawSkeleton {
-        //    let startLandmark = pose.landmark(ofType: startLandmarkType)
-        //                    for endLandmarkType in endLandmarkTypesArray {
-        //                        let endLandmark = pose.landmark(ofType: endLandmarkType)
-        //                        let startLandmarkPoint = self.pointProcessor.normalizedPoint(
-        //                            fromVisionPoint: startLandmark.position,
-        //                            videoPreviewLayer: self.configuration.capturePreviewLayer,
-        //                            shouldFindAverageDot: self.configuration.shouldFingAverageDot,
-        //                            width: width,
-        //                            height: height,
-        //                            type: startLandmark.type)
-        //                        let endLandmarkPoint = self.pointProcessor.normalizedPoint(
-        //                            fromVisionPoint: endLandmark.position,
-        //                            videoPreviewLayer: self.configuration.capturePreviewLayer,
-        //                            shouldFindAverageDot: self.configuration.shouldFingAverageDot,
-        //                            width: width,
-        //                            height: height,
-        //                            type: endLandmark.type)
-        //                        self.drawSkeletonIfNeeded(startLandmarkPoint: startLandmarkPoint, endLandmarkPoint: endLandmarkPoint)
-        //                    }
-            UtilsForDrawing.addLineSegment(
-                fromPoint: startLandmarkPoint,
-                toPoint: endLandmarkPoint,
-                inView: configuration.annotationOverlayView,
-                color: UIColor.green,
-                width: Constant.lineWidth)
-        }
-    }
-    
-    func removeDetectionAnnotations() {
-        for annotationView in configuration.annotationOverlayView.subviews {
-            annotationView.removeFromSuperview()
         }
     }
 }

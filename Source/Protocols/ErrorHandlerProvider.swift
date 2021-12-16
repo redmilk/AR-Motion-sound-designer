@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol ErrorHandlerProvidable {
+protocol ErrorHandlerProvider {
     @discardableResult
     func handleError(_ error: Error) -> (error: JiggleError, message: String)
 }
 
-extension ErrorHandlerProvidable {
+extension ErrorHandlerProvider {
     @discardableResult
     func handleError(_ error: Error) -> (error: JiggleError, message: String) {
         guard let customError = error as? JiggleError else {

@@ -16,9 +16,6 @@ target 'Jiggle' do
   pod 'Firebase/Crashlytics'
   
   # ML
-  pod 'GoogleMLKit/FaceDetection'
-  pod 'GoogleMLKit/ObjectDetection'
-  pod 'GoogleMLKit/ObjectDetectionCustom'
-  pod 'GoogleMLKit/PoseDetection'
+  pod 'GoogleMLKit/PoseDetectionAccurate', '2.5.0'
 
 end

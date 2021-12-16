@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 
-final class SessionInputManager: NSObject, ErrorHandlerProvidable {
+final class SessionInputManager: NSObject, ErrorHandlerProvider {
         
     init(captureSession: AVCaptureSession,
          sessionQueue: DispatchQueue,
