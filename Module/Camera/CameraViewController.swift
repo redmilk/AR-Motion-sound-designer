@@ -63,6 +63,7 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
                 switch response {
                 case .measurement(let fps):
                     self?.fpsLabel.text = fps
+                case _: break
                 }
             })
             .store(in: &bag)

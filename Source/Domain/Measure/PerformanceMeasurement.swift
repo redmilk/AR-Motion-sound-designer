@@ -17,6 +17,7 @@ public class PerfmormanceMeasurment: NSObject {
     
     enum Response {
         case measurement(fps: String)
+        case inferenceMeasurment(inferenceTime: String)
     }
     
     class DisplayLinkProxy: NSObject {
@@ -37,6 +38,32 @@ public class PerfmormanceMeasurment: NSObject {
     private var mode: RunLoop.Mode?
     private var lastNotificationTime: CFAbsoluteTime = 0.0
     private var numberOfFrames = 0
+    
+    
+    var inferenceMeasurement = [
+        "start": CACurrentMediaTime(),
+        "end": CACurrentMediaTime()
+    ]
+    var isMeasuring: Bool = false
+    
+    func startMeasure() {
+        if isMeasuring { return }
+        isMeasuring = true
+        inferenceMeasurement["start"] = CACurrentMediaTime()
+    }
+    func stopMeasure() {
+        isMeasuring = false
+        inferenceMeasurement["stop"] = CACurrentMediaTime()
+        if let startTime = inferenceMeasurement["start"],
+           let endTime = inferenceMeasurement["end"] {
+            let inferenceTime = endTime - startTime
+            let inferenceTimeString = "inference: \(Int(inferenceTime * 1000.0)) ms"
+            
+        }
+
+    }
+    
+    
 
     public override init() {
         displayLinkProxy = DisplayLinkProxy()
