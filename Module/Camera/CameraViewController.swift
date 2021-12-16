@@ -11,7 +11,6 @@ import UIKit
 import Combine
 import AVFoundation
 
-
 // MARK: - CameraViewController
 
 final class CameraViewController: UIViewController, SessionMediaServiceProvider, PerformanceMeasurmentProvider {
@@ -33,11 +32,10 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
     @IBOutlet weak var executionTimeLabel: UILabel!
     @IBOutlet weak var fpsLabel: UILabel!
     
-    
     private lazy var matrixCollection = MatrixCollection(collectionView: collectionView)
     private let viewModel: CameraViewModel
     private var bag = Set<AnyCancellable>()
-
+    
     /// capture session views
     private lazy var videoPreviewView = CaptureVideoPreviewView(superView: self.containerView)
     private lazy var annotationOverlayView = AnnotationsOverlayView(superView: self.containerView)
@@ -46,6 +44,7 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
         self.viewModel = viewModel
         super.init(nibName: String(describing: CameraViewController.self), bundle: nil)
         overrideUserInterfaceStyle = .dark
+
         /// handling view model's response
         viewModel.output
             .sink(receiveValue: { [weak self] state in
@@ -62,9 +61,7 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
         performanceMeasurment.output.receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] response in
                 switch response {
-                case .measurement(let inferenceTime, let executionTime, let fps):
-                    self?.detectionTimeLabel.text = inferenceTime
-                    self?.executionTimeLabel.text = executionTime
+                case .measurement(let fps):
                     self?.fpsLabel.text = fps
                 }
             })
@@ -82,7 +79,7 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         configureView()
         
         viewModel.input.send(
@@ -92,6 +89,8 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
                 collectionMatrix: collectionView
             )
         )
+        
+        performanceMeasurment.input.send(.startMeasure)
         matrixCollection.input.send(.initialSetup)
     }
     

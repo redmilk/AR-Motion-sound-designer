@@ -13,8 +13,8 @@ final class MatrixNodeCell: UICollectionViewCell {
     var node: MatrixNode?
 
     override func awakeFromNib() {
-        containerView.layer.borderColor = UIColor.yellow.cgColor
-        containerView.layer.borderWidth = 0.5
+        containerView.layer.borderColor = UIColor.yellow.withAlphaComponent(0.4).cgColor
+        containerView.layer.borderWidth = 0.2
         containerView.layer.masksToBounds = true
     }
     

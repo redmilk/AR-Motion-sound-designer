@@ -79,7 +79,6 @@ final class SoundWithHandposeMechanics: PoseDetectorProvider,
     //                            }
                             }
                         }
-                    self.performanceMeasurment.stopMeasure()
                 }
             })
             .store(in: &self.bag)

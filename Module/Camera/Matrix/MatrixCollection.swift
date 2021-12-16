@@ -125,8 +125,10 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
     private func emitNodes(_ count: Int) -> [MatrixNode] {
         var nodes: [MatrixNode] = []
         for _ in 1...count {
-            let node = MatrixNode()
-            nodes.append(node)
+            autoreleasepool {
+                let node = MatrixNode()
+                nodes.append(node)
+            }
         }
         return nodes
     }
@@ -159,7 +161,12 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
         let section = MatrixSection(nodes: [], id: UUID().uuidString)
         snapshot.appendSections([section])
         snapshot.appendItems(nodes, toSection: section)
-        dataSource?.apply(snapshot, animatingDifferences: false)
+
+        let runLoopMode = CFRunLoopMode.commonModes.rawValue
+        CFRunLoopPerformBlock(CFRunLoopGetMain(), runLoopMode) { [weak dataSource] in
+            dataSource?.apply(snapshot, animatingDifferences: false)
+        }
+        CFRunLoopWakeUp(CFRunLoopGetMain())
     }
     
     private func removeNodes(_ nodes: [MatrixNode]) {

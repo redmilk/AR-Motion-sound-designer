@@ -57,7 +57,6 @@ final class PoseRocognizer: ErrorHandlerProvider, PerformanceMeasurmentProvider 
             case .configure(let configuration):
                 self?.configuration = configuration
             case .buffer(let sampleBuffer):
-                self?.performanceMeasurment.startMeasure()
                 self?.processFrameWithSampleBuffer(sampleBuffer)
             }
         })
@@ -150,7 +149,6 @@ private extension PoseRocognizer {
                     }
                 }
             }
-            self.performanceMeasurment.labelMeasurment(with: "endInference")
             self.output.send(.result(dotsList: dots, pose: pose))
         }
     }
