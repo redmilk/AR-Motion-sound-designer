@@ -12,7 +12,7 @@ struct Constant {
     static let localModelFile = (name: "bird", type: "tflite")
     static let labelConfidenceThreshold: Float = 0.75
     static let smallDotRadius: CGFloat = 4.0
-    static let bigDotRadius: CGFloat = 35.0
+    static let bigDotRadius: CGFloat = 15.0
     static let lineWidth: CGFloat = 3.0
     static let originalScale: CGFloat = 1.0
     static let padding: CGFloat = 10.0

@@ -21,17 +21,9 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var cameraView: UIView!
     @IBOutlet private weak var collectionView: UICollectionView!
-    
-    @IBOutlet weak var scaleUpGridButton: UIBarButtonItem!
-    @IBOutlet weak var currentGridScaleLabel: UIBarButtonItem!
-    @IBOutlet weak var scaleDownGridButton: UIBarButtonItem!
-    
-    @IBOutlet weak var fpsButton: UIBarButtonItem!
-    @IBOutlet weak var debugStackView: UIStackView!
-    @IBOutlet weak var detectionTimeLabel: UILabel!
-    @IBOutlet weak var executionTimeLabel: UILabel!
-    @IBOutlet weak var fpsLabel: UILabel!
-    
+    /// debug window
+    @IBOutlet private weak var debugWindow: DebugWindow!
+
     private lazy var matrixCollection = MatrixCollection(collectionView: collectionView)
     private let viewModel: CameraViewModel
     private var bag = Set<AnyCancellable>()
@@ -57,16 +49,6 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
                 }
             })
             .store(in: &bag)
-        
-        performanceMeasurment.output.receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] response in
-                switch response {
-                case .measurement(let fps):
-                    self?.fpsLabel.text = fps
-                case _: break
-                }
-            })
-            .store(in: &bag)
     }
     
     required init?(coder: NSCoder) {
@@ -81,79 +63,45 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureView()
-        
-        viewModel.input.send(
-            .configureSession(
-                videoPreview: videoPreviewView,
-                annotationsPreview: annotationOverlayView,
-                collectionMatrix: collectionView
-            )
-        )
+
+        debugWindow.input.send(.matrixCollectionPublisher(matrixCollection.output.eraseToAnyPublisher()))
+        /// debug view out
+        debugWindow.output
+            .sink(receiveValue: { [weak self] response in
+                switch response {
+                case .scaleUpGrid: self?.matrixCollection.input.send(.scaleDown)
+                case .scaleDownGrid: self?.matrixCollection.input.send(.scaleUp)
+                case .shouldHideGrid(let shouldHideGrid):
+                    self?.matrixCollection.input.send(.shouldHideGrid(shouldHideGrid))
+                }
+            })
+            .store(in: &bag)
+
+        viewModel.input.send(.configureSession(
+            videoPreview: videoPreviewView,
+            annotationsPreview: annotationOverlayView,
+            collectionMatrix: collectionView))
         
         performanceMeasurment.input.send(.startMeasure)
         matrixCollection.input.send(.initialSetup)
+        matrixCollection.input.send(.configureScaling(.scale2048))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        /// start session
-        self.viewModel.input.send(.startSession)
-        matrixCollection.input.send(.configureScaling(.scale128))
+        
+        debugWindow.configure()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        /// start session
+        self.viewModel.input.send(.startSession)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         /// stop session
         viewModel.input.send(.stopSession)
-    }
-}
-
-// MARK: - Private
-
-private extension CameraViewController {
-    func configureView() {
-        scaleUpGridButton.publisher()
-            .sink(receiveValue: { [weak self] _ in
-                self?.matrixCollection.input.send(.scaleUp)
-            })
-            .store(in: &bag)
-        
-        scaleDownGridButton.publisher()
-            .sink(receiveValue: { [weak self] _ in
-                self?.matrixCollection.input.send(.scaleDown)
-            })
-            .store(in: &bag)
-        
-        matrixCollection.output
-            .sink(receiveValue: { [weak self] matrixResponse in
-                switch matrixResponse {
-                case .currentScale(let scale):
-                    self?.updateScalefactorLabel(scale)
-                case _: break
-                }
-            })
-            .store(in: &bag)
-        
-        fpsButton.publisher()
-            .sink(receiveValue: { [weak self] _ in
-                self?.debugStackView.isHidden.toggle()
-            })
-            .store(in: &bag)
-    }
-    
-    func updateScalefactorLabel(_ scale: MatrixCollection.GridScale) {
-        switch scale {
-        case .scale2048: currentGridScaleLabel.title = "2048"
-        case .scale1024: currentGridScaleLabel.title = "1024"
-        case .scale512: currentGridScaleLabel.title = "512"
-        case .scale256: currentGridScaleLabel.title = "256"
-        case .scale128: currentGridScaleLabel.title = "128"
-        }
     }
 }

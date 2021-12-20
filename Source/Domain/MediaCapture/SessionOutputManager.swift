@@ -50,7 +50,7 @@ final class SessionOutputManager: NSObject, ErrorHandlerProvider {
     }
     
     private func addOutputToCaptureSession(captureSession: AVCaptureSession) throws {
-        captureSession.sessionPreset = AVCaptureSession.Preset.high
+        captureSession.sessionPreset = AVCaptureSession.Preset.medium
         videoDataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as String): kCVPixelFormatType_32BGRA]
         videoDataOutput.alwaysDiscardsLateVideoFrames = true
         videoDataOutput.setSampleBufferDelegate(self, queue: outputQueueForVideoAndAudio)

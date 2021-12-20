@@ -31,7 +31,7 @@ public class PerfmormanceMeasurment: NSObject {
     let output = PassthroughSubject<Response, Never>()
     private var bag = Set<AnyCancellable>()
     
-    @objc public var notificationDelay: TimeInterval = 1.0
+    @objc public var notificationDelay: TimeInterval = 2.0
     private let displayLink: CADisplayLink
     private let displayLinkProxy: DisplayLinkProxy
     private var runloop: RunLoop?
@@ -63,8 +63,6 @@ public class PerfmormanceMeasurment: NSObject {
 
     }
     
-    
-
     public override init() {
         displayLinkProxy = DisplayLinkProxy()
         displayLink = CADisplayLink(

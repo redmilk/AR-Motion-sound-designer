@@ -17,7 +17,7 @@ final class CaptureVideoPreviewView: UIView {
         videoPreviewLayer.videoGravity = .resizeAspectFill
         
         self.translatesAutoresizingMaskIntoConstraints = false
-        //superView.insertSubview(self, at: 0)
+        superView.insertSubview(self, at: 0)
         superView.addSubview(self)
         self.topAnchor.constraint(equalTo: superView.topAnchor).isActive = true
         self.bottomAnchor.constraint(equalTo: superView.bottomAnchor).isActive = true

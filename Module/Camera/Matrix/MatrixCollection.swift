@@ -9,35 +9,35 @@ import Foundation
 import Combine
 import UIKit
 
+/// 8196
+let itemSize8196: CGFloat = 5
+let groupHeight8196: CGFloat = 5
+let groupItemsCount8196: Int = 64
 /// 2048
-let itemSize2048: CGFloat = 5
-let groupHeight2048: CGFloat = 5
-let groupItemsCount2048: Int = 64
+let itemSize2048: CGFloat = 10
+let groupHeight2048: CGFloat = 10
+let groupItemsCount2048: Int = 32
 /// 1024
-let itemSize1024: CGFloat = 10
-let groupHeight1024: CGFloat = 10
-let groupItemsCount1024: Int = 32
-/// 512
-let itemSize512: CGFloat = 20
-let groupHeight512: CGFloat = 20
-let groupItemsCount512: Int = 16
+let itemSize1024: CGFloat = 20
+let groupHeight1024: CGFloat = 20
+let groupItemsCount1024: Int = 16
 /// 256
 let itemSize256: CGFloat = 40
 let groupHeight256: CGFloat = 40
 let groupItemsCount256: Int = 8
-/// 128
-let itemSize128: CGFloat = 80
-let groupHeight128: CGFloat = 80
-let groupItemsCount128: Int = 4
+/// 64
+let itemSize64: CGFloat = 80
+let groupHeight64: CGFloat = 80
+let groupItemsCount64: Int = 4
 
 final class MatrixCollection: NSObject { /// NSObject for collection delegate
     
     enum GridScale {
+        case scale8196
         case scale2048
         case scale1024
-        case scale512
         case scale256
-        case scale128
+        case scale64
     }
     
     enum Action {
@@ -45,7 +45,7 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
         case configureScaling(GridScale)
         case scaleUp
         case scaleDown
-        ///case removeNodes([MatrixNode])
+        case shouldHideGrid(Bool)
     }
     
     enum Response {
@@ -63,6 +63,7 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
     private var dataSource: DataSource!
     private var bag = Set<AnyCancellable>()
     private var currentScaleType: GridScale!
+    private var isGridHidden: Bool = false
     
     init(collectionView: UICollectionView) {
         self.collectionView = collectionView
@@ -84,75 +85,81 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
     }
     
     private func handleInput() {
-        input.sink(receiveValue: { [weak self] action in
+        input.receive(on: RunLoop.main)
+            .sink(receiveValue: { [weak self] action in
             guard let self = self else { return }
             switch action {
             case .initialSetup:
                 self.configure()
             case .configureScaling(let scaleType):
-                self.setupScaleType(scaleType)
+                self.setupScaleType(scaleType, isVisibleGrid: self.isGridHidden)
+            case .shouldHideGrid(let shouldHide):
+                self.isGridHidden = shouldHide
+                self.setupScaleType(self.currentScaleType, isVisibleGrid: !shouldHide)
             case .scaleUp:
+                let shouldHide = self.isGridHidden
                 switch self.currentScaleType! {
+                case .scale8196:
+                    self.setupScaleType(.scale64, isVisibleGrid: !shouldHide)
                 case .scale2048:
-                    self.setupScaleType(.scale128)
+                    self.setupScaleType(.scale8196, isVisibleGrid: !shouldHide)
                 case .scale1024:
-                    self.setupScaleType(.scale2048)
-                case .scale512:
-                    self.setupScaleType(.scale1024)
+                    self.setupScaleType(.scale2048, isVisibleGrid: !shouldHide)
                 case .scale256:
-                    self.setupScaleType(.scale512)
-                case .scale128:
-                    self.setupScaleType(.scale256)
+                    self.setupScaleType(.scale1024, isVisibleGrid: !shouldHide)
+                case .scale64:
+                    self.setupScaleType(.scale8196, isVisibleGrid: !shouldHide)
                 }
             case .scaleDown:
+                let shouldHide = self.isGridHidden
                 switch self.currentScaleType! {
+                case .scale8196:
+                    self.setupScaleType(.scale2048, isVisibleGrid: !shouldHide)
                 case .scale2048:
-                    self.setupScaleType(.scale1024)
+                    self.setupScaleType(.scale1024, isVisibleGrid: !shouldHide)
                 case .scale1024:
-                    self.setupScaleType(.scale512)
-                case .scale512:
-                    self.setupScaleType(.scale256)
+                    self.setupScaleType(.scale256, isVisibleGrid: !shouldHide)
                 case .scale256:
-                    self.setupScaleType(.scale128)
-                case .scale128:
-                    self.setupScaleType(.scale1024)
+                    self.setupScaleType(.scale64, isVisibleGrid: !shouldHide)
+                case .scale64:
+                    self.setupScaleType(.scale8196, isVisibleGrid: !shouldHide)
                 }
             }
         })
         .store(in: &bag)
     }
     
-    private func emitNodes(_ count: Int) -> [MatrixNode] {
+    private func emitNodes(_ count: Int, isVisibleGrid: Bool = true) -> [MatrixNode] {
         var nodes: [MatrixNode] = []
         for _ in 1...count {
             autoreleasepool {
-                let node = MatrixNode()
+                let node = MatrixNode(isVisibleGrid: isVisibleGrid)
                 nodes.append(node)
             }
         }
         return nodes
     }
     
-    private func setupScaleType(_ scaleType: GridScale) {
+    private func setupScaleType(_ scaleType: GridScale, isVisibleGrid: Bool) {
         self.currentScaleType = scaleType
         switch scaleType {
+        case .scale8196:
+            layoutCollectionAsGrid(itemSize: itemSize8196, groupHeight: groupHeight8196, groupItemsCount: groupItemsCount8196)
+            replaceAllWithNewNodes(emitNodes(4096 * 2, isVisibleGrid: isVisibleGrid))
         case .scale2048:
-            self.layoutCollectionAsGrid(itemSize: itemSize2048, groupHeight: groupHeight2048, groupItemsCount: groupItemsCount2048)
-            self.replaceAllWithNewNodes(self.emitNodes(4096 * 2))
+            layoutCollectionAsGrid(itemSize: itemSize2048, groupHeight: groupHeight2048, groupItemsCount: groupItemsCount2048)
+            replaceAllWithNewNodes(emitNodes(2048, isVisibleGrid: isVisibleGrid))
         case .scale1024:
-            self.layoutCollectionAsGrid(itemSize: itemSize1024, groupHeight: groupHeight1024, groupItemsCount: groupItemsCount1024)
-            self.replaceAllWithNewNodes(self.emitNodes(2048))
-        case .scale512:
-            self.layoutCollectionAsGrid(itemSize: itemSize512, groupHeight: groupHeight512, groupItemsCount: groupItemsCount512)
-            self.replaceAllWithNewNodes(self.emitNodes(1024))
+            layoutCollectionAsGrid(itemSize: itemSize1024, groupHeight: groupHeight1024, groupItemsCount: groupItemsCount1024)
+            replaceAllWithNewNodes(emitNodes(512, isVisibleGrid: isVisibleGrid))
         case .scale256:
-            self.layoutCollectionAsGrid(itemSize: itemSize256, groupHeight: groupHeight256, groupItemsCount: groupItemsCount256)
-            self.replaceAllWithNewNodes(self.emitNodes(256))
-        case .scale128:
-            self.layoutCollectionAsGrid(itemSize: itemSize128, groupHeight: groupHeight128, groupItemsCount: groupItemsCount128)
-            self.replaceAllWithNewNodes(self.emitNodes(64))
+            layoutCollectionAsGrid(itemSize: itemSize256, groupHeight: groupHeight256, groupItemsCount: groupItemsCount256)
+            replaceAllWithNewNodes(emitNodes(128, isVisibleGrid: isVisibleGrid))
+        case .scale64:
+            layoutCollectionAsGrid(itemSize: itemSize64, groupHeight: groupHeight64, groupItemsCount: groupItemsCount64)
+            replaceAllWithNewNodes(emitNodes(64, isVisibleGrid: isVisibleGrid))
         }
-        self.collectionView.reloadData()
+        collectionView.reloadData()
         output.send(.currentScale(scaleType))
     }
 
@@ -178,12 +185,6 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
     private func reloadSection() {
         let currentSnapshot = dataSource.snapshot()
         dataSource?.apply(currentSnapshot, animatingDifferences: false)
-    }
-    
-    private func reloadNodes(_ nodes: [MatrixNode]) {
-        var currentSnapshot = dataSource.snapshot()
-        currentSnapshot.reloadItems(nodes)
-        dataSource?.apply(currentSnapshot, animatingDifferences: true)
     }
     
     func buildDataSource() -> DataSource {

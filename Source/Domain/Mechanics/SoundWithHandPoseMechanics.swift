@@ -35,7 +35,7 @@ final class SoundWithHandposeMechanics: PoseDetectorProvider,
     
     init() {
         /// handle actions input
-        input
+        input.receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] action in
                 switch action {
                 case .configure(let matrixCollection, let videoPreview, let annotationsPreview):
@@ -58,7 +58,7 @@ final class SoundWithHandposeMechanics: PoseDetectorProvider,
             .store(in: &self.bag)
         
         /// handle detection manager output
-        poseDetector.output.receive(on: RunLoop.main)
+        poseDetector.output.receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] detectionResponse in
                 guard let self = self else { return }
                 switch detectionResponse {
