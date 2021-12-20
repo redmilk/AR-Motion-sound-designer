@@ -24,7 +24,7 @@ final class MatrixNodeCell: UICollectionViewCell {
     var node: MatrixNode? {
         didSet {
             guard let node = node else { return }
-            containerView.layer.borderWidth = node.isVisibleGrid ? 0.2 : 0.0
+            containerView.layer.borderWidth = node.isGridHidden ? 0.0 : 0.2 
         }
     }
 

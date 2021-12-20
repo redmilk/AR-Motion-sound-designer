@@ -20,8 +20,8 @@ final class DebugCollectionMenu: NSObject { /// NSObject for collection delegate
     typealias DataSource = UICollectionViewDiffableDataSource<DebugMenuSection, DebugMenuItem>
     typealias Snapshot = NSDiffableDataSourceSnapshot<DebugMenuSection, DebugMenuItem>
     
-    let inp = PassthroughSubject<Action, Never>()
-    let out = PassthroughSubject<Response, Never>()
+    let input = PassthroughSubject<Action, Never>()
+    let output = PassthroughSubject<Response, Never>()
  
     private unowned let collectionView: UICollectionView
     private var dataSource: DataSource!
@@ -31,7 +31,7 @@ final class DebugCollectionMenu: NSObject { /// NSObject for collection delegate
         self.collectionView = collectionView
         super.init()
         
-        inp.receive(on: DispatchQueue.main)
+        input
             .sink(receiveValue: { [weak self] action in
             guard let self = self else { return }
             switch action {
@@ -132,7 +132,7 @@ extension DebugCollectionMenu: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? DebugMenuCell else { return }
         cell.didSelect()
-        out.send(.didPressNode(cell.item))
+        output.send(.didPressNode(cell.item))
     }
 }
 

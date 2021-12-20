@@ -10,12 +10,12 @@ import Foundation
 final class MatrixNode: Hashable, Equatable {
     
     var isAnimating: Bool = false
-    var isVisibleGrid: Bool
+    var isGridHidden: Bool
     var id: String
         
-    init(isVisibleGrid: Bool) {
+    init(isGridHidden: Bool) {
         id = UUID().uuidString
-        self.isVisibleGrid = isVisibleGrid
+        self.isGridHidden = isGridHidden
     }
     
     func hash(into hasher: inout Hasher) {

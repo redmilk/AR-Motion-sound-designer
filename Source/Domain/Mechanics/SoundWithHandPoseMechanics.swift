@@ -58,27 +58,31 @@ final class SoundWithHandposeMechanics: PoseDetectorProvider,
             .store(in: &self.bag)
         
         /// handle detection manager output
-        poseDetector.output.receive(on: DispatchQueue.main)
+        poseDetector.output
             .sink(receiveValue: { [weak self] detectionResponse in
                 guard let self = self else { return }
                 switch detectionResponse {
                 case .result(let dots, _):
+                    DispatchQueue.main.sync {
                         self.removeDetectionAnnotations()
-                        /// play sound with dots
-                        dots.forEach { point in
+                    }
+                    /// play sound with dots
+                    dots.forEach { point in
+                        DispatchQueue.main.sync {
                             self.drawLandmarksForPose(atPoint: point)
                             if let indexPath = self.matrixCollection.indexPathForItem(at: point),
                                let cell = self.matrixCollection.cellForItem(at: indexPath) as? MatrixNodeCell {
                                 cell.trigger()
                                 //self.output.send(.affectedNode(cell: cell, indePath: indexPath))
-
-    //                            let zoneHitTest = ZoneTriggerHitTest(zone: cell.bounds, dot: point)
-    //                            if zoneHitTest.validateConditions() {
-    //
-    //                              //  self.output.send(.affectedNode(cell: cell, indePath: indexPath))
-    //                            }
+                                
+                                //                            let zoneHitTest = ZoneTriggerHitTest(zone: cell.bounds, dot: point)
+                                //                            if zoneHitTest.validateConditions() {
+                                //
+                                //                              //  self.output.send(.affectedNode(cell: cell, indePath: indexPath))
+                                //                            }
                             }
                         }
+                    }
                 }
             })
             .store(in: &self.bag)

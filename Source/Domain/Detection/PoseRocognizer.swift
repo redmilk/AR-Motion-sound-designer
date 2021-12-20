@@ -101,16 +101,7 @@ final class PoseRocognizer: ErrorHandlerProvider, PerformanceMeasurmentProvider 
         }
     }
     
-    private var landmarks: [PoseLandmarkType] = [ ]
-    
-    /*= [
-        //.leftWrist, .rightWrist,
-        .leftPinkyFinger, .rightPinkyFinger,
-        .leftIndexFinger, .rightIndexFinger,
-        //.rightAnkle, .rightHeel, .rightToe, // Left leg
-        //.leftAnkle, .leftHeel, .leftToe     // Right leg
-        //.leftEye, .rightEye, .leftEar, .rightEar, .mouthLeft, .mouthRight, .leftEyeOuter, .rightEyeOuter, .leftEyeInner, .rightEyeInner, .nose
-    ] */
+    private var landmarks: [PoseLandmarkType] = []
     private var bag = Set<AnyCancellable>()
 }
 

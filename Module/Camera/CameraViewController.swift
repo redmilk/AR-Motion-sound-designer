@@ -63,16 +63,24 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-        debugWindow.input.send(.matrixCollectionPublisher(matrixCollection.output.eraseToAnyPublisher()))
         /// debug view out
         debugWindow.output
             .sink(receiveValue: { [weak self] response in
                 switch response {
-                case .scaleUpGrid: self?.matrixCollection.input.send(.scaleDown)
-                case .scaleDownGrid: self?.matrixCollection.input.send(.scaleUp)
+                case .scaleUpGrid: self?.matrixCollection.input.send(.scaleUp)
+                case .scaleDownGrid: self?.matrixCollection.input.send(.scaleDown)
                 case .shouldHideGrid(let shouldHideGrid):
                     self?.matrixCollection.input.send(.shouldHideGrid(shouldHideGrid))
+                }
+            })
+            .store(in: &bag)
+        
+        matrixCollection.output
+            .sink(receiveValue: { [weak self] response in
+                switch response {
+                case .didPressNode(_): break
+                case .currentScale(let currentScale):
+                    self?.debugWindow.input.send(.currentScale(currentScale))
                 }
             })
             .store(in: &bag)
@@ -84,7 +92,7 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
         
         performanceMeasurment.input.send(.startMeasure)
         matrixCollection.input.send(.initialSetup)
-        matrixCollection.input.send(.configureScaling(.scale2048))
+        matrixCollection.input.send(.configureScaling(scale: .scale1024, isGridHidden: false))
     }
     
     override func viewWillAppear(_ animated: Bool) {
