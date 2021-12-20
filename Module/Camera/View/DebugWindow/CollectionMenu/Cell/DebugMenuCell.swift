@@ -23,9 +23,6 @@ final class DebugMenuCell: UICollectionViewCell {
     func didSelect() {
         item.isSelected.toggle()
         containerView.layer.borderWidth = item.isSelected ? 3 : 0
-        mainLabel.text = item.isSelected ?
-        item.landmark.description.uppercased() :
-        item.landmark.description.lowercased()
     }
     
     func configureWith(_ item: DebugMenuItem) {

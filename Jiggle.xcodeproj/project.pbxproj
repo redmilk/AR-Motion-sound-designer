@@ -56,7 +56,7 @@
 		79A6FFE727628E27002E78E0 /* OneEuroFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6FFE627628E27002E78E0 /* OneEuroFilter.swift */; };
 		79A6FFEC27629E50002E78E0 /* UtilsForDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6FFEB27629E50002E78E0 /* UtilsForDrawing.swift */; };
 		79A6FFEE27629EAB002E78E0 /* UtilsForPoseDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6FFED27629EAB002E78E0 /* UtilsForPoseDetection.swift */; };
-		79A6FFF12762A3F0002E78E0 /* PoseRocognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6FFE827628FAD002E78E0 /* PoseRocognizer.swift */; };
+		79A6FFF12762A3F0002E78E0 /* PoseRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A6FFE827628FAD002E78E0 /* PoseRecognizer.swift */; };
 		79F913B42746501500771FFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F913B32746501500771FFE /* AppDelegate.swift */; };
 		79F913B62746501500771FFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F913B52746501500771FFE /* SceneDelegate.swift */; };
 		79F913BD2746501900771FFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79F913BC2746501900771FFE /* Assets.xcassets */; };
@@ -151,7 +151,7 @@
 		798F2BBA2763968900A47CC2 /* MatrixNodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatrixNodeCell.xib; sourceTree = "<group>"; };
 		79A6FFE327628BC3002E78E0 /* PointProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointProcessor.swift; sourceTree = "<group>"; };
 		79A6FFE627628E27002E78E0 /* OneEuroFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneEuroFilter.swift; sourceTree = "<group>"; };
-		79A6FFE827628FAD002E78E0 /* PoseRocognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseRocognizer.swift; sourceTree = "<group>"; };
+		79A6FFE827628FAD002E78E0 /* PoseRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseRecognizer.swift; sourceTree = "<group>"; };
 		79A6FFEB27629E50002E78E0 /* UtilsForDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsForDrawing.swift; sourceTree = "<group>"; };
 		79A6FFED27629EAB002E78E0 /* UtilsForPoseDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsForPoseDetection.swift; sourceTree = "<group>"; };
 		79F913B02746501500771FFE /* Jiggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jiggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,7 +250,7 @@
 		791CC44E2764C21400813FAC /* Detection */ = {
 			isa = PBXGroup;
 			children = (
-				79A6FFE827628FAD002E78E0 /* PoseRocognizer.swift */,
+				79A6FFE827628FAD002E78E0 /* PoseRecognizer.swift */,
 				7953DE2B2768DEA40003DF71 /* PoseRecognizerNative.swift */,
 			);
 			path = Detection;
@@ -744,7 +744,7 @@
 				796A59F32747A02B008BA88B /* UserDefaultsPropertyWrapper.swift in Sources */,
 				79189E00274672900023628A /* Logger.swift in Sources */,
 				794B56FA276BF9DD001A7FE6 /* DebugCollectionModels.swift in Sources */,
-				79A6FFF12762A3F0002E78E0 /* PoseRocognizer.swift in Sources */,
+				79A6FFF12762A3F0002E78E0 /* PoseRecognizer.swift in Sources */,
 				798F2BB7276393E200A47CC2 /* MatrixNode.swift in Sources */,
 				7965FCFE275E44D0002C1C1B /* CameraCoordinator.swift in Sources */,
 				79A6FFEC27629E50002E78E0 /* UtilsForDrawing.swift in Sources */,

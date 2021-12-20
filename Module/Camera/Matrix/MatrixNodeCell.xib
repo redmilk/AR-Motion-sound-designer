@@ -15,23 +15,8 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6dB-vQ-wRV">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </subviews>
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="6dB-vQ-wRV" secondAttribute="trailing" id="0Es-fs-G0H"/>
-                <constraint firstItem="6dB-vQ-wRV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5x9-A7-BTD"/>
-                <constraint firstItem="6dB-vQ-wRV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WfP-mu-cV3"/>
-                <constraint firstAttribute="bottom" secondItem="6dB-vQ-wRV" secondAttribute="bottom" id="ihI-4b-OKb"/>
-            </constraints>
-            <connections>
-                <outlet property="containerView" destination="6dB-vQ-wRV" id="jB1-FG-n71"/>
-            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </collectionViewCell>
     </objects>

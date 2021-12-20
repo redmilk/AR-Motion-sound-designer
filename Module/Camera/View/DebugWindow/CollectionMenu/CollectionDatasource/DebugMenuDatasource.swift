@@ -67,8 +67,8 @@ extension PoseLandmarkType: CustomStringConvertible {
     public var description: String {
         switch self {
             /// legs
-        case .leftHip: return "left Hip"
-        case .rightHip: return "right Hip"
+        case .leftHip: return "left hip"
+        case .rightHip: return "right hip"
         case .leftKnee: return "left Knee"
         case .rightKnee: return "right Knee"
         case .leftAnkle: return "left Ankle"

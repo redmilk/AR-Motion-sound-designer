@@ -9,9 +9,9 @@ import Foundation
 
 final class MatrixNode: Hashable, Equatable {
     
+    var id: String
     var isAnimating: Bool = false
     var isGridHidden: Bool
-    var id: String
         
     init(isGridHidden: Bool) {
         id = UUID().uuidString

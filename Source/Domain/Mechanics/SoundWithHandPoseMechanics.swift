@@ -59,28 +59,23 @@ final class SoundWithHandposeMechanics: PoseDetectorProvider,
         
         /// handle detection manager output
         poseDetector.output
+            .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] detectionResponse in
-                guard let self = self else { return }
                 switch detectionResponse {
                 case .result(let dots, _):
-                    DispatchQueue.main.sync {
-                        self.removeDetectionAnnotations()
-                    }
                     /// play sound with dots
                     dots.forEach { point in
-                        DispatchQueue.main.sync {
-                            self.drawLandmarksForPose(atPoint: point)
-                            if let indexPath = self.matrixCollection.indexPathForItem(at: point),
-                               let cell = self.matrixCollection.cellForItem(at: indexPath) as? MatrixNodeCell {
-                                cell.trigger()
-                                //self.output.send(.affectedNode(cell: cell, indePath: indexPath))
-                                
-                                //                            let zoneHitTest = ZoneTriggerHitTest(zone: cell.bounds, dot: point)
-                                //                            if zoneHitTest.validateConditions() {
-                                //
-                                //                              //  self.output.send(.affectedNode(cell: cell, indePath: indexPath))
-                                //                            }
-                            }
+                        //self.drawLandmarksForPose(atPoint: point)
+                        if let indexPath = self?.matrixCollection.indexPathForItem(at: point),
+                           let cell = self?.matrixCollection.cellForItem(at: indexPath) as? MatrixNodeCell {
+                            cell.trigger()
+                            //self.output.send(.affectedNode(cell: cell, indePath: indexPath))
+                            
+                            //                            let zoneHitTest = ZoneTriggerHitTest(zone: cell.bounds, dot: point)
+                            //                            if zoneHitTest.validateConditions() {
+                            //
+                            //                              //  self.output.send(.affectedNode(cell: cell, indePath: indexPath))
+                            //                            }
                         }
                     }
                 }
@@ -128,25 +123,25 @@ private extension SoundWithHandposeMechanics {
     
     func drawSkeletonIfNeeded(startLandmarkPoint: CGPoint, endLandmarkPoint: CGPoint) {
         if configuration.shouldDrawSkeleton {
-        //    let startLandmark = pose.landmark(ofType: startLandmarkType)
-        //                    for endLandmarkType in endLandmarkTypesArray {
-        //                        let endLandmark = pose.landmark(ofType: endLandmarkType)
-        //                        let startLandmarkPoint = self.pointProcessor.normalizedPoint(
-        //                            fromVisionPoint: startLandmark.position,
-        //                            videoPreviewLayer: self.configuration.capturePreviewLayer,
-        //                            shouldFindAverageDot: self.configuration.shouldFingAverageDot,
-        //                            width: width,
-        //                            height: height,
-        //                            type: startLandmark.type)
-        //                        let endLandmarkPoint = self.pointProcessor.normalizedPoint(
-        //                            fromVisionPoint: endLandmark.position,
-        //                            videoPreviewLayer: self.configuration.capturePreviewLayer,
-        //                            shouldFindAverageDot: self.configuration.shouldFingAverageDot,
-        //                            width: width,
-        //                            height: height,
-        //                            type: endLandmark.type)
-        //                        self.drawSkeletonIfNeeded(startLandmarkPoint: startLandmarkPoint, endLandmarkPoint: endLandmarkPoint)
-        //                    }
+            //    let startLandmark = pose.landmark(ofType: startLandmarkType)
+            //                    for endLandmarkType in endLandmarkTypesArray {
+            //                        let endLandmark = pose.landmark(ofType: endLandmarkType)
+            //                        let startLandmarkPoint = self.pointProcessor.normalizedPoint(
+            //                            fromVisionPoint: startLandmark.position,
+            //                            videoPreviewLayer: self.configuration.capturePreviewLayer,
+            //                            shouldFindAverageDot: self.configuration.shouldFingAverageDot,
+            //                            width: width,
+            //                            height: height,
+            //                            type: startLandmark.type)
+            //                        let endLandmarkPoint = self.pointProcessor.normalizedPoint(
+            //                            fromVisionPoint: endLandmark.position,
+            //                            videoPreviewLayer: self.configuration.capturePreviewLayer,
+            //                            shouldFindAverageDot: self.configuration.shouldFingAverageDot,
+            //                            width: width,
+            //                            height: height,
+            //                            type: endLandmark.type)
+            //                        self.drawSkeletonIfNeeded(startLandmarkPoint: startLandmarkPoint, endLandmarkPoint: endLandmarkPoint)
+            //                    }
             UtilsForDrawing.addLineSegment(
                 fromPoint: startLandmarkPoint,
                 toPoint: endLandmarkPoint,

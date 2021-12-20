@@ -35,7 +35,7 @@ final class DetectionManagerConfig {
 
 // MARK: - DetectionManager
 
-final class PoseRocognizer: ErrorHandlerProvider, PerformanceMeasurmentProvider {
+final class PoseRecognizer: ErrorHandlerProvider, PerformanceMeasurmentProvider {
     /// API
     let input = PassthroughSubject<Action, Never>()
     let output = PassthroughSubject<Response, Never>()
@@ -94,9 +94,7 @@ final class PoseRocognizer: ErrorHandlerProvider, PerformanceMeasurmentProvider 
 
     ] {
         didSet {
-            poseDetectorQueue.async {
-                self.landmarks = Array(self.landmarksToTrack.keys)
-            }
+            landmarks = Array(landmarksToTrack.keys)
             Logger.log(landmarksToTrack.keys.count.description)
         }
     }
@@ -107,7 +105,7 @@ final class PoseRocognizer: ErrorHandlerProvider, PerformanceMeasurmentProvider 
 
 // MARK: - Private
 
-private extension PoseRocognizer {
+private extension PoseRecognizer {
     
     func processFrameWithSampleBuffer(_ sampleBuffer: CMSampleBuffer) {
         do {
@@ -133,30 +131,25 @@ private extension PoseRocognizer {
     
     // TODO: - try return dots one by one
     func detectPose(in image: VisionImage, width: CGFloat, height: CGFloat) throws {
-        poseDetectorQueue.async {
-            guard let pose = try? self.poseDetector.results(in: image).first else { return }
+        let landmarks = self.landmarks
+        poseDetectorQueue.async(qos: .userInteractive, flags: [.barrier]) { [weak self] in
+            guard let pose = try? self?.poseDetector.results(in: image).first, let self = self else { return }
             var dots = [CGPoint]()
-            for (_, (startLandmarkType, endLandmarkTypesArray)) in UtilsForPoseDetection.poseConnections().enumerated() {
-                self.landmarks.forEach { poseType in
-                    if startLandmarkType.rawValue == poseType.rawValue {
-                        for endLandmarkType in endLandmarkTypesArray {
-                            let landmark = pose.landmark(ofType: endLandmarkType)
-                            //guard landmark.inFrameLikelihood > 0.1 else { return }
-                        
-                            let filteredPoint = self.pointProcessor.applyOneEuroFilter(for: landmark)
-                            let normalizedPoint = self.pointProcessor.normalizedPoint(
-                                fromPoint: filteredPoint,
-                                videoPreviewLayer: self.configuration.capturePreviewLayer,
-                                shouldFindAverageDot: self.configuration.shouldFingAverageDot,
-                                width: width,
-                                height: height,
-                                type: landmark.type)
-                                        
-                            dots.append(normalizedPoint)
-                        }
-                    }
+            for landmark in landmarks {
+                let findLandmark = pose.landmark(ofType: landmark)
+                if findLandmark.inFrameLikelihood > 0.1 {
+                    let filteredPoint = self.pointProcessor.applyOneEuroFilter(for: findLandmark)
+                    let normalizedPoint = self.pointProcessor.normalizedPoint(
+                        fromPoint: filteredPoint,
+                        videoPreviewLayer: self.configuration.capturePreviewLayer,
+                        shouldFindAverageDot: self.configuration.shouldFingAverageDot,
+                        width: width,
+                        height: height,
+                        type: findLandmark.type)
+                    dots.append(normalizedPoint)
                 }
             }
+            guard !dots.isEmpty else { return }
             self.output.send(.result(dotsList: dots, pose: pose))
         }
     }

@@ -13,7 +13,7 @@ import Foundation
 fileprivate let container = EntityContainer()
 
 final class EntityContainer {
-    lazy var poseDetector = PoseRocognizer(pointProcessor: PointProcessor())
+    lazy var poseDetector = PoseRecognizer(pointProcessor: PointProcessor())
     lazy var poseDetectorNative = PoseRecognizerNative()
     lazy var sessionMediaService = SessionMediaService()
     lazy var handposeMechanics = SoundWithHandposeMechanics()
@@ -35,7 +35,7 @@ extension SessionMediaServiceProvider {
 /// Pose detector
 protocol PoseDetectorProvider { }
 extension PoseDetectorProvider {
-    var poseDetector: PoseRocognizer { container.poseDetector }
+    var poseDetector: PoseRecognizer { container.poseDetector }
 }
 
 /// Pose detector native
