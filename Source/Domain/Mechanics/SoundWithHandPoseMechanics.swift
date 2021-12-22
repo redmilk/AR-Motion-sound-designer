@@ -24,7 +24,7 @@ final class SoundWithHandposeMechanics: PoseDetectorProvider,
     }
     enum Response {
         case captureSessionReceived(AVCaptureSession)
-        case affectedNode(cell: MatrixNodeCell, indePath: IndexPath)
+        case playSoundForZone(_ soundName: String)
     }
     
     let input = PassthroughSubject<Action, Never>()
@@ -32,6 +32,7 @@ final class SoundWithHandposeMechanics: PoseDetectorProvider,
     private var bag = Set<AnyCancellable>()
     private var matrixCollection: UICollectionView!
     private var configuration: DetectionManagerConfig!
+    private var currentMask = RobotMask()
     
     init() {
         /// handle actions input
@@ -70,12 +71,9 @@ final class SoundWithHandposeMechanics: PoseDetectorProvider,
                            let cell = self?.matrixCollection.cellForItem(at: indexPath) as? MatrixNodeCell {
                             cell.trigger()
                             //self.output.send(.affectedNode(cell: cell, indePath: indexPath))
-                            
-                            //                            let zoneHitTest = ZoneTriggerHitTest(zone: cell.bounds, dot: point)
-                            //                            if zoneHitTest.validateConditions() {
-                            //
-                            //                              //  self.output.send(.affectedNode(cell: cell, indePath: indexPath))
-                            //                            }
+                            if let soundName = self?.currentMask.determinateSoundForZonesWithIndexPath(indexPath) {
+                                self?.output.send(.playSoundForZone(soundName))
+                            }
                         }
                     }
                 }

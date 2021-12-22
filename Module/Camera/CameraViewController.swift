@@ -92,7 +92,7 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
         
         performanceMeasurment.input.send(.startMeasure)
         matrixCollection.input.send(.initialSetup)
-        matrixCollection.input.send(.configureScaling(scale: .scale1024, isGridHidden: false))
+        matrixCollection.input.send(.configureScaling(scale: .scale2048, isGridHidden: false))
     }
     
     override func viewWillAppear(_ animated: Bool) {

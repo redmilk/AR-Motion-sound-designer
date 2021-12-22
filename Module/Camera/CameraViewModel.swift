@@ -55,10 +55,8 @@ final class CameraViewModel {
         handposeMechanics.output
             .sink(receiveValue: { [weak self] response in
                 switch response {
-                case .affectedNode(let cell, _): break
-//                    DispatchQueue.main.async {
-//                        cell.trigger()
-//                    }
+                case .playSoundForZone(let soundName):
+                    ZoneBaseAudio.shared.playSoundForZone(with: soundName)
                 case .captureSessionReceived(let preconfiguredCaptureSession):
                     self?.output.send(.captureSessionReceived(preconfiguredCaptureSession))
                 }

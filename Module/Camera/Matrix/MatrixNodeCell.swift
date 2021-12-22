@@ -20,10 +20,10 @@ extension UIColor {
 
 final class MatrixNodeCell: UICollectionViewCell {
 
-    var node: MatrixNode? {
+    var node: MatrixNode! {
         didSet {
-            guard let node = node else { return }
             contentView.layer.borderWidth = node.isGridHidden ? 0.0 : 0.2
+            contentView.backgroundColor = node.debugColorIfNodeBelongsToZone ?? .clear
         }
     }
 
@@ -37,7 +37,7 @@ final class MatrixNodeCell: UICollectionViewCell {
         contentView.layer.removeAllAnimations()
         contentView.backgroundColor = .random
         UIView.animate(withDuration: 1, animations: { [weak self] in
-            self?.contentView.backgroundColor = .clear
+            self?.contentView.backgroundColor = self?.node?.debugColorIfNodeBelongsToZone ?? .clear
         })
     }
 }

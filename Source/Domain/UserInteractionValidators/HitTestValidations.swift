@@ -16,18 +16,18 @@ protocol HitTestValidationStrategy {
 }
 
 struct ZoneTriggerHitTest: HitTestValidationStrategy {
-    var zone: CGRect
-    var dot: CGPoint
+    var zone: SoundZone
+    var indexPath: IndexPath
     
-    init(zone: CGRect, dot: CGPoint) {
+    init(zone: SoundZone, indexPath: IndexPath) {
         self.zone = zone
-        self.dot = dot
+        self.indexPath = indexPath
     }
     
     func validateConditions() -> Bool {
-        dot.x >= zone.minX &&
-        dot.x <= zone.maxX &&
-        dot.y >= zone.minY &&
-        dot.y <= zone.maxY
+        let x = indexPath.row
+        let y = indexPath.section
+        
+        return zone.minX...zone.maxX ~= x && zone.minY...zone.maxY ~= y
     }
 }

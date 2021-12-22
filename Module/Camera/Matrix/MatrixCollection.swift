@@ -126,15 +126,18 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
         .store(in: &bag)
     }
     
-    private func emitNodes(_ count: Int, isGridHidden: Bool = true) -> [MatrixNode] {
-        var nodes: [MatrixNode] = []
-        for _ in 1...count {
-            autoreleasepool {
-                let node = MatrixNode(isGridHidden: isGridHidden)
-                nodes.append(node)
+    private func emitNodes(lines: Int, rows: Int, isGridHidden: Bool = true) -> [MatrixSection] {
+        var sections: [MatrixSection] = []
+        for i in 0...lines - 1 {
+            var items: [MatrixNode] = []
+            for j in 0...rows - 1 {
+                let isIndexPathBelongsToZone = MaskManager.shared.activeMaskData?.determinateIndexPathZoneColor(IndexPath(row: j, section: i))
+                items.append(MatrixNode(isGridHidden: isGridHidden, debugColorIfNodeBelongsToZone: isIndexPathBelongsToZone))
             }
+            let section = MatrixSection(nodes: items, id: UUID().uuidString)
+            sections.append(section)
         }
-        return nodes
+        return sections
     }
     
     private func setupScaleType(_ scaleType: GridScale, isVisibleGrid: Bool) {
@@ -142,30 +145,30 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
         switch scaleType {
         case .scale8196:
             layoutCollectionAsGrid(itemSize: itemSize8196, groupHeight: groupHeight8196, groupItemsCount: groupItemsCount8196)
-            replaceAllWithNewNodes(emitNodes(4096 * 2, isGridHidden: isVisibleGrid))
+            replaceAllWithNewNodes(emitNodes(lines: 128, rows: 64, isGridHidden: isVisibleGrid))
         case .scale2048:
             layoutCollectionAsGrid(itemSize: itemSize2048, groupHeight: groupHeight2048, groupItemsCount: groupItemsCount2048)
-            replaceAllWithNewNodes(emitNodes(2048, isGridHidden: isVisibleGrid))
+            replaceAllWithNewNodes(emitNodes(lines: 64, rows: 32, isGridHidden: isVisibleGrid))
         case .scale1024:
             layoutCollectionAsGrid(itemSize: itemSize1024, groupHeight: groupHeight1024, groupItemsCount: groupItemsCount1024)
-            replaceAllWithNewNodes(emitNodes(512, isGridHidden: isVisibleGrid))
+            replaceAllWithNewNodes(emitNodes(lines: 64, rows: 16, isGridHidden: isVisibleGrid))
         case .scale256:
             layoutCollectionAsGrid(itemSize: itemSize256, groupHeight: groupHeight256, groupItemsCount: groupItemsCount256)
-            replaceAllWithNewNodes(emitNodes(128, isGridHidden: isVisibleGrid))
+            replaceAllWithNewNodes(emitNodes(lines: 32, rows: 8, isGridHidden: isVisibleGrid))
         case .scale32:
             layoutCollectionAsGrid(itemSize: itemSize32, groupHeight: groupHeight32, groupItemsCount: groupItemsCount32)
-            replaceAllWithNewNodes(emitNodes(32, isGridHidden: isVisibleGrid))
+            replaceAllWithNewNodes(emitNodes(lines: 8, rows: 4, isGridHidden: isVisibleGrid))
         }
         collectionView.reloadData()
         output.send(.currentScale(scaleType))
     }
 
-    private func replaceAllWithNewNodes(_ nodes: [MatrixNode]) {
+    private func replaceAllWithNewNodes(_ sections: [MatrixSection]) {
         var snapshot = Snapshot()
-        let section = MatrixSection(nodes: [], id: UUID().uuidString)
-        snapshot.appendSections([section])
-        snapshot.appendItems(nodes, toSection: section)
-
+        snapshot.appendSections(sections)
+        for section in sections {
+            snapshot.appendItems(section.nodes, toSection: section)
+        }
         let runLoopMode = CFRunLoopMode.commonModes.rawValue
         CFRunLoopPerformBlock(CFRunLoopGetMain(), runLoopMode) { [weak dataSource] in
             dataSource?.apply(snapshot, animatingDifferences: false)
