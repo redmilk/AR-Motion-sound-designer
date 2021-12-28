@@ -32,7 +32,7 @@ final class SoundWithHandposeMechanics: PoseDetectorProvider,
     private var bag = Set<AnyCancellable>()
     private var matrixCollection: UICollectionView!
     private var configuration: DetectionManagerConfig!
-    private var currentMask = RobotMask()
+    private var currentMask = Mask64Mapper().makeMask64()
     
     init() {
         /// handle actions input

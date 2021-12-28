@@ -9,7 +9,7 @@ import Foundation
 
 // MASK
 enum MaskPreset: String, CaseIterable {
-    case robot//jiggle, jingleBells, robot, starWars, donda
+    case mask64//robot//jiggle, jingleBells, robot, starWars, donda
 }
 
 class MaskManager {
@@ -28,18 +28,19 @@ class MaskManager {
 //        }
     }
     
-    var activeMask: MaskPreset = .robot
+    var activeMask: MaskPreset = .mask64
     var activeMaskData: MaskProtocol? {
         maskPresets[activeMask]
     }
     
     init() {
         maskPresets = [
+            .mask64: Mask64Mapper().makeMask64()
+            //.robot: RobotMask(),
             //.jiggle: JiggleMask(),
             //.cinematic: CinematicMask(),
             //.jingleBells: JingleBellMask(),
             //.money: MoneyMask(),
-            .robot: RobotMask(),
             //.tabla: TablaMask()
             //.starWars: StarWarsMask(),
             //.donda: DandaMask()

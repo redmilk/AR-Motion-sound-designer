@@ -151,7 +151,7 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
             replaceAllWithNewNodes(emitNodes(lines: 64, rows: 32, isGridHidden: isVisibleGrid))
         case .scale1024:
             layoutCollectionAsGrid(itemSize: itemSize1024, groupHeight: groupHeight1024, groupItemsCount: groupItemsCount1024)
-            replaceAllWithNewNodes(emitNodes(lines: 64, rows: 16, isGridHidden: isVisibleGrid))
+            replaceAllWithNewNodes(emitNodes(lines: 96, rows: 16, isGridHidden: isVisibleGrid))
         case .scale256:
             layoutCollectionAsGrid(itemSize: itemSize256, groupHeight: groupHeight256, groupItemsCount: groupItemsCount256)
             replaceAllWithNewNodes(emitNodes(lines: 32, rows: 8, isGridHidden: isVisibleGrid))
