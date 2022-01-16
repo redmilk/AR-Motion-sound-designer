@@ -9,13 +9,12 @@ import Foundation
 
 // MASK
 enum MaskPreset: String, CaseIterable {
-    case mask64//robot//jiggle, jingleBells, robot, starWars, donda
+    case editor, mask64, robot //jiggle, jingleBells, robot, starWars, donda
 }
 
 class MaskManager {
     
     static let shared = MaskManager()
-        
     let maskPresets: [MaskPreset: MaskProtocol]
     let forcePlayingSoundFilenames: [String: Bool] = ["": true]
     
@@ -28,15 +27,17 @@ class MaskManager {
 //        }
     }
     
-    var activeMask: MaskPreset = .mask64
+    var activeMask: MaskPreset? = .editor
     var activeMaskData: MaskProtocol? {
-        maskPresets[activeMask]
+        guard let activeMask = activeMask else { return nil }
+        return maskPresets[activeMask]
     }
     
     init() {
         maskPresets = [
-            .mask64: Mask64Mapper().makeMask64()
-            //.robot: RobotMask(),
+            .editor: EditorZoneSelection.shared.mask,
+            .mask64: Mask64Mapper().makeMask64(),
+            .robot: RobotMask()
             //.jiggle: JiggleMask(),
             //.cinematic: CinematicMask(),
             //.jingleBells: JingleBellMask(),

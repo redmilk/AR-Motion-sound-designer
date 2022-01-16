@@ -14,6 +14,18 @@ extension UICollectionView {
         setContentOffset(attributes.frame.origin, animated: animated)
     }
     
+    func getIndexPathsListForPoints(_ points: [CGPoint]) -> [IndexPath: Bool] {
+        var result: [IndexPath: Bool] = [:]
+        for point in points {
+            autoreleasepool {
+                if let indexPath = self.indexPathForItem(at: point) {
+                    result[indexPath] = true
+                }
+            }
+        }
+        return result
+    }
+    
     // MARK: - Cell
     
     func register<T>(cellClassName name: T.Type) {

@@ -19,6 +19,7 @@ enum LoggerTypes: Int {
     case subscriptionFinished
     case deinited
     case errorDescription
+    case grid
 }
 
 final class Logger {
@@ -38,7 +39,7 @@ final class Logger {
                     line: Int = #line,
                     function: String = #function
     ) {
-        Swift.print(" - LOGGER \(time) ❌ ❌ ❌ ERROR \nFunction: \((function as NSString).lastPathComponent), File: \((path as NSString).lastPathComponent), Line: \((line.description as NSString).lastPathComponent)")
+        Swift.print("--- \(time) ❌ ❌ ❌ ERROR \nFunction: \((function as NSString).lastPathComponent), File: \((path as NSString).lastPathComponent), Line: \((line.description as NSString).lastPathComponent)")
 
         if let e = error {
             debugPrint(e)
@@ -93,27 +94,29 @@ final class Logger {
         switch type {
         /// just comment unnecessary printing logs
         case .all:
-            print(str: " - LOGGER \(time) 🟨 " + string + "\nFunction: \((function as NSString).lastPathComponent), File: \((path as NSString).lastPathComponent), Line: \((line.description as NSString).lastPathComponent)")
+            print(str: "--- \(time) 🟨 " + string + "\nFunction: \((function as NSString).lastPathComponent), File: \((path as NSString).lastPathComponent), Line: \((line.description as NSString).lastPathComponent)")
         case .responses:
-            print(str:" - LOGGER \(time) ✅ Response " + string)
+            print(str:"--- \(time) ✅ Response " + string)
         case .requests:
-            print(str:" - LOGGER \(time) 📡 Request " + string)
+            print(str:"--- \(time) 📡 Request " + string)
         case .lifecycle:
-            print(str:" - LOGGER \(time) 🔄 Lifecycle " + string)
+            print(str:"--- \(time) 🔄 Lifecycle " + string)
         case .sockets:
-            print(str:" - LOGGER \(time) 🧦 Sockets " + string)
+            print(str:"--- \(time) 🧦 Sockets " + string)
         case .notifications:
-            print(str:" - LOGGER \(time) 📩 Notifications " + string)
+            print(str:"--- \(time) 📩 Notifications " + string)
         case .redirectURL:
-            print(str:" - LOGGER \(time) 🔀 Redirect URL " + string)
+            print(str:"--- \(time) 🔀 Redirect URL " + string)
         case .token:
-            print(str:" - LOGGER \(time) 🧬 Token " + string)
+            print(str:"--- \(time) 🧬 Token " + string)
         case .subscriptionFinished:
-            print(str:" - LOGGER \(time) 🗑 Finished " + string)
+            print(str:"--- \(time) 🗑 Finished " + string)
         case .deinited:
-            print(str:" - LOGGER \(time) 🚯 Deinit " + string)
+            print(str:"--- \(time) 🚯 Deinit " + string)
         case .errorDescription:
-            print(str:" - LOGGER \(time) ❌❌❌ Error " + string)
+            print(str:"--- \(time) ❌❌❌ Error " + string)
+        case .grid:
+            print(str:"--- \(time) 🕸🕸🕸 Grid " + string)
         }
     }
     

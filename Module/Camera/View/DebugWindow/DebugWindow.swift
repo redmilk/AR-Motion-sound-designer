@@ -19,6 +19,8 @@ extension DebugWindow {
         case scaleUpGrid
         case scaleDownGrid
         case shouldHideGrid(Bool)
+        case hideDebug(isHidden: Bool)
+        case resetMask
     }
 }
 
@@ -30,19 +32,99 @@ final class DebugWindow: UIView, PerformanceMeasurmentProvider, PoseDetectorProv
     @IBOutlet private weak var menuCollectionView: UICollectionView!
     /// containers
     @IBOutlet private weak var contentView: UIView!
-    @IBOutlet private weak var debugTopStack: UIStackView!
-    /// buttons / labels
-    @IBOutlet weak var infoLabelStack: UIStackView!
-    
-    @IBOutlet private weak var hideMenuButton: UIButton!
-    @IBOutlet private weak var hideGrid: UIButton!
-    @IBOutlet private weak var scaleUpGridButton: UIButton!
-    @IBOutlet private weak var currentGridScaleLabel: UILabel!
-    @IBOutlet private weak var scaleDownGridButton: UIButton!
-    @IBOutlet private weak var hideDebugButton: UIButton!
-    @IBOutlet private weak var detectionTimeLabel: UILabel!
-    @IBOutlet private weak var fpsLabel: UILabel!
 
+    /// main stacks
+    @IBOutlet weak var superStack: UIStackView!
+    @IBOutlet weak var zoneControlsStack: UIStackView!
+    @IBOutlet weak var maskControlsStack: UIStackView!
+    @IBOutlet weak var generalInfoStack: UIStackView!
+    // MARK: - Zone edit controls
+    /// position
+    @IBOutlet weak var positionInfoStack: UIStackView!
+    @IBOutlet weak var positionXLabel: UILabel!
+    @IBOutlet weak var positionYLabel: UILabel!
+    @IBOutlet weak var positionControlsStack: UIStackView!
+    @IBOutlet weak var moveUpZoneButton: UIButton!
+    @IBOutlet weak var moveDownZoneButton: UIButton!
+    @IBOutlet weak var moveLeftZoneButton: UIButton!
+    @IBOutlet weak var moveRightZoneButton: UIButton!
+    @IBOutlet weak var scaleDownZoneButton: UIButton!
+    @IBOutlet weak var scaleUpZoneButton: UIButton!
+    /// scale
+    @IBOutlet weak var scaleInfoStack: UIStackView!
+    @IBOutlet weak var scaleInfoWidthLabel: UILabel!
+    @IBOutlet weak var scaleInfoHeightLabel: UILabel!
+    @IBOutlet weak var scaleUpAxisStack: UIStackView!
+    @IBOutlet weak var scaleDownAxisStack: UIStackView!
+    @IBOutlet weak var scaleUpWidthButton: UIButton!
+    @IBOutlet weak var scaleDownWidthButton: UIButton!
+    @IBOutlet weak var scaleUpHeightButton: UIButton!
+    @IBOutlet weak var scaleDownHeightButton: UIButton!
+    /// zone edit
+    @IBOutlet weak var zoneEditStack: UIStackView!
+    @IBOutlet weak var zoneEditAddButton: UIButton!
+    @IBOutlet weak var zoneEditSelectButton: UIButton!
+    @IBOutlet weak var zoneEditCloneButton: UIButton!
+    @IBOutlet weak var zoneEditDrawButton: UIButton!
+    @IBOutlet weak var zoneEditSoundButton: UIButton!
+    @IBOutlet weak var zoneEditConfigButton: UIButton!
+    @IBOutlet weak var zoneEditDeleteButton: UIButton!
+    @IBOutlet weak var zoneEditPreviousButton: UIButton!
+    @IBOutlet weak var zoneEditNextButton: UIButton!
+    @IBOutlet weak var zoneEditResetButton: UIButton!
+    @IBOutlet weak var zoneEditCommitButton: UIButton!
+
+    // MARK: - Zone edit controls
+    @IBOutlet private weak var hideEverythingButton: UIButton!
+    @IBOutlet private weak var detectionSettingButton: UIButton!
+    @IBOutlet weak var performanceInfoStack: UIStackView!
+    @IBOutlet private weak var fpsLabel: UILabel!
+    @IBOutlet private weak var currentGridScaleLabel: UILabel!
+    @IBOutlet weak var zoneInfoStack: UIStackView!
+    @IBOutlet private weak var zoneTitleLabel: UILabel!
+    @IBOutlet weak var zoneOrderNumberLabel: UILabel!
+    @IBOutlet weak var zoneSoundNameLabel: UILabel!
+    @IBOutlet weak var zoneForceSoundStatusLabel: UILabel!
+    @IBOutlet weak var zoneVolumeLabel: UILabel!
+    @IBOutlet weak var zoneMuteGroupLabel: UILabel!
+    @IBOutlet weak var zoneIsHiddenLabel: UILabel!
+    @IBOutlet private weak var hideGrid: UIButton!
+    /// mask edit
+    @IBOutlet private weak var createNewMaskButton: UIButton!
+    @IBOutlet private weak var switchMaskButton: UIButton!
+    @IBOutlet private weak var resetMaskButton: UIButton!
+    @IBOutlet private weak var saveMaskButton: UIButton!
+    @IBOutlet private weak var exportMaskButton: UIButton!
+    @IBOutlet private weak var importMaskButton: UIButton!
+    @IBOutlet private weak var selectBackgroundSoundButton: UIButton!
+    @IBOutlet private weak var maskSettingsButton: UIButton!
+
+    // MARK: - General info
+    /// current mask
+    @IBOutlet weak var maskTitleLabel: UILabel!
+    @IBOutlet weak var maskOrderNumberLabel: UILabel!
+    @IBOutlet weak var maskZonesTotalLabel: UILabel!
+    @IBOutlet weak var maskBackgroundSoundLabel: UILabel!
+    @IBOutlet weak var maskTypeLabel: UILabel!
+    @IBOutlet weak var maskBackgroundSoundVolumeLabel: UILabel!
+    @IBOutlet weak var maskIsAllZonesForceSoundLabel: UILabel!
+    @IBOutlet weak var maskIsAllZonesHiddenLabel: UILabel!
+    @IBOutlet weak var maskTotalSizeLabel: UILabel!
+    @IBOutlet weak var maskAverageSoundSizeLabel: UILabel!
+    /// available resources
+    @IBOutlet weak var totalMasksCountLabel: UILabel!
+    @IBOutlet weak var defaultMasksCountLabel: UILabel!
+    @IBOutlet weak var mask64CountLabel: UILabel!
+    @IBOutlet weak var totalAvailableSoundsLabel: UILabel!
+    @IBOutlet weak var totalAvailableSoundsMP3Label: UILabel!
+    @IBOutlet weak var totalAvailableSoundsWAVLabel: UILabel!
+    /// detector collection menu
+    @IBOutlet weak var menuHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var menuBottomToStackTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var menuBottomToDebugConstraint: NSLayoutConstraint!
+    @IBOutlet weak var menuTopToDebugConstraint: NSLayoutConstraint!
+    
+    
     private var bag = Set<AnyCancellable>()
     private lazy var collectionManager = DebugCollectionMenu(collectionView: self.menuCollectionView)
     private var isGridHidden: Bool = false
@@ -109,40 +191,36 @@ private extension DebugWindow {
                 }
             })
             .store(in: &bag)
-        /// scale grid
-        scaleUpGridButton.publisher()
-            .sink(receiveValue: { [weak self] _ in
-                self?.output.send(.scaleUpGrid)
-            })
-            .store(in: &bag)
-        /// scale grid
-        scaleDownGridButton.publisher()
-            .sink(receiveValue: { [weak self] _ in
-                self?.output.send(.scaleDownGrid)
-            })
-            .store(in: &bag)
         /// hide menu button
-        hideMenuButton.publisher()
+        detectionSettingButton.publisher()
             .sink(receiveValue: { [weak self] _ in
                 self?.menuCollectionView.isHidden.toggle()
                 self?.menuCollectionView.isUserInteractionEnabled.toggle()
+                if let isHidden = self?.menuCollectionView.isHidden {
+                    self?.menuBottomToDebugConstraint.isActive = isHidden
+                    self?.menuTopToDebugConstraint.isActive = isHidden
+                    self?.layoutIfNeeded()
+                }
             })
             .store(in: &bag)
         /// hide debug button
-        hideDebugButton.publisher()
+        hideEverythingButton.publisher()
             .sink(receiveValue: { [weak self] _ in
-                self?.infoLabelStack.isHidden.toggle()
-                self?.debugTopStack.isHidden.toggle()
-                self?.hideDebugButton?.alpha = self?.debugTopStack.isHidden ?? false ? 0.4 : 1.0
-                self?.menuCollectionView.isHidden = true
-                self?.menuCollectionView.isUserInteractionEnabled = false
+                self?.output.send(.hideDebug(isHidden: true))
             })
             .store(in: &bag)
         /// hide sidebars
         hideGrid.publisher()
             .sink(receiveValue: { [weak self] _ in
-                self?.isGridHidden.toggle()
-                self?.output.send(.shouldHideGrid(self?.isGridHidden ?? false))
+               // self?.isGridHidden.toggle()
+                self?.output.send(.shouldHideGrid(true))
+            })
+            .store(in: &bag)
+        
+        /// hide menu button
+        resetMaskButton.publisher()
+            .sink(receiveValue: { [weak self] _ in
+                self?.output.send(.resetMask)
             })
             .store(in: &bag)
     }

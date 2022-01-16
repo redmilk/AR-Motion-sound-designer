@@ -9,12 +9,15 @@ import Foundation
 import UIKit
 
 final class MatrixNode: Hashable, Equatable {
-    
     var id: String
-    var debugColorIfNodeBelongsToZone: UIColor?
-    var isAnimating: Bool = false
+    
+    var isNodeBelongToZone: Bool = false
     var isGridHidden: Bool
+    var isAnimating: Bool = false
         
+    var debugColorIfNodeBelongsToZone: UIColor?
+    var colorWhenZoneSelectedInEditor: UIColor = .white
+    
     init(isGridHidden: Bool, debugColorIfNodeBelongsToZone: UIColor?) {
         id = UUID().uuidString
         self.isGridHidden = isGridHidden

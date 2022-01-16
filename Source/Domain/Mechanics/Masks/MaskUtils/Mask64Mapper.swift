@@ -42,7 +42,6 @@ struct Mask64Mapper {
                 }
                 let soundZone = SoundZone(
                     minX: x, maxX: x + rowWidth, minY: y, maxY: y + lineWidth)
-                print(counter)
                 counter += 1
                 if counter == 63 {
                     counter = 0

@@ -50,7 +50,8 @@ class ZoneBaseAudio: NSObject, AVAudioPlayerDelegate {
 //        let beatFileNameURL = documentsUrl.appendingPathComponent(fileName)
         
         var fileNameURL: URL?
-        let mask = MaskManager.shared.activeMask
+        
+        guard let mask = MaskManager.shared.activeMask else { return }
         guard let fileName = MaskManager.shared.maskPresets[mask]?.backgroundFileName else { return }
         if !fileName.hasSuffix(".wav") && !fileName.hasSuffix(".mp3") {
             guard let bundle = Bundle.main.path(forResource: fileName, ofType: "wav") else { return }
@@ -134,7 +135,7 @@ class ZoneBaseAudio: NSObject, AVAudioPlayerDelegate {
         
         var fileNameURL: URL?
 //        guard let fileName = UserDefaults.standard.string(forKey: zone.keyValue) else { return }
-        let mask = MaskManager.shared.activeMask
+        guard let mask = MaskManager.shared.activeMask else { return }
         guard let fileName = MaskManager.shared.maskPresets[mask]?.zonePresets[zone]?.soundName else { return }
         
         if !fileName.hasSuffix(".wav") && !fileName.hasSuffix(".mp3") {

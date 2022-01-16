@@ -49,7 +49,7 @@ final class CameraViewModel {
                     self?.handposeMechanics.input.send(.stopSession)
                 }
             })
-            .store(in: &bag)
+            //.store(in: &bag)
         
         /// handle response from handpose mechanicsb
         handposeMechanics.output

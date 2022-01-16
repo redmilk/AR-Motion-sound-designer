@@ -116,7 +116,7 @@ public class PerfmormanceMeasurment: NSObject {
 
     private func notifyUpdateForElapsedTime(_ elapsedTime: CFAbsoluteTime) {
         let fps = Int(round(Double(numberOfFrames) / elapsedTime))
-        output.send(.measurement(fps: "fps: \(fps)"))
+        output.send(.measurement(fps: "\(fps)"))
     }
 }
 /// Old impl.

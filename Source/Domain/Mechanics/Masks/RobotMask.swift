@@ -31,11 +31,20 @@ struct SoundZone: Hashable {
     
     let title: String = ""
     
+    func getAllPointsInsideZone() -> [CGPoint] {
+        var points = [CGPoint]()
+        for x in min(minX, maxX)...max(minX, maxX) {
+            for y in min(minY, maxY)...max(minY, maxY) {
+                points.append(CGPoint(x: x, y: y))
+            }
+        }
+        return points
+    }
+    
     func validateTriggerConditionsWithIndexPath(_ indexPath: IndexPath) -> Bool {
         let x = indexPath.row
         let y = indexPath.section
-        
-        return minX...maxX ~= x && minY...maxY ~= y
+        return min(minX, maxX)...max(minX, maxX) ~= x && min(minY, maxY)...max(minY, maxY) ~= y
     }
     
     func hash(into hasher: inout Hasher) {
@@ -53,18 +62,9 @@ struct ZoneValue {
     let zoneColor: UIColor = .random.withAlphaComponent(0.5)
 }
 
-protocol MaskProtocol {
-    var zonePresets: [SoundZone: ZoneValue] { get }
-    var backgroundFileName: String? { get }
-    func determinateSoundForZonesWithIndexPath(_ indexPath: IndexPath) -> String?
-    func determinateIndexPathZoneColor(_ indexPath: IndexPath) -> UIColor?
-}
-
-struct RobotMask: MaskProtocol {
-    let zonePresets: [SoundZone: ZoneValue]
-    let backgroundFileName: String? = nil
-    
-    init() {
+class RobotMask: MaskBase {
+    override init() {
+        super.init()
         //let animationFrameDecoder = AnimationFrameDecoder()
         var zonePresets: [SoundZone: ZoneValue] = [:]
         
@@ -97,27 +97,5 @@ struct RobotMask: MaskProtocol {
         zonePresets[sound7Zone] = sound7Value
         
         self.zonePresets = zonePresets
-    }
-    
-    func determinateSoundForZonesWithIndexPath(_ indexPath: IndexPath) -> String? {
-        var soundFileName: String?
-        Set(zonePresets.keys).forEach {
-            if $0.validateTriggerConditionsWithIndexPath(indexPath) {
-                soundFileName = zonePresets[$0]?.soundName
-                return
-            }
-        }
-        return soundFileName
-    }
-    
-    func determinateIndexPathZoneColor(_ indexPath: IndexPath) -> UIColor? {
-        var color: UIColor?
-        Set(zonePresets.keys).forEach {
-            if $0.validateTriggerConditionsWithIndexPath(indexPath) {
-                color = zonePresets[$0]?.zoneColor
-                return
-            }
-        }
-        return color
     }
 }

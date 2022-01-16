@@ -36,8 +36,8 @@ final class MatrixNodeCell: UICollectionViewCell {
     func trigger() {
         contentView.layer.removeAllAnimations()
         contentView.backgroundColor = .random
-        UIView.animate(withDuration: 1, animations: { [weak self] in
-            self?.contentView.backgroundColor = self?.node?.debugColorIfNodeBelongsToZone ?? .clear
-        })
+        UIView.animate(withDuration: 1.5, delay: 0.0, options: [.allowUserInteraction], animations: {
+            self.contentView.backgroundColor = self.node?.debugColorIfNodeBelongsToZone ?? .clear
+        }, completion: nil)
     }
 }

@@ -20,3 +20,16 @@ extension XibDesignable where Self: UIView {
     }
 }
 extension UIView: XibDesignable { }
+
+extension UIView {
+    func addAndFill(_ subview: UIView, topPadding: Int = 0) {
+        subview.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(subview)
+        self.addConstraints([
+            NSLayoutConstraint(item: subview, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: CGFloat(topPadding)),
+            NSLayoutConstraint(item: subview, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: subview, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: subview, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0)
+        ])
+    }
+}

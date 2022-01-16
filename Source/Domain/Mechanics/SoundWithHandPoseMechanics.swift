@@ -29,10 +29,13 @@ final class SoundWithHandposeMechanics: PoseDetectorProvider,
     
     let input = PassthroughSubject<Action, Never>()
     let output = PassthroughSubject<Response, Never>()
+    
     private var bag = Set<AnyCancellable>()
     private var matrixCollection: UICollectionView!
     private var configuration: DetectionManagerConfig!
-    private var currentMask = Mask64Mapper().makeMask64()
+    private var currentMask: MaskProtocol? {
+        MaskManager.shared.activeMaskData
+    }
     
     init() {
         /// handle actions input
@@ -51,7 +54,7 @@ final class SoundWithHandposeMechanics: PoseDetectorProvider,
                     self?.poseDetector.input.send(.configure(configuration))
                     self?.sessionMediaService.input.send(.configure)
                 case .startSession:
-                    self?.sessionMediaService.input.send(.startSession)
+                    break//self?.sessionMediaService.input.send(.startSession)
                 case .stopSession:
                     self?.sessionMediaService.input.send(.stopSession)
                 }
@@ -71,7 +74,7 @@ final class SoundWithHandposeMechanics: PoseDetectorProvider,
                            let cell = self?.matrixCollection.cellForItem(at: indexPath) as? MatrixNodeCell {
                             cell.trigger()
                             //self.output.send(.affectedNode(cell: cell, indePath: indexPath))
-                            if let soundName = self?.currentMask.determinateSoundForZonesWithIndexPath(indexPath) {
+                            if let soundName = self?.currentMask?.determinateSoundForZonesWithIndexPath(indexPath) {
                                 self?.output.send(.playSoundForZone(soundName))
                             }
                         }
