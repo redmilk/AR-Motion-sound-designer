@@ -20,6 +20,7 @@ enum LoggerTypes: Int {
     case deinited
     case errorDescription
     case grid
+    case editor
 }
 
 final class Logger {
@@ -114,9 +115,11 @@ final class Logger {
         case .deinited:
             print(str:"--- \(time) 🚯 Deinit " + string)
         case .errorDescription:
-            print(str:"--- \(time) ❌❌❌ Error " + string)
+            print(str:"--- \(time) ❌ Error " + string)
         case .grid:
-            print(str:"--- \(time) 🕸🕸🕸 Grid " + string)
+            print(str:"--- \(time) 🕸 Grid " + string)
+        case .editor:
+            print(str:"--- \(time) 🎛 Editor " + string)
         }
     }
     

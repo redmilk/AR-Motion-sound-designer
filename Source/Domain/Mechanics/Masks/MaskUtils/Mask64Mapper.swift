@@ -48,7 +48,7 @@ struct Mask64Mapper {
                 }
                 let soundNameStr = counter >= 10 ?
                 counter.description : "0\(counter)"
-                let soundValue = ZoneValue(icons: nil, soundName: soundNameStr)
+                let soundValue = ZoneValue(icons: nil, soundName: soundNameStr, color: .random.withAlphaComponent(0.5))
                 zonePresets[soundZone] = soundValue
             }
             prevRowX = nil
@@ -86,7 +86,7 @@ struct Mask64SoundsDemo: MaskProtocol {
         var color: UIColor?
         Set(zonePresets.keys).forEach {
             if $0.validateTriggerConditionsWithIndexPath(indexPath) {
-                color = zonePresets[$0]?.zoneColor
+                color = zonePresets[$0]?.color
                 return
             }
         }

@@ -9,11 +9,12 @@ import Foundation
 import UIKit
 import Combine
 
-/// I/O models
 extension DebugWindow {
     enum Action {
         case populateMenuCollection
         case currentScale(MatrixCollection.GridScale)
+        case forcedMode(EditorZoneSelection.Mode)
+        case currentZoneInfo(EditorDescription)
     }
     enum Response {
         case scaleUpGrid
@@ -21,6 +22,8 @@ extension DebugWindow {
         case shouldHideGrid(Bool)
         case hideDebug(isHidden: Bool)
         case resetMask
+        case editorMode(EditorZoneSelection.Mode)
+        case transformZone(x: Int, y: Int, w: Int, h: Int)
     }
 }
 
@@ -29,10 +32,8 @@ final class DebugWindow: UIView, PerformanceMeasurmentProvider, PoseDetectorProv
     let input = PassthroughSubject<Action, Never>()
     let output = PassthroughSubject<Response, Never>()
     /// collections
-    @IBOutlet private weak var menuCollectionView: UICollectionView!
     /// containers
     @IBOutlet private weak var contentView: UIView!
-
     /// main stacks
     @IBOutlet weak var superStack: UIStackView!
     @IBOutlet weak var zoneControlsStack: UIStackView!
@@ -112,26 +113,42 @@ final class DebugWindow: UIView, PerformanceMeasurmentProvider, PoseDetectorProv
     @IBOutlet weak var maskTotalSizeLabel: UILabel!
     @IBOutlet weak var maskAverageSoundSizeLabel: UILabel!
     /// available resources
-    @IBOutlet weak var totalMasksCountLabel: UILabel!
+    @IBOutlet weak var totalZonesLabel: UILabel!
     @IBOutlet weak var defaultMasksCountLabel: UILabel!
     @IBOutlet weak var mask64CountLabel: UILabel!
     @IBOutlet weak var totalAvailableSoundsLabel: UILabel!
     @IBOutlet weak var totalAvailableSoundsMP3Label: UILabel!
     @IBOutlet weak var totalAvailableSoundsWAVLabel: UILabel!
     /// detector collection menu
-    @IBOutlet weak var menuHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var menuBottomToStackTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var menuBottomToDebugConstraint: NSLayoutConstraint!
-    @IBOutlet weak var menuTopToDebugConstraint: NSLayoutConstraint!
-    
+    @IBOutlet private weak var menuCollectionView: UICollectionView!
+    private lazy var collectionManager = DebugCollectionMenu(collectionView: self.menuCollectionView)
+    private lazy var touchableViews: [UIView] = { [self.menuCollectionView] }()
     
     private var bag = Set<AnyCancellable>()
-    private lazy var collectionManager = DebugCollectionMenu(collectionView: self.menuCollectionView)
     private var isGridHidden: Bool = false
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initView()
+    }
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        for view in touchableViews {
+            if let v = view.hitTest(view.convert(point, from: self), with: event) {
+                return v
+            }
+        }
+        return super.hitTest(point, with: event)
+    }
+    
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        if super.point(inside: point, with: event) {
+            return true
+        }
+        for view in touchableViews {
+            return !view.isHidden && view.point(inside: view.convert(point, from: self), with: event)
+        }
+        return false
     }
     
     private func initView() {
@@ -147,6 +164,8 @@ final class DebugWindow: UIView, PerformanceMeasurmentProvider, PoseDetectorProv
     
     func configure() {
         handleInput()
+        configureCollectionMenu()
+        handleEditorMode(.select)
     }
 }
 
@@ -154,75 +173,104 @@ final class DebugWindow: UIView, PerformanceMeasurmentProvider, PoseDetectorProv
 
 private extension DebugWindow {
     
-    func handleInput() {
+    func configureCollectionMenu() {
         menuCollectionView.isHidden = true
-        menuCollectionView.isUserInteractionEnabled = false
+        //menuCollectionView.isUserInteractionEnabled = false
         collectionManager.configure()
+        collectionManager.output.sink(receiveValue: { [weak self] response in
+            switch response {
+            case .didPressNode(let menuItem):
+                self?.poseDetector.input.send(.targetLandmarksToggle([menuItem.landmark]))
+            }
+        }).store(in: &bag)
+    }
+    
+    func handleInput() {
         /// view input actions
-        input
-            .sink(receiveValue: {  [weak self] action in
+        input.sink(receiveValue: {  [weak self] action in
             switch action {
             case .populateMenuCollection:
                 self?.collectionManager.input.send(.populateWithSections)
             case .currentScale(let currentScale):
                 self?.updateCurrentScaleLabel(currentScale)
+            case .forcedMode(let mode):
+                self?.handleEditorMode(mode)
+            case .currentZoneInfo(let selectedZoneInfo):
+                self?.updateCurrentZoneDescriptions(selectedZoneInfo)
             }
-        })
-        .store(in: &bag)
-        
-        /// collection menu manager out
-        collectionManager.output
-            .sink(receiveValue: { [weak self] response in
-                switch response {
-                case .didPressNode(let menuItem):
-                    self?.poseDetector.input.send(.targetLandmarksToggle([menuItem.landmark]))
-                }
-            })
-            .store(in: &bag)
-        
-        
+        }).store(in: &bag)
         /// performance measurment
-        performanceMeasurment.output
-            .sink(receiveValue: { [weak self] response in
+        performanceMeasurment.output.sink(receiveValue: { [weak self] response in
                 switch response {
                 case .measurement(let fps):
                     self?.fpsLabel.text = fps
                 case _: break
                 }
-            })
-            .store(in: &bag)
+            }).store(in: &bag)
         /// hide menu button
-        detectionSettingButton.publisher()
-            .sink(receiveValue: { [weak self] _ in
-                self?.menuCollectionView.isHidden.toggle()
-                self?.menuCollectionView.isUserInteractionEnabled.toggle()
-                if let isHidden = self?.menuCollectionView.isHidden {
-                    self?.menuBottomToDebugConstraint.isActive = isHidden
-                    self?.menuTopToDebugConstraint.isActive = isHidden
-                    self?.layoutIfNeeded()
-                }
-            })
-            .store(in: &bag)
+        detectionSettingButton.publisher().sink(receiveValue: { [weak self] _ in
+            self?.showHideDetectionMenu()
+        }).store(in: &bag)
         /// hide debug button
-        hideEverythingButton.publisher()
-            .sink(receiveValue: { [weak self] _ in
+        hideEverythingButton.publisher().sink(receiveValue: { [weak self] _ in
                 self?.output.send(.hideDebug(isHidden: true))
-            })
-            .store(in: &bag)
+            }).store(in: &bag)
         /// hide sidebars
-        hideGrid.publisher()
-            .sink(receiveValue: { [weak self] _ in
-               // self?.isGridHidden.toggle()
+        hideGrid.publisher().sink(receiveValue: { [weak self] _ in
                 self?.output.send(.shouldHideGrid(true))
-            })
-            .store(in: &bag)
-        
+            }).store(in: &bag)
         /// hide menu button
         resetMaskButton.publisher()
             .sink(receiveValue: { [weak self] _ in
                 self?.output.send(.resetMask)
-            })
-            .store(in: &bag)
+            }).store(in: &bag)
+        
+        // MARK: - Edit zone mode controls
+        /// selection
+        zoneEditSelectButton.publisher()
+            .sink(receiveValue: { [weak self] _ in
+                self?.handleEditorMode(.select)
+                self?.output.send(.editorMode(.select))
+            }).store(in: &bag)
+        zoneEditAddButton.publisher()
+            .sink(receiveValue: { [weak self] _ in
+                self?.handleEditorMode(.add)
+                self?.output.send(.editorMode(.add))
+                self?.output.send(.hideDebug(isHidden: true))
+            }).store(in: &bag)
+        zoneEditDrawButton.publisher()
+            .sink(receiveValue: { [weak self] _ in
+                self?.handleEditorMode(.draw)
+                self?.output.send(.editorMode(.draw))
+                self?.output.send(.hideDebug(isHidden: true))
+            }).store(in: &bag)
+        zoneEditDeleteButton.publisher()
+            .sink(receiveValue: { [weak self] _ in
+                self?.handleEditorMode(.delete)
+                self?.output.send(.editorMode(.delete))
+            }).store(in: &bag)
+        
+        // MARK: - Position and Scale controls
+        moveUpZoneButton.publisher().sink(receiveValue: { [weak self] _ in
+            self?.output.send(.transformZone(x: 0, y: -3, w: 0, h: 0))
+        }).store(in: &bag)
+        moveDownZoneButton.publisher().sink(receiveValue: { [weak self] _ in
+            self?.output.send(.transformZone(x: 0, y: 3, w: 0, h: 0))
+        }).store(in: &bag)
+        moveLeftZoneButton.publisher().sink(receiveValue: { [weak self] _ in
+            self?.output.send(.transformZone(x: -3, y: 0, w: 0, h: 0))
+        }).store(in: &bag)
+        moveRightZoneButton.publisher().sink(receiveValue: { [weak self] _ in
+            self?.output.send(.transformZone(x: 3, y: 0, w: 0, h: 0))
+        }).store(in: &bag)
+        
+        /// scale both axis
+        scaleUpZoneButton.publisher().sink(receiveValue: { [weak self] _ in
+            self?.output.send(.transformZone(x: 0, y: 0, w: 1, h: 1))
+        }).store(in: &bag)
+        scaleDownZoneButton.publisher().sink(receiveValue: { [weak self] _ in
+            self?.output.send(.transformZone(x: 0, y: 0, w: -1, h: -1))
+        }).store(in: &bag)
     }
     
     func updateCurrentScaleLabel(_ scale: MatrixCollection.GridScale) {
@@ -233,5 +281,59 @@ private extension DebugWindow {
         case .scale256: self.currentGridScaleLabel.text = "256"
         case .scale32: self.currentGridScaleLabel.text = "32"
         }
+    }
+    
+    private func handleEditorMode(_ mode: EditorZoneSelection.Mode) {
+        [zoneEditSelectButton, zoneEditAddButton, zoneEditDrawButton,
+         zoneEditSoundButton, zoneEditNextButton, zoneEditPreviousButton,
+         zoneEditCloneButton, zoneEditResetButton, zoneEditConfigButton,
+         zoneEditCommitButton, zoneEditDeleteButton].forEach { $0?.layer.borderWidth = 0 }
+        switch mode {
+        case .select:
+            zoneEditSelectButton.layer.borderWidth = 3.0
+            zoneEditSelectButton.layer.borderColor = UIColor.green.cgColor
+            debugAction("SELECT")
+        case .add:
+            zoneEditAddButton.layer.borderWidth = 3.0
+            zoneEditAddButton.layer.borderColor = UIColor.green.cgColor
+            debugAction("ADD")
+        case .draw:
+            zoneEditDrawButton.layer.borderWidth = 3.0
+            zoneEditDrawButton.layer.borderColor = UIColor.green.cgColor
+            debugAction("DRAW", delay: 2)
+        case .delete:
+            zoneEditDeleteButton.layer.borderWidth = 3.0
+            zoneEditDeleteButton.layer.borderColor = UIColor.green.cgColor
+            debugAction("DELETE")
+        case _: break
+        }
+    }
+    
+    private func updateCurrentZoneDescriptions(_ info: EditorDescription) {
+        positionXLabel.text = info.positionX.description
+        positionYLabel.text = info.positionY.description
+        scaleInfoWidthLabel.text = info.scaleX.description
+        scaleInfoHeightLabel.text = info.scaleY.description
+        totalZonesLabel.text = info.zonesTotal.description
+    }
+    
+    private func debugAction(_ msg: String, delay: TimeInterval = 1) {
+        let label = UILabel(frame: CGRect(x: 0, y: 50, width: bounds.width, height: 150))
+        label.text = msg
+        label.font = .systemFont(ofSize: 70, weight: .black)
+        label.textColor = .red
+        label.alpha = 0.4
+        label.textAlignment = .center
+        label.center.x = superview!.center.x
+        superview?.addSubview(label)
+        UIView.animate(withDuration: 0.3, delay: delay, options: [.allowUserInteraction], animations: { [weak label] in
+            label?.transform = label!.transform.scaledBy(x: 1, y: 0.01)
+        }, completion: { [weak label] _ in
+            label?.removeFromSuperview()
+        })
+    }
+    
+    private func showHideDetectionMenu() {
+        self.menuCollectionView.isHidden.toggle()
     }
 }

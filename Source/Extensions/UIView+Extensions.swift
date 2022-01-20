@@ -32,4 +32,15 @@ extension UIView {
             NSLayoutConstraint(item: subview, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0)
         ])
     }
+    func drawRect(_ rect: CGRect, strokeColor: UIColor = .white,
+                  borderWidth: CGFloat = 3.0, fillColor: UIColor = .clear) {
+        let path = UIBezierPath(rect: rect)
+        path.lineWidth = borderWidth
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.cgPath
+        shapeLayer.strokeColor = strokeColor.cgColor
+        shapeLayer.fillColor = fillColor.cgColor
+        shapeLayer.lineWidth = borderWidth
+        layer.addSublayer(shapeLayer)
+    }
 }

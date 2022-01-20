@@ -35,7 +35,7 @@ class MaskManager {
     
     init() {
         maskPresets = [
-            .editor: EditorZoneSelection.shared.mask,
+            .editor: EditorZoneSelection.mask,
             .mask64: Mask64Mapper().makeMask64(),
             .robot: RobotMask()
             //.jiggle: JiggleMask(),

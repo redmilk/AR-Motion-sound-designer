@@ -10,25 +10,22 @@
 import UIKit
 import Combine
 import AVFoundation
-import SceneKit
 
 // MARK: - CameraViewController
 
-final class CameraViewController: UIViewController, SessionMediaServiceProvider, PerformanceMeasurmentProvider {
+final class CameraViewController: UIViewController, SessionMediaServiceProvider, PerformanceMeasurmentProvider, MaskEditorProvider {
     enum State {
         case captureSessionReceived(AVCaptureSession)
         case debugWindow(isHidden: Bool)
     }
     
+    @IBOutlet private weak var recognizersContainer: UIView!
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var cameraView: UIView!
     @IBOutlet private weak var collectionView: UICollectionView!
     /// debug window
-    @IBOutlet weak var SceneView: SCNView!
     @IBOutlet private weak var debugWindow: DebugWindow!
-    
     @IBOutlet weak var debugWindowHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var easterEgg: SCNView!
     
     private lazy var matrixCollection = MatrixCollection(collectionView: collectionView)
     private let viewModel: CameraViewModel
@@ -42,7 +39,7 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
         self.viewModel = viewModel
         super.init(nibName: String(describing: CameraViewController.self), bundle: nil)
         overrideUserInterfaceStyle = .dark
-
+ 
         /// handling view model's response
         viewModel.output
             .sink(receiveValue: { [weak self] state in
@@ -52,8 +49,7 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
                     self.videoPreviewView.setupWithCaptureSession(captureSession)
                     self.viewModel.input.send(.startSession)
                     self.containerView.bringSubviewToFront(self.collectionView)
-                case .debugWindow(let isHidden):
-                    break
+                case .debugWindow(_): break
                 }
             })
             .store(in: &bag)
@@ -70,17 +66,12 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         /// editor updates
-        EditorZoneSelection.shared.newZonePub.sink(receiveValue: { zone in
-            let points = zone.keys
-                .compactMap { $0.getAllPointsInsideZone() }
-                .flatMap { $0 }
-            let indexPathList = self.collectionView.getIndexPathsListForPoints(points)
-            self.matrixCollection.input.send(.updateIndexPath(indexPathList))
-        }).store(in: &bag)
-        
-        EditorZoneSelection.shared.interactionFeedbackPub
+        editor.newZonePub
+            .sink(receiveValue: { [weak self] zone in
+                self?.matrixCollection.input.send(.drawZone(zone))
+            }).store(in: &bag)
+        editor.interactionFeedbackPub
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] point in
                 if let indexPath = self?.collectionView.indexPathForItem(at: point),
@@ -88,11 +79,26 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
                     cell.trigger()
                 }
         }).store(in: &bag)
-        
-        EditorZoneSelection.shared.openEditorPub
+        editor.openEditorPub
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] _ in
                 self?.hideDebugWindow(false)
+        }).store(in: &bag)
+        editor.modeSwitchPub
+            .sink(receiveValue: { [weak self] mode in
+                self?.debugWindow.input.send(.forcedMode(mode))
+        }).store(in: &bag)
+        editor.selectedZoneRectPub
+            .sink(receiveValue: { [weak self] zoneRect in
+                self?.recognizersContainer.drawRect(zoneRect)
+        }).store(in: &bag)
+        editor.deleteZonePub
+            .sink(receiveValue: { [weak self] zone in
+                self?.matrixCollection.input.send(.deleteZone(zone))
+        }).store(in: &bag)
+        editor.currentSelectedZoneInfoPub
+            .sink(receiveValue: { [weak self] editorInfo in
+                self?.debugWindow.input.send(.currentZoneInfo(editorInfo))
         }).store(in: &bag)
         
         /// debug view out
@@ -103,25 +109,27 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
                 case .scaleDownGrid: self?.matrixCollection.input.send(.scaleDown)
                 case .shouldHideGrid(let shouldHideGrid):
                     self?.matrixCollection.input.send(.removeAll(shouldHideGrid: shouldHideGrid))
-                    EditorZoneSelection.shared.requestSub.send(.resetMask)
+                    self?.editor.input.send(.resetMask)
                 case .hideDebug(let isHidden):
                     self?.hideDebugWindow(isHidden)
                 case .resetMask:
                     self?.matrixCollection.input.send(.removeAll(shouldHideGrid: false))
-                    EditorZoneSelection.shared.requestSub.send(.resetMask)
+                    self?.editor.input.send(.resetMask)
+                case .editorMode(let mode):
+                    self?.editor.input.send(.mode(mode))
+                case .transformZone(let x, let y, let w, let h):
+                    self?.editor.input.send(.transformZone(x: x, y: y, w: w, h: h))
                 }
             })
             .store(in: &bag)
         
-        matrixCollection.output
-            .sink(receiveValue: { [weak self] response in
+        matrixCollection.output .sink(receiveValue: { [weak self] response in
                 switch response {
                 case .didPressNode(_): break
                 case .currentScale(let currentScale):
                     self?.debugWindow.input.send(.currentScale(currentScale))
                 }
-            })
-            .store(in: &bag)
+            }).store(in: &bag)
 
         viewModel.input.send(.configureSession(
             videoPreview: videoPreviewView,
@@ -131,8 +139,7 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
         performanceMeasurment.input.send(.startMeasure)
         matrixCollection.input.send(.initialSetup)
         matrixCollection.input.send(.configureScaling(scale: .scale2048, isGridHidden: false))
-        EditorZoneSelection.shared.configure(withView: collectionView, target: self)
-        initializeEasterEgg()
+        editor.configure(withView: recognizersContainer, gridCollection: collectionView)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -150,38 +157,8 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
     }
     
     private func hideDebugWindow(_ isHidden: Bool) {
-        debugWindowHeightConstraint.constant = isHidden ? 0 : 232
         UIView.animate(withDuration: 0.5, delay: 0.0, options: [], animations: {
-            self.view.layoutIfNeeded()
-            self.debugWindow.transform = isHidden ?
-            CGAffineTransform.identity.translatedBy(x: 0.0, y: 100) : CGAffineTransform.identity
+            self.debugWindow.transform = isHidden ? CGAffineTransform.identity.translatedBy(x: 0.0, y: 400) : CGAffineTransform.identity
         }, completion: nil)
-    }
-    
-    private func initializeEasterEgg() {
-        scene.fogColor = UIColor.blue
-        scene.fogDensityExponent = 0
-        scene.set
-        let cameraNode = SCNNode()
-        cameraNode.camera = SCNCamera()
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
-
-        let lightNode = SCNNode()
-        lightNode.light = SCNLight()
-        lightNode.light!.type = .omni
-        lightNode.position = SCNVector3(x: 0, y: 10, z: 10)
-        lightNode.light!.color = UIColor.blue
-        scene.rootNode.addChildNode(lightNode)
-        
-        let ambientLightNode = SCNNode()
-        ambientLightNode.light = SCNLight()
-        ambientLightNode.light!.type = .ambient
-        ambientLightNode.light!.color = UIColor.blue
-        scene.rootNode.addChildNode(ambientLightNode)
- 
-        let ship = scene.rootNode.childNode(withName: "ship", recursively: true)!
-        ship.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 2, y: 1, z: 1, duration: 1)))
-        
-        SceneView.scene = scene
     }
 }

@@ -28,7 +28,7 @@ class MaskBase: MaskProtocol {
     
     func determinateSoundForZonesWithIndexPath(_ indexPath: IndexPath) -> String? {
         var soundFileName: String?
-        Set(zonePresets.keys).forEach {
+        zonePresets.keys.forEach {
             if $0.validateTriggerConditionsWithIndexPath(indexPath) {
                 soundFileName = zonePresets[$0]?.soundName
                 return
@@ -39,12 +39,23 @@ class MaskBase: MaskProtocol {
     
     func determinateIndexPathZoneColor(_ indexPath: IndexPath) -> UIColor? {
         var color: UIColor?
-        Set(zonePresets.keys).forEach {
+        zonePresets.keys.forEach {
             if $0.validateTriggerConditionsWithIndexPath(indexPath) {
-                color = zonePresets[$0]?.zoneColor
+                color = zonePresets[$0]?.color
                 return
             }
         }
         return color
+    }
+    
+    func determinateZone(with indexPath: IndexPath) -> [SoundZone: ZoneValue]? {
+        var zone: [SoundZone: ZoneValue]?
+        for (key, value) in zonePresets {
+            if key.validateTriggerConditionsWithIndexPath(indexPath) {
+                zone = [key: value]
+                break
+            }
+        }
+        return zone
     }
 }

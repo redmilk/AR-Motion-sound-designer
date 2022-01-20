@@ -45,8 +45,9 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
         case scaleUp
         case scaleDown
         case shouldHideGrid(Bool)
-        case updateIndexPath([IndexPath: Bool])
+        case drawZone([SoundZone: ZoneValue])
         case removeAll(shouldHideGrid: Bool)
+        case deleteZone([SoundZone: ZoneValue])
     }
     
     enum Response {
@@ -59,6 +60,13 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
     
     let input = PassthroughSubject<Request, Never>()
     let output = PassthroughSubject<Response, Never>()
+    
+    static var numberOfLinesBasedOnDeviceHeight: Int {
+        let heightWithSafeAreaTopBottom = Int(UIScreen.main.bounds.height - 32 - 44)
+        let dividableByTen = heightWithSafeAreaTopBottom - (heightWithSafeAreaTopBottom % 10)
+        let linesCount = dividableByTen / 10
+        return linesCount
+    }
  
     private unowned let collectionView: UICollectionView
     private var dataSource: DataSource!
@@ -122,11 +130,13 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
                     self.fillCollection(.scale32, isGridHidden: self.isGridHidden)
                 case .scale32: break
                 }
-            case .updateIndexPath(let indexPathList):
-                self.reloadItemsAtIndexPathList(indexPathList)
+            case .drawZone(let zone):
+                self.drawZone(zone)
             case .removeAll(let shouldHideGrid):
                 self.removeAll()
                 self.fillCollection(.scale2048, isGridHidden: shouldHideGrid)
+            case .deleteZone(let zone):
+                self.deleteZone(zone)
             }
         })
         .store(in: &bag)
@@ -141,11 +151,7 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
                 if colorIfZone != nil {
                     Logger.log(colorIfZone.debugDescription, type: .grid)
                 }
-                items.append(
-                    MatrixNode(
-                        isGridHidden: isGridHidden,
-                        debugColorIfNodeBelongsToZone: colorIfZone)// !isGridHidden ? colorIfZone : .clear)
-                )
+                items.append(MatrixNode(isGridHidden: isGridHidden, debugColorIfNodeBelongsToZone: colorIfZone))
             }
             let section = MatrixSection(nodes: items, id: UUID().uuidString)
             sections.append(section)
@@ -161,7 +167,7 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
             replaceAllWithNewNodes(emitNodes(lines: 128, rows: 64, isGridHidden: isGridHidden))
         case .scale2048:
             layoutCollectionAsGrid(itemSize: itemSize2048, groupHeight: groupHeight2048, groupItemsCount: groupItemsCount2048)
-            let linesCount = Int(((UIScreen.main.bounds.height - 34) / 10).rounded(.down))
+            let linesCount = MatrixCollection.numberOfLinesBasedOnDeviceHeight
             replaceAllWithNewNodes(emitNodes(lines: linesCount, rows: 32, isGridHidden: isGridHidden))
         case .scale1024:
             layoutCollectionAsGrid(itemSize: itemSize1024, groupHeight: groupHeight1024, groupItemsCount: groupItemsCount1024)
@@ -177,16 +183,26 @@ final class MatrixCollection: NSObject { /// NSObject for collection delegate
         output.send(.currentScale(scaleType))
     }
     
-    private func reloadItemsAtIndexPathList(_ indexPathesDict: [IndexPath: Bool]) {
+    private func drawZone(_ zone: [SoundZone: ZoneValue]) {
+        guard let zone = zone.keys.first else { return }
+        let indexPathList = zone.getAllIndexPathesInside()
+        reloadItemsAtIndexPathList(indexPathList)
+    }
+    
+    private func deleteZone(_ zone: [SoundZone: ZoneValue]) {
+        guard let zone = zone.keys.first else { return }
+        let indexPathList = zone.getAllIndexPathesInside()
+        reloadItemsAtIndexPathList(indexPathList, isDeletion: true)
+    }
+    
+    private func reloadItemsAtIndexPathList(_ indexPathList: [IndexPath], isDeletion: Bool = false) {
         var currentSnapshot = dataSource.snapshot()
         var items: [MatrixNode] = []
-        let color = UIColor.random
-        autoreleasepool {
-            items = indexPathesDict.keys.compactMap { (self.collectionView.cellForItem(at: $0) as? MatrixNodeCell)?.node }
-            items.forEach { $0.debugColorIfNodeBelongsToZone = .random }
-        }
+        items = indexPathList.compactMap { (self.collectionView.cellForItem(at: $0) as? MatrixNodeCell)?.node }
+        // MARK: - Zone pixels color
+        items.forEach { $0.debugColorIfNodeBelongsToZone = isDeletion ? nil : .random }
         currentSnapshot.reloadItems(items)
-        self.dataSource.apply(currentSnapshot, animatingDifferences: true)
+        dataSource.apply(currentSnapshot, animatingDifferences: true)
     }
 
     private func replaceAllWithNewNodes(_ sections: [MatrixSection]) {

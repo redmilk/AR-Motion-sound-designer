@@ -12,6 +12,7 @@ import UIKit
 final class DebugCollectionMenu: NSObject { /// NSObject for collection delegate
     enum Action {
         case populateWithSections
+        case populateWithSounds
     }
     enum Response {
         case didPressNode(DebugMenuItem)
@@ -30,13 +31,13 @@ final class DebugCollectionMenu: NSObject { /// NSObject for collection delegate
     init(collectionView: UICollectionView) {
         self.collectionView = collectionView
         super.init()
-        
-        input
-            .sink(receiveValue: { [weak self] action in
+        input.sink(receiveValue: { [weak self] action in
             guard let self = self else { return }
             switch action {
             case .populateWithSections:
                 self.populateWithSections()
+            case .populateWithSounds: break
+                //self.populateWithSounds()
             }
         })
         .store(in: &bag)
@@ -105,12 +106,12 @@ final class DebugCollectionMenu: NSObject { /// NSObject for collection delegate
             item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
             /// group
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(35))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 4)
             group.interItemSpacing = .fixed(2)
             /// section
             let section = NSCollectionLayoutSection(group: group)
             section.interGroupSpacing = 4
-            section.contentInsets = NSDirectionalEdgeInsets(top: 55, leading: 2, bottom: 0, trailing: 2)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 19, leading: 2, bottom: 0, trailing: 2)
             return section
         })
         let config = UICollectionViewCompositionalLayoutConfiguration()
@@ -121,6 +122,7 @@ final class DebugCollectionMenu: NSObject { /// NSObject for collection delegate
 }
 
 // MARK: - Collection Delegate
+
 private extension DebugCollectionMenu {
     func scrollToItem(withIndexPath indexPath: IndexPath) {
         Logger.log(indexPath.section.description + " " + indexPath.row.description, type: .all)

@@ -10,11 +10,13 @@ import MLKit
 
 /// item
 final class DebugMenuItem: Hashable, Equatable {
-    
     var isSelected: Bool = false
     var landmark: PoseLandmarkType
     var id: String
-        
+    
+    // select sounds mode
+    var soundForZone: String?
+    
     init(landmark: PoseLandmarkType) {
         self.landmark = landmark
         id = UUID().uuidString
@@ -26,7 +28,7 @@ final class DebugMenuItem: Hashable, Equatable {
     }
     
     static func == (lhs: DebugMenuItem, rhs: DebugMenuItem) -> Bool {
-        lhs.id == rhs.id && lhs.landmark == rhs.landmark
+        lhs.id == rhs.id && lhs.landmark == rhs.landmark && lhs.soundForZone == rhs.soundForZone
     }
 }
 

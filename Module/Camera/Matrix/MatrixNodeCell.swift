@@ -30,7 +30,6 @@ final class MatrixNodeCell: UICollectionViewCell {
     override func awakeFromNib() {
         contentView.layer.borderColor = UIColor.blue.withAlphaComponent(0.6).cgColor
         contentView.layer.borderWidth = 0.2
-        contentView.layer.masksToBounds = true
     }
     
     func trigger() {

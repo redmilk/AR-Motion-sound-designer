@@ -18,6 +18,13 @@ final class EntityContainer {
     lazy var sessionMediaService = SessionMediaService()
     lazy var handposeMechanics = SoundWithHandposeMechanics()
     lazy var performanceMeasurment = PerfmormanceMeasurment()
+    lazy var maskEditor = EditorZoneSelection()
+}
+
+/// Mask editor
+protocol MaskEditorProvider { }
+extension MaskEditorProvider {
+    var editor: EditorZoneSelection { container.maskEditor }
 }
 
 /// Performance measurement

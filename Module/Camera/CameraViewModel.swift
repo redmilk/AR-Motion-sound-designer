@@ -35,8 +35,7 @@ final class CameraViewModel {
         self.coordinator = coordinator
         
         /// handle actions sent to self
-        input
-            .sink(receiveValue: { [weak self] action in
+        input.sink(receiveValue: { [weak self] action in
                 switch action {
                 case .configureSession(let videPreview, let annotationsPreview, let collectionMatrix):
                     self?.handposeMechanics.input.send(.configure(
