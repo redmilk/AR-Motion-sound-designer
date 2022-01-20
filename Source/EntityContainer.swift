@@ -14,11 +14,17 @@ fileprivate let container = EntityContainer()
 
 final class EntityContainer {
     lazy var poseDetector = PoseRecognizer(pointProcessor: PointProcessor())
-    lazy var poseDetectorNative = PoseRecognizerNative()
     lazy var sessionMediaService = SessionMediaService()
-    lazy var handposeMechanics = SoundWithHandposeMechanics()
+    lazy var handposeMechanics = ZoneBasedMechanic()
     lazy var performanceMeasurment = PerfmormanceMeasurment()
     lazy var maskEditor = EditorZoneSelection()
+    lazy var maskManager = MaskManager()
+}
+
+/// Mask manager
+protocol MaskManagerProvider { }
+extension MaskManagerProvider {
+    var maskManager: MaskManager { container.maskManager }
 }
 
 /// Mask editor
@@ -45,18 +51,12 @@ extension PoseDetectorProvider {
     var poseDetector: PoseRecognizer { container.poseDetector }
 }
 
-/// Pose detector native
-protocol NativePoseDetectorProvider { }
-extension NativePoseDetectorProvider {
-    var poseDetectorNative: PoseRecognizerNative { container.poseDetectorNative }
-}
-
 // MARK: - Various application mechanics
 
 /// Sound with Handpose Mechanics
 protocol SoundWithHandposeMechanicsProvider { }
 extension SoundWithHandposeMechanicsProvider {
-    var handposeMechanics: SoundWithHandposeMechanics { container.handposeMechanics }
+    var handposeMechanics: ZoneBasedMechanic { container.handposeMechanics }
 }
 
 

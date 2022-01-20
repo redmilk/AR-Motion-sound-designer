@@ -102,11 +102,8 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
         }).store(in: &bag)
         
         /// debug view out
-        debugWindow.output
-            .sink(receiveValue: { [weak self] response in
+        debugWindow.output.sink(receiveValue: { [weak self] response in
                 switch response {
-                case .scaleUpGrid: self?.matrixCollection.input.send(.scaleUp)
-                case .scaleDownGrid: self?.matrixCollection.input.send(.scaleDown)
                 case .shouldHideGrid(let shouldHideGrid):
                     self?.matrixCollection.input.send(.removeAll(shouldHideGrid: shouldHideGrid))
                     self?.editor.input.send(.resetMask)
@@ -120,15 +117,6 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
                 case .transformZone(let x, let y, let w, let h):
                     self?.editor.input.send(.transformZone(x: x, y: y, w: w, h: h))
                 }
-            })
-            .store(in: &bag)
-        
-        matrixCollection.output .sink(receiveValue: { [weak self] response in
-                switch response {
-                case .didPressNode(_): break
-                case .currentScale(let currentScale):
-                    self?.debugWindow.input.send(.currentScale(currentScale))
-                }
             }).store(in: &bag)
 
         viewModel.input.send(.configureSession(
@@ -137,8 +125,7 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
             collectionMatrix: collectionView))
         
         performanceMeasurment.input.send(.startMeasure)
-        matrixCollection.input.send(.initialSetup)
-        matrixCollection.input.send(.configureScaling(scale: .scale2048, isGridHidden: false))
+        matrixCollection.input.send(.initialSetup(isGridHidden: false))
         editor.configure(withView: recognizersContainer, gridCollection: collectionView)
     }
     override func viewWillAppear(_ animated: Bool) {

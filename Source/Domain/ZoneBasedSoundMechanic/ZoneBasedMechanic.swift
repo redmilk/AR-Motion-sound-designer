@@ -11,11 +11,11 @@ import UIKit
 import AVFoundation.AVCaptureVideoPreviewLayer
 import MLKit
 
-final class SoundWithHandposeMechanics: PoseDetectorProvider,
-                                        SessionMediaServiceProvider,
-                                        PerformanceMeasurmentProvider {
+final class ZoneBasedMechanic: PoseDetectorProvider,
+                               SessionMediaServiceProvider,
+                               PerformanceMeasurmentProvider,
+                               MaskManagerProvider {
     enum Action {
-        
         case configure(collection: UICollectionView,
                        videoPreview: CaptureVideoPreviewView,
                        annotationsPreview: AnnotationsOverlayView)
@@ -33,9 +33,7 @@ final class SoundWithHandposeMechanics: PoseDetectorProvider,
     private var bag = Set<AnyCancellable>()
     private var matrixCollection: UICollectionView!
     private var configuration: DetectionManagerConfig!
-    private var currentMask: MaskProtocol? {
-        MaskManager.shared.activeMaskData
-    }
+    private var currentMask: MaskProtocol? { maskManager.activeMaskData }
     
     init() {
         /// handle actions input
@@ -100,7 +98,7 @@ final class SoundWithHandposeMechanics: PoseDetectorProvider,
 
 // MARK: - Landmarks drawing
 
-private extension SoundWithHandposeMechanics {
+private extension ZoneBasedMechanic {
     func drawLandmarksForPose(atPoint point: CGPoint) {
         if configuration.shouldDrawCircle {
             UtilsForDrawing.addCircleImage(atPoint: point, to: self.configuration.annotationOverlayView, radius: Constant.bigDotRadius)

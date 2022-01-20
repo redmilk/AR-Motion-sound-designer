@@ -8,7 +8,7 @@
 import Foundation
 import AVFoundation
 
-class ZoneBaseAudio: NSObject, AVAudioPlayerDelegate {
+class ZoneBaseAudio: NSObject, AVAudioPlayerDelegate, MaskManagerProvider {
 
     static let shared = ZoneBaseAudio()
     private var backgroundMusicPlayer: AVAudioPlayer?
@@ -51,8 +51,8 @@ class ZoneBaseAudio: NSObject, AVAudioPlayerDelegate {
         
         var fileNameURL: URL?
         
-        guard let mask = MaskManager.shared.activeMask else { return }
-        guard let fileName = MaskManager.shared.maskPresets[mask]?.backgroundFileName else { return }
+        guard let mask = maskManager.activeMask else { return }
+        guard let fileName = maskManager.maskPresets[mask]?.backgroundFileName else { return }
         if !fileName.hasSuffix(".wav") && !fileName.hasSuffix(".mp3") {
             guard let bundle = Bundle.main.path(forResource: fileName, ofType: "wav") else { return }
             fileNameURL = URL(fileURLWithPath: bundle)
@@ -85,7 +85,7 @@ class ZoneBaseAudio: NSObject, AVAudioPlayerDelegate {
             fileNameURL = documentsUrl.appendingPathComponent(fileName)
             Logger.log(fileName)
         }
-        let isForcePlayingSound = MaskManager.shared.shouldForceplaySoundForCurrentMask
+        let isForcePlayingSound = maskManager.shouldForceplaySoundForCurrentMask
         guard let soundFileNameURL = fileNameURL else { return }
         
         if let player = players[soundFileNameURL]  { //player for sound has been found
@@ -135,8 +135,8 @@ class ZoneBaseAudio: NSObject, AVAudioPlayerDelegate {
         
         var fileNameURL: URL?
 //        guard let fileName = UserDefaults.standard.string(forKey: zone.keyValue) else { return }
-        guard let mask = MaskManager.shared.activeMask else { return }
-        guard let fileName = MaskManager.shared.maskPresets[mask]?.zonePresets[zone]?.soundName else { return }
+        guard let mask = maskManager.activeMask else { return }
+        guard let fileName = maskManager.maskPresets[mask]?.zonePresets[zone]?.soundName else { return }
         
         if !fileName.hasSuffix(".wav") && !fileName.hasSuffix(".mp3") {
             guard let bundle = Bundle.main.path(forResource: fileName, ofType: "wav") else { return }
@@ -146,7 +146,7 @@ class ZoneBaseAudio: NSObject, AVAudioPlayerDelegate {
             fileNameURL = documentsUrl.appendingPathComponent(fileName)
             Logger.log(fileName)
         }
-        let isForcePlayingSound = MaskManager.shared.shouldForceplaySoundForCurrentMask
+        let isForcePlayingSound = maskManager.shouldForceplaySoundForCurrentMask
         guard let soundFileNameURL = fileNameURL else { return }
         
         if let player = players[soundFileNameURL]  { //player for sound has been found

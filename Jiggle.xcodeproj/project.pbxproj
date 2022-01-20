@@ -20,9 +20,8 @@
 		791B7BEE27469FFF00EF6886 /* Publisher+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B7BE527469FFF00EF6886 /* Publisher+Extensions.swift */; };
 		791B7BEF27469FFF00EF6886 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B7BE627469FFF00EF6886 /* UIView+Extensions.swift */; };
 		791CC44427649E4700813FAC /* MatrixConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791CC44327649E4600813FAC /* MatrixConfigurator.swift */; };
-		791CC4462764A6D600813FAC /* HitTestValidations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791CC4452764A6D600813FAC /* HitTestValidations.swift */; };
 		791CC44D2764BE0900813FAC /* EntityContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791CC44C2764BE0900813FAC /* EntityContainer.swift */; };
-		791CC4542764CB5E00813FAC /* SoundWithHandPoseMechanics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791CC4532764CB5E00813FAC /* SoundWithHandPoseMechanics.swift */; };
+		791CC4542764CB5E00813FAC /* ZoneBasedMechanic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791CC4532764CB5E00813FAC /* ZoneBasedMechanic.swift */; };
 		791CC4582764E38000813FAC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A5A872747ABCF008BA88B /* Constants.swift */; };
 		7920E0C8275FF3C9001A8366 /* ErrorHandlerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920E0C7275FF3C9001A8366 /* ErrorHandlerProvider.swift */; };
 		7920E0CA275FFD5B001A8366 /* AnnotationsOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7920E0C9275FFD5B001A8366 /* AnnotationsOverlayView.swift */; };
@@ -39,9 +38,7 @@
 		794B56FE276BFDAD001A7FE6 /* DebugMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B56FC276BFDAD001A7FE6 /* DebugMenuCell.swift */; };
 		794B56FF276BFDAD001A7FE6 /* DebugMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 794B56FD276BFDAD001A7FE6 /* DebugMenuCell.xib */; };
 		794B5701276C05E6001A7FE6 /* DebugMenuDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B5700276C05E6001A7FE6 /* DebugMenuDatasource.swift */; };
-		7953DE2C2768DEA40003DF71 /* PoseRecognizerNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7953DE2B2768DEA40003DF71 /* PoseRecognizerNative.swift */; };
-		795842F627713F3600E0172C /* RobotMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795842F527713F3600E0172C /* RobotMask.swift */; };
-		795842F927713F9800E0172C /* AnimationFrameDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795842F827713F9800E0172C /* AnimationFrameDecoder.swift */; };
+		795842F627713F3600E0172C /* SoundZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795842F527713F3600E0172C /* SoundZone.swift */; };
 		7958430A2771453700E0172C /* robotDry12.wav in Resources */ = {isa = PBXBuildFile; fileRef = 795842FD2771453400E0172C /* robotDry12.wav */; };
 		7958430B2771453700E0172C /* robotDry2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 795842FE2771453400E0172C /* robotDry2.wav */; };
 		7958430C2771453700E0172C /* robotDry7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 795842FF2771453500E0172C /* robotDry7.wav */; };
@@ -231,9 +228,8 @@
 		791B7BE527469FFF00EF6886 /* Publisher+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Publisher+Extensions.swift"; sourceTree = "<group>"; };
 		791B7BE627469FFF00EF6886 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		791CC44327649E4600813FAC /* MatrixConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixConfigurator.swift; sourceTree = "<group>"; };
-		791CC4452764A6D600813FAC /* HitTestValidations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitTestValidations.swift; sourceTree = "<group>"; };
 		791CC44C2764BE0900813FAC /* EntityContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityContainer.swift; sourceTree = "<group>"; };
-		791CC4532764CB5E00813FAC /* SoundWithHandPoseMechanics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundWithHandPoseMechanics.swift; sourceTree = "<group>"; };
+		791CC4532764CB5E00813FAC /* ZoneBasedMechanic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneBasedMechanic.swift; sourceTree = "<group>"; };
 		7920E0C7275FF3C9001A8366 /* ErrorHandlerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlerProvider.swift; sourceTree = "<group>"; };
 		7920E0C9275FFD5B001A8366 /* AnnotationsOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationsOverlayView.swift; sourceTree = "<group>"; };
 		7920E0CC2760094A001A8366 /* SessionOutputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionOutputManager.swift; sourceTree = "<group>"; };
@@ -249,9 +245,7 @@
 		794B56FC276BFDAD001A7FE6 /* DebugMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMenuCell.swift; sourceTree = "<group>"; };
 		794B56FD276BFDAD001A7FE6 /* DebugMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebugMenuCell.xib; sourceTree = "<group>"; };
 		794B5700276C05E6001A7FE6 /* DebugMenuDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMenuDatasource.swift; sourceTree = "<group>"; };
-		7953DE2B2768DEA40003DF71 /* PoseRecognizerNative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseRecognizerNative.swift; sourceTree = "<group>"; };
-		795842F527713F3600E0172C /* RobotMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotMask.swift; sourceTree = "<group>"; };
-		795842F827713F9800E0172C /* AnimationFrameDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationFrameDecoder.swift; sourceTree = "<group>"; };
+		795842F527713F3600E0172C /* SoundZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundZone.swift; sourceTree = "<group>"; };
 		795842FD2771453400E0172C /* robotDry12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robotDry12.wav; sourceTree = "<group>"; };
 		795842FE2771453400E0172C /* robotDry2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robotDry2.wav; sourceTree = "<group>"; };
 		795842FF2771453500E0172C /* robotDry7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robotDry7.wav; sourceTree = "<group>"; };
@@ -494,17 +488,11 @@
 			path = EasterEgg;
 			sourceTree = "<group>";
 		};
-		790CFEE4276A7B9700C355C5 /* Measure */ = {
-			isa = PBXGroup;
-			children = (
-				790CFEE5276A7BE000C355C5 /* PerformanceMeasurement.swift */,
-			);
-			path = Measure;
-			sourceTree = "<group>";
-		};
 		79189DFE274672420023628A /* Debug */ = {
 			isa = PBXGroup;
 			children = (
+				7938B51A27992BEB00F8B72D /* ErrorHandling */,
+				790CFEE5276A7BE000C355C5 /* PerformanceMeasurement.swift */,
 				79189DFF274672900023628A /* Logger.swift */,
 			);
 			path = Debug;
@@ -527,6 +515,7 @@
 		791B7BF72746A11800EF6886 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				791CC4502764C8E000813FAC /* DrawingAnnotations */,
 				796A59F22747A02B008BA88B /* UserDefaultsPropertyWrapper.swift */,
 				7920E0D027600F62001A8366 /* Typealies.swift */,
 				79035A5E2793D3D200DFFDB2 /* EasterEgg */,
@@ -537,13 +526,9 @@
 		791B7BFE2746A71E00EF6886 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				791CC4512764C97C00813FAC /* Mechanics */,
-				791CC4502764C8E000813FAC /* DrawingAnnotations */,
+				791CC4512764C97C00813FAC /* ZoneBasedSoundMechanic */,
 				791CC44E2764C21400813FAC /* Detection */,
-				791CC44F2764C40B00813FAC /* PointsFilters */,
 				791CC44B2764B89500813FAC /* MediaCapture */,
-				791CC4552764CB8E00813FAC /* UserInteractionValidators */,
-				790CFEE4276A7B9700C355C5 /* Measure */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -562,7 +547,7 @@
 			isa = PBXGroup;
 			children = (
 				79A6FFE827628FAD002E78E0 /* PoseRecognizer.swift */,
-				7953DE2B2768DEA40003DF71 /* PoseRecognizerNative.swift */,
+				791CC44F2764C40B00813FAC /* PointsFilters */,
 			);
 			path = Detection;
 			sourceTree = "<group>";
@@ -585,21 +570,14 @@
 			path = DrawingAnnotations;
 			sourceTree = "<group>";
 		};
-		791CC4512764C97C00813FAC /* Mechanics */ = {
+		791CC4512764C97C00813FAC /* ZoneBasedSoundMechanic */ = {
 			isa = PBXGroup;
 			children = (
-				791CC4532764CB5E00813FAC /* SoundWithHandPoseMechanics.swift */,
-				795842F427713F0A00E0172C /* Masks */,
+				795842F427713F0A00E0172C /* Mask */,
+				7958431927714E9400E0172C /* MaskManager.swift */,
+				791CC4532764CB5E00813FAC /* ZoneBasedMechanic.swift */,
 			);
-			path = Mechanics;
-			sourceTree = "<group>";
-		};
-		791CC4552764CB8E00813FAC /* UserInteractionValidators */ = {
-			isa = PBXGroup;
-			children = (
-				791CC4452764A6D600813FAC /* HitTestValidations.swift */,
-			);
-			path = UserInteractionValidators;
+			path = ZoneBasedSoundMechanic;
 			sourceTree = "<group>";
 		};
 		7922B2F6275FE61700273D8B /* View */ = {
@@ -611,12 +589,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		7922B2F9275FED0900273D8B /* Errors */ = {
+		7938B51A27992BEB00F8B72D /* ErrorHandling */ = {
 			isa = PBXGroup;
 			children = (
+				7920E0C7275FF3C9001A8366 /* ErrorHandlerProvider.swift */,
 				7922B2FA275FED1C00273D8B /* JiggleError.swift */,
 			);
-			path = Errors;
+			path = ErrorHandling;
 			sourceTree = "<group>";
 		};
 		794B56F1276BE2EA001A7FE6 /* DebugWindow */ = {
@@ -650,33 +629,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		795842F427713F0A00E0172C /* Masks */ = {
+		795842F427713F0A00E0172C /* Mask */ = {
 			isa = PBXGroup;
 			children = (
-				795842F527713F3600E0172C /* RobotMask.swift */,
+				795842F527713F3600E0172C /* SoundZone.swift */,
 				798F5D86278F35460042BA98 /* MaskBase.swift */,
-				795842F727713F8200E0172C /* MaskUtils */,
-			);
-			path = Masks;
-			sourceTree = "<group>";
-		};
-		795842F727713F8200E0172C /* MaskUtils */ = {
-			isa = PBXGroup;
-			children = (
 				7958431727714E6400E0172C /* ZoneBasedAudio.swift */,
-				7958431927714E9400E0172C /* MaskManager.swift */,
-				795842F827713F9800E0172C /* AnimationFrameDecoder.swift */,
 				79D1AAFA27748E2900733F20 /* Mask64Mapper.swift */,
 			);
-			path = MaskUtils;
-			sourceTree = "<group>";
-		};
-		795842FA27713FD300E0172C /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				791CC44C2764BE0900813FAC /* EntityContainer.swift */,
-			);
-			path = Services;
+			path = Mask;
 			sourceTree = "<group>";
 		};
 		795842FB2771451F00E0172C /* MasksSounds */ = {
@@ -713,7 +674,6 @@
 			isa = PBXGroup;
 			children = (
 				7963FC4527466FAD007B8449 /* CoordinatorProtocol.swift */,
-				7920E0C7275FF3C9001A8366 /* ErrorHandlerProvider.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1108,8 +1068,7 @@
 		79F913CD274652E200771FFE /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				7922B2F9275FED0900273D8B /* Errors */,
-				795842FA27713FD300E0172C /* Services */,
+				791CC44C2764BE0900813FAC /* EntityContainer.swift */,
 				791B7BDD27469FF000EF6886 /* Extensions */,
 				791B7BF72746A11800EF6886 /* Utils */,
 				79189DFE274672420023628A /* Debug */,
@@ -1459,8 +1418,7 @@
 				79ED1383278C4D2C00A1F9BA /* EditorViewModel.swift in Sources */,
 				7958431A27714E9400E0172C /* MaskManager.swift in Sources */,
 				79A6FFE427628BC3002E78E0 /* PointProcessor.swift in Sources */,
-				791CC4542764CB5E00813FAC /* SoundWithHandPoseMechanics.swift in Sources */,
-				7953DE2C2768DEA40003DF71 /* PoseRecognizerNative.swift in Sources */,
+				791CC4542764CB5E00813FAC /* ZoneBasedMechanic.swift in Sources */,
 				791B7BEC27469FFF00EF6886 /* UIBarButtonItem+Extensions.swift in Sources */,
 				79ED1386278C8DD600A1F9BA /* EditorZoneSelection.swift in Sources */,
 				791CC4582764E38000813FAC /* Constants.swift in Sources */,
@@ -1473,13 +1431,11 @@
 				798F2BB2276392C500A47CC2 /* MatrixCollection.swift in Sources */,
 				7920E0CF27600F1E001A8366 /* SessionInputManager.swift in Sources */,
 				7920E0D127600F62001A8366 /* Typealies.swift in Sources */,
-				791CC4462764A6D600813FAC /* HitTestValidations.swift in Sources */,
 				794B5701276C05E6001A7FE6 /* DebugMenuDatasource.swift in Sources */,
 				7958431827714E6400E0172C /* ZoneBasedAudio.swift in Sources */,
 				79A6FFE727628E27002E78E0 /* OneEuroFilter.swift in Sources */,
 				79F913B62746501500771FFE /* SceneDelegate.swift in Sources */,
 				7965FCFF275E44D0002C1C1B /* CameraViewController.swift in Sources */,
-				795842F927713F9800E0172C /* AnimationFrameDecoder.swift in Sources */,
 				794B56FE276BFDAD001A7FE6 /* DebugMenuCell.swift in Sources */,
 				7963FC4227466F6F007B8449 /* ApplicationCoordinator.swift in Sources */,
 				798F5D87278F35460042BA98 /* MaskBase.swift in Sources */,
@@ -1489,7 +1445,7 @@
 				791B7BEE27469FFF00EF6886 /* Publisher+Extensions.swift in Sources */,
 				790CFEE6276A7BE000C355C5 /* PerformanceMeasurement.swift in Sources */,
 				791B7BE827469FFF00EF6886 /* Collection+Extensions.swift in Sources */,
-				795842F627713F3600E0172C /* RobotMask.swift in Sources */,
+				795842F627713F3600E0172C /* SoundZone.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
