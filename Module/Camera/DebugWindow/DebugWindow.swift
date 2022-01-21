@@ -219,12 +219,14 @@ extension DebugWindow {
                 self?.handleEditorMode(.add)
                 self?.output.send(.editorMode(.add))
                 self?.output.send(.hideDebug(true))
+                self?.menuCollectionView.isHidden = true
             }).store(in: &bag)
         zoneEditDrawButton.publisher()
             .sink(receiveValue: { [weak self] _ in
                 self?.handleEditorMode(.draw)
                 self?.output.send(.editorMode(.draw))
                 self?.output.send(.hideDebug(true))
+                self?.menuCollectionView.isHidden = true
             }).store(in: &bag)
         zoneEditDeleteButton.publisher()
             .sink(receiveValue: { [weak self] _ in
@@ -235,19 +237,21 @@ extension DebugWindow {
             .sink(receiveValue: { [weak self] _ in
                 self?.collectionManager.input.send(.populateWithSounds)
                 self?.menuCollectionView.isHidden.toggle()
+                self?.output.send(.editorMode(.select))
+                self?.handleEditorMode(.select)
             }).store(in: &bag)
         // MARK: - Position and Scale for zone
         moveUpZoneButton.publisher().sink(receiveValue: { [weak self] _ in
-            self?.output.send(.transformZone(x: 0, y: -3, w: 0, h: 0))
+            self?.output.send(.transformZone(x: 0, y: -1, w: 0, h: 0))
         }).store(in: &bag)
         moveDownZoneButton.publisher().sink(receiveValue: { [weak self] _ in
-            self?.output.send(.transformZone(x: 0, y: 3, w: 0, h: 0))
+            self?.output.send(.transformZone(x: 0, y: 1, w: 0, h: 0))
         }).store(in: &bag)
         moveLeftZoneButton.publisher().sink(receiveValue: { [weak self] _ in
-            self?.output.send(.transformZone(x: -3, y: 0, w: 0, h: 0))
+            self?.output.send(.transformZone(x: -1, y: 0, w: 0, h: 0))
         }).store(in: &bag)
         moveRightZoneButton.publisher().sink(receiveValue: { [weak self] _ in
-            self?.output.send(.transformZone(x: 3, y: 0, w: 0, h: 0))
+            self?.output.send(.transformZone(x: 1, y: 0, w: 0, h: 0))
         }).store(in: &bag)
         scaleUpZoneButton.publisher().sink(receiveValue: { [weak self] _ in
             self?.output.send(.transformZone(x: 0, y: 0, w: 1, h: 1))
@@ -265,19 +269,19 @@ extension DebugWindow {
         case .select:
             zoneEditSelectButton.layer.borderWidth = 3.0
             zoneEditSelectButton.layer.borderColor = UIColor.green.cgColor
-            debugAction("SELECT", delay: 2)
+            debugAction("SELECT", delay: 0.5)
         case .add:
             zoneEditAddButton.layer.borderWidth = 3.0
             zoneEditAddButton.layer.borderColor = UIColor.green.cgColor
-            debugAction("ADD", delay: 2)
+            debugAction("ADD", delay: 0.5)
         case .draw:
             zoneEditDrawButton.layer.borderWidth = 3.0
             zoneEditDrawButton.layer.borderColor = UIColor.green.cgColor
-            debugAction("DRAW", delay: 10)
+            debugAction("DRAW", delay: 0.5)
         case .delete:
             zoneEditDeleteButton.layer.borderWidth = 3.0
             zoneEditDeleteButton.layer.borderColor = UIColor.green.cgColor
-            debugAction("DELETE", delay: 10)
+            debugAction("DELETE", delay: 0.5)
         case _: break
         }
     }
@@ -290,7 +294,7 @@ extension DebugWindow {
         totalZonesLabel.text = info.zonesTotal.description
         zoneSoundNameLabel.text = info.sound
     }
-    private func debugAction(_ msg: String, delay: TimeInterval = 5) {
+    private func debugAction(_ msg: String, delay: TimeInterval = 1) {
         let debugCurrentModeLabel = UILabel(frame: CGRect(x: 0, y: 50, width: bounds.width, height: 150))
         debugCurrentModeLabel.text = msg
         debugCurrentModeLabel.font = .systemFont(ofSize: 70, weight: .black)
@@ -299,7 +303,7 @@ extension DebugWindow {
         debugCurrentModeLabel.textAlignment = .center
         debugCurrentModeLabel.center.x = superview!.center.x
         superview?.addSubview(debugCurrentModeLabel)
-        UIView.animate(withDuration: 0.3, delay: delay, options: [.allowUserInteraction], animations: {
+        UIView.animate(withDuration: 0.5, delay: delay, options: [.allowUserInteraction], animations: {
             [weak debugCurrentModeLabel] in
             debugCurrentModeLabel?.transform = debugCurrentModeLabel!.transform.scaledBy(x: 1, y: 0.01)
         }, completion: { _ in debugCurrentModeLabel.removeFromSuperview() })
