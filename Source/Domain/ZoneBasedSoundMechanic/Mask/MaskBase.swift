@@ -20,7 +20,7 @@ class MaskBase: MaskProtocol {
         didSet {
             Logger.log("Total zones: \(zonePresets.count)", type: .grid)
             zonePresets.forEach { (zone, zoneValue) in
-                //print("minY: \(zone.minY), maxY: \(zone.maxY), minX: \(zone.minX), maxX: \(zone.maxX). Color: \(zoneValue.zoneColor.debugDescription)")
+                print("minY: \(zone.minY), maxY: \(zone.maxY), minX: \(zone.minX), maxX: \(zone.maxX). Sound: \(zoneValue.soundName)")
             }
         }
     }

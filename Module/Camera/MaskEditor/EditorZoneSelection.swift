@@ -25,6 +25,10 @@ extension EditorZoneSelection {
         case resetMask
         case mode(Mode)
         case transformZone(x: Int, y: Int, w: Int, h: Int)
+        case soundForCurrentZone(String)
+    }
+    enum Output {
+        case showAlert(message: String, title: String, button: String?)
     }
 }
 
@@ -34,6 +38,7 @@ final class EditorZoneSelection: NSObject {
     static var mask = EditorMask()
     
     let input = PassthroughSubject<Input, Never>()
+    let output = PassthroughSubject<Output, Never>()
     let currentSelectedZoneInfoPub = PassthroughSubject<EditorDescription, Never>()
     let selectedZoneRectPub = PassthroughSubject<CGRect, Never>()
     let modeSwitchPub = PassthroughSubject<EditorZoneSelection.Mode, Never>()
@@ -54,20 +59,22 @@ final class EditorZoneSelection: NSObject {
     
     private var currentZone: [SoundZone: ZoneValue]? {
         didSet {
-            guard let zone = currentZone?.keys.first else {
+            guard let zone = currentZone?.keys.first, let value = currentZone?[zone] else {
                 return Logger.log("Current zone - E M P T Y", type: .editor)
             }
-            Logger.log("Current zone - Min X: \(zone.minX) Max Y: \(zone.maxY)", type: .editor)
+            let soundDebugText = value.soundName.isEmpty ? "EMPTY" : value.soundName
+            Logger.log("Current zone - Sound: \(soundDebugText) Min X: \(zone.minX) Max Y: \(zone.maxY)", type: .editor)
             let zoneInfo = EditorDescription(
                 positionX: zone.minX, positionY: zone.minY,
                 scaleX: max(1, zone.maxX - zone.minX), scaleY: max(1, zone.maxY - zone.minY),
-                zonesTotal: EditorZoneSelection.mask.zonePresets.count, orderNumber: nil, zoneTitle: nil, sound: nil)
+                zonesTotal: EditorZoneSelection.mask.zonePresets.count, orderNumber: nil, zoneTitle: nil, sound: value.soundName)
             currentSelectedZoneInfoPub.send(zoneInfo)
+            ZoneBaseAudio.shared.playSoundForZone(with: value.soundName)
         }
     }
     
     // MARK: - Editor's current mode
-    private var mode: Mode = .select {
+    private var mode: Mode = .add {
         didSet {
             Logger.log(String(describing: mode), type: .editor)
         }
@@ -102,6 +109,15 @@ final class EditorZoneSelection: NSObject {
                 self?.mode = mode
             case .transformZone(let x, let y, let w, let h):
                 self?.moveAndScaleZone(x: x, y: y, w: w, h: h)
+            case .soundForCurrentZone(let soundName):
+                guard let zone = self?.currentZone, let key = zone.keys.first,
+                        var value = EditorZoneSelection.mask.zonePresets[key] else {
+                    self?.output.send(.showAlert(message: "Listen to me, little bitch. The zone must be selected before sound assignment...you stupid little bitch!", title: "😂 FAILER 😂", button: "Please, sorry"))
+                    return
+                }
+                value.soundName = soundName
+                EditorZoneSelection.mask.zonePresets[key] = value
+                self?.currentZone = [key: value]
             }
         }).store(in: &bag)
     }

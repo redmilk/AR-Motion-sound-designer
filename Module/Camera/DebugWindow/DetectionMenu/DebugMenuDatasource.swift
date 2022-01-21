@@ -7,61 +7,73 @@
 
 import Foundation
 import MLKit
+import CoreVideo
 
-let menuData = DebugMenuSectionsDatasource()
-
+// MARK: - Sound files
+// MARK: - Recognizer landmarks
 final class DebugMenuSectionsDatasource {
-    var arms = DebugMenuSectionMaker.arms.section
-    var legs = DebugMenuSectionMaker.legs.section
-    var head = DebugMenuSectionMaker.head.section
-    
-    var currentTrackingLandmarks: [PoseLandmarkType] {
-        let armsLandmarkList = arms.items.filter { $0.isSelected }.map { $0.landmark }
-        let legsLandmarkList = legs.items.filter { $0.isSelected }.map { $0.landmark }
-        let headLandmarksList = head.items.filter { $0.isSelected }.map { $0.landmark }
+    /// sounds
+    var soundsSection = DebugMenuSectionMaker.makeSoundfilesSection()
+    func getSoundsSection(_ shouldRefreshList: Bool = false) -> DebugMenuSection? {
+        if shouldRefreshList {
+            soundsSection = DebugMenuSectionMaker.makeSoundfilesSection()
+        }
+        return soundsSection
+    }
+    /// landmarks array
+    var landmarkList: [PoseLandmarkType] {
+        let armsLandmarkList = landmarksSection.arms.items.filter { $0.isSelected }.map { $0.landmark }
+        let legsLandmarkList = landmarksSection.legs.items.filter { $0.isSelected }.map { $0.landmark }
+        let headLandmarksList = landmarksSection.head.items.filter { $0.isSelected }.map { $0.landmark }
         return [armsLandmarkList, legsLandmarkList, headLandmarksList].flatMap { $0 }
     }
+    /// landmark sections carthage
+    var landmarksSection = DebugMenuSectionMaker.makeLandmarksSection()
 }
 
+// MARK: - Menu section builder
 fileprivate enum DebugMenuSectionMaker {
-    case arms
-    case legs
-    case head
-    var section: DebugMenuSection {
-        switch self {
-        case .arms:
-            let items: [PoseLandmarkType] = [
-                .leftShoulder, .rightShoulder,
-                .leftElbow, .rightElbow,
-                .leftWrist, .rightWrist,
-                .leftIndexFinger, .rightIndexFinger,
-                .leftPinkyFinger, .rightPinkyFinger,
-                .leftThumb, .rightThumb
-            ]
-            return DebugMenuSection(items: items.map { DebugMenuItem(landmark: $0) }, id: "Arms")
-        case .legs:
-            let items: [PoseLandmarkType] = [
-                .leftHip, .rightHip,
-                .leftKnee, .rightKnee,
-                .leftAnkle, .rightAnkle,
-                .leftHeel, .rightHeel,
-                .rightToe, .leftToe
-            ]
-            return DebugMenuSection(items: items.map { DebugMenuItem(landmark: $0) }, id: "Legs")
-        case .head:
-            let items: [PoseLandmarkType] = [
-                .leftEar, .rightEar,
-                .leftEye, .rightEye,
-                .leftEyeInner, .rightEyeInner,
-                .leftEyeOuter, .rightEyeOuter,
-                .mouthLeft, .mouthRight,
-                .nose
-            ]
-            return DebugMenuSection(items: items.map { DebugMenuItem(landmark: $0) }, id: "Head")
-        }
+    static func makeSoundfilesSection() -> DebugMenuSection? {
+        ((try? FileManager.default.contentsOfDirectory(atPath: Bundle.main.bundlePath)) ?? [])
+            .filter { $0.contains(".wav") || $0.contains(".mp3") }
+            .map { DebugMenuItem(landmark: .nose, soundForZone: $0) }
+            .sorted { $0.soundForZone ?? "" < $1.soundForZone ?? "" }
+            .reduce(into: DebugMenuSection(items: [], id: ""), { partialResult, item in
+                partialResult.items.append(item)
+            })
+    }
+    static func makeLandmarksSection() -> (arms: DebugMenuSection, legs: DebugMenuSection, head: DebugMenuSection) {
+        let arms: [PoseLandmarkType] = [
+            .leftShoulder, .rightShoulder,
+            .leftElbow, .rightElbow,
+            .leftWrist, .rightWrist,
+            .leftIndexFinger, .rightIndexFinger,
+            .leftPinkyFinger, .rightPinkyFinger,
+            .leftThumb, .rightThumb
+        ]
+        let armsSection = DebugMenuSection(items: arms.map { DebugMenuItem(landmark: $0) }, id: "Arms")
+        let legs: [PoseLandmarkType] = [
+            .leftHip, .rightHip,
+            .leftKnee, .rightKnee,
+            .leftAnkle, .rightAnkle,
+            .leftHeel, .rightHeel,
+            .rightToe, .leftToe
+        ]
+        let legsSection = DebugMenuSection(items: legs.map { DebugMenuItem(landmark: $0) }, id: "Legs")
+        let head: [PoseLandmarkType] = [
+            .leftEar, .rightEar,
+            .leftEye, .rightEye,
+            .leftEyeInner, .rightEyeInner,
+            .leftEyeOuter, .rightEyeOuter,
+            .mouthLeft, .mouthRight,
+            .nose
+        ]
+        let headSection = DebugMenuSection(items: head.map { DebugMenuItem(landmark: $0) }, id: "Head")
+        return (arms: armsSection, legs: legsSection, head: headSection)
     }
 }
 
+// MARK: - Landmark types
 extension PoseLandmarkType: CustomStringConvertible {
     public var description: String {
         switch self {

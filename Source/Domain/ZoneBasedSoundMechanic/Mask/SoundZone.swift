@@ -10,7 +10,7 @@ import UIKit.UIImage
 
 struct ZoneValue {
     let icons: [UIImage]?
-    let soundName: String
+    var soundName: String
     let color: UIColor
 }
 

@@ -32,6 +32,13 @@ extension UIView {
             NSLayoutConstraint(item: subview, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0)
         ])
     }
+    func constraintToSides(inside superView: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        leadingAnchor.constraint(equalTo: superView.leadingAnchor).isActive = true
+        trailingAnchor.constraint(equalTo: superView.trailingAnchor).isActive = true
+        topAnchor.constraint(equalTo: superView.topAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: superView.bottomAnchor).isActive = true
+    }
     func drawRect(_ rect: CGRect, strokeColor: UIColor = .white,
                   borderWidth: CGFloat = 3.0, fillColor: UIColor = .clear) {
         let path = UIBezierPath(rect: rect)
@@ -43,4 +50,34 @@ extension UIView {
         shapeLayer.lineWidth = borderWidth
         layer.addSublayer(shapeLayer)
     }
+    func animateBackgroundChangeFromRandomToInitial(_ duration: TimeInterval = 1.5) {
+        layer.removeAllAnimations()
+        let initialcolor = backgroundColor
+        backgroundColor = .random
+        UIView.animate(withDuration: duration, delay: 0.0, options: [.allowUserInteraction], animations: {
+            self.backgroundColor = initialcolor
+        }, completion: nil)
+    }
+    func dropShadow(scale: Bool = true) {
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.5
+        layer.shadowOffset = CGSize(width: -1, height: 1)
+        layer.shadowRadius = 1
+        layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    }
+    func dropShadow(color: UIColor, opacity: Float = 0.5,
+                    offSet: CGSize, radius: CGFloat = 1, scale: Bool = true) {
+        layer.masksToBounds = false
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = offSet
+        layer.shadowRadius = radius
+        layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    }
+    
 }

@@ -77,25 +77,21 @@ class ZoneBaseAudio: NSObject, AVAudioPlayerDelegate, MaskManagerProvider {
     
     func playSoundForZone(with fileName: String) {
         var fileNameURL: URL?
-        if !fileName.hasSuffix(".wav") && !fileName.hasSuffix(".mp3") {
-            guard let bundle = Bundle.main.path(forResource: fileName, ofType: "wav") else { return }
-            fileNameURL = URL(fileURLWithPath: bundle)
-        } else {
-            let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-            fileNameURL = documentsUrl.appendingPathComponent(fileName)
-            Logger.log(fileName)
-        }
-        let isForcePlayingSound = maskManager.shouldForceplaySoundForCurrentMask
+        
+        guard let bundle = Bundle.main.path(forResource: fileName.replacingOccurrences(of: ".wav", with: ""), ofType: "wav") else { return }
+        fileNameURL = URL(fileURLWithPath: bundle)
+
+        let isForcePlayingSound = true//maskManager.shouldForceplaySoundForCurrentMask
         guard let soundFileNameURL = fileNameURL else { return }
         
-        if let player = players[soundFileNameURL]  { //player for sound has been found
+        if let player = players[soundFileNameURL] { //player for sound has been found
             
             if !player.isPlaying { //player is not in use, so use that one
                 player.volume = 0.5//getVolumeForZone(for: zone)
                 player.prepareToPlay()
                 player.play()
                 //makeTimestamp(with: soundFileNameURL, and: player.volume)
-            } else if isForcePlayingSound { //isForcePlaying || isForcePlayingSound { // player is in use, create a new, duplicate, player and use that instead
+            } else if isForcePlaying || isForcePlayingSound { // player is in use, create a new, duplicate, player and use that instead
 
                 do {
                     let duplicatePlayer = try AVAudioPlayer(contentsOf: soundFileNameURL)
@@ -113,7 +109,6 @@ class ZoneBaseAudio: NSObject, AVAudioPlayerDelegate, MaskManagerProvider {
                 } catch let error {
                     print(error.localizedDescription)
                 }
-
             }
         } else { //player has not been found, create a new player with the URL if possible
             do {

@@ -11,11 +11,16 @@ import UIKit
 
 final class DebugCollectionMenu: NSObject { /// NSObject for collection delegate
     enum Action {
-        case populateWithSections
+        case populateWithLandmarks
         case populateWithSounds
     }
     enum Response {
-        case didPressNode(DebugMenuItem)
+        case landmarkDidSelect(DebugMenuItem)
+        case soundDidSelect(DebugMenuItem)
+    }
+    enum Content {
+        case sounds
+        case landmarks
     }
     
     typealias DataSource = UICollectionViewDiffableDataSource<DebugMenuSection, DebugMenuItem>
@@ -27,17 +32,20 @@ final class DebugCollectionMenu: NSObject { /// NSObject for collection delegate
     private unowned let collectionView: UICollectionView
     private var dataSource: DataSource!
     private var bag = Set<AnyCancellable>()
+    private let sectionsProvider = DebugMenuSectionsDatasource()
+    private var contentType: Content = .landmarks
     
     init(collectionView: UICollectionView) {
         self.collectionView = collectionView
         super.init()
         input.sink(receiveValue: { [weak self] action in
-            guard let self = self else { return }
             switch action {
-            case .populateWithSections:
-                self.populateWithSections()
-            case .populateWithSounds: break
-                //self.populateWithSounds()
+            case .populateWithLandmarks:
+                self?.populateWithLandmarks()
+                self?.contentType = .landmarks
+            case .populateWithSounds:
+                self?.populateWithSounds()
+                self?.contentType = .sounds
             }
         })
         .store(in: &bag)
@@ -55,13 +63,18 @@ final class DebugCollectionMenu: NSObject { /// NSObject for collection delegate
         collectionView.isPagingEnabled = false
         dataSource = buildDataSource()
         layoutCollection()
-        populateWithSections()
+        ///populateWithLandmarks()
+        populateWithSounds()
     }
     
-    private func populateWithSections() {
-        replaceAllWith([menuData.legs, menuData.arms, menuData.head])
+    private func populateWithLandmarks() {
+        replaceAllWith([sectionsProvider.landmarksSection.legs, sectionsProvider.landmarksSection.arms, sectionsProvider.landmarksSection.head])
     }
-
+    private func populateWithSounds() {
+        guard let soundSection = sectionsProvider.soundsSection else { return }
+        replaceAllWith([soundSection])
+    }
+    
     private func replaceAllWith(_ sections: [DebugMenuSection]) {
         var snapshot = Snapshot()
         snapshot.appendSections(sections)
@@ -91,10 +104,9 @@ final class DebugCollectionMenu: NSObject { /// NSObject for collection delegate
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: String(describing: DebugMenuCell.self),
                     for: indexPath) as! DebugMenuCell
-                cell.configureWith(item)
+                cell.item = item
                 return cell
             })
-        
         return dataSource
     }
 
@@ -133,8 +145,14 @@ private extension DebugCollectionMenu {
 extension DebugCollectionMenu: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? DebugMenuCell else { return }
-        cell.didSelect()
-        output.send(.didPressNode(cell.item))
+        switch contentType {
+        case .landmarks:
+            cell.didSelect()
+            output.send(.landmarkDidSelect(cell.item))
+        case .sounds:
+            cell.animateSelection()
+            output.send(.soundDidSelect(cell.item))
+        }
     }
 }
 

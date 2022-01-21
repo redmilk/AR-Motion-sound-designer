@@ -13,7 +13,11 @@ import AVFoundation
 
 // MARK: - CameraViewController
 
-final class CameraViewController: UIViewController, SessionMediaServiceProvider, PerformanceMeasurmentProvider, MaskEditorProvider {
+final class CameraViewController: UIViewController,
+                                    SessionMediaServiceProvider,
+                                    PerformanceMeasurmentProvider,
+                                    MaskEditorProvider,
+                                    AlertPresentable {
     enum State {
         case captureSessionReceived(AVCaptureSession)
         case debugWindow(isHidden: Bool)
@@ -67,6 +71,13 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
     override func viewDidLoad() {
         super.viewDidLoad()
         /// editor updates
+        editor.output.sink(receiveValue: { [weak self] response in
+            guard let self = self else { return }
+            switch response {
+            case .showAlert(let message, let title, let button):
+                self.displayAlert(fromParentView: self.view, with: message, title: title, buttonTitle: button)
+            }
+        }).store(in: &bag)
         editor.newZonePub
             .sink(receiveValue: { [weak self] zone in
                 self?.matrixCollection.input.send(.drawZone(zone))
@@ -116,6 +127,8 @@ final class CameraViewController: UIViewController, SessionMediaServiceProvider,
                     self?.editor.input.send(.mode(mode))
                 case .transformZone(let x, let y, let w, let h):
                     self?.editor.input.send(.transformZone(x: x, y: y, w: w, h: h))
+                case .soundForZone(let soundName):
+                    self?.editor.input.send(.soundForCurrentZone(soundName))
                 }
             }).store(in: &bag)
 

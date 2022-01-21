@@ -21,6 +21,7 @@ extension DebugWindow {
         case resetMask
         case editorMode(EditorZoneSelection.Mode)
         case transformZone(x: Int, y: Int, w: Int, h: Int)
+        case soundForZone(String)
     }
 }
 
@@ -35,8 +36,9 @@ final class DebugWindow: UIView, PerformanceMeasurmentProvider, PoseDetectorProv
     @IBOutlet weak var maskControlsStack: UIStackView!
     @IBOutlet weak var generalInfoStack: UIStackView!
     // MARK: - Editor controls
-    @IBOutlet private weak var detectionSettingButton: UIButton!
+    @IBOutlet private weak var detectionLandmarksSelectButton: UIButton!
     @IBOutlet private weak var hideEverythingButton: UIButton!
+    @IBOutlet private weak var hideGrid: UIButton!
     @IBOutlet private weak var menuCollectionView: UICollectionView!
     // MARK: - Zone ransform
     @IBOutlet weak var positionInfoStack: UIStackView!
@@ -77,14 +79,11 @@ final class DebugWindow: UIView, PerformanceMeasurmentProvider, PoseDetectorProv
     @IBOutlet private weak var fpsLabel: UILabel!
     @IBOutlet private weak var currentGridScaleLabel: UILabel!
     @IBOutlet weak var zoneInfoStack: UIStackView!
-    @IBOutlet private weak var zoneTitleLabel: UILabel!
-    @IBOutlet weak var zoneOrderNumberLabel: UILabel!
     @IBOutlet weak var zoneSoundNameLabel: UILabel!
     @IBOutlet weak var zoneForceSoundStatusLabel: UILabel!
     @IBOutlet weak var zoneVolumeLabel: UILabel!
     @IBOutlet weak var zoneMuteGroupLabel: UILabel!
     @IBOutlet weak var zoneIsHiddenLabel: UILabel!
-    @IBOutlet private weak var hideGrid: UIButton!
     // MARK: - Mask edit controls
     @IBOutlet private weak var createNewMaskButton: UIButton!
     @IBOutlet private weak var switchMaskButton: UIButton!
@@ -115,7 +114,7 @@ final class DebugWindow: UIView, PerformanceMeasurmentProvider, PoseDetectorProv
     
     private var bag = Set<AnyCancellable>()
     private lazy var collectionManager = DebugCollectionMenu(collectionView: self.menuCollectionView)
-    // MARK: - Hit test interaction enabled views
+    // MARK: - Hit test interaction for collection menu
     private var isGridHidden: Bool = false
     
     // MARK: - Hit test handlers
@@ -152,11 +151,9 @@ final class DebugWindow: UIView, PerformanceMeasurmentProvider, PoseDetectorProv
     func configure() {
         handleInput()
         configureCollectionMenu()
-        handleEditorMode(.select)
+        handleEditorMode(.add)
     }
 }
-
-// MARK: - Private
 
 extension DebugWindow {
     // MARK: - Detection parts and sounds picker
@@ -165,7 +162,14 @@ extension DebugWindow {
         collectionManager.configure()
         collectionManager.output.sink(receiveValue: { [weak self] response in
             switch response {
-            case .didPressNode(let menuItem):
+            case .soundDidSelect(let menuItem):
+                guard let soundName = menuItem.soundForZone else { return }
+                Logger.log(soundName, type: .editor)
+                ZoneBaseAudio.shared.playSoundForZone(with: soundName)
+                self?.zoneSoundNameLabel.text = soundName
+                self?.zoneSoundNameLabel.animateBackgroundChangeFromRandomToInitial()
+                self?.output.send(.soundForZone(soundName))
+            case .landmarkDidSelect(let menuItem):
                 self?.poseDetector.input.send(.targetLandmarksToggle([menuItem.landmark]))
             }
         }).store(in: &bag)
@@ -174,7 +178,8 @@ extension DebugWindow {
         input.sink(receiveValue: {  [weak self] action in
             switch action {
             case .populateMenuCollection:
-                self?.collectionManager.input.send(.populateWithSections)
+                // MARK: - Populate with landmarks
+                self?.collectionManager.input.send(.populateWithLandmarks)
             case .forcedMode(let mode):
                 self?.handleEditorMode(mode)
             case .currentZoneInfo(let selectedZoneInfo):
@@ -188,15 +193,16 @@ extension DebugWindow {
             case _: break
             }
         }).store(in: &bag)
-        detectionSettingButton.publisher().sink(receiveValue: { [weak self] _ in
+        detectionLandmarksSelectButton.publisher().sink(receiveValue: { [weak self] _ in
+            self?.collectionManager.input.send(.populateWithLandmarks)
             self?.menuCollectionView.isHidden.toggle()
         }).store(in: &bag)
         hideEverythingButton.publisher().sink(receiveValue: { [weak self] _ in
+            self?.menuCollectionView.isHidden = true
             self?.output.send(.hideDebug(true))
-            self?.menuCollectionView.isHidden.toggle()
         }).store(in: &bag)
         hideGrid.publisher().sink(receiveValue: { [weak self] _ in
-            self?.output.send(.shouldHideGrid(true))
+            //self?.output.send(.shouldHideGrid(true))
         }).store(in: &bag)
         resetMaskButton.publisher()
             .sink(receiveValue: { [weak self] _ in
@@ -224,6 +230,11 @@ extension DebugWindow {
             .sink(receiveValue: { [weak self] _ in
                 self?.handleEditorMode(.delete)
                 self?.output.send(.editorMode(.delete))
+            }).store(in: &bag)
+        zoneEditSoundButton.publisher()
+            .sink(receiveValue: { [weak self] _ in
+                self?.collectionManager.input.send(.populateWithSounds)
+                self?.menuCollectionView.isHidden.toggle()
             }).store(in: &bag)
         // MARK: - Position and Scale for zone
         moveUpZoneButton.publisher().sink(receiveValue: { [weak self] _ in
@@ -277,6 +288,7 @@ extension DebugWindow {
         scaleInfoWidthLabel.text = info.scaleX.description
         scaleInfoHeightLabel.text = info.scaleY.description
         totalZonesLabel.text = info.zonesTotal.description
+        zoneSoundNameLabel.text = info.sound
     }
     private func debugAction(_ msg: String, delay: TimeInterval = 5) {
         let debugCurrentModeLabel = UILabel(frame: CGRect(x: 0, y: 50, width: bounds.width, height: 150))
@@ -290,6 +302,6 @@ extension DebugWindow {
         UIView.animate(withDuration: 0.3, delay: delay, options: [.allowUserInteraction], animations: {
             [weak debugCurrentModeLabel] in
             debugCurrentModeLabel?.transform = debugCurrentModeLabel!.transform.scaledBy(x: 1, y: 0.01)
-        }, completion: { debugCurrentModeLabel.removeFromSuperview() })
+        }, completion: { _ in debugCurrentModeLabel.removeFromSuperview() })
     }
 }

@@ -11,7 +11,6 @@ import Combine
 import AVFoundation
 
 // MARK: - DetectionManager configuration model
-
 final class DetectionManagerConfig {
     let capturePreviewLayer: AVCaptureVideoPreviewLayer
     let annotationOverlayView: AnnotationsOverlayView
@@ -34,7 +33,6 @@ final class DetectionManagerConfig {
 }
 
 // MARK: - DetectionManager
-
 final class PoseRecognizer: ErrorHandlerProvider, PerformanceMeasurmentProvider {
     /// API
     let input = PassthroughSubject<Action, Never>()
@@ -77,7 +75,7 @@ final class PoseRecognizer: ErrorHandlerProvider, PerformanceMeasurmentProvider 
     private var configuration: DetectionManagerConfig!
     
     private let pointProcessor: PointProcessor
-    // For changing amount of processed or skipped frames its need to change one of this values
+    /// For changing amount of processed or skipped frames its need to change one of this values
     private var countOfFramesForProcessing = 1
     private var countOfFramesForSkipping = 1
     private var currentProcessedFrameNumber = 0
@@ -104,7 +102,6 @@ final class PoseRecognizer: ErrorHandlerProvider, PerformanceMeasurmentProvider 
 }
 
 // MARK: - Private
-
 private extension PoseRecognizer {
     
     func processFrameWithSampleBuffer(_ sampleBuffer: CMSampleBuffer) {

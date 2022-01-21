@@ -19,18 +19,19 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cay-4D-QQw">
                         <rect key="frame" x="0.0" y="0.0" width="156" height="63"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gb9-pH-QQ6">
-                                <rect key="frame" x="8" y="25.5" width="140" height="12"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="10"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AWz-lP-OhQ">
+                                <rect key="frame" x="0.0" y="0.0" width="156" height="63"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="8"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Gb9-pH-QQ6" firstAttribute="leading" secondItem="cay-4D-QQw" secondAttribute="leading" constant="8" id="8Ul-gv-u3U"/>
-                            <constraint firstItem="Gb9-pH-QQ6" firstAttribute="centerY" secondItem="cay-4D-QQw" secondAttribute="centerY" id="FWC-ND-6pC"/>
-                            <constraint firstAttribute="trailing" secondItem="Gb9-pH-QQ6" secondAttribute="trailing" constant="8" id="a5w-ut-Ljm"/>
+                            <constraint firstItem="AWz-lP-OhQ" firstAttribute="top" secondItem="cay-4D-QQw" secondAttribute="top" id="g6D-LX-GyX"/>
+                            <constraint firstAttribute="trailing" secondItem="AWz-lP-OhQ" secondAttribute="trailing" id="kJS-vS-LGh"/>
+                            <constraint firstAttribute="bottom" secondItem="AWz-lP-OhQ" secondAttribute="bottom" id="otQ-Lv-pXi"/>
+                            <constraint firstItem="AWz-lP-OhQ" firstAttribute="leading" secondItem="cay-4D-QQw" secondAttribute="leading" id="ppN-CB-uFR"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -45,7 +46,7 @@
             <size key="customSize" width="156" height="63"/>
             <connections>
                 <outlet property="containerView" destination="cay-4D-QQw" id="dl8-ag-CmK"/>
-                <outlet property="mainLabel" destination="Gb9-pH-QQ6" id="fu7-Xc-6S6"/>
+                <outlet property="mainLabel" destination="AWz-lP-OhQ" id="H7Q-J9-hUE"/>
             </connections>
             <point key="canvasLocation" x="60.869565217391312" y="112.83482142857142"/>
         </collectionViewCell>
