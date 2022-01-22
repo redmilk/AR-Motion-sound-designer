@@ -9,23 +9,122 @@ import Foundation
 import UIKit.UIColor
 
 struct Mask64Mapper {
-    private let rowsCount: Int = 8
-    private let linesCount: Int = 16
     
-    private let lineWidth = 1
-    private let rowWidth = 1
+    enum SoundsTotal {
+        case sounds32
+        case sounds32equal
+        case sounds32x2
+        case sounds32x2rowSpacing
+        case sounds32fillScreen
+        case sounds64
+        case sounds64fillScreen
+        case sounds64x2
+        case sounds64x2fillScreen
+    }
     
-    private let rowSpacing: Int = 2
-    private let lineSpacing: Int = 2
+    var rowsCount: Int!
+    var linesCount: Int!
     
-    private let topPadding: Int = 10
-    private let leftPadding: Int = 1
+    var lineWidth: Int!
+    var rowWidth: Int!
+    
+    var rowSpacing: Int!
+    var lineSpacing: Int!
+    
+    var topPadding: Int!
+    var leftPadding: Int!
+    
+    init(type: SoundsTotal) {
+        switch type {
+        case .sounds32equal:
+            rowsCount = 4
+            linesCount = 8
+            lineWidth = 4
+            rowWidth = 3
+            rowSpacing = 4
+            lineSpacing = 4
+            topPadding = 2
+            leftPadding = 2
+        case .sounds32:
+            rowsCount = 4
+            linesCount = 8
+            lineWidth = 5
+            rowWidth = 4
+            rowSpacing = 4
+            lineSpacing = 3
+            topPadding = 2
+            leftPadding = 0
+        case .sounds32x2:
+            rowsCount = 4
+            linesCount = 16
+            lineWidth = 3
+            rowWidth = 5
+            rowSpacing = 2
+            lineSpacing = 1
+            topPadding = 0
+            leftPadding = 1
+        case .sounds32x2rowSpacing:
+            rowsCount = 4
+            linesCount = 16
+            lineWidth = 3
+            rowWidth = 4
+            rowSpacing = 4
+            lineSpacing = 0
+            topPadding = 3
+            leftPadding = 0
+        case .sounds32fillScreen:
+            rowsCount = 4
+            linesCount = 8
+            lineWidth = 8
+            rowWidth = 7
+            rowSpacing = 0
+            lineSpacing = 0
+            topPadding = 0
+            leftPadding = 0
+        case .sounds64:
+            rowsCount = 8
+            linesCount = 8
+            lineWidth = 1
+            rowWidth = 1
+            rowSpacing = 2
+            lineSpacing = 2
+            topPadding = 16
+            leftPadding = 1
+        case .sounds64fillScreen:
+            rowsCount = 8
+            linesCount = 8
+            lineWidth = 8
+            rowWidth = 3
+            rowSpacing = 0
+            lineSpacing = 0
+            topPadding = 0
+            leftPadding = 0
+        case .sounds64x2:
+            rowsCount = 8
+            linesCount = 16
+            lineWidth = 1
+            rowWidth = 1
+            rowSpacing = 2
+            lineSpacing = 2
+            topPadding = 5
+            leftPadding = 1
+        case .sounds64x2fillScreen:
+            rowsCount = 8
+            linesCount = 16
+            lineWidth = 3
+            rowWidth = 3
+            rowSpacing = 0
+            lineSpacing = 0
+            topPadding = 4
+            leftPadding = 0
+        }
+    }
     
     func makeMask64() -> Mask64SoundsDemo {
         var zonePresets: [SoundZone: ZoneValue] = [:]
         var prevLineY: Int?
         var counter = 0
-        for line in 0...linesCount - 1 {
+        for line in 0..<linesCount {
             var y = line + lineWidth + (prevLineY ?? 1) + lineSpacing
             prevLineY = y - line
             if line == 0 {
@@ -33,7 +132,8 @@ struct Mask64Mapper {
                 y = topPadding
             }
             var prevRowX: Int?
-            for row in 0...rowsCount - 1 {
+            var rowSounds: String = ""
+            for row in 0..<rowsCount {
                 var x = row + rowWidth + (prevRowX ?? 1) + rowSpacing
                 prevRowX = x - row
                 if row == 0 {
@@ -42,17 +142,20 @@ struct Mask64Mapper {
                 }
                 let soundZone = SoundZone(
                     minX: x, maxX: x + rowWidth, minY: y, maxY: y + lineWidth)
-                counter += 1
-                if counter == 63 {
-                    counter = 0
-                }
                 let soundNameStr = counter >= 10 ?
                 counter.description : "0\(counter)"
                 let soundValue = ZoneValue(icons: nil, soundName: soundNameStr, color: .random.withAlphaComponent(0.5))
                 zonePresets[soundZone] = soundValue
+                counter += 1
+                if counter == 32 {
+                    counter = 0
+                }
+                rowSounds += " " + soundNameStr
             }
+            print(rowSounds)
             prevRowX = nil
         }
+        
         return Mask64SoundsDemo(zonePresets: zonePresets)
     }
 }

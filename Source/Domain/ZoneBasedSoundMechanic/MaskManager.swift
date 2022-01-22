@@ -29,7 +29,7 @@ final class MaskManager {
     init() {
         maskPresets = [
             .editor: EditorZoneSelection.mask,
-            .mask64: Mask64Mapper().makeMask64()
+            .mask64: Mask64Mapper(type: .sounds32).makeMask64()
         ]
     }
 }

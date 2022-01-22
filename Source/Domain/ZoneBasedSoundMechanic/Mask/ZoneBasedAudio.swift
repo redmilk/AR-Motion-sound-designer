@@ -76,6 +76,7 @@ class ZoneBaseAudio: NSObject, AVAudioPlayerDelegate, MaskManagerProvider {
     }
     
     func playSoundForZone(with fileName: String) {
+        guard !fileName.isEmpty else { return }
         var fileNameURL: URL?
         
         guard let bundle = Bundle.main.path(forResource: fileName.replacingOccurrences(of: ".wav", with: ""), ofType: "wav") else { return }
