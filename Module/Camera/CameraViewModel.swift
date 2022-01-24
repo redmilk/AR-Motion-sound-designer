@@ -23,6 +23,7 @@ final class CameraViewModel {
                             collectionMatrix: UICollectionView)
       case startSession
       case stopSession
+       case toggleSession
    }
    
    let input = PassthroughSubject<CameraViewModel.Action, Never>()
@@ -46,6 +47,10 @@ final class CameraViewModel {
             self?.handposeMechanics.input.send(.startSession)
          case .stopSession:
             self?.handposeMechanics.input.send(.stopSession)
+         case .toggleSession:
+             if let isRunning = self?.handposeMechanics.isSessionRunning {
+                 self?.handposeMechanics.input.send(isRunning ? .stopSession : .startSession)
+             }
          }
       }).store(in: &bag)
       

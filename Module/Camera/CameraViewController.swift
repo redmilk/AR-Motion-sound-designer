@@ -16,8 +16,9 @@ import AVFoundation
 final class CameraViewController: UIViewController,
                                     SessionMediaServiceProvider,
                                     PerformanceMeasurmentProvider,
-                                    MaskEditorProvider,
-                                    AlertPresentable {
+                                    AlertPresentable,
+                                    MaskManagerProvider,
+                                    MaskEditorProvider {
     enum State {
         case captureSessionReceived(AVCaptureSession)
         case debugWindow(isHidden: Bool)
@@ -28,9 +29,9 @@ final class CameraViewController: UIViewController,
     @IBOutlet private weak var cameraView: UIView!
     @IBOutlet private weak var collectionView: UICollectionView!
     /// debug window
-    @IBOutlet private weak var debugWindow: DebugWindow!
-    @IBOutlet weak var debugWindowHeightConstraint: NSLayoutConstraint!
-    
+    @IBOutlet private weak var debugWindow: DebugWindow!    
+    @IBOutlet weak var debugWindowBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var debugWindowTopConstraint: NSLayoutConstraint!
     private lazy var matrixCollection = MatrixCollection(collectionView: collectionView)
     private let viewModel: CameraViewModel
     private var bag = Set<AnyCancellable>()
@@ -51,7 +52,7 @@ final class CameraViewController: UIViewController,
                 switch state {
                 case .captureSessionReceived(let captureSession):
                     self.videoPreviewView.setupWithCaptureSession(captureSession)
-                    self.viewModel.input.send(.startSession)
+                    //self.viewModel.input.send(.startSession)
                     self.containerView.bringSubviewToFront(self.collectionView)
                 case .debugWindow(_): break
                 }
@@ -70,12 +71,15 @@ final class CameraViewController: UIViewController,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /// editor updates
-        editor.output.sink(receiveValue: { [weak self] response in
-            guard let self = self else { return }
+        /// mask manager updates
+        maskManager.output.sink(receiveValue: { [weak self] response in
             switch response {
-            case .showAlert(let message, let title, let button):
-                self.displayAlert(fromParentView: self.view, with: message, title: title, buttonTitle: button)
+            case .importedMask(let mask):
+                self?.matrixCollection.input.send(.drawMask(mask.zonePresets))
+            case .nextMask(let mask, let descriptionModel):
+                self?.matrixCollection.input.send(.drawMask(mask.zonePresets))
+                self?.editor.input.send(.setupMask(mask))
+                self?.debugWindow.input.send(.displaySelectedMaskDescriptionsModel(descriptionModel))
             }
         }).store(in: &bag)
         editor.newZonePub
@@ -94,6 +98,7 @@ final class CameraViewController: UIViewController,
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] _ in
                 self?.hideDebugWindow(false)
+                //self?.debugWindow.input.send(.forcedMode(.idle))
         }).store(in: &bag)
         editor.modeSwitchPub
             .sink(receiveValue: { [weak self] mode in
@@ -118,17 +123,38 @@ final class CameraViewController: UIViewController,
                 case .shouldHideGrid(let shouldHideGrid):
                     self?.matrixCollection.input.send(.removeAll(shouldHideGrid: shouldHideGrid))
                     self?.editor.input.send(.resetMask)
-                case .hideDebug(let isHidden):
-                    self?.hideDebugWindow(isHidden)
                 case .resetMask:
-                    self?.matrixCollection.input.send(.removeAll(shouldHideGrid: false))
-                    self?.editor.input.send(.resetMask)
+                    guard let self = self else { return }
+                    self.displayAlert(fromParentView: self.view, with: "All your progress will be lost. Are you sure you want to discard current changes?", title: "Confirm to reset", isDangerAction: true, action: {
+                    }, buttonTitle: "Cancel", extraAction: { [weak self] in
+                        self?.matrixCollection.input.send(.removeAll(shouldHideGrid: false))
+                        self?.editor.input.send(.resetMask)
+                    }, extraActionTitle: "DISCARD CHANGES")
                 case .editorMode(let mode):
                     self?.editor.input.send(.mode(mode))
                 case .transformZone(let x, let y, let w, let h):
                     self?.editor.input.send(.transformZone(x: x, y: y, w: w, h: h))
                 case .soundForZone(let soundName):
                     self?.editor.input.send(.soundForCurrentZone(soundName))
+                case .maskSaveAndExport:
+                    guard let mask = self?.editor.mask, let maskJSON = self?.maskManager.exportJSON(with: mask) else { return }
+                    self?.share(with: maskJSON)
+                    self?.maskManager.saveMask(with: maskJSON)
+                case .maskImportFromPasteboard:
+                    self?.maskManager.importFromClipboard()
+                case .toggleCamera:
+                    self?.viewModel.input.send(.toggleSession)
+                case .hideDebug(let isHidden):
+                    self?.hideDebugWindow(isHidden)
+                case .toggleFlipMenu:
+                    self?.toggleMenuTopBottom()
+                    self?.debugWindow.input.send(.toggleFlipMenu)
+                case .undoAction:
+                    self?.editor.input.send(.undo)
+                case .nextTemplate:
+                    self?.maskManager.input.send(.getNextMask)
+                case .prevTemplate:
+                    self?.maskManager.input.send(.getNextMask)
                 }
             }).store(in: &bag)
 
@@ -145,11 +171,6 @@ final class CameraViewController: UIViewController,
         super.viewWillAppear(animated)
         debugWindow.configure()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        /// start session
-        //self.viewModel.input.send(.startSession)
-    }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         /// stop session
@@ -157,8 +178,11 @@ final class CameraViewController: UIViewController,
     }
     
     private func hideDebugWindow(_ isHidden: Bool) {
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: [], animations: {
-            self.debugWindow.transform = isHidden ? CGAffineTransform.identity.translatedBy(x: 0.0, y: 400) : CGAffineTransform.identity
-        }, completion: nil)
+        self.debugWindow.isHidden.toggle()
+    }
+    private func toggleMenuTopBottom() {
+        debugWindowBottomConstraint.isActive.toggle()
+        debugWindowTopConstraint.isActive.toggle()
+        view.layoutIfNeeded()
     }
 }

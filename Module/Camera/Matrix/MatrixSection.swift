@@ -7,7 +7,12 @@
 
 import Foundation
 
-final class MatrixSection: Hashable {
+final class MatrixSection: Hashable, NSCopying {
+    func copy(with zone: NSZone? = nil) -> Any {
+        let section = MatrixSection(nodes: nodes, id: id)
+        return section
+    }
+    
     var id: String
     let nodes: [MatrixNode]
     

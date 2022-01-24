@@ -29,6 +29,8 @@ final class SessionMediaService {
     let input = PassthroughSubject<Action, Never>()
     let output = PassthroughSubject<Response, Never>()
     
+    var isRunning: Bool { captureSession.isRunning }
+    
     private let captureSession = AVCaptureSession()
     private let sessionQueue = DispatchQueue(label: "capture-session-queue", qos: .userInteractive)
     private var sessionInputManager: SessionInputManager!

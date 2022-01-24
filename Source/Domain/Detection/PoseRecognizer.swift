@@ -88,9 +88,7 @@ final class PoseRecognizer: ErrorHandlerProvider, PerformanceMeasurmentProvider 
         return PoseDetector.poseDetector(options: options)
     }()
     
-    private var landmarksToTrack: [PoseLandmarkType: PoseLandmarkType] = [:
-
-    ] {
+    private var landmarksToTrack: [PoseLandmarkType: PoseLandmarkType] = [:] {
         didSet {
             landmarks = Array(landmarksToTrack.keys)
             Logger.log(landmarksToTrack.keys.count.description)

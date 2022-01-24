@@ -24,7 +24,7 @@ class UtilsForDrawing {
         let circleView = UIImageView(frame: circleRect)
         circleView.image = UIImage(named: "point")
         circleView.layer.cornerRadius = radius / divisor
-        circleView.alpha = Constant.circleImageAlpha
+        circleView.alpha = 1
         view.addSubview(circleView)
         circleView.bringSubviewToFront(view)
         
@@ -47,7 +47,7 @@ class UtilsForDrawing {
         let circleRect = CGRect(x: xCoord, y: yCoord, width: radius, height: radius)
         let circleView = UIView(frame: circleRect)
         circleView.layer.cornerRadius = radius / divisor
-        circleView.alpha = Constant.circleViewAlpha
+        circleView.alpha = 0.7
         circleView.backgroundColor = color
         view.addSubview(circleView)
         circleView.bringSubviewToFront(view)
@@ -73,8 +73,8 @@ class UtilsForDrawing {
     static func addRectangle(_ rectangle: CGRect, to view: UIView, color: UIColor) {
         guard !rectangle.isNaN() else { return }
         let rectangleView = UIView(frame: rectangle)
-        rectangleView.layer.cornerRadius = Constant.rectangleViewCornerRadius
-        rectangleView.alpha = Constant.rectangleViewAlpha
+        rectangleView.layer.cornerRadius = 10
+        rectangleView.alpha = 0.3
         rectangleView.backgroundColor = color
         view.addSubview(rectangleView)
     }
@@ -98,7 +98,7 @@ class UtilsForDrawing {
         shapeLayer.fillColor = color.cgColor
         let rect = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
         let shapeView = UIView(frame: rect)
-        shapeView.alpha = Constant.shapeViewAlpha
+        shapeView.alpha = 0.3
         shapeView.layer.addSublayer(shapeLayer)
         view.addSubview(shapeView)
     }

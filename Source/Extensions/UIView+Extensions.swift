@@ -18,8 +18,28 @@ extension XibDesignable where Self: UIView {
         }
         return view
     }
+    func loadViewFromNib(nibName: String) -> UIView {
+        if nibExists(name: nibName) {
+            return getNibForClass(named: nibName)
+        } else if let superClass = superclass.self {
+            let parentName = String(describing: superClass)
+            if nibExists(name: parentName) {
+                return getNibForClass(named: parentName)
+            }
+        }
+        fatalError("\"\(nibName).xib\" does not exist")
+    }
+    func nibExists(name: String) -> Bool {
+        !(Bundle.main.path(forResource: name, ofType: "nib") == nil)
+    }
+    func getNibForClass(named nibName: String) -> UIView {
+        let bundle = Bundle(for: Self.self)
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        return view
+    }
 }
-extension UIView: XibDesignable { }
+extension UIView: XibDesignable, InteractionFeedbackService { }
 
 extension UIView {
     func addAndFill(_ subview: UIView, topPadding: Int = 0) {
@@ -79,5 +99,10 @@ extension UIView {
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
     }
-    
+    func addBlur(_ style: UIBlurEffect.Style = .systemUltraThinMaterialDark) {
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.translatesAutoresizingMaskIntoConstraints = false
+        insertSubview(blurEffectView, at: 0)
+    }
 }

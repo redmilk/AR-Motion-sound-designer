@@ -17,6 +17,7 @@ final class DebugMenuCell: UICollectionViewCell {
             /// resolve what to display
             /// landmarks for detector or sound names
             mainLabel.text = item.soundForZone?.replacingOccurrences(of: ".wav", with: "") ?? item.landmark.description.capitalized
+            containerView.layer.borderWidth = !isForSounds && item.isSelected ? 3 : 0
         }
     }
     
@@ -25,6 +26,7 @@ final class DebugMenuCell: UICollectionViewCell {
         containerView.layer.masksToBounds = true
         containerView.layer.borderColor = UIColor.green.cgColor
         containerView.layer.cornerRadius = 6
+        containerView.layer.borderWidth = 0
     }
     
     func didSelect() {

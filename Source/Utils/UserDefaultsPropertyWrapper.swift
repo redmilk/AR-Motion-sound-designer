@@ -7,12 +7,10 @@
 
 import Foundation
 
-/// UDK - User Defaults Keys
 enum UDK: String, CaseIterable {
-    case dummyExample
+    case savedMaskList, savedMaskListTotal
 }
 
-/// UD - User Defaults
 @propertyWrapper struct UD<Value: Codable> {
     private let key: UDK
     private let defaultValue: Value
@@ -32,7 +30,6 @@ enum UDK: String, CaseIterable {
             return defaultValue
         }
         set {
-            /// we need to wrap it into an array to encode Bool or String etc. to Data
             let value = try? PropertyListEncoder().encode([newValue])
             ud.setValue(value, forKey: key.rawValue)
         }

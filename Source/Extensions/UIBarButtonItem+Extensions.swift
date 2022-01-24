@@ -17,6 +17,8 @@ extension BarButtonControlPublisher {
     }
 }
 
+extension UIBarButtonItem: InteractionFeedbackService { }
+
 struct BarButtonControlWithPublisher<T: UIBarButtonItem>: Publisher {
     typealias Output = T
     typealias Failure = Never
@@ -58,6 +60,7 @@ struct BarButtonControlWithPublisher<T: UIBarButtonItem>: Publisher {
         @objc private func doAction(_ sender: UIControl) {
             guard let sender = self.sender else { return }
             _ = downstream?.receive(sender)
+            sender.generateInteractionFeedback()
         }
         
         private func finish() {

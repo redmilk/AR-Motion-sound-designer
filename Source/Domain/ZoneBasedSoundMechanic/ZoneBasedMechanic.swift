@@ -30,6 +30,8 @@ final class ZoneBasedMechanic: PoseDetectorProvider,
     let input = PassthroughSubject<Action, Never>()
     let output = PassthroughSubject<Response, Never>()
     
+    var isSessionRunning: Bool { sessionMediaService.isRunning }
+    
     private var bag = Set<AnyCancellable>()
     private var matrixCollection: UICollectionView!
     private var configuration: DetectionManagerConfig!
@@ -51,8 +53,8 @@ final class ZoneBasedMechanic: PoseDetectorProvider,
                     self?.configuration = configuration
                     self?.poseDetector.input.send(.configure(configuration))
                     self?.sessionMediaService.input.send(.configure)
-                case .startSession:
-                    break//self?.sessionMediaService.input.send(.startSession)
+                case .startSession: break
+                    //self?.sessionMediaService.input.send(.startSession)
                 case .stopSession:
                     self?.sessionMediaService.input.send(.stopSession)
                 }
@@ -101,7 +103,7 @@ final class ZoneBasedMechanic: PoseDetectorProvider,
 private extension ZoneBasedMechanic {
     func drawLandmarksForPose(atPoint point: CGPoint) {
         if configuration.shouldDrawCircle {
-            UtilsForDrawing.addCircleImage(atPoint: point, to: self.configuration.annotationOverlayView, radius: Constant.bigDotRadius)
+            UtilsForDrawing.addCircleImage(atPoint: point, to: self.configuration.annotationOverlayView, radius: 15)
         }
         
         if configuration.shouldDrawSkeleton {
@@ -109,7 +111,7 @@ private extension ZoneBasedMechanic {
                 atPoint: point,
                 to: configuration.annotationOverlayView,
                 color: UIColor.blue,
-                radius: Constant.smallDotRadius
+                radius: 4.0
             )
         }
     }
@@ -146,7 +148,7 @@ private extension ZoneBasedMechanic {
                 toPoint: endLandmarkPoint,
                 inView: configuration.annotationOverlayView,
                 color: UIColor.green,
-                width: Constant.lineWidth)
+                width: 3.0)
         }
     }
 }

@@ -21,6 +21,8 @@ extension CGPoint {
     }
 }
 
+fileprivate var lastDotsNumber = 3
+
 class MovingAverageFilter {
     var elements: [PredictedPoint?] = []
     private var limit: Int
@@ -123,7 +125,7 @@ final class PointProcessor {
     }
     
     func averageDot(newDot: CGPoint, type: PoseLandmarkType) -> CGPoint {
-        let numberOfLastDots = Constant.lastDotsNumber
+        let numberOfLastDots = lastDotsNumber
         
         var lastThreeDotsOfType = lastThreeDots[type.rawValue]
         if lastThreeDotsOfType == nil {

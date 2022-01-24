@@ -10,10 +10,12 @@ import UIKit
 import Combine
 
 extension DebugWindow {
-    enum Action {
+    enum Input {
         case populateMenuCollection
         case forcedMode(EditorZoneSelection.Mode)
         case currentZoneInfo(EditorDescription)
+        case toggleFlipMenu
+        case displaySelectedMaskDescriptionsModel(MaskDescription)
     }
     enum Response {
         case shouldHideGrid(Bool)
@@ -22,11 +24,18 @@ extension DebugWindow {
         case editorMode(EditorZoneSelection.Mode)
         case transformZone(x: Int, y: Int, w: Int, h: Int)
         case soundForZone(String)
+        case maskSaveAndExport
+        case maskImportFromPasteboard
+        case toggleCamera
+        case toggleFlipMenu
+        case undoAction
+        case nextTemplate
+        case prevTemplate
     }
 }
 
-final class DebugWindow: UIView, PerformanceMeasurmentProvider, PoseDetectorProvider {
-    let input = PassthroughSubject<Action, Never>()
+final class DebugWindow: UIView, PerformanceMeasurmentProvider, PoseDetectorProvider, MaskEditorProvider {
+    let input = PassthroughSubject<Input, Never>()
     let output = PassthroughSubject<Response, Never>()
     
     @IBOutlet private weak var contentView: UIView!
@@ -36,81 +45,86 @@ final class DebugWindow: UIView, PerformanceMeasurmentProvider, PoseDetectorProv
     @IBOutlet weak var maskControlsStack: UIStackView!
     @IBOutlet weak var generalInfoStack: UIStackView!
     // MARK: - Editor controls
-    @IBOutlet private weak var detectionLandmarksSelectButton: UIButton!
-    @IBOutlet private weak var hideEverythingButton: UIButton!
-    @IBOutlet private weak var hideGrid: UIButton!
+    @IBOutlet private weak var detectionLandmarksSelectButton: TapAnimatedButton!
     @IBOutlet private weak var menuCollectionView: UICollectionView!
     // MARK: - Zone ransform
     @IBOutlet weak var positionInfoStack: UIStackView!
     @IBOutlet weak var positionXLabel: UILabel!
     @IBOutlet weak var positionYLabel: UILabel!
     @IBOutlet weak var positionControlsStack: UIStackView!
-    @IBOutlet weak var moveUpZoneButton: UIButton!
-    @IBOutlet weak var moveDownZoneButton: UIButton!
-    @IBOutlet weak var moveLeftZoneButton: UIButton!
-    @IBOutlet weak var moveRightZoneButton: UIButton!
-    @IBOutlet weak var scaleDownZoneButton: UIButton!
-    @IBOutlet weak var scaleUpZoneButton: UIButton!
+    @IBOutlet weak var moveUpZoneButton: TapAnimatedButton!
+    @IBOutlet weak var moveDownZoneButton: TapAnimatedButton!
+    @IBOutlet weak var moveLeftZoneButton: TapAnimatedButton!
+    @IBOutlet weak var moveRightZoneButton: TapAnimatedButton!
+    @IBOutlet weak var scaleDownZoneButton: TapAnimatedButton!
+    @IBOutlet weak var scaleUpZoneButton: TapAnimatedButton!
     // MARK: - Zone axis scale
     @IBOutlet weak var scaleInfoStack: UIStackView!
     @IBOutlet weak var scaleInfoWidthLabel: UILabel!
     @IBOutlet weak var scaleInfoHeightLabel: UILabel!
     @IBOutlet weak var scaleUpAxisStack: UIStackView!
-    @IBOutlet weak var scaleDownAxisStack: UIStackView!
-    @IBOutlet weak var scaleUpWidthButton: UIButton!
-    @IBOutlet weak var scaleDownWidthButton: UIButton!
-    @IBOutlet weak var scaleUpHeightButton: UIButton!
-    @IBOutlet weak var scaleDownHeightButton: UIButton!
+    @IBOutlet weak var scaleUpWidthButton: TapAnimatedButton!
+    @IBOutlet weak var scaleDownWidthButton: TapAnimatedButton!
+    @IBOutlet weak var scaleUpHeightButton: TapAnimatedButton!
+    @IBOutlet weak var scaleDownHeightButton: TapAnimatedButton!
     // MARK: - Zone management controls
     @IBOutlet weak var zoneEditStack: UIStackView!
-    @IBOutlet weak var zoneEditAddButton: UIButton!
-    @IBOutlet weak var zoneEditSelectButton: UIButton!
-    @IBOutlet weak var zoneEditCloneButton: UIButton!
-    @IBOutlet weak var zoneEditDrawButton: UIButton!
-    @IBOutlet weak var zoneEditSoundButton: UIButton!
-    @IBOutlet weak var zoneEditConfigButton: UIButton!
-    @IBOutlet weak var zoneEditDeleteButton: UIButton!
-    @IBOutlet weak var zoneEditPreviousButton: UIButton!
-    @IBOutlet weak var zoneEditNextButton: UIButton!
-    @IBOutlet weak var zoneEditResetButton: UIButton!
-    @IBOutlet weak var zoneEditCommitButton: UIButton!
+    @IBOutlet weak var zoneEditAddButton: TapAnimatedButton!
+    @IBOutlet weak var zoneEditCloneButton: TapAnimatedButton!
+    
+    @IBOutlet weak var zoneEditAlignmentButton: TapAnimatedButton!
+    @IBOutlet weak var zoneEditDrawButton: TapAnimatedButton!
+    @IBOutlet weak var zoneEditSoundButton: TapAnimatedButton!
+    @IBOutlet weak var zoneEditConfigButton: TapAnimatedButton!
+    @IBOutlet weak var zoneEditDeleteButton: TapAnimatedButton!
+    @IBOutlet weak var previousTemplateButton: TapAnimatedButton!
+    @IBOutlet weak var nextTemplateButton: TapAnimatedButton!
+    @IBOutlet weak var undoButton: TapAnimatedButton!
+    @IBOutlet weak var tryItButtonn: TapAnimatedButton!
+    
     // MARK: - Zone edit controls
-    @IBOutlet weak var performanceInfoStack: UIStackView!
     @IBOutlet private weak var fpsLabel: UILabel!
-    @IBOutlet private weak var currentGridScaleLabel: UILabel!
     @IBOutlet weak var zoneInfoStack: UIStackView!
     @IBOutlet weak var zoneSoundNameLabel: UILabel!
     @IBOutlet weak var zoneForceSoundStatusLabel: UILabel!
     @IBOutlet weak var zoneVolumeLabel: UILabel!
     @IBOutlet weak var zoneMuteGroupLabel: UILabel!
-    @IBOutlet weak var zoneIsHiddenLabel: UILabel!
     // MARK: - Mask edit controls
-    @IBOutlet private weak var createNewMaskButton: UIButton!
-    @IBOutlet private weak var switchMaskButton: UIButton!
-    @IBOutlet private weak var resetMaskButton: UIButton!
-    @IBOutlet private weak var saveMaskButton: UIButton!
-    @IBOutlet private weak var exportMaskButton: UIButton!
-    @IBOutlet private weak var importMaskButton: UIButton!
-    @IBOutlet private weak var selectBackgroundSoundButton: UIButton!
-    @IBOutlet private weak var maskSettingsButton: UIButton!
+    @IBOutlet private weak var createNewMaskButton: TapAnimatedButton!
+    @IBOutlet private weak var resetMaskButton: TapAnimatedButton!
+    @IBOutlet private weak var saveMaskButton: TapAnimatedButton!
+    @IBOutlet private weak var exportMaskButton: TapAnimatedButton!
+    @IBOutlet private weak var importMaskButton: TapAnimatedButton!
+    @IBOutlet private weak var maskSettingsButton: TapAnimatedButton!
     // MARK: - Mask debug descriptions
     @IBOutlet weak var maskTitleLabel: UILabel!
-    @IBOutlet weak var maskOrderNumberLabel: UILabel!
     @IBOutlet weak var maskZonesTotalLabel: UILabel!
     @IBOutlet weak var maskBackgroundSoundLabel: UILabel!
     @IBOutlet weak var maskTypeLabel: UILabel!
     @IBOutlet weak var maskBackgroundSoundVolumeLabel: UILabel!
     @IBOutlet weak var maskIsAllZonesForceSoundLabel: UILabel!
     @IBOutlet weak var maskIsAllZonesHiddenLabel: UILabel!
-    @IBOutlet weak var maskTotalSizeLabel: UILabel!
-    @IBOutlet weak var maskAverageSoundSizeLabel: UILabel!
     // MARK: - Other description labels
-    @IBOutlet weak var totalZonesLabel: UILabel!
     @IBOutlet weak var defaultMasksCountLabel: UILabel!
     @IBOutlet weak var mask64CountLabel: UILabel!
     @IBOutlet weak var totalAvailableSoundsLabel: UILabel!
     @IBOutlet weak var totalAvailableSoundsMP3Label: UILabel!
     @IBOutlet weak var totalAvailableSoundsWAVLabel: UILabel!
+    @IBOutlet weak var modeStatusLabel: UILabel!
+    
+    @IBOutlet weak var startCameraButton: UIButton!
+    
+    @IBOutlet weak var menuToggleFlipButton: TapAnimatedButton!
+    @IBOutlet weak var menuBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var menuTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var menuCloseButton: TapAnimatedButton!
+    
+    @IBOutlet weak var currentMaskOrderNumberLabel: UILabel!
+    @IBOutlet weak var totalMasksCountLabel: UILabel!
+    @IBOutlet weak var maskForcesAllSoundsLabel: UILabel!
+    @IBOutlet weak var numberOfUniqueSoundsLabel: UILabel!
+    @IBOutlet weak var numberOfZonesLabel: UILabel!
+    @IBOutlet weak var currentMaskTypeAndOrigin: UILabel!
     
     private var bag = Set<AnyCancellable>()
     private lazy var collectionManager = DebugCollectionMenu(collectionView: self.menuCollectionView)
@@ -151,7 +165,7 @@ final class DebugWindow: UIView, PerformanceMeasurmentProvider, PoseDetectorProv
     func configure() {
         handleInput()
         configureCollectionMenu()
-        handleEditorMode(.add)
+        handleEditorMode(.idle)
     }
 }
 
@@ -184,6 +198,16 @@ extension DebugWindow {
                 self?.handleEditorMode(mode)
             case .currentZoneInfo(let selectedZoneInfo):
                 self?.updateCurrentZoneDebugLabels(selectedZoneInfo)
+            case .toggleFlipMenu:
+                self?.menuTopConstraint.isActive.toggle()
+                self?.menuBottomConstraint.isActive.toggle()
+            case .displaySelectedMaskDescriptionsModel(let descriptionsModel):
+                self?.currentMaskOrderNumberLabel.text = descriptionsModel.orderNumber.description
+                self?.totalMasksCountLabel.text = descriptionsModel.masksTotal.description
+                self?.maskForcesAllSoundsLabel.text = descriptionsModel.shouldForcePlayAll ? "TRUE" : "FALSE"
+                self?.numberOfUniqueSoundsLabel.text = descriptionsModel.currentMasksUniqueSoundsTotal.description
+                self?.numberOfZonesLabel.text = descriptionsModel.currentMasksZonesTotal.description
+                self?.currentMaskTypeAndOrigin.text = descriptionsModel.createdWith
             }
         }).store(in: &bag)
         performanceMeasurment.output.sink(receiveValue: { [weak self] response in
@@ -193,34 +217,42 @@ extension DebugWindow {
             case _: break
             }
         }).store(in: &bag)
-        detectionLandmarksSelectButton.publisher().sink(receiveValue: { [weak self] _ in
-            self?.collectionManager.input.send(.populateWithLandmarks)
-            self?.menuCollectionView.isHidden.toggle()
-        }).store(in: &bag)
-        hideEverythingButton.publisher().sink(receiveValue: { [weak self] _ in
-            self?.menuCollectionView.isHidden = true
-            self?.output.send(.hideDebug(true))
-        }).store(in: &bag)
-        hideGrid.publisher().sink(receiveValue: { [weak self] _ in
-            //self?.output.send(.shouldHideGrid(true))
+        detectionLandmarksSelectButton.publisher()
+            .sink(receiveValue: { [weak self] _ in
+            self?.handleDebugMenuOpenClose(isForSounds: false)
         }).store(in: &bag)
         resetMaskButton.publisher()
             .sink(receiveValue: { [weak self] _ in
                 self?.output.send(.resetMask)
             }).store(in: &bag)
+        
+        startCameraButton.publisher().sink(receiveValue: { [weak self] _ in
+            self?.output.send(.toggleCamera)
+        }).store(in: &bag)
+        menuToggleFlipButton.publisher()
+            .sink(receiveValue: { [weak self] _ in
+                self?.output.send(.toggleFlipMenu)
+            }).store(in: &bag)
+        undoButton.publisher()
+            .sink(receiveValue: { [weak self] _ in
+                self?.output.send(.undoAction)
+            }).store(in: &bag)
+        
+        // MARK: - Mask management controls
+        exportMaskButton.publisher().sink(receiveValue: { [weak self] _ in
+            self?.output.send(.maskSaveAndExport)
+        }).store(in: &bag)
+        importMaskButton.publisher().sink(receiveValue: { [weak self] _ in
+            self?.output.send(.maskImportFromPasteboard)
+        }).store(in: &bag)
+        nextTemplateButton.publisher().sink(receiveValue: { [weak self] _ in
+            self?.output.send(.nextTemplate)
+        }).store(in: &bag)
+        previousTemplateButton.publisher().sink(receiveValue: { [weak self] _ in
+            self?.output.send(.prevTemplate)
+        }).store(in: &bag)
+
         // MARK: - Modes for editing
-        zoneEditSelectButton.publisher()
-            .sink(receiveValue: { [weak self] _ in
-                self?.handleEditorMode(.select)
-                self?.output.send(.editorMode(.select))
-            }).store(in: &bag)
-        zoneEditAddButton.publisher()
-            .sink(receiveValue: { [weak self] _ in
-                self?.handleEditorMode(.add)
-                self?.output.send(.editorMode(.add))
-                self?.output.send(.hideDebug(true))
-                self?.menuCollectionView.isHidden = true
-            }).store(in: &bag)
         zoneEditDrawButton.publisher()
             .sink(receiveValue: { [weak self] _ in
                 self?.handleEditorMode(.draw)
@@ -235,10 +267,14 @@ extension DebugWindow {
             }).store(in: &bag)
         zoneEditSoundButton.publisher()
             .sink(receiveValue: { [weak self] _ in
-                self?.collectionManager.input.send(.populateWithSounds)
-                self?.menuCollectionView.isHidden.toggle()
-                self?.output.send(.editorMode(.select))
-                self?.handleEditorMode(.select)
+                self?.output.send(.editorMode(.idle))
+                self?.handleEditorMode(.idle)
+                self?.handleDebugMenuOpenClose(isForSounds: true)
+            }).store(in: &bag)
+        zoneEditAddButton.publisher()
+            .sink(receiveValue: { [weak self] _ in
+                self?.output.send(.editorMode(.add))
+                self?.handleEditorMode(.add)
             }).store(in: &bag)
         // MARK: - Position and Scale for zone
         moveUpZoneButton.publisher().sink(receiveValue: { [weak self] _ in
@@ -259,28 +295,49 @@ extension DebugWindow {
         scaleDownZoneButton.publisher().sink(receiveValue: { [weak self] _ in
             self?.output.send(.transformZone(x: 0, y: 0, w: -1, h: -1))
         }).store(in: &bag)
+        
     }
+    
+    private func handleDebugMenuOpenClose(isForSounds: Bool) {
+        let shouldHide = !menuCollectionView.isHidden
+        isForSounds ? collectionManager.input.send(.populateWithSounds) :
+        collectionManager.input.send(.populateWithLandmarks)
+        menuCollectionView.isHidden = shouldHide
+        guard !shouldHide else { return }
+        handleEditorMode(.idle)
+        output.send(.editorMode(.idle))
+        let isAtTop = 0...100 ~= frame.minY
+        menuTopConstraint.isActive = isAtTop
+        menuBottomConstraint.isActive = !isAtTop
+        layoutIfNeeded()
+    }
+    
     private func handleEditorMode(_ mode: EditorZoneSelection.Mode) {
-        [zoneEditSelectButton, zoneEditAddButton, zoneEditDrawButton,
-         zoneEditSoundButton, zoneEditNextButton, zoneEditPreviousButton,
-         zoneEditCloneButton, zoneEditResetButton, zoneEditConfigButton,
-         zoneEditCommitButton, zoneEditDeleteButton].forEach { $0?.layer.borderWidth = 0 }
+        [zoneEditAddButton, zoneEditDrawButton, zoneEditDeleteButton].forEach { $0?.layer.borderWidth = 0 }
         switch mode {
-        case .select:
-            zoneEditSelectButton.layer.borderWidth = 3.0
-            zoneEditSelectButton.layer.borderColor = UIColor.green.cgColor
-            debugAction("SELECT", delay: 0.5)
         case .add:
-            zoneEditAddButton.layer.borderWidth = 3.0
-            zoneEditAddButton.layer.borderColor = UIColor.green.cgColor
+            zoneEditAddButton.layer.borderWidth = 2.0
+            zoneEditAddButton.layer.borderColor = UIColor.white.cgColor
+            zoneEditAddButton.layer.cornerRadius = 6.0
+            modeStatusLabel.text = "ADD"
             debugAction("ADD", delay: 0.5)
+        case .clone(let width, let height):
+            zoneEditCloneButton.layer.borderWidth = 2.0
+            zoneEditCloneButton.layer.borderColor = UIColor.white.cgColor
+            zoneEditCloneButton.layer.cornerRadius = 6.0
+            modeStatusLabel.text = "CLONE SIZE  W: \(width) H: \(height)"
+            debugAction("CLONE", delay: 0.5)
         case .draw:
-            zoneEditDrawButton.layer.borderWidth = 3.0
-            zoneEditDrawButton.layer.borderColor = UIColor.green.cgColor
+            zoneEditDrawButton.layer.borderWidth = 2.0
+            zoneEditDrawButton.layer.borderColor = UIColor.white.cgColor
+            zoneEditAddButton.layer.cornerRadius = 6.0
+            modeStatusLabel.text = "DRAW"
             debugAction("DRAW", delay: 0.5)
         case .delete:
-            zoneEditDeleteButton.layer.borderWidth = 3.0
-            zoneEditDeleteButton.layer.borderColor = UIColor.green.cgColor
+            zoneEditDeleteButton.layer.borderWidth = 2.0
+            zoneEditDeleteButton.layer.borderColor = UIColor.white.cgColor
+            zoneEditAddButton.layer.cornerRadius = 6.0
+            modeStatusLabel.text = "DELETE"
             debugAction("DELETE", delay: 0.5)
         case _: break
         }
@@ -291,15 +348,15 @@ extension DebugWindow {
         positionYLabel.text = info.positionY.description
         scaleInfoWidthLabel.text = info.scaleX.description
         scaleInfoHeightLabel.text = info.scaleY.description
-        totalZonesLabel.text = info.zonesTotal.description
+        maskZonesTotalLabel.text = info.zonesTotal.description
         zoneSoundNameLabel.text = info.sound
     }
     private func debugAction(_ msg: String, delay: TimeInterval = 1) {
         let debugCurrentModeLabel = UILabel(frame: CGRect(x: 0, y: 50, width: bounds.width, height: 150))
         debugCurrentModeLabel.text = msg
-        debugCurrentModeLabel.font = .systemFont(ofSize: 70, weight: .black)
-        debugCurrentModeLabel.textColor = .red
-        debugCurrentModeLabel.alpha = 0.4
+        debugCurrentModeLabel.font = .systemFont(ofSize: 70, weight: .light)
+        debugCurrentModeLabel.textColor = .white
+        debugCurrentModeLabel.alpha = 0.3
         debugCurrentModeLabel.textAlignment = .center
         debugCurrentModeLabel.center.x = superview!.center.x
         superview?.addSubview(debugCurrentModeLabel)

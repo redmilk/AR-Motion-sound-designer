@@ -9,28 +9,23 @@ import Foundation
 import UIKit
 
 final class MatrixNode: Hashable, Equatable {
-    var id: String
-    
-    var isNodeBelongToZone: Bool = false
     var isGridHidden: Bool
-    var isAnimating: Bool = false
-        
-    var debugColorIfNodeBelongsToZone: UIColor?
-    var colorWhenZoneSelectedInEditor: UIColor = .white
+    var painted: UIColor
+    let id: String
     
-    init(isGridHidden: Bool, debugColorIfNodeBelongsToZone: UIColor?) {
+    init(isGridHidden: Bool, painted: UIColor) {
         id = UUID().uuidString
         self.isGridHidden = isGridHidden
-        self.debugColorIfNodeBelongsToZone = debugColorIfNodeBelongsToZone
+        self.painted = painted
     }
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
-        hasher.combine(isAnimating)
-        hasher.combine(debugColorIfNodeBelongsToZone)
+        hasher.combine(isGridHidden)
+        hasher.combine(painted)
     }
     
     static func == (lhs: MatrixNode, rhs: MatrixNode) -> Bool {
-        lhs.id == rhs.id && lhs.isAnimating == rhs.isAnimating
+        lhs.isGridHidden == rhs.isGridHidden && lhs.id == rhs.id && lhs.painted == rhs.painted
     }
 }

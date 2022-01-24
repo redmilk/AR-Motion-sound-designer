@@ -20,6 +20,7 @@ final class MatrixCollection: NSObject, MaskManagerProvider { /// NSObject for c
         case initialSetup(isGridHidden: Bool)
         case shouldHideGrid(Bool)
         case drawZone([SoundZone: ZoneValue])
+        case drawMask([SoundZone: ZoneValue])
         case removeAll(shouldHideGrid: Bool)
         case deleteZone([SoundZone: ZoneValue])
     }
@@ -41,6 +42,8 @@ final class MatrixCollection: NSObject, MaskManagerProvider { /// NSObject for c
     private unowned let collectionView: UICollectionView
     private var dataSource: DataSource!
     private var bag = Set<AnyCancellable>()
+    private var gridContent = NSMutableDictionary()
+
     
     init(collectionView: UICollectionView) {
         self.collectionView = collectionView
@@ -74,6 +77,8 @@ final class MatrixCollection: NSObject, MaskManagerProvider { /// NSObject for c
                 self.fillCollection(isGridHidden: self.isGridHidden)
             case .drawZone(let zone):
                 self.drawZone(zone)
+            case .drawMask(let zones):
+                self.drawMask(zones)
             case .removeAll(let shouldHideGrid):
                 self.removeAll()
                 self.fillCollection(isGridHidden: shouldHideGrid)
@@ -83,16 +88,19 @@ final class MatrixCollection: NSObject, MaskManagerProvider { /// NSObject for c
         }).store(in: &bag)
     }
     
-    private func emitNodes(lines: Int, rows: Int, isGridHidden: Bool = true) -> [MatrixSection] {
+    private func emitNodes(lines: Int, rows: Int, isGridHidden: Bool = true, isPainted: UIColor? = nil) -> [MatrixSection] {
         var sections: [MatrixSection] = []
         for i in 0...lines - 1 {
             var items: [MatrixNode] = []
             for j in 0...rows - 1 {
-                let colorIfZone = maskManager.activeMaskData?.determinateIndexPathZoneColor(IndexPath(row: j, section: i))
-                items.append(MatrixNode(isGridHidden: isGridHidden, debugColorIfNodeBelongsToZone: colorIfZone))
+                let ip = IndexPath(row: j, section: i)
+                let colorIfZone = maskManager.activeMaskData?.determinateIndexPathZoneColor(ip)
+                let item = MatrixNode(isGridHidden: isGridHidden, painted: colorIfZone ?? .clear)
+                items.append(item)
             }
             let section = MatrixSection(nodes: items, id: UUID().uuidString)
             sections.append(section)
+            gridContent.setObject(items as NSArray, forKey: section)
         }
         return sections
     }
@@ -109,6 +117,18 @@ final class MatrixCollection: NSObject, MaskManagerProvider { /// NSObject for c
         let indexPathList = zone.getAllIndexPathesInside()
         reloadItemsAtIndexPathList(indexPathList)
     }
+    private func drawMask(_ zones: [SoundZone: ZoneValue]) {
+        var currentSnapshot = dataSource.snapshot()
+        for zone in zones {
+            let key = zone.key
+            var items: [MatrixNode] = []
+            let indexPathList = key.getAllIndexPathesInside()
+            items = indexPathList.compactMap { (self.collectionView.cellForItem(at: $0) as? MatrixNodeCell)?.node }
+            items.forEach { $0.painted = zone.value.color }
+            currentSnapshot.reloadItems(items)
+        }
+        dataSource.apply(currentSnapshot, animatingDifferences: true)
+    }
     
     private func deleteZone(_ zone: [SoundZone: ZoneValue]) {
         guard let zone = zone.keys.first else { return }
@@ -121,7 +141,7 @@ final class MatrixCollection: NSObject, MaskManagerProvider { /// NSObject for c
         var items: [MatrixNode] = []
         items = indexPathList.compactMap { (self.collectionView.cellForItem(at: $0) as? MatrixNodeCell)?.node }
         // MARK: - Zone pixels color
-        items.forEach { $0.debugColorIfNodeBelongsToZone = isDeletion ? nil : .random }
+        //items.forEach { $0.painted = isDeletion ? .clear : .random }
         currentSnapshot.reloadItems(items)
         dataSource.apply(currentSnapshot, animatingDifferences: true)
     }

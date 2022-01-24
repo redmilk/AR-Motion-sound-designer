@@ -23,20 +23,21 @@ final class MatrixNodeCell: UICollectionViewCell {
     var node: MatrixNode! {
         didSet {
             contentView.layer.borderWidth = node.isGridHidden ? 0.0 : 0.2
-            contentView.backgroundColor = node.debugColorIfNodeBelongsToZone ?? .clear
+            contentView.backgroundColor = node.painted
         }
     }
 
     override func awakeFromNib() {
-        contentView.layer.borderColor = UIColor.blue.withAlphaComponent(0.6).cgColor
+        contentView.layer.borderColor = UIColor.blue.withAlphaComponent(0.4).cgColor
         contentView.layer.borderWidth = 0.2
     }
     
     func trigger() {
         contentView.layer.removeAllAnimations()
         contentView.backgroundColor = .random
-        UIView.animate(withDuration: 1.5, delay: 0.0, options: [.allowUserInteraction], animations: {
-            self.contentView.backgroundColor = self.node?.debugColorIfNodeBelongsToZone ?? .clear
+        
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: [.allowUserInteraction], animations: {
+            self.contentView.backgroundColor = self.node.painted
         }, completion: nil)
     }
 }

@@ -41,11 +41,11 @@ final class DebugCollectionMenu: NSObject { /// NSObject for collection delegate
         input.sink(receiveValue: { [weak self] action in
             switch action {
             case .populateWithLandmarks:
-                self?.populateWithLandmarks()
                 self?.contentType = .landmarks
+                self?.populateWithLandmarks()
             case .populateWithSounds:
-                self?.populateWithSounds()
                 self?.contentType = .sounds
+                self?.populateWithSounds()
             }
         })
         .store(in: &bag)
@@ -64,15 +64,16 @@ final class DebugCollectionMenu: NSObject { /// NSObject for collection delegate
         dataSource = buildDataSource()
         layoutCollection()
         ///populateWithLandmarks()
-        populateWithSounds()
+        //populateWithSounds()
     }
     
     private func populateWithLandmarks() {
+        reloadSection()
         replaceAllWith([sectionsProvider.landmarksSection.legs, sectionsProvider.landmarksSection.arms, sectionsProvider.landmarksSection.head])
     }
     private func populateWithSounds() {
-        guard let soundSection = sectionsProvider.soundsSection else { return }
-        replaceAllWith([soundSection])
+        guard let section = sectionsProvider.soundsSection else { return }
+        replaceAllWith([section])
     }
     
     private func replaceAllWith(_ sections: [DebugMenuSection]) {
@@ -89,7 +90,7 @@ final class DebugCollectionMenu: NSObject { /// NSObject for collection delegate
     private func removeItems(_ items: [DebugMenuItem]) {
         var currentSnapshot = dataSource.snapshot()
         currentSnapshot.deleteItems(items)
-        dataSource?.apply(currentSnapshot, animatingDifferences: true)
+        dataSource?.apply(currentSnapshot, animatingDifferences: false)
     }
     
     private func reloadSection() {
@@ -104,6 +105,7 @@ final class DebugCollectionMenu: NSObject { /// NSObject for collection delegate
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: String(describing: DebugMenuCell.self),
                     for: indexPath) as! DebugMenuCell
+                cell.containerView.backgroundColor = .black.withAlphaComponent(0.85)
                 cell.item = item
                 return cell
             })
@@ -144,14 +146,15 @@ private extension DebugCollectionMenu {
 
 extension DebugCollectionMenu: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? DebugMenuCell else { return }
+        guard let cell = collectionView.cellForItem(at: indexPath) as? DebugMenuCell, let item = cell.item else { return }
         switch contentType {
         case .landmarks:
             cell.didSelect()
-            output.send(.landmarkDidSelect(cell.item))
+            
+            output.send(.landmarkDidSelect(item))
         case .sounds:
             cell.animateSelection()
-            output.send(.soundDidSelect(cell.item))
+            output.send(.soundDidSelect(item))
         }
     }
 }
