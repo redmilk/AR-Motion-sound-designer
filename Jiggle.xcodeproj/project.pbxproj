@@ -11,6 +11,153 @@
 		79035A602793D40900DFFDB2 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 79035A5F2793D40800DFFDB2 /* art.scnassets */; };
 		79035A622793D42F00DFFDB2 /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 79035A612793D42F00DFFDB2 /* texture.png */; };
 		790CFEE6276A7BE000C355C5 /* PerformanceMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790CFEE5276A7BE000C355C5 /* PerformanceMeasurement.swift */; };
+		791682E327A9606000C66142 /* meditation-24.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682A427A9605E00C66142 /* meditation-24.wav */; };
+		791682E427A9606000C66142 /* meditation-63.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682A527A9605E00C66142 /* meditation-63.wav */; };
+		791682E527A9606000C66142 /* meditation-05.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682A627A9605E00C66142 /* meditation-05.wav */; };
+		791682E627A9606000C66142 /* meditation-62.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682A727A9605E00C66142 /* meditation-62.wav */; };
+		791682E727A9606000C66142 /* meditation-12.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682A827A9605E00C66142 /* meditation-12.wav */; };
+		791682E827A9606000C66142 /* meditation-04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682A927A9605E00C66142 /* meditation-04.wav */; };
+		791682E927A9606000C66142 /* meditation-08.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682AA27A9605E00C66142 /* meditation-08.wav */; };
+		791682EA27A9606000C66142 /* meditation-58.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682AB27A9605E00C66142 /* meditation-58.wav */; };
+		791682EB27A9606000C66142 /* meditation-23.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682AC27A9605E00C66142 /* meditation-23.wav */; };
+		791682EC27A9606000C66142 /* meditation-39.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682AD27A9605E00C66142 /* meditation-39.wav */; };
+		791682ED27A9606000C66142 /* meditation-07.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682AE27A9605F00C66142 /* meditation-07.wav */; };
+		791682EE27A9606000C66142 /* meditation-16.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682AF27A9605F00C66142 /* meditation-16.wav */; };
+		791682EF27A9606000C66142 /* meditation-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B027A9605F00C66142 /* meditation-00.wav */; };
+		791682F027A9606000C66142 /* meditation-42.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B127A9605F00C66142 /* meditation-42.wav */; };
+		791682F127A9606000C66142 /* meditation-26.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B227A9605F00C66142 /* meditation-26.wav */; };
+		791682F227A9606000C66142 /* meditation-17.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B327A9605F00C66142 /* meditation-17.wav */; };
+		791682F327A9606000C66142 /* meditation-49.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B427A9605F00C66142 /* meditation-49.wav */; };
+		791682F427A9606000C66142 /* meditation-30.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B527A9605F00C66142 /* meditation-30.wav */; };
+		791682F527A9606000C66142 /* meditation-29.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B627A9605F00C66142 /* meditation-29.wav */; };
+		791682F627A9606000C66142 /* meditation-60.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B727A9605F00C66142 /* meditation-60.wav */; };
+		791682F727A9606000C66142 /* meditation-28.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B827A9605F00C66142 /* meditation-28.wav */; };
+		791682F827A9606000C66142 /* meditation-25.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B927A9605F00C66142 /* meditation-25.wav */; };
+		791682F927A9606000C66142 /* meditation-06.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682BA27A9605F00C66142 /* meditation-06.wav */; };
+		791682FA27A9606000C66142 /* meditation-48.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682BB27A9605F00C66142 /* meditation-48.wav */; };
+		791682FB27A9606000C66142 /* meditation-53.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682BC27A9605F00C66142 /* meditation-53.wav */; };
+		791682FC27A9606000C66142 /* meditation-56.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682BD27A9605F00C66142 /* meditation-56.wav */; };
+		791682FD27A9606000C66142 /* meditation-44.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682BE27A9605F00C66142 /* meditation-44.wav */; };
+		791682FE27A9606000C66142 /* meditation-01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682BF27A9605F00C66142 /* meditation-01.wav */; };
+		791682FF27A9606000C66142 /* meditation-15.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C027A9605F00C66142 /* meditation-15.wav */; };
+		7916830027A9606000C66142 /* meditation-22.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C127A9605F00C66142 /* meditation-22.wav */; };
+		7916830127A9606000C66142 /* meditation-20.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C227A9605F00C66142 /* meditation-20.wav */; };
+		7916830227A9606000C66142 /* meditation-19.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C327A9605F00C66142 /* meditation-19.wav */; };
+		7916830327A9606000C66142 /* meditation-35.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C427A9605F00C66142 /* meditation-35.wav */; };
+		7916830427A9606000C66142 /* meditation-18.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C527A9605F00C66142 /* meditation-18.wav */; };
+		7916830527A9606000C66142 /* meditation-11.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C627A9605F00C66142 /* meditation-11.wav */; };
+		7916830627A9606000C66142 /* meditation-46.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C727A9605F00C66142 /* meditation-46.wav */; };
+		7916830727A9606000C66142 /* meditation-36.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C827A9605F00C66142 /* meditation-36.wav */; };
+		7916830827A9606000C66142 /* meditation-51.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C927A9605F00C66142 /* meditation-51.wav */; };
+		7916830927A9606000C66142 /* meditation-45.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682CA27A9605F00C66142 /* meditation-45.wav */; };
+		7916830A27A9606000C66142 /* meditation-02.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682CB27A9605F00C66142 /* meditation-02.wav */; };
+		7916830B27A9606000C66142 /* meditation-54.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682CC27A9606000C66142 /* meditation-54.wav */; };
+		7916830C27A9606000C66142 /* meditation-13.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682CD27A9606000C66142 /* meditation-13.wav */; };
+		7916830D27A9606000C66142 /* meditation-03.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682CE27A9606000C66142 /* meditation-03.wav */; };
+		7916830E27A9606000C66142 /* meditation-61.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682CF27A9606000C66142 /* meditation-61.wav */; };
+		7916830F27A9606000C66142 /* meditation-41.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D027A9606000C66142 /* meditation-41.wav */; };
+		7916831027A9606000C66142 /* meditation-34.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D127A9606000C66142 /* meditation-34.wav */; };
+		7916831127A9606000C66142 /* meditation-31.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D227A9606000C66142 /* meditation-31.wav */; };
+		7916831227A9606000C66142 /* meditation-27.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D327A9606000C66142 /* meditation-27.wav */; };
+		7916831327A9606000C66142 /* meditation-57.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D427A9606000C66142 /* meditation-57.wav */; };
+		7916831427A9606000C66142 /* meditation-09.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D527A9606000C66142 /* meditation-09.wav */; };
+		7916831527A9606000C66142 /* meditation-14.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D627A9606000C66142 /* meditation-14.wav */; };
+		7916831627A9606000C66142 /* meditation-50.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D727A9606000C66142 /* meditation-50.wav */; };
+		7916831727A9606000C66142 /* meditation-38.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D827A9606000C66142 /* meditation-38.wav */; };
+		7916831827A9606000C66142 /* meditation-55.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D927A9606000C66142 /* meditation-55.wav */; };
+		7916831927A9606000C66142 /* meditation-40.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682DA27A9606000C66142 /* meditation-40.wav */; };
+		7916831A27A9606000C66142 /* meditation-21.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682DB27A9606000C66142 /* meditation-21.wav */; };
+		7916831B27A9606000C66142 /* meditation-10.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682DC27A9606000C66142 /* meditation-10.wav */; };
+		7916831C27A9606000C66142 /* meditation-47.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682DD27A9606000C66142 /* meditation-47.wav */; };
+		7916831D27A9606000C66142 /* meditation-32.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682DE27A9606000C66142 /* meditation-32.wav */; };
+		7916831E27A9606000C66142 /* meditation-43.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682DF27A9606000C66142 /* meditation-43.wav */; };
+		7916831F27A9606000C66142 /* meditation-59.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682E027A9606000C66142 /* meditation-59.wav */; };
+		7916832027A9606000C66142 /* meditation-37.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682E127A9606000C66142 /* meditation-37.wav */; };
+		7916832127A9606000C66142 /* meditation-33.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682E227A9606000C66142 /* meditation-33.wav */; };
+		7916833727A9609E00C66142 /* IAR_Wet_DW_CraviottoMaple5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916832427A9609700C66142 /* IAR_Wet_DW_CraviottoMaple5.wav */; };
+		7916833827A9609E00C66142 /* IAR_Wet_PaisteDarkCrisp14InchHatsBell1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916832527A9609700C66142 /* IAR_Wet_PaisteDarkCrisp14InchHatsBell1.wav */; };
+		7916833927A9609E00C66142 /* IAR_Wet_Acrolite_Dampened_Snare4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916832627A9609800C66142 /* IAR_Wet_Acrolite_Dampened_Snare4.wav */; };
+		7916833A27A9609E00C66142 /* IAR_Wet_Ride2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916832727A9609800C66142 /* IAR_Wet_Ride2.wav */; };
+		7916833B27A9609E00C66142 /* IAR_Wet_Supraphonic400Dampened_Snare5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916832827A9609900C66142 /* IAR_Wet_Supraphonic400Dampened_Snare5.wav */; };
+		7916833C27A9609E00C66142 /* IAR_Wet_Supraphonic400Undampened_Snare5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916832927A9609900C66142 /* IAR_Wet_Supraphonic400Undampened_Snare5.wav */; };
+		7916833D27A9609E00C66142 /* IAR_Wet_PaisteGiantBeat16InchHats8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916832A27A9609900C66142 /* IAR_Wet_PaisteGiantBeat16InchHats8.wav */; };
+		7916833E27A9609E00C66142 /* IAR_Wet_Rack4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916832B27A9609A00C66142 /* IAR_Wet_Rack4.wav */; };
+		7916833F27A9609E00C66142 /* IAR_Wet_RideBell3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916832C27A9609A00C66142 /* IAR_Wet_RideBell3.wav */; };
+		7916834027A9609E00C66142 /* IAR_Wet_Floor4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916832D27A9609B00C66142 /* IAR_Wet_Floor4.wav */; };
+		7916834127A9609E00C66142 /* IAR_Wet_Kick4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916832E27A9609B00C66142 /* IAR_Wet_Kick4.wav */; };
+		7916834227A9609E00C66142 /* IAR_Wet_PaisteGiantBeat16InchHatsHalfOpen12.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916832F27A9609C00C66142 /* IAR_Wet_PaisteGiantBeat16InchHatsHalfOpen12.wav */; };
+		7916834327A9609E00C66142 /* IAR_Wet_PaisteDarkCrisp14InchHats4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916833027A9609C00C66142 /* IAR_Wet_PaisteDarkCrisp14InchHats4.wav */; };
+		7916834427A9609E00C66142 /* IAR_Wet_Cowbell4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916833127A9609C00C66142 /* IAR_Wet_Cowbell4.wav */; };
+		7916834527A9609E00C66142 /* IAR_Wet_BlackBeauty_Snare5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916833227A9609D00C66142 /* IAR_Wet_BlackBeauty_Snare5.wav */; };
+		7916834627A9609E00C66142 /* IAR_Wet_PaisteDarkCrisp14InchHatsOpen10.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916833327A9609D00C66142 /* IAR_Wet_PaisteDarkCrisp14InchHatsOpen10.wav */; };
+		7916834727A9609E00C66142 /* IAR_Wet_Crash2_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916833427A9609E00C66142 /* IAR_Wet_Crash2_3.wav */; };
+		7916834827A9609E00C66142 /* IAR_Wet_Crash3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916833527A9609E00C66142 /* IAR_Wet_Crash3.wav */; };
+		7916834927A9609E00C66142 /* IAR_Wet_Shaker3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916833627A9609E00C66142 /* IAR_Wet_Shaker3.wav */; };
+		7916838C27A9614500C66142 /* monkey49.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916834B27A9614500C66142 /* monkey49.wav */; };
+		7916838D27A9614500C66142 /* monkey61.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916834C27A9614500C66142 /* monkey61.wav */; };
+		7916838E27A9614500C66142 /* monkey60.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916834D27A9614500C66142 /* monkey60.wav */; };
+		7916838F27A9614500C66142 /* monkey48.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916834E27A9614500C66142 /* monkey48.wav */; };
+		7916839027A9614500C66142 /* monkey62.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916834F27A9614500C66142 /* monkey62.wav */; };
+		7916839127A9614500C66142 /* monkey63.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916835027A9614500C66142 /* monkey63.wav */; };
+		7916839227A9614500C66142 /* monkey58.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916835127A9614500C66142 /* monkey58.wav */; };
+		7916839327A9614500C66142 /* monkey59.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916835227A9614500C66142 /* monkey59.wav */; };
+		7916839427A9614500C66142 /* monkey16.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916835327A9614500C66142 /* monkey16.wav */; };
+		7916839527A9614500C66142 /* monkey02.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916835427A9614500C66142 /* monkey02.wav */; };
+		7916839627A9614500C66142 /* monkey03.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916835527A9614500C66142 /* monkey03.wav */; };
+		7916839727A9614500C66142 /* monkey17.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916835627A9614500C66142 /* monkey17.wav */; };
+		7916839827A9614500C66142 /* monkey29.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916835727A9614500C66142 /* monkey29.wav */; };
+		7916839927A9614500C66142 /* monkey01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916835827A9614500C66142 /* monkey01.wav */; };
+		7916839A27A9614500C66142 /* monkey15.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916835927A9614500C66142 /* monkey15.wav */; };
+		7916839B27A9614500C66142 /* monkey14.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916835A27A9614500C66142 /* monkey14.wav */; };
+		7916839C27A9614500C66142 /* monkey00.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916835B27A9614500C66142 /* monkey00.wav */; };
+		7916839D27A9614500C66142 /* monkey28.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916835C27A9614500C66142 /* monkey28.wav */; };
+		7916839E27A9614500C66142 /* monkey04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916835D27A9614500C66142 /* monkey04.wav */; };
+		7916839F27A9614500C66142 /* monkey10.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916835E27A9614500C66142 /* monkey10.wav */; };
+		791683A027A9614500C66142 /* monkey38.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916835F27A9614500C66142 /* monkey38.wav */; };
+		791683A127A9614500C66142 /* monkey39.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916836027A9614500C66142 /* monkey39.wav */; };
+		791683A227A9614500C66142 /* monkey11.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916836127A9614500C66142 /* monkey11.wav */; };
+		791683A327A9614500C66142 /* monkey05.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916836227A9614500C66142 /* monkey05.wav */; };
+		791683A427A9614500C66142 /* monkey13.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916836327A9614500C66142 /* monkey13.wav */; };
+		791683A527A9614500C66142 /* monkey07.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916836427A9614500C66142 /* monkey07.wav */; };
+		791683A627A9614500C66142 /* monkey06.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916836527A9614500C66142 /* monkey06.wav */; };
+		791683A727A9614500C66142 /* monkey12.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916836627A9614500C66142 /* monkey12.wav */; };
+		791683A827A9614500C66142 /* monkey37.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916836727A9614500C66142 /* monkey37.wav */; };
+		791683A927A9614500C66142 /* monkey23.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916836827A9614500C66142 /* monkey23.wav */; };
+		791683AA27A9614500C66142 /* monkey22.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916836927A9614500C66142 /* monkey22.wav */; };
+		791683AB27A9614500C66142 /* monkey36.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916836A27A9614500C66142 /* monkey36.wav */; };
+		791683AC27A9614500C66142 /* monkey08.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916836B27A9614500C66142 /* monkey08.wav */; };
+		791683AD27A9614500C66142 /* monkey20.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916836C27A9614500C66142 /* monkey20.wav */; };
+		791683AE27A9614500C66142 /* monkey34.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916836D27A9614500C66142 /* monkey34.wav */; };
+		791683AF27A9614500C66142 /* monkey35.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916836E27A9614500C66142 /* monkey35.wav */; };
+		791683B027A9614500C66142 /* monkey21.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916836F27A9614500C66142 /* monkey21.wav */; };
+		791683B127A9614500C66142 /* monkey09.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916837027A9614500C66142 /* monkey09.wav */; };
+		791683B227A9614500C66142 /* monkey25.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916837127A9614500C66142 /* monkey25.wav */; };
+		791683B327A9614500C66142 /* monkey31.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916837227A9614500C66142 /* monkey31.wav */; };
+		791683B427A9614500C66142 /* monkey19.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916837327A9614500C66142 /* monkey19.wav */; };
+		791683B527A9614500C66142 /* monkey18.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916837427A9614500C66142 /* monkey18.wav */; };
+		791683B627A9614500C66142 /* monkey30.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916837527A9614500C66142 /* monkey30.wav */; };
+		791683B727A9614500C66142 /* monkey24.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916837627A9614500C66142 /* monkey24.wav */; };
+		791683B827A9614500C66142 /* monkey32.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916837727A9614500C66142 /* monkey32.wav */; };
+		791683B927A9614500C66142 /* monkey26.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916837827A9614500C66142 /* monkey26.wav */; };
+		791683BA27A9614500C66142 /* monkey27.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916837927A9614500C66142 /* monkey27.wav */; };
+		791683BB27A9614500C66142 /* monkey-background.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916837A27A9614500C66142 /* monkey-background.wav */; };
+		791683BC27A9614500C66142 /* monkey33.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916837B27A9614500C66142 /* monkey33.wav */; };
+		791683BD27A9614500C66142 /* monkey54.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916837C27A9614500C66142 /* monkey54.wav */; };
+		791683BE27A9614500C66142 /* monkey40.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916837D27A9614500C66142 /* monkey40.wav */; };
+		791683BF27A9614500C66142 /* monkey41.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916837E27A9614500C66142 /* monkey41.wav */; };
+		791683C027A9614500C66142 /* monkey55.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916837F27A9614500C66142 /* monkey55.wav */; };
+		791683C127A9614500C66142 /* monkey43.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916838027A9614500C66142 /* monkey43.wav */; };
+		791683C227A9614500C66142 /* monkey57.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916838127A9614500C66142 /* monkey57.wav */; };
+		791683C327A9614500C66142 /* monkey56.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916838227A9614500C66142 /* monkey56.wav */; };
+		791683C427A9614500C66142 /* monkey42.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916838327A9614500C66142 /* monkey42.wav */; };
+		791683C527A9614500C66142 /* monkey46.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916838427A9614500C66142 /* monkey46.wav */; };
+		791683C627A9614500C66142 /* monkey52.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916838527A9614500C66142 /* monkey52.wav */; };
+		791683C727A9614500C66142 /* monkey53.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916838627A9614500C66142 /* monkey53.wav */; };
+		791683C827A9614500C66142 /* monkey47.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916838727A9614500C66142 /* monkey47.wav */; };
+		791683C927A9614500C66142 /* monkey51.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916838827A9614500C66142 /* monkey51.wav */; };
+		791683CA27A9614500C66142 /* monkey45.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916838927A9614500C66142 /* monkey45.wav */; };
+		791683CB27A9614500C66142 /* monkey44.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916838A27A9614500C66142 /* monkey44.wav */; };
+		791683CC27A9614500C66142 /* monkey50.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916838B27A9614500C66142 /* monkey50.wav */; };
 		79189E00274672900023628A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79189DFF274672900023628A /* Logger.swift */; };
 		791B7BE727469FFF00EF6886 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B7BDE27469FFF00EF6886 /* UICollectionView+Extensions.swift */; };
 		791B7BE827469FFF00EF6886 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B7BDF27469FFF00EF6886 /* Collection+Extensions.swift */; };
@@ -30,6 +177,119 @@
 		7922B2F8275FE65A00273D8B /* CaptureVideoPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922B2F7275FE65A00273D8B /* CaptureVideoPreviewView.swift */; };
 		7922B2FB275FED1C00273D8B /* JiggleError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7922B2FA275FED1C00273D8B /* JiggleError.swift */; };
 		792980DA279D7028007647F7 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792980D9279D7028007647F7 /* Array+Extensions.swift */; };
+		79386D16279F788500B98E02 /* LisaRemix02.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386CA4279F788500B98E02 /* LisaRemix02.wav */; };
+		79386D17279F788500B98E02 /* LisaRemix13.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386CA5279F788500B98E02 /* LisaRemix13.wav */; };
+		79386D18279F788500B98E02 /* LisaRemix12.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386CA6279F788500B98E02 /* LisaRemix12.wav */; };
+		79386D19279F788500B98E02 /* LisaRemix03.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386CA7279F788500B98E02 /* LisaRemix03.wav */; };
+		79386D1A279F788500B98E02 /* LisaRemix01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386CA8279F788500B98E02 /* LisaRemix01.wav */; };
+		79386D1B279F788500B98E02 /* LisaRemix10.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386CA9279F788500B98E02 /* LisaRemix10.wav */; };
+		79386D1C279F788500B98E02 /* LisaRemix11.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386CAA279F788500B98E02 /* LisaRemix11.wav */; };
+		79386D1D279F788500B98E02 /* LisaRemix04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386CAB279F788500B98E02 /* LisaRemix04.wav */; };
+		79386D1E279F788500B98E02 /* LisaRemix15.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386CAC279F788500B98E02 /* LisaRemix15.wav */; };
+		79386D1F279F788500B98E02 /* LisaRemix14.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386CAD279F788500B98E02 /* LisaRemix14.wav */; };
+		79386D20279F788500B98E02 /* LisaRemix05.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386CAE279F788500B98E02 /* LisaRemix05.wav */; };
+		79386D21279F788500B98E02 /* LisaRemix07.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386CAF279F788500B98E02 /* LisaRemix07.wav */; };
+		79386D22279F788500B98E02 /* LisaRemix06.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386CB0279F788500B98E02 /* LisaRemix06.wav */; };
+		79386D23279F788500B98E02 /* LisaRemix08.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386CB1279F788500B98E02 /* LisaRemix08.wav */; };
+		79386D24279F788500B98E02 /* LisaRemix09.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386CB2279F788500B98E02 /* LisaRemix09.wav */; };
+		79386D66279F7B6000B98E02 /* kung-fu53.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D25279F7B5B00B98E02 /* kung-fu53.wav */; };
+		79386D67279F7B6000B98E02 /* kung-fu20.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D26279F7B5B00B98E02 /* kung-fu20.wav */; };
+		79386D68279F7B6000B98E02 /* kung-fu38.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D27279F7B5B00B98E02 /* kung-fu38.wav */; };
+		79386D69279F7B6000B98E02 /* kung-fu59.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D28279F7B5B00B98E02 /* kung-fu59.wav */; };
+		79386D6A279F7B6000B98E02 /* kung-fu08.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D29279F7B5B00B98E02 /* kung-fu08.wav */; };
+		79386D6B279F7B6000B98E02 /* kung-fu62.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D2A279F7B5B00B98E02 /* kung-fu62.wav */; };
+		79386D6C279F7B6000B98E02 /* kung-fu19.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D2B279F7B5B00B98E02 /* kung-fu19.wav */; };
+		79386D6D279F7B6000B98E02 /* kung-fu42.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D2C279F7B5B00B98E02 /* kung-fu42.wav */; };
+		79386D6E279F7B6000B98E02 /* kung-fu10.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D2D279F7B5B00B98E02 /* kung-fu10.wav */; };
+		79386D6F279F7B6000B98E02 /* kung-fu34.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D2E279F7B5B00B98E02 /* kung-fu34.wav */; };
+		79386D70279F7B6000B98E02 /* kung-fu22.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D2F279F7B5B00B98E02 /* kung-fu22.wav */; };
+		79386D71279F7B6000B98E02 /* kung-fu40.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D30279F7B5B00B98E02 /* kung-fu40.wav */; };
+		79386D72279F7B6000B98E02 /* kung-fu43.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D31279F7B5B00B98E02 /* kung-fu43.wav */; };
+		79386D73279F7B6000B98E02 /* kung-fu47.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D32279F7B5C00B98E02 /* kung-fu47.wav */; };
+		79386D74279F7B6000B98E02 /* kung-fu58.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D33279F7B5C00B98E02 /* kung-fu58.wav */; };
+		79386D75279F7B6000B98E02 /* kung-fu51.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D34279F7B5C00B98E02 /* kung-fu51.wav */; };
+		79386D76279F7B6000B98E02 /* kung-fu30.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D35279F7B5C00B98E02 /* kung-fu30.wav */; };
+		79386D77279F7B6000B98E02 /* kung-fu35.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D36279F7B5C00B98E02 /* kung-fu35.wav */; };
+		79386D78279F7B6000B98E02 /* kung-fu25.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D37279F7B5C00B98E02 /* kung-fu25.wav */; };
+		79386D79279F7B6000B98E02 /* kung-fu39.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D38279F7B5C00B98E02 /* kung-fu39.wav */; };
+		79386D7A279F7B6000B98E02 /* kung-fu37.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D39279F7B5C00B98E02 /* kung-fu37.wav */; };
+		79386D7B279F7B6000B98E02 /* kung-fu04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D3A279F7B5C00B98E02 /* kung-fu04.wav */; };
+		79386D7C279F7B6000B98E02 /* kung-fu21.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D3B279F7B5C00B98E02 /* kung-fu21.wav */; };
+		79386D7D279F7B6000B98E02 /* kung-fu61.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D3C279F7B5C00B98E02 /* kung-fu61.wav */; };
+		79386D7E279F7B6000B98E02 /* kung-fu28.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D3D279F7B5C00B98E02 /* kung-fu28.wav */; };
+		79386D7F279F7B6000B98E02 /* kung-fu02.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D3E279F7B5C00B98E02 /* kung-fu02.wav */; };
+		79386D80279F7B6000B98E02 /* kung-fu52.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D3F279F7B5D00B98E02 /* kung-fu52.wav */; };
+		79386D81279F7B6000B98E02 /* kung-fu33.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D40279F7B5D00B98E02 /* kung-fu33.wav */; };
+		79386D82279F7B6000B98E02 /* kung-fu01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D41279F7B5D00B98E02 /* kung-fu01.wav */; };
+		79386D83279F7B6000B98E02 /* kung-fu63.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D42279F7B5D00B98E02 /* kung-fu63.wav */; };
+		79386D84279F7B6000B98E02 /* kung-fu13.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D43279F7B5D00B98E02 /* kung-fu13.wav */; };
+		79386D85279F7B6000B98E02 /* kung-fu41.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D44279F7B5D00B98E02 /* kung-fu41.wav */; };
+		79386D86279F7B6000B98E02 /* kung-fu36.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D45279F7B5D00B98E02 /* kung-fu36.wav */; };
+		79386D87279F7B6000B98E02 /* kung-fu15.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D46279F7B5D00B98E02 /* kung-fu15.wav */; };
+		79386D88279F7B6000B98E02 /* kung-fu60.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D47279F7B5D00B98E02 /* kung-fu60.wav */; };
+		79386D89279F7B6000B98E02 /* kung-fu48.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D48279F7B5D00B98E02 /* kung-fu48.wav */; };
+		79386D8A279F7B6000B98E02 /* kung-fu07.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D49279F7B5D00B98E02 /* kung-fu07.wav */; };
+		79386D8B279F7B6000B98E02 /* kung-fu12.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D4A279F7B5D00B98E02 /* kung-fu12.wav */; };
+		79386D8C279F7B6000B98E02 /* kung-fu14.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D4B279F7B5E00B98E02 /* kung-fu14.wav */; };
+		79386D8D279F7B6000B98E02 /* kung-fu57.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D4C279F7B5E00B98E02 /* kung-fu57.wav */; };
+		79386D8E279F7B6000B98E02 /* kung-fu-background.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D4D279F7B5E00B98E02 /* kung-fu-background.wav */; };
+		79386D8F279F7B6000B98E02 /* kung-fu56.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D4E279F7B5E00B98E02 /* kung-fu56.wav */; };
+		79386D90279F7B6000B98E02 /* kung-fu18.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D4F279F7B5E00B98E02 /* kung-fu18.wav */; };
+		79386D91279F7B6000B98E02 /* kung-fu16.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D50279F7B5E00B98E02 /* kung-fu16.wav */; };
+		79386D92279F7B6000B98E02 /* kung-fu17.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D51279F7B5E00B98E02 /* kung-fu17.wav */; };
+		79386D93279F7B6000B98E02 /* kung-fu05.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D52279F7B5E00B98E02 /* kung-fu05.wav */; };
+		79386D94279F7B6000B98E02 /* kung-fu50.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D53279F7B5E00B98E02 /* kung-fu50.wav */; };
+		79386D95279F7B6000B98E02 /* kung-fu27.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D54279F7B5E00B98E02 /* kung-fu27.wav */; };
+		79386D96279F7B6000B98E02 /* kung-fu55.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D55279F7B5E00B98E02 /* kung-fu55.wav */; };
+		79386D97279F7B6000B98E02 /* kung-fu44.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D56279F7B5F00B98E02 /* kung-fu44.wav */; };
+		79386D98279F7B6000B98E02 /* kung-fu26.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D57279F7B5F00B98E02 /* kung-fu26.wav */; };
+		79386D99279F7B6000B98E02 /* kung-fu11.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D58279F7B5F00B98E02 /* kung-fu11.wav */; };
+		79386D9A279F7B6000B98E02 /* kung-fu46.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D59279F7B5F00B98E02 /* kung-fu46.wav */; };
+		79386D9B279F7B6000B98E02 /* kung-fu06.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D5A279F7B5F00B98E02 /* kung-fu06.wav */; };
+		79386D9C279F7B6000B98E02 /* kung-fu45.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D5B279F7B5F00B98E02 /* kung-fu45.wav */; };
+		79386D9D279F7B6000B98E02 /* kung-fu09.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D5C279F7B5F00B98E02 /* kung-fu09.wav */; };
+		79386D9E279F7B6000B98E02 /* kung-fu31.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D5D279F7B5F00B98E02 /* kung-fu31.wav */; };
+		79386D9F279F7B6000B98E02 /* kung-fu29.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D5E279F7B5F00B98E02 /* kung-fu29.wav */; };
+		79386DA0279F7B6000B98E02 /* kung-fu00.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D5F279F7B5F00B98E02 /* kung-fu00.wav */; };
+		79386DA1279F7B6000B98E02 /* kung-fu03.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D60279F7B5F00B98E02 /* kung-fu03.wav */; };
+		79386DA2279F7B6000B98E02 /* kung-fu23.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D61279F7B5F00B98E02 /* kung-fu23.wav */; };
+		79386DA3279F7B6000B98E02 /* kung-fu49.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D62279F7B5F00B98E02 /* kung-fu49.wav */; };
+		79386DA4279F7B6000B98E02 /* kung-fu32.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D63279F7B6000B98E02 /* kung-fu32.wav */; };
+		79386DA5279F7B6000B98E02 /* kung-fu54.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D64279F7B6000B98E02 /* kung-fu54.wav */; };
+		79386DA6279F7B6000B98E02 /* kung-fu24.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386D65279F7B6000B98E02 /* kung-fu24.wav */; };
+		79386DC8279F7BCE00B98E02 /* robot-2-13.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DA7279F7BCA00B98E02 /* robot-2-13.wav */; };
+		79386DC9279F7BCE00B98E02 /* robot-2-03.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DA8279F7BCA00B98E02 /* robot-2-03.wav */; };
+		79386DCA279F7BCE00B98E02 /* robot-2-09.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DA9279F7BCA00B98E02 /* robot-2-09.wav */; };
+		79386DCB279F7BCE00B98E02 /* robot-2-04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DAA279F7BCB00B98E02 /* robot-2-04.wav */; };
+		79386DCC279F7BCE00B98E02 /* robot-2-24.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DAB279F7BCB00B98E02 /* robot-2-24.wav */; };
+		79386DCD279F7BCE00B98E02 /* robot-2-28.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DAC279F7BCB00B98E02 /* robot-2-28.wav */; };
+		79386DCE279F7BCE00B98E02 /* robot-2-background.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DAD279F7BCB00B98E02 /* robot-2-background.wav */; };
+		79386DCF279F7BCE00B98E02 /* robot-2-22.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DAE279F7BCB00B98E02 /* robot-2-22.wav */; };
+		79386DD0279F7BCE00B98E02 /* robot-2-07.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DAF279F7BCB00B98E02 /* robot-2-07.wav */; };
+		79386DD1279F7BCE00B98E02 /* robot-2-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DB0279F7BCB00B98E02 /* robot-2-00.wav */; };
+		79386DD2279F7BCE00B98E02 /* robot-2-25.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DB1279F7BCB00B98E02 /* robot-2-25.wav */; };
+		79386DD3279F7BCE00B98E02 /* robot-2-26.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DB2279F7BCC00B98E02 /* robot-2-26.wav */; };
+		79386DD4279F7BCE00B98E02 /* robot-2-02.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DB3279F7BCC00B98E02 /* robot-2-02.wav */; };
+		79386DD5279F7BCE00B98E02 /* robot-2-17.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DB4279F7BCC00B98E02 /* robot-2-17.wav */; };
+		79386DD6279F7BCE00B98E02 /* robot-2-10.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DB5279F7BCC00B98E02 /* robot-2-10.wav */; };
+		79386DD7279F7BCE00B98E02 /* robot-2-29.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DB6279F7BCC00B98E02 /* robot-2-29.wav */; };
+		79386DD8279F7BCE00B98E02 /* robot-2-31.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DB7279F7BCC00B98E02 /* robot-2-31.wav */; };
+		79386DD9279F7BCE00B98E02 /* robot-2-11.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DB8279F7BCC00B98E02 /* robot-2-11.wav */; };
+		79386DDA279F7BCE00B98E02 /* robot-2-19.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DB9279F7BCC00B98E02 /* robot-2-19.wav */; };
+		79386DDB279F7BCE00B98E02 /* robot-2-05.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DBA279F7BCC00B98E02 /* robot-2-05.wav */; };
+		79386DDC279F7BCE00B98E02 /* robot-2-01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DBB279F7BCC00B98E02 /* robot-2-01.wav */; };
+		79386DDD279F7BCE00B98E02 /* robot-2-30.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DBC279F7BCC00B98E02 /* robot-2-30.wav */; };
+		79386DDE279F7BCE00B98E02 /* robot-2-08.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DBD279F7BCD00B98E02 /* robot-2-08.wav */; };
+		79386DDF279F7BCE00B98E02 /* robot-2-14.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DBE279F7BCD00B98E02 /* robot-2-14.wav */; };
+		79386DE0279F7BCE00B98E02 /* robot-2-21.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DBF279F7BCD00B98E02 /* robot-2-21.wav */; };
+		79386DE1279F7BCE00B98E02 /* robot-2-12.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DC0279F7BCD00B98E02 /* robot-2-12.wav */; };
+		79386DE2279F7BCE00B98E02 /* robot-2-18.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DC1279F7BCD00B98E02 /* robot-2-18.wav */; };
+		79386DE3279F7BCE00B98E02 /* robot-2-16.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DC2279F7BCD00B98E02 /* robot-2-16.wav */; };
+		79386DE4279F7BCE00B98E02 /* robot-2-06.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DC3279F7BCD00B98E02 /* robot-2-06.wav */; };
+		79386DE5279F7BCE00B98E02 /* robot-2-20.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DC4279F7BCD00B98E02 /* robot-2-20.wav */; };
+		79386DE6279F7BCE00B98E02 /* robot-2-23.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DC5279F7BCD00B98E02 /* robot-2-23.wav */; };
+		79386DE7279F7BCE00B98E02 /* robot-2-15.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DC6279F7BCD00B98E02 /* robot-2-15.wav */; };
+		79386DE8279F7BCE00B98E02 /* robot-2-27.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79386DC7279F7BCE00B98E02 /* robot-2-27.wav */; };
 		794B56F3276BE2FF001A7FE6 /* DebugWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B56F2276BE2FF001A7FE6 /* DebugWindow.swift */; };
 		794B56F5276BE314001A7FE6 /* DebugWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 794B56F4276BE314001A7FE6 /* DebugWindow.xib */; };
 		794B56F7276BF962001A7FE6 /* DebugCollectionMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B56F6276BF962001A7FE6 /* DebugCollectionMenu.swift */; };
@@ -37,25 +297,14 @@
 		794B56FE276BFDAD001A7FE6 /* DebugMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B56FC276BFDAD001A7FE6 /* DebugMenuCell.swift */; };
 		794B56FF276BFDAD001A7FE6 /* DebugMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 794B56FD276BFDAD001A7FE6 /* DebugMenuCell.xib */; };
 		794B5701276C05E6001A7FE6 /* DebugMenuDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B5700276C05E6001A7FE6 /* DebugMenuDatasource.swift */; };
+		794B79DB279E2F620037B6C9 /* EditorZonesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B79DA279E2F620037B6C9 /* EditorZonesInteractor.swift */; };
+		794B79DE279E2FC70037B6C9 /* EditorDescriptionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794B79DD279E2FC70037B6C9 /* EditorDescriptionsModel.swift */; };
 		795129D2279CEDAE002F746C /* CaseItarable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795129D1279CEDAE002F746C /* CaseItarable+Extensions.swift */; };
 		795129D6279D1573002F746C /* CustomAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 795129D4279D1572002F746C /* CustomAlert.xib */; };
 		795129D7279D1573002F746C /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795129D5279D1573002F746C /* CustomAlert.swift */; };
 		795129DA279D16B6002F746C /* InteractionFeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795129D9279D16B6002F746C /* InteractionFeedbackService.swift */; };
 		795129DC279D16E1002F746C /* TapAnimatedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795129DB279D16E1002F746C /* TapAnimatedButton.swift */; };
 		795842F627713F3600E0172C /* SoundZone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795842F527713F3600E0172C /* SoundZone.swift */; };
-		7958430A2771453700E0172C /* robotDry12.wav in Resources */ = {isa = PBXBuildFile; fileRef = 795842FD2771453400E0172C /* robotDry12.wav */; };
-		7958430B2771453700E0172C /* robotDry2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 795842FE2771453400E0172C /* robotDry2.wav */; };
-		7958430C2771453700E0172C /* robotDry7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 795842FF2771453500E0172C /* robotDry7.wav */; };
-		7958430D2771453700E0172C /* robotDry10.wav in Resources */ = {isa = PBXBuildFile; fileRef = 795843002771453500E0172C /* robotDry10.wav */; };
-		7958430E2771453700E0172C /* robotDry8.wav in Resources */ = {isa = PBXBuildFile; fileRef = 795843012771453500E0172C /* robotDry8.wav */; };
-		7958430F2771453700E0172C /* robotDry5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 795843022771453500E0172C /* robotDry5.wav */; };
-		795843102771453700E0172C /* robotDry4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 795843032771453500E0172C /* robotDry4.wav */; };
-		795843112771453700E0172C /* robotDry1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 795843042771453600E0172C /* robotDry1.wav */; };
-		795843122771453700E0172C /* robotDry11.wav in Resources */ = {isa = PBXBuildFile; fileRef = 795843052771453600E0172C /* robotDry11.wav */; };
-		795843132771453700E0172C /* robotDry6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 795843062771453600E0172C /* robotDry6.wav */; };
-		795843142771453700E0172C /* robotDry9.wav in Resources */ = {isa = PBXBuildFile; fileRef = 795843072771453600E0172C /* robotDry9.wav */; };
-		795843152771453700E0172C /* robotDry3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 795843082771453700E0172C /* robotDry3.wav */; };
-		795843162771453700E0172C /* 2021-11-10 14.13.06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 795843092771453700E0172C /* 2021-11-10 14.13.06.jpg */; };
 		7958431827714E6400E0172C /* ZoneBasedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7958431727714E6400E0172C /* ZoneBasedAudio.swift */; };
 		7958431A27714E9400E0172C /* MaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7958431927714E9400E0172C /* MaskManager.swift */; };
 		7963FC4227466F6F007B8449 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7963FC4127466F6F007B8449 /* ApplicationCoordinator.swift */; };
@@ -147,71 +396,7 @@
 		79E0415D279BC3E200AB1390 /* EditorMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0415C279BC3E200AB1390 /* EditorMask.swift */; };
 		79E0415F279BD0A200AB1390 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E0415E279BD0A200AB1390 /* UIViewController+Extensions.swift */; };
 		79E04161279C058C00AB1390 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E04160279C058C00AB1390 /* String+Extensions.swift */; };
-		79E041A3279C829D00AB1390 /* meditation-55.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04163279C829B00AB1390 /* meditation-55.wav */; };
-		79E041A4279C829D00AB1390 /* meditation-42.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04164279C829B00AB1390 /* meditation-42.wav */; };
-		79E041A5279C829D00AB1390 /* meditation-50.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04165279C829B00AB1390 /* meditation-50.wav */; };
-		79E041A6279C829D00AB1390 /* meditation-23.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04166279C829B00AB1390 /* meditation-23.wav */; };
-		79E041A7279C829D00AB1390 /* meditation-62.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04167279C829B00AB1390 /* meditation-62.wav */; };
-		79E041A8279C829D00AB1390 /* meditation-44.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04168279C829B00AB1390 /* meditation-44.wav */; };
-		79E041A9279C829D00AB1390 /* meditation-22.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04169279C829B00AB1390 /* meditation-22.wav */; };
-		79E041AA279C829D00AB1390 /* meditation-01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0416A279C829B00AB1390 /* meditation-01.wav */; };
-		79E041AB279C829D00AB1390 /* meditation-51.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0416B279C829B00AB1390 /* meditation-51.wav */; };
-		79E041AC279C829D00AB1390 /* meditation-59.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0416C279C829C00AB1390 /* meditation-59.wav */; };
-		79E041AD279C829D00AB1390 /* meditation-38.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0416D279C829C00AB1390 /* meditation-38.wav */; };
-		79E041AE279C829D00AB1390 /* meditation-14.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0416E279C829C00AB1390 /* meditation-14.wav */; };
-		79E041AF279C829D00AB1390 /* meditation-27.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0416F279C829C00AB1390 /* meditation-27.wav */; };
-		79E041B0279C829D00AB1390 /* meditation-48.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04170279C829C00AB1390 /* meditation-48.wav */; };
-		79E041B1279C829D00AB1390 /* meditation-41.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04171279C829C00AB1390 /* meditation-41.wav */; };
-		79E041B2279C829D00AB1390 /* meditation-16.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04172279C829C00AB1390 /* meditation-16.wav */; };
-		79E041B3279C829D00AB1390 /* meditation-39.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04173279C829C00AB1390 /* meditation-39.wav */; };
-		79E041B4279C829D00AB1390 /* meditation-58.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04174279C829C00AB1390 /* meditation-58.wav */; };
-		79E041B5279C829D00AB1390 /* meditation-12.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04175279C829C00AB1390 /* meditation-12.wav */; };
-		79E041B6279C829D00AB1390 /* meditation-54.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04176279C829C00AB1390 /* meditation-54.wav */; };
-		79E041B7279C829D00AB1390 /* meditation-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04177279C829C00AB1390 /* meditation-00.wav */; };
-		79E041B8279C829D00AB1390 /* meditation-45.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04178279C829C00AB1390 /* meditation-45.wav */; };
-		79E041B9279C829D00AB1390 /* meditation-24.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04179279C829C00AB1390 /* meditation-24.wav */; };
-		79E041BA279C829D00AB1390 /* meditation-25.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0417A279C829C00AB1390 /* meditation-25.wav */; };
-		79E041BB279C829D00AB1390 /* meditation-21.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0417B279C829C00AB1390 /* meditation-21.wav */; };
-		79E041BC279C829D00AB1390 /* meditation-56.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0417C279C829C00AB1390 /* meditation-56.wav */; };
-		79E041BD279C829D00AB1390 /* meditation-57.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0417D279C829C00AB1390 /* meditation-57.wav */; };
-		79E041BE279C829D00AB1390 /* meditation-53.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0417E279C829C00AB1390 /* meditation-53.wav */; };
-		79E041BF279C829D00AB1390 /* meditation-47.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0417F279C829C00AB1390 /* meditation-47.wav */; };
-		79E041C0279C829D00AB1390 /* meditation-34.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04180279C829C00AB1390 /* meditation-34.wav */; };
-		79E041C1279C829D00AB1390 /* meditation-15.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04181279C829C00AB1390 /* meditation-15.wav */; };
-		79E041C2279C829D00AB1390 /* meditation-63.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04182279C829C00AB1390 /* meditation-63.wav */; };
-		79E041C3279C829D00AB1390 /* meditation-60.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04183279C829C00AB1390 /* meditation-60.wav */; };
-		79E041C4279C829D00AB1390 /* meditation-20.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04184279C829C00AB1390 /* meditation-20.wav */; };
-		79E041C5279C829D00AB1390 /* meditation-36.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04185279C829C00AB1390 /* meditation-36.wav */; };
-		79E041C6279C829D00AB1390 /* meditation-13.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04186279C829C00AB1390 /* meditation-13.wav */; };
-		79E041C7279C829D00AB1390 /* meditation-11.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04187279C829C00AB1390 /* meditation-11.wav */; };
-		79E041C8279C829D00AB1390 /* meditation-28.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04188279C829C00AB1390 /* meditation-28.wav */; };
-		79E041C9279C829D00AB1390 /* meditation-05.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04189279C829C00AB1390 /* meditation-05.wav */; };
-		79E041CA279C829D00AB1390 /* meditation-07.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0418A279C829C00AB1390 /* meditation-07.wav */; };
-		79E041CB279C829D00AB1390 /* meditation-04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0418B279C829D00AB1390 /* meditation-04.wav */; };
-		79E041CC279C829D00AB1390 /* meditation-29.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0418C279C829D00AB1390 /* meditation-29.wav */; };
-		79E041CD279C829D00AB1390 /* meditation-06.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0418D279C829D00AB1390 /* meditation-06.wav */; };
-		79E041CE279C829D00AB1390 /* meditation-49.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0418E279C829D00AB1390 /* meditation-49.wav */; };
-		79E041CF279C829D00AB1390 /* meditation-32.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0418F279C829D00AB1390 /* meditation-32.wav */; };
-		79E041D0279C829D00AB1390 /* meditation-31.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04190279C829D00AB1390 /* meditation-31.wav */; };
-		79E041D1279C829D00AB1390 /* meditation-19.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04191279C829D00AB1390 /* meditation-19.wav */; };
-		79E041D2279C829D00AB1390 /* meditation-17.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04192279C829D00AB1390 /* meditation-17.wav */; };
-		79E041D3279C829D00AB1390 /* meditation-03.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04193279C829D00AB1390 /* meditation-03.wav */; };
-		79E041D4279C829D00AB1390 /* meditation-40.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04194279C829D00AB1390 /* meditation-40.wav */; };
-		79E041D5279C829D00AB1390 /* meditation-08.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04195279C829D00AB1390 /* meditation-08.wav */; };
-		79E041D6279C829D00AB1390 /* meditation-33.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04196279C829D00AB1390 /* meditation-33.wav */; };
-		79E041D7279C829D00AB1390 /* meditation-46.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04197279C829D00AB1390 /* meditation-46.wav */; };
-		79E041D8279C829D00AB1390 /* meditation-61.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04198279C829D00AB1390 /* meditation-61.wav */; };
-		79E041D9279C829D00AB1390 /* meditation-43.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E04199279C829D00AB1390 /* meditation-43.wav */; };
-		79E041DA279C829D00AB1390 /* meditation-02.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0419A279C829D00AB1390 /* meditation-02.wav */; };
-		79E041DB279C829D00AB1390 /* meditation-09.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0419B279C829D00AB1390 /* meditation-09.wav */; };
-		79E041DC279C829E00AB1390 /* meditation-30.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0419C279C829D00AB1390 /* meditation-30.wav */; };
-		79E041DD279C829E00AB1390 /* meditation-10.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0419D279C829D00AB1390 /* meditation-10.wav */; };
-		79E041DE279C829E00AB1390 /* meditation-37.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0419E279C829D00AB1390 /* meditation-37.wav */; };
-		79E041DF279C829E00AB1390 /* meditation-18.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E0419F279C829D00AB1390 /* meditation-18.wav */; };
-		79E041E0279C829E00AB1390 /* meditation-52.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E041A0279C829D00AB1390 /* meditation-52.wav */; };
-		79E041E1279C829E00AB1390 /* meditation-26.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E041A1279C829D00AB1390 /* meditation-26.wav */; };
-		79E041E2279C829E00AB1390 /* meditation-35.wav in Resources */ = {isa = PBXBuildFile; fileRef = 79E041A2279C829D00AB1390 /* meditation-35.wav */; };
-		79EC56AD2796B0A600AEF729 /* EditorDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EC56AC2796B0A600AEF729 /* EditorDescription.swift */; };
+		79EC56AD2796B0A600AEF729 /* EditorSoundsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EC56AC2796B0A600AEF729 /* EditorSoundsInteractor.swift */; };
 		79ED1386278C8DD600A1F9BA /* EditorZoneSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED1385278C8DD600A1F9BA /* EditorZoneSelection.swift */; };
 		79F913B42746501500771FFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F913B32746501500771FFE /* AppDelegate.swift */; };
 		79F913B62746501500771FFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F913B52746501500771FFE /* SceneDelegate.swift */; };
@@ -223,6 +408,153 @@
 		79035A5F2793D40800DFFDB2 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		79035A612793D42F00DFFDB2 /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
 		790CFEE5276A7BE000C355C5 /* PerformanceMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceMeasurement.swift; sourceTree = "<group>"; };
+		791682A427A9605E00C66142 /* meditation-24.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-24.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-24.wav"; sourceTree = "<group>"; };
+		791682A527A9605E00C66142 /* meditation-63.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-63.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-63.wav"; sourceTree = "<group>"; };
+		791682A627A9605E00C66142 /* meditation-05.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-05.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-05.wav"; sourceTree = "<group>"; };
+		791682A727A9605E00C66142 /* meditation-62.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-62.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-62.wav"; sourceTree = "<group>"; };
+		791682A827A9605E00C66142 /* meditation-12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-12.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-12.wav"; sourceTree = "<group>"; };
+		791682A927A9605E00C66142 /* meditation-04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-04.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-04.wav"; sourceTree = "<group>"; };
+		791682AA27A9605E00C66142 /* meditation-08.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-08.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-08.wav"; sourceTree = "<group>"; };
+		791682AB27A9605E00C66142 /* meditation-58.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-58.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-58.wav"; sourceTree = "<group>"; };
+		791682AC27A9605E00C66142 /* meditation-23.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-23.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-23.wav"; sourceTree = "<group>"; };
+		791682AD27A9605E00C66142 /* meditation-39.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-39.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-39.wav"; sourceTree = "<group>"; };
+		791682AE27A9605F00C66142 /* meditation-07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-07.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-07.wav"; sourceTree = "<group>"; };
+		791682AF27A9605F00C66142 /* meditation-16.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-16.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-16.wav"; sourceTree = "<group>"; };
+		791682B027A9605F00C66142 /* meditation-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-00.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-00.wav"; sourceTree = "<group>"; };
+		791682B127A9605F00C66142 /* meditation-42.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-42.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-42.wav"; sourceTree = "<group>"; };
+		791682B227A9605F00C66142 /* meditation-26.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-26.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-26.wav"; sourceTree = "<group>"; };
+		791682B327A9605F00C66142 /* meditation-17.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-17.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-17.wav"; sourceTree = "<group>"; };
+		791682B427A9605F00C66142 /* meditation-49.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-49.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-49.wav"; sourceTree = "<group>"; };
+		791682B527A9605F00C66142 /* meditation-30.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-30.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-30.wav"; sourceTree = "<group>"; };
+		791682B627A9605F00C66142 /* meditation-29.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-29.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-29.wav"; sourceTree = "<group>"; };
+		791682B727A9605F00C66142 /* meditation-60.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-60.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-60.wav"; sourceTree = "<group>"; };
+		791682B827A9605F00C66142 /* meditation-28.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-28.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-28.wav"; sourceTree = "<group>"; };
+		791682B927A9605F00C66142 /* meditation-25.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-25.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-25.wav"; sourceTree = "<group>"; };
+		791682BA27A9605F00C66142 /* meditation-06.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-06.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-06.wav"; sourceTree = "<group>"; };
+		791682BB27A9605F00C66142 /* meditation-48.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-48.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-48.wav"; sourceTree = "<group>"; };
+		791682BC27A9605F00C66142 /* meditation-53.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-53.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-53.wav"; sourceTree = "<group>"; };
+		791682BD27A9605F00C66142 /* meditation-56.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-56.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-56.wav"; sourceTree = "<group>"; };
+		791682BE27A9605F00C66142 /* meditation-44.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-44.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-44.wav"; sourceTree = "<group>"; };
+		791682BF27A9605F00C66142 /* meditation-01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-01.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-01.wav"; sourceTree = "<group>"; };
+		791682C027A9605F00C66142 /* meditation-15.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-15.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-15.wav"; sourceTree = "<group>"; };
+		791682C127A9605F00C66142 /* meditation-22.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-22.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-22.wav"; sourceTree = "<group>"; };
+		791682C227A9605F00C66142 /* meditation-20.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-20.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-20.wav"; sourceTree = "<group>"; };
+		791682C327A9605F00C66142 /* meditation-19.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-19.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-19.wav"; sourceTree = "<group>"; };
+		791682C427A9605F00C66142 /* meditation-35.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-35.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-35.wav"; sourceTree = "<group>"; };
+		791682C527A9605F00C66142 /* meditation-18.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-18.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-18.wav"; sourceTree = "<group>"; };
+		791682C627A9605F00C66142 /* meditation-11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-11.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-11.wav"; sourceTree = "<group>"; };
+		791682C727A9605F00C66142 /* meditation-46.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-46.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-46.wav"; sourceTree = "<group>"; };
+		791682C827A9605F00C66142 /* meditation-36.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-36.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-36.wav"; sourceTree = "<group>"; };
+		791682C927A9605F00C66142 /* meditation-51.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-51.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-51.wav"; sourceTree = "<group>"; };
+		791682CA27A9605F00C66142 /* meditation-45.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-45.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-45.wav"; sourceTree = "<group>"; };
+		791682CB27A9605F00C66142 /* meditation-02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-02.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-02.wav"; sourceTree = "<group>"; };
+		791682CC27A9606000C66142 /* meditation-54.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-54.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-54.wav"; sourceTree = "<group>"; };
+		791682CD27A9606000C66142 /* meditation-13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-13.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-13.wav"; sourceTree = "<group>"; };
+		791682CE27A9606000C66142 /* meditation-03.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-03.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-03.wav"; sourceTree = "<group>"; };
+		791682CF27A9606000C66142 /* meditation-61.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-61.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-61.wav"; sourceTree = "<group>"; };
+		791682D027A9606000C66142 /* meditation-41.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-41.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-41.wav"; sourceTree = "<group>"; };
+		791682D127A9606000C66142 /* meditation-34.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-34.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-34.wav"; sourceTree = "<group>"; };
+		791682D227A9606000C66142 /* meditation-31.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-31.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-31.wav"; sourceTree = "<group>"; };
+		791682D327A9606000C66142 /* meditation-27.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-27.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-27.wav"; sourceTree = "<group>"; };
+		791682D427A9606000C66142 /* meditation-57.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-57.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-57.wav"; sourceTree = "<group>"; };
+		791682D527A9606000C66142 /* meditation-09.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-09.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-09.wav"; sourceTree = "<group>"; };
+		791682D627A9606000C66142 /* meditation-14.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-14.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-14.wav"; sourceTree = "<group>"; };
+		791682D727A9606000C66142 /* meditation-50.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-50.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-50.wav"; sourceTree = "<group>"; };
+		791682D827A9606000C66142 /* meditation-38.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-38.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-38.wav"; sourceTree = "<group>"; };
+		791682D927A9606000C66142 /* meditation-55.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-55.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-55.wav"; sourceTree = "<group>"; };
+		791682DA27A9606000C66142 /* meditation-40.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-40.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-40.wav"; sourceTree = "<group>"; };
+		791682DB27A9606000C66142 /* meditation-21.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-21.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-21.wav"; sourceTree = "<group>"; };
+		791682DC27A9606000C66142 /* meditation-10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-10.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-10.wav"; sourceTree = "<group>"; };
+		791682DD27A9606000C66142 /* meditation-47.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-47.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-47.wav"; sourceTree = "<group>"; };
+		791682DE27A9606000C66142 /* meditation-32.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-32.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-32.wav"; sourceTree = "<group>"; };
+		791682DF27A9606000C66142 /* meditation-43.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-43.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-43.wav"; sourceTree = "<group>"; };
+		791682E027A9606000C66142 /* meditation-59.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-59.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-59.wav"; sourceTree = "<group>"; };
+		791682E127A9606000C66142 /* meditation-37.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-37.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-37.wav"; sourceTree = "<group>"; };
+		791682E227A9606000C66142 /* meditation-33.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-33.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-33.wav"; sourceTree = "<group>"; };
+		7916832427A9609700C66142 /* IAR_Wet_DW_CraviottoMaple5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_DW_CraviottoMaple5.wav; sourceTree = "<group>"; };
+		7916832527A9609700C66142 /* IAR_Wet_PaisteDarkCrisp14InchHatsBell1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_PaisteDarkCrisp14InchHatsBell1.wav; sourceTree = "<group>"; };
+		7916832627A9609800C66142 /* IAR_Wet_Acrolite_Dampened_Snare4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_Acrolite_Dampened_Snare4.wav; sourceTree = "<group>"; };
+		7916832727A9609800C66142 /* IAR_Wet_Ride2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_Ride2.wav; sourceTree = "<group>"; };
+		7916832827A9609900C66142 /* IAR_Wet_Supraphonic400Dampened_Snare5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_Supraphonic400Dampened_Snare5.wav; sourceTree = "<group>"; };
+		7916832927A9609900C66142 /* IAR_Wet_Supraphonic400Undampened_Snare5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_Supraphonic400Undampened_Snare5.wav; sourceTree = "<group>"; };
+		7916832A27A9609900C66142 /* IAR_Wet_PaisteGiantBeat16InchHats8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_PaisteGiantBeat16InchHats8.wav; sourceTree = "<group>"; };
+		7916832B27A9609A00C66142 /* IAR_Wet_Rack4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_Rack4.wav; sourceTree = "<group>"; };
+		7916832C27A9609A00C66142 /* IAR_Wet_RideBell3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_RideBell3.wav; sourceTree = "<group>"; };
+		7916832D27A9609B00C66142 /* IAR_Wet_Floor4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_Floor4.wav; sourceTree = "<group>"; };
+		7916832E27A9609B00C66142 /* IAR_Wet_Kick4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_Kick4.wav; sourceTree = "<group>"; };
+		7916832F27A9609C00C66142 /* IAR_Wet_PaisteGiantBeat16InchHatsHalfOpen12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_PaisteGiantBeat16InchHatsHalfOpen12.wav; sourceTree = "<group>"; };
+		7916833027A9609C00C66142 /* IAR_Wet_PaisteDarkCrisp14InchHats4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_PaisteDarkCrisp14InchHats4.wav; sourceTree = "<group>"; };
+		7916833127A9609C00C66142 /* IAR_Wet_Cowbell4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_Cowbell4.wav; sourceTree = "<group>"; };
+		7916833227A9609D00C66142 /* IAR_Wet_BlackBeauty_Snare5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_BlackBeauty_Snare5.wav; sourceTree = "<group>"; };
+		7916833327A9609D00C66142 /* IAR_Wet_PaisteDarkCrisp14InchHatsOpen10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_PaisteDarkCrisp14InchHatsOpen10.wav; sourceTree = "<group>"; };
+		7916833427A9609E00C66142 /* IAR_Wet_Crash2_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_Crash2_3.wav; sourceTree = "<group>"; };
+		7916833527A9609E00C66142 /* IAR_Wet_Crash3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_Crash3.wav; sourceTree = "<group>"; };
+		7916833627A9609E00C66142 /* IAR_Wet_Shaker3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_Shaker3.wav; sourceTree = "<group>"; };
+		7916834B27A9614500C66142 /* monkey49.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey49.wav; sourceTree = "<group>"; };
+		7916834C27A9614500C66142 /* monkey61.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey61.wav; sourceTree = "<group>"; };
+		7916834D27A9614500C66142 /* monkey60.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey60.wav; sourceTree = "<group>"; };
+		7916834E27A9614500C66142 /* monkey48.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey48.wav; sourceTree = "<group>"; };
+		7916834F27A9614500C66142 /* monkey62.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey62.wav; sourceTree = "<group>"; };
+		7916835027A9614500C66142 /* monkey63.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey63.wav; sourceTree = "<group>"; };
+		7916835127A9614500C66142 /* monkey58.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey58.wav; sourceTree = "<group>"; };
+		7916835227A9614500C66142 /* monkey59.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey59.wav; sourceTree = "<group>"; };
+		7916835327A9614500C66142 /* monkey16.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey16.wav; sourceTree = "<group>"; };
+		7916835427A9614500C66142 /* monkey02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey02.wav; sourceTree = "<group>"; };
+		7916835527A9614500C66142 /* monkey03.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey03.wav; sourceTree = "<group>"; };
+		7916835627A9614500C66142 /* monkey17.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey17.wav; sourceTree = "<group>"; };
+		7916835727A9614500C66142 /* monkey29.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey29.wav; sourceTree = "<group>"; };
+		7916835827A9614500C66142 /* monkey01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey01.wav; sourceTree = "<group>"; };
+		7916835927A9614500C66142 /* monkey15.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey15.wav; sourceTree = "<group>"; };
+		7916835A27A9614500C66142 /* monkey14.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey14.wav; sourceTree = "<group>"; };
+		7916835B27A9614500C66142 /* monkey00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey00.wav; sourceTree = "<group>"; };
+		7916835C27A9614500C66142 /* monkey28.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey28.wav; sourceTree = "<group>"; };
+		7916835D27A9614500C66142 /* monkey04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey04.wav; sourceTree = "<group>"; };
+		7916835E27A9614500C66142 /* monkey10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey10.wav; sourceTree = "<group>"; };
+		7916835F27A9614500C66142 /* monkey38.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey38.wav; sourceTree = "<group>"; };
+		7916836027A9614500C66142 /* monkey39.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey39.wav; sourceTree = "<group>"; };
+		7916836127A9614500C66142 /* monkey11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey11.wav; sourceTree = "<group>"; };
+		7916836227A9614500C66142 /* monkey05.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey05.wav; sourceTree = "<group>"; };
+		7916836327A9614500C66142 /* monkey13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey13.wav; sourceTree = "<group>"; };
+		7916836427A9614500C66142 /* monkey07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey07.wav; sourceTree = "<group>"; };
+		7916836527A9614500C66142 /* monkey06.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey06.wav; sourceTree = "<group>"; };
+		7916836627A9614500C66142 /* monkey12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey12.wav; sourceTree = "<group>"; };
+		7916836727A9614500C66142 /* monkey37.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey37.wav; sourceTree = "<group>"; };
+		7916836827A9614500C66142 /* monkey23.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey23.wav; sourceTree = "<group>"; };
+		7916836927A9614500C66142 /* monkey22.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey22.wav; sourceTree = "<group>"; };
+		7916836A27A9614500C66142 /* monkey36.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey36.wav; sourceTree = "<group>"; };
+		7916836B27A9614500C66142 /* monkey08.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey08.wav; sourceTree = "<group>"; };
+		7916836C27A9614500C66142 /* monkey20.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey20.wav; sourceTree = "<group>"; };
+		7916836D27A9614500C66142 /* monkey34.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey34.wav; sourceTree = "<group>"; };
+		7916836E27A9614500C66142 /* monkey35.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey35.wav; sourceTree = "<group>"; };
+		7916836F27A9614500C66142 /* monkey21.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey21.wav; sourceTree = "<group>"; };
+		7916837027A9614500C66142 /* monkey09.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey09.wav; sourceTree = "<group>"; };
+		7916837127A9614500C66142 /* monkey25.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey25.wav; sourceTree = "<group>"; };
+		7916837227A9614500C66142 /* monkey31.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey31.wav; sourceTree = "<group>"; };
+		7916837327A9614500C66142 /* monkey19.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey19.wav; sourceTree = "<group>"; };
+		7916837427A9614500C66142 /* monkey18.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey18.wav; sourceTree = "<group>"; };
+		7916837527A9614500C66142 /* monkey30.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey30.wav; sourceTree = "<group>"; };
+		7916837627A9614500C66142 /* monkey24.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey24.wav; sourceTree = "<group>"; };
+		7916837727A9614500C66142 /* monkey32.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey32.wav; sourceTree = "<group>"; };
+		7916837827A9614500C66142 /* monkey26.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey26.wav; sourceTree = "<group>"; };
+		7916837927A9614500C66142 /* monkey27.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey27.wav; sourceTree = "<group>"; };
+		7916837A27A9614500C66142 /* monkey-background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "monkey-background.wav"; sourceTree = "<group>"; };
+		7916837B27A9614500C66142 /* monkey33.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey33.wav; sourceTree = "<group>"; };
+		7916837C27A9614500C66142 /* monkey54.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey54.wav; sourceTree = "<group>"; };
+		7916837D27A9614500C66142 /* monkey40.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey40.wav; sourceTree = "<group>"; };
+		7916837E27A9614500C66142 /* monkey41.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey41.wav; sourceTree = "<group>"; };
+		7916837F27A9614500C66142 /* monkey55.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey55.wav; sourceTree = "<group>"; };
+		7916838027A9614500C66142 /* monkey43.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey43.wav; sourceTree = "<group>"; };
+		7916838127A9614500C66142 /* monkey57.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey57.wav; sourceTree = "<group>"; };
+		7916838227A9614500C66142 /* monkey56.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey56.wav; sourceTree = "<group>"; };
+		7916838327A9614500C66142 /* monkey42.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey42.wav; sourceTree = "<group>"; };
+		7916838427A9614500C66142 /* monkey46.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey46.wav; sourceTree = "<group>"; };
+		7916838527A9614500C66142 /* monkey52.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey52.wav; sourceTree = "<group>"; };
+		7916838627A9614500C66142 /* monkey53.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey53.wav; sourceTree = "<group>"; };
+		7916838727A9614500C66142 /* monkey47.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey47.wav; sourceTree = "<group>"; };
+		7916838827A9614500C66142 /* monkey51.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey51.wav; sourceTree = "<group>"; };
+		7916838927A9614500C66142 /* monkey45.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey45.wav; sourceTree = "<group>"; };
+		7916838A27A9614500C66142 /* monkey44.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey44.wav; sourceTree = "<group>"; };
+		7916838B27A9614500C66142 /* monkey50.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey50.wav; sourceTree = "<group>"; };
 		79189DFF274672900023628A /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		791B7BDE27469FFF00EF6886 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		791B7BDF27469FFF00EF6886 /* Collection+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
@@ -242,6 +574,119 @@
 		7922B2F7275FE65A00273D8B /* CaptureVideoPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureVideoPreviewView.swift; sourceTree = "<group>"; };
 		7922B2FA275FED1C00273D8B /* JiggleError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiggleError.swift; sourceTree = "<group>"; };
 		792980D9279D7028007647F7 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		79386CA4279F788500B98E02 /* LisaRemix02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LisaRemix02.wav; sourceTree = "<group>"; };
+		79386CA5279F788500B98E02 /* LisaRemix13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LisaRemix13.wav; sourceTree = "<group>"; };
+		79386CA6279F788500B98E02 /* LisaRemix12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LisaRemix12.wav; sourceTree = "<group>"; };
+		79386CA7279F788500B98E02 /* LisaRemix03.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LisaRemix03.wav; sourceTree = "<group>"; };
+		79386CA8279F788500B98E02 /* LisaRemix01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LisaRemix01.wav; sourceTree = "<group>"; };
+		79386CA9279F788500B98E02 /* LisaRemix10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LisaRemix10.wav; sourceTree = "<group>"; };
+		79386CAA279F788500B98E02 /* LisaRemix11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LisaRemix11.wav; sourceTree = "<group>"; };
+		79386CAB279F788500B98E02 /* LisaRemix04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LisaRemix04.wav; sourceTree = "<group>"; };
+		79386CAC279F788500B98E02 /* LisaRemix15.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LisaRemix15.wav; sourceTree = "<group>"; };
+		79386CAD279F788500B98E02 /* LisaRemix14.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LisaRemix14.wav; sourceTree = "<group>"; };
+		79386CAE279F788500B98E02 /* LisaRemix05.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LisaRemix05.wav; sourceTree = "<group>"; };
+		79386CAF279F788500B98E02 /* LisaRemix07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LisaRemix07.wav; sourceTree = "<group>"; };
+		79386CB0279F788500B98E02 /* LisaRemix06.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LisaRemix06.wav; sourceTree = "<group>"; };
+		79386CB1279F788500B98E02 /* LisaRemix08.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LisaRemix08.wav; sourceTree = "<group>"; };
+		79386CB2279F788500B98E02 /* LisaRemix09.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = LisaRemix09.wav; sourceTree = "<group>"; };
+		79386D25279F7B5B00B98E02 /* kung-fu53.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu53.wav"; sourceTree = "<group>"; };
+		79386D26279F7B5B00B98E02 /* kung-fu20.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu20.wav"; sourceTree = "<group>"; };
+		79386D27279F7B5B00B98E02 /* kung-fu38.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu38.wav"; sourceTree = "<group>"; };
+		79386D28279F7B5B00B98E02 /* kung-fu59.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu59.wav"; sourceTree = "<group>"; };
+		79386D29279F7B5B00B98E02 /* kung-fu08.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu08.wav"; sourceTree = "<group>"; };
+		79386D2A279F7B5B00B98E02 /* kung-fu62.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu62.wav"; sourceTree = "<group>"; };
+		79386D2B279F7B5B00B98E02 /* kung-fu19.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu19.wav"; sourceTree = "<group>"; };
+		79386D2C279F7B5B00B98E02 /* kung-fu42.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu42.wav"; sourceTree = "<group>"; };
+		79386D2D279F7B5B00B98E02 /* kung-fu10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu10.wav"; sourceTree = "<group>"; };
+		79386D2E279F7B5B00B98E02 /* kung-fu34.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu34.wav"; sourceTree = "<group>"; };
+		79386D2F279F7B5B00B98E02 /* kung-fu22.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu22.wav"; sourceTree = "<group>"; };
+		79386D30279F7B5B00B98E02 /* kung-fu40.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu40.wav"; sourceTree = "<group>"; };
+		79386D31279F7B5B00B98E02 /* kung-fu43.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu43.wav"; sourceTree = "<group>"; };
+		79386D32279F7B5C00B98E02 /* kung-fu47.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu47.wav"; sourceTree = "<group>"; };
+		79386D33279F7B5C00B98E02 /* kung-fu58.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu58.wav"; sourceTree = "<group>"; };
+		79386D34279F7B5C00B98E02 /* kung-fu51.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu51.wav"; sourceTree = "<group>"; };
+		79386D35279F7B5C00B98E02 /* kung-fu30.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu30.wav"; sourceTree = "<group>"; };
+		79386D36279F7B5C00B98E02 /* kung-fu35.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu35.wav"; sourceTree = "<group>"; };
+		79386D37279F7B5C00B98E02 /* kung-fu25.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu25.wav"; sourceTree = "<group>"; };
+		79386D38279F7B5C00B98E02 /* kung-fu39.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu39.wav"; sourceTree = "<group>"; };
+		79386D39279F7B5C00B98E02 /* kung-fu37.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu37.wav"; sourceTree = "<group>"; };
+		79386D3A279F7B5C00B98E02 /* kung-fu04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu04.wav"; sourceTree = "<group>"; };
+		79386D3B279F7B5C00B98E02 /* kung-fu21.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu21.wav"; sourceTree = "<group>"; };
+		79386D3C279F7B5C00B98E02 /* kung-fu61.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu61.wav"; sourceTree = "<group>"; };
+		79386D3D279F7B5C00B98E02 /* kung-fu28.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu28.wav"; sourceTree = "<group>"; };
+		79386D3E279F7B5C00B98E02 /* kung-fu02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu02.wav"; sourceTree = "<group>"; };
+		79386D3F279F7B5D00B98E02 /* kung-fu52.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu52.wav"; sourceTree = "<group>"; };
+		79386D40279F7B5D00B98E02 /* kung-fu33.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu33.wav"; sourceTree = "<group>"; };
+		79386D41279F7B5D00B98E02 /* kung-fu01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu01.wav"; sourceTree = "<group>"; };
+		79386D42279F7B5D00B98E02 /* kung-fu63.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu63.wav"; sourceTree = "<group>"; };
+		79386D43279F7B5D00B98E02 /* kung-fu13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu13.wav"; sourceTree = "<group>"; };
+		79386D44279F7B5D00B98E02 /* kung-fu41.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu41.wav"; sourceTree = "<group>"; };
+		79386D45279F7B5D00B98E02 /* kung-fu36.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu36.wav"; sourceTree = "<group>"; };
+		79386D46279F7B5D00B98E02 /* kung-fu15.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu15.wav"; sourceTree = "<group>"; };
+		79386D47279F7B5D00B98E02 /* kung-fu60.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu60.wav"; sourceTree = "<group>"; };
+		79386D48279F7B5D00B98E02 /* kung-fu48.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu48.wav"; sourceTree = "<group>"; };
+		79386D49279F7B5D00B98E02 /* kung-fu07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu07.wav"; sourceTree = "<group>"; };
+		79386D4A279F7B5D00B98E02 /* kung-fu12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu12.wav"; sourceTree = "<group>"; };
+		79386D4B279F7B5E00B98E02 /* kung-fu14.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu14.wav"; sourceTree = "<group>"; };
+		79386D4C279F7B5E00B98E02 /* kung-fu57.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu57.wav"; sourceTree = "<group>"; };
+		79386D4D279F7B5E00B98E02 /* kung-fu-background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu-background.wav"; sourceTree = "<group>"; };
+		79386D4E279F7B5E00B98E02 /* kung-fu56.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu56.wav"; sourceTree = "<group>"; };
+		79386D4F279F7B5E00B98E02 /* kung-fu18.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu18.wav"; sourceTree = "<group>"; };
+		79386D50279F7B5E00B98E02 /* kung-fu16.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu16.wav"; sourceTree = "<group>"; };
+		79386D51279F7B5E00B98E02 /* kung-fu17.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu17.wav"; sourceTree = "<group>"; };
+		79386D52279F7B5E00B98E02 /* kung-fu05.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu05.wav"; sourceTree = "<group>"; };
+		79386D53279F7B5E00B98E02 /* kung-fu50.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu50.wav"; sourceTree = "<group>"; };
+		79386D54279F7B5E00B98E02 /* kung-fu27.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu27.wav"; sourceTree = "<group>"; };
+		79386D55279F7B5E00B98E02 /* kung-fu55.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu55.wav"; sourceTree = "<group>"; };
+		79386D56279F7B5F00B98E02 /* kung-fu44.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu44.wav"; sourceTree = "<group>"; };
+		79386D57279F7B5F00B98E02 /* kung-fu26.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu26.wav"; sourceTree = "<group>"; };
+		79386D58279F7B5F00B98E02 /* kung-fu11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu11.wav"; sourceTree = "<group>"; };
+		79386D59279F7B5F00B98E02 /* kung-fu46.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu46.wav"; sourceTree = "<group>"; };
+		79386D5A279F7B5F00B98E02 /* kung-fu06.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu06.wav"; sourceTree = "<group>"; };
+		79386D5B279F7B5F00B98E02 /* kung-fu45.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu45.wav"; sourceTree = "<group>"; };
+		79386D5C279F7B5F00B98E02 /* kung-fu09.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu09.wav"; sourceTree = "<group>"; };
+		79386D5D279F7B5F00B98E02 /* kung-fu31.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu31.wav"; sourceTree = "<group>"; };
+		79386D5E279F7B5F00B98E02 /* kung-fu29.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu29.wav"; sourceTree = "<group>"; };
+		79386D5F279F7B5F00B98E02 /* kung-fu00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu00.wav"; sourceTree = "<group>"; };
+		79386D60279F7B5F00B98E02 /* kung-fu03.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu03.wav"; sourceTree = "<group>"; };
+		79386D61279F7B5F00B98E02 /* kung-fu23.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu23.wav"; sourceTree = "<group>"; };
+		79386D62279F7B5F00B98E02 /* kung-fu49.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu49.wav"; sourceTree = "<group>"; };
+		79386D63279F7B6000B98E02 /* kung-fu32.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu32.wav"; sourceTree = "<group>"; };
+		79386D64279F7B6000B98E02 /* kung-fu54.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu54.wav"; sourceTree = "<group>"; };
+		79386D65279F7B6000B98E02 /* kung-fu24.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "kung-fu24.wav"; sourceTree = "<group>"; };
+		79386DA7279F7BCA00B98E02 /* robot-2-13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-13.wav"; sourceTree = "<group>"; };
+		79386DA8279F7BCA00B98E02 /* robot-2-03.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-03.wav"; sourceTree = "<group>"; };
+		79386DA9279F7BCA00B98E02 /* robot-2-09.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-09.wav"; sourceTree = "<group>"; };
+		79386DAA279F7BCB00B98E02 /* robot-2-04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-04.wav"; sourceTree = "<group>"; };
+		79386DAB279F7BCB00B98E02 /* robot-2-24.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-24.wav"; sourceTree = "<group>"; };
+		79386DAC279F7BCB00B98E02 /* robot-2-28.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-28.wav"; sourceTree = "<group>"; };
+		79386DAD279F7BCB00B98E02 /* robot-2-background.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-background.wav"; sourceTree = "<group>"; };
+		79386DAE279F7BCB00B98E02 /* robot-2-22.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-22.wav"; sourceTree = "<group>"; };
+		79386DAF279F7BCB00B98E02 /* robot-2-07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-07.wav"; sourceTree = "<group>"; };
+		79386DB0279F7BCB00B98E02 /* robot-2-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-00.wav"; sourceTree = "<group>"; };
+		79386DB1279F7BCB00B98E02 /* robot-2-25.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-25.wav"; sourceTree = "<group>"; };
+		79386DB2279F7BCC00B98E02 /* robot-2-26.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-26.wav"; sourceTree = "<group>"; };
+		79386DB3279F7BCC00B98E02 /* robot-2-02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-02.wav"; sourceTree = "<group>"; };
+		79386DB4279F7BCC00B98E02 /* robot-2-17.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-17.wav"; sourceTree = "<group>"; };
+		79386DB5279F7BCC00B98E02 /* robot-2-10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-10.wav"; sourceTree = "<group>"; };
+		79386DB6279F7BCC00B98E02 /* robot-2-29.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-29.wav"; sourceTree = "<group>"; };
+		79386DB7279F7BCC00B98E02 /* robot-2-31.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-31.wav"; sourceTree = "<group>"; };
+		79386DB8279F7BCC00B98E02 /* robot-2-11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-11.wav"; sourceTree = "<group>"; };
+		79386DB9279F7BCC00B98E02 /* robot-2-19.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-19.wav"; sourceTree = "<group>"; };
+		79386DBA279F7BCC00B98E02 /* robot-2-05.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-05.wav"; sourceTree = "<group>"; };
+		79386DBB279F7BCC00B98E02 /* robot-2-01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-01.wav"; sourceTree = "<group>"; };
+		79386DBC279F7BCC00B98E02 /* robot-2-30.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-30.wav"; sourceTree = "<group>"; };
+		79386DBD279F7BCD00B98E02 /* robot-2-08.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-08.wav"; sourceTree = "<group>"; };
+		79386DBE279F7BCD00B98E02 /* robot-2-14.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-14.wav"; sourceTree = "<group>"; };
+		79386DBF279F7BCD00B98E02 /* robot-2-21.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-21.wav"; sourceTree = "<group>"; };
+		79386DC0279F7BCD00B98E02 /* robot-2-12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-12.wav"; sourceTree = "<group>"; };
+		79386DC1279F7BCD00B98E02 /* robot-2-18.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-18.wav"; sourceTree = "<group>"; };
+		79386DC2279F7BCD00B98E02 /* robot-2-16.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-16.wav"; sourceTree = "<group>"; };
+		79386DC3279F7BCD00B98E02 /* robot-2-06.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-06.wav"; sourceTree = "<group>"; };
+		79386DC4279F7BCD00B98E02 /* robot-2-20.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-20.wav"; sourceTree = "<group>"; };
+		79386DC5279F7BCD00B98E02 /* robot-2-23.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-23.wav"; sourceTree = "<group>"; };
+		79386DC6279F7BCD00B98E02 /* robot-2-15.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-15.wav"; sourceTree = "<group>"; };
+		79386DC7279F7BCE00B98E02 /* robot-2-27.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "robot-2-27.wav"; sourceTree = "<group>"; };
 		794B56F2276BE2FF001A7FE6 /* DebugWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugWindow.swift; sourceTree = "<group>"; };
 		794B56F4276BE314001A7FE6 /* DebugWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebugWindow.xib; sourceTree = "<group>"; };
 		794B56F6276BF962001A7FE6 /* DebugCollectionMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugCollectionMenu.swift; sourceTree = "<group>"; };
@@ -249,25 +694,14 @@
 		794B56FC276BFDAD001A7FE6 /* DebugMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMenuCell.swift; sourceTree = "<group>"; };
 		794B56FD276BFDAD001A7FE6 /* DebugMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebugMenuCell.xib; sourceTree = "<group>"; };
 		794B5700276C05E6001A7FE6 /* DebugMenuDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMenuDatasource.swift; sourceTree = "<group>"; };
+		794B79DA279E2F620037B6C9 /* EditorZonesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorZonesInteractor.swift; sourceTree = "<group>"; };
+		794B79DD279E2FC70037B6C9 /* EditorDescriptionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorDescriptionsModel.swift; sourceTree = "<group>"; };
 		795129D1279CEDAE002F746C /* CaseItarable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaseItarable+Extensions.swift"; sourceTree = "<group>"; };
 		795129D4279D1572002F746C /* CustomAlert.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomAlert.xib; sourceTree = "<group>"; };
 		795129D5279D1573002F746C /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		795129D9279D16B6002F746C /* InteractionFeedbackService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionFeedbackService.swift; sourceTree = "<group>"; };
 		795129DB279D16E1002F746C /* TapAnimatedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapAnimatedButton.swift; sourceTree = "<group>"; };
 		795842F527713F3600E0172C /* SoundZone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundZone.swift; sourceTree = "<group>"; };
-		795842FD2771453400E0172C /* robotDry12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robotDry12.wav; sourceTree = "<group>"; };
-		795842FE2771453400E0172C /* robotDry2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robotDry2.wav; sourceTree = "<group>"; };
-		795842FF2771453500E0172C /* robotDry7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robotDry7.wav; sourceTree = "<group>"; };
-		795843002771453500E0172C /* robotDry10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robotDry10.wav; sourceTree = "<group>"; };
-		795843012771453500E0172C /* robotDry8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robotDry8.wav; sourceTree = "<group>"; };
-		795843022771453500E0172C /* robotDry5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robotDry5.wav; sourceTree = "<group>"; };
-		795843032771453500E0172C /* robotDry4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robotDry4.wav; sourceTree = "<group>"; };
-		795843042771453600E0172C /* robotDry1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robotDry1.wav; sourceTree = "<group>"; };
-		795843052771453600E0172C /* robotDry11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robotDry11.wav; sourceTree = "<group>"; };
-		795843062771453600E0172C /* robotDry6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robotDry6.wav; sourceTree = "<group>"; };
-		795843072771453600E0172C /* robotDry9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robotDry9.wav; sourceTree = "<group>"; };
-		795843082771453700E0172C /* robotDry3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = robotDry3.wav; sourceTree = "<group>"; };
-		795843092771453700E0172C /* 2021-11-10 14.13.06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "2021-11-10 14.13.06.jpg"; sourceTree = "<group>"; };
 		7958431727714E6400E0172C /* ZoneBasedAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneBasedAudio.swift; sourceTree = "<group>"; };
 		7958431927714E9400E0172C /* MaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskManager.swift; sourceTree = "<group>"; };
 		7963FC4127466F6F007B8449 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
@@ -359,71 +793,7 @@
 		79E0415C279BC3E200AB1390 /* EditorMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorMask.swift; sourceTree = "<group>"; };
 		79E0415E279BD0A200AB1390 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		79E04160279C058C00AB1390 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		79E04163279C829B00AB1390 /* meditation-55.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-55.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-55.wav"; sourceTree = SOURCE_ROOT; };
-		79E04164279C829B00AB1390 /* meditation-42.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-42.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-42.wav"; sourceTree = SOURCE_ROOT; };
-		79E04165279C829B00AB1390 /* meditation-50.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-50.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-50.wav"; sourceTree = SOURCE_ROOT; };
-		79E04166279C829B00AB1390 /* meditation-23.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-23.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-23.wav"; sourceTree = SOURCE_ROOT; };
-		79E04167279C829B00AB1390 /* meditation-62.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-62.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-62.wav"; sourceTree = SOURCE_ROOT; };
-		79E04168279C829B00AB1390 /* meditation-44.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-44.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-44.wav"; sourceTree = SOURCE_ROOT; };
-		79E04169279C829B00AB1390 /* meditation-22.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-22.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-22.wav"; sourceTree = SOURCE_ROOT; };
-		79E0416A279C829B00AB1390 /* meditation-01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-01.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-01.wav"; sourceTree = SOURCE_ROOT; };
-		79E0416B279C829B00AB1390 /* meditation-51.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-51.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-51.wav"; sourceTree = SOURCE_ROOT; };
-		79E0416C279C829C00AB1390 /* meditation-59.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-59.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-59.wav"; sourceTree = SOURCE_ROOT; };
-		79E0416D279C829C00AB1390 /* meditation-38.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-38.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-38.wav"; sourceTree = SOURCE_ROOT; };
-		79E0416E279C829C00AB1390 /* meditation-14.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-14.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-14.wav"; sourceTree = SOURCE_ROOT; };
-		79E0416F279C829C00AB1390 /* meditation-27.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-27.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-27.wav"; sourceTree = SOURCE_ROOT; };
-		79E04170279C829C00AB1390 /* meditation-48.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-48.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-48.wav"; sourceTree = SOURCE_ROOT; };
-		79E04171279C829C00AB1390 /* meditation-41.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-41.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-41.wav"; sourceTree = SOURCE_ROOT; };
-		79E04172279C829C00AB1390 /* meditation-16.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-16.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-16.wav"; sourceTree = SOURCE_ROOT; };
-		79E04173279C829C00AB1390 /* meditation-39.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-39.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-39.wav"; sourceTree = SOURCE_ROOT; };
-		79E04174279C829C00AB1390 /* meditation-58.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-58.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-58.wav"; sourceTree = SOURCE_ROOT; };
-		79E04175279C829C00AB1390 /* meditation-12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-12.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-12.wav"; sourceTree = SOURCE_ROOT; };
-		79E04176279C829C00AB1390 /* meditation-54.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-54.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-54.wav"; sourceTree = SOURCE_ROOT; };
-		79E04177279C829C00AB1390 /* meditation-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-00.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-00.wav"; sourceTree = SOURCE_ROOT; };
-		79E04178279C829C00AB1390 /* meditation-45.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-45.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-45.wav"; sourceTree = SOURCE_ROOT; };
-		79E04179279C829C00AB1390 /* meditation-24.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-24.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-24.wav"; sourceTree = SOURCE_ROOT; };
-		79E0417A279C829C00AB1390 /* meditation-25.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-25.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-25.wav"; sourceTree = SOURCE_ROOT; };
-		79E0417B279C829C00AB1390 /* meditation-21.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-21.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-21.wav"; sourceTree = SOURCE_ROOT; };
-		79E0417C279C829C00AB1390 /* meditation-56.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-56.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-56.wav"; sourceTree = SOURCE_ROOT; };
-		79E0417D279C829C00AB1390 /* meditation-57.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-57.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-57.wav"; sourceTree = SOURCE_ROOT; };
-		79E0417E279C829C00AB1390 /* meditation-53.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-53.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-53.wav"; sourceTree = SOURCE_ROOT; };
-		79E0417F279C829C00AB1390 /* meditation-47.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-47.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-47.wav"; sourceTree = SOURCE_ROOT; };
-		79E04180279C829C00AB1390 /* meditation-34.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-34.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-34.wav"; sourceTree = SOURCE_ROOT; };
-		79E04181279C829C00AB1390 /* meditation-15.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-15.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-15.wav"; sourceTree = SOURCE_ROOT; };
-		79E04182279C829C00AB1390 /* meditation-63.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-63.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-63.wav"; sourceTree = SOURCE_ROOT; };
-		79E04183279C829C00AB1390 /* meditation-60.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-60.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-60.wav"; sourceTree = SOURCE_ROOT; };
-		79E04184279C829C00AB1390 /* meditation-20.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-20.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-20.wav"; sourceTree = SOURCE_ROOT; };
-		79E04185279C829C00AB1390 /* meditation-36.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-36.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-36.wav"; sourceTree = SOURCE_ROOT; };
-		79E04186279C829C00AB1390 /* meditation-13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-13.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-13.wav"; sourceTree = SOURCE_ROOT; };
-		79E04187279C829C00AB1390 /* meditation-11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-11.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-11.wav"; sourceTree = SOURCE_ROOT; };
-		79E04188279C829C00AB1390 /* meditation-28.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-28.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-28.wav"; sourceTree = SOURCE_ROOT; };
-		79E04189279C829C00AB1390 /* meditation-05.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-05.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-05.wav"; sourceTree = SOURCE_ROOT; };
-		79E0418A279C829C00AB1390 /* meditation-07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-07.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-07.wav"; sourceTree = SOURCE_ROOT; };
-		79E0418B279C829D00AB1390 /* meditation-04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-04.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-04.wav"; sourceTree = SOURCE_ROOT; };
-		79E0418C279C829D00AB1390 /* meditation-29.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-29.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-29.wav"; sourceTree = SOURCE_ROOT; };
-		79E0418D279C829D00AB1390 /* meditation-06.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-06.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-06.wav"; sourceTree = SOURCE_ROOT; };
-		79E0418E279C829D00AB1390 /* meditation-49.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-49.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-49.wav"; sourceTree = SOURCE_ROOT; };
-		79E0418F279C829D00AB1390 /* meditation-32.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-32.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-32.wav"; sourceTree = SOURCE_ROOT; };
-		79E04190279C829D00AB1390 /* meditation-31.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-31.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-31.wav"; sourceTree = SOURCE_ROOT; };
-		79E04191279C829D00AB1390 /* meditation-19.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-19.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-19.wav"; sourceTree = SOURCE_ROOT; };
-		79E04192279C829D00AB1390 /* meditation-17.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-17.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-17.wav"; sourceTree = SOURCE_ROOT; };
-		79E04193279C829D00AB1390 /* meditation-03.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-03.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-03.wav"; sourceTree = SOURCE_ROOT; };
-		79E04194279C829D00AB1390 /* meditation-40.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-40.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-40.wav"; sourceTree = SOURCE_ROOT; };
-		79E04195279C829D00AB1390 /* meditation-08.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-08.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-08.wav"; sourceTree = SOURCE_ROOT; };
-		79E04196279C829D00AB1390 /* meditation-33.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-33.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-33.wav"; sourceTree = SOURCE_ROOT; };
-		79E04197279C829D00AB1390 /* meditation-46.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-46.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-46.wav"; sourceTree = SOURCE_ROOT; };
-		79E04198279C829D00AB1390 /* meditation-61.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-61.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-61.wav"; sourceTree = SOURCE_ROOT; };
-		79E04199279C829D00AB1390 /* meditation-43.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-43.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-43.wav"; sourceTree = SOURCE_ROOT; };
-		79E0419A279C829D00AB1390 /* meditation-02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-02.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-02.wav"; sourceTree = SOURCE_ROOT; };
-		79E0419B279C829D00AB1390 /* meditation-09.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-09.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-09.wav"; sourceTree = SOURCE_ROOT; };
-		79E0419C279C829D00AB1390 /* meditation-30.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-30.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-30.wav"; sourceTree = SOURCE_ROOT; };
-		79E0419D279C829D00AB1390 /* meditation-10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-10.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-10.wav"; sourceTree = SOURCE_ROOT; };
-		79E0419E279C829D00AB1390 /* meditation-37.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-37.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-37.wav"; sourceTree = SOURCE_ROOT; };
-		79E0419F279C829D00AB1390 /* meditation-18.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-18.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-18.wav"; sourceTree = SOURCE_ROOT; };
-		79E041A0279C829D00AB1390 /* meditation-52.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-52.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-52.wav"; sourceTree = SOURCE_ROOT; };
-		79E041A1279C829D00AB1390 /* meditation-26.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-26.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-26.wav"; sourceTree = SOURCE_ROOT; };
-		79E041A2279C829D00AB1390 /* meditation-35.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-35.wav"; path = "Resources/MasksSounds/64SoundsDemo/meditation-35.wav"; sourceTree = SOURCE_ROOT; };
-		79EC56AC2796B0A600AEF729 /* EditorDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorDescription.swift; sourceTree = "<group>"; };
+		79EC56AC2796B0A600AEF729 /* EditorSoundsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorSoundsInteractor.swift; sourceTree = "<group>"; };
 		79ED1385278C8DD600A1F9BA /* EditorZoneSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorZoneSelection.swift; sourceTree = "<group>"; };
 		79F913B02746501500771FFE /* Jiggle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jiggle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F913B32746501500771FFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -453,6 +823,104 @@
 				79035A5F2793D40800DFFDB2 /* art.scnassets */,
 			);
 			path = EasterEgg;
+			sourceTree = "<group>";
+		};
+		7916832327A9607200C66142 /* Drums */ = {
+			isa = PBXGroup;
+			children = (
+				7916832627A9609800C66142 /* IAR_Wet_Acrolite_Dampened_Snare4.wav */,
+				7916833227A9609D00C66142 /* IAR_Wet_BlackBeauty_Snare5.wav */,
+				7916833127A9609C00C66142 /* IAR_Wet_Cowbell4.wav */,
+				7916833427A9609E00C66142 /* IAR_Wet_Crash2_3.wav */,
+				7916833527A9609E00C66142 /* IAR_Wet_Crash3.wav */,
+				7916832427A9609700C66142 /* IAR_Wet_DW_CraviottoMaple5.wav */,
+				7916832D27A9609B00C66142 /* IAR_Wet_Floor4.wav */,
+				7916832E27A9609B00C66142 /* IAR_Wet_Kick4.wav */,
+				7916833027A9609C00C66142 /* IAR_Wet_PaisteDarkCrisp14InchHats4.wav */,
+				7916832527A9609700C66142 /* IAR_Wet_PaisteDarkCrisp14InchHatsBell1.wav */,
+				7916833327A9609D00C66142 /* IAR_Wet_PaisteDarkCrisp14InchHatsOpen10.wav */,
+				7916832A27A9609900C66142 /* IAR_Wet_PaisteGiantBeat16InchHats8.wav */,
+				7916832F27A9609C00C66142 /* IAR_Wet_PaisteGiantBeat16InchHatsHalfOpen12.wav */,
+				7916832B27A9609A00C66142 /* IAR_Wet_Rack4.wav */,
+				7916832727A9609800C66142 /* IAR_Wet_Ride2.wav */,
+				7916832C27A9609A00C66142 /* IAR_Wet_RideBell3.wav */,
+				7916833627A9609E00C66142 /* IAR_Wet_Shaker3.wav */,
+				7916832827A9609900C66142 /* IAR_Wet_Supraphonic400Dampened_Snare5.wav */,
+				7916832927A9609900C66142 /* IAR_Wet_Supraphonic400Undampened_Snare5.wav */,
+			);
+			path = Drums;
+			sourceTree = "<group>";
+		};
+		7916834A27A9614500C66142 /* monkey mask 64 */ = {
+			isa = PBXGroup;
+			children = (
+				7916834B27A9614500C66142 /* monkey49.wav */,
+				7916834C27A9614500C66142 /* monkey61.wav */,
+				7916834D27A9614500C66142 /* monkey60.wav */,
+				7916834E27A9614500C66142 /* monkey48.wav */,
+				7916834F27A9614500C66142 /* monkey62.wav */,
+				7916835027A9614500C66142 /* monkey63.wav */,
+				7916835127A9614500C66142 /* monkey58.wav */,
+				7916835227A9614500C66142 /* monkey59.wav */,
+				7916835327A9614500C66142 /* monkey16.wav */,
+				7916835427A9614500C66142 /* monkey02.wav */,
+				7916835527A9614500C66142 /* monkey03.wav */,
+				7916835627A9614500C66142 /* monkey17.wav */,
+				7916835727A9614500C66142 /* monkey29.wav */,
+				7916835827A9614500C66142 /* monkey01.wav */,
+				7916835927A9614500C66142 /* monkey15.wav */,
+				7916835A27A9614500C66142 /* monkey14.wav */,
+				7916835B27A9614500C66142 /* monkey00.wav */,
+				7916835C27A9614500C66142 /* monkey28.wav */,
+				7916835D27A9614500C66142 /* monkey04.wav */,
+				7916835E27A9614500C66142 /* monkey10.wav */,
+				7916835F27A9614500C66142 /* monkey38.wav */,
+				7916836027A9614500C66142 /* monkey39.wav */,
+				7916836127A9614500C66142 /* monkey11.wav */,
+				7916836227A9614500C66142 /* monkey05.wav */,
+				7916836327A9614500C66142 /* monkey13.wav */,
+				7916836427A9614500C66142 /* monkey07.wav */,
+				7916836527A9614500C66142 /* monkey06.wav */,
+				7916836627A9614500C66142 /* monkey12.wav */,
+				7916836727A9614500C66142 /* monkey37.wav */,
+				7916836827A9614500C66142 /* monkey23.wav */,
+				7916836927A9614500C66142 /* monkey22.wav */,
+				7916836A27A9614500C66142 /* monkey36.wav */,
+				7916836B27A9614500C66142 /* monkey08.wav */,
+				7916836C27A9614500C66142 /* monkey20.wav */,
+				7916836D27A9614500C66142 /* monkey34.wav */,
+				7916836E27A9614500C66142 /* monkey35.wav */,
+				7916836F27A9614500C66142 /* monkey21.wav */,
+				7916837027A9614500C66142 /* monkey09.wav */,
+				7916837127A9614500C66142 /* monkey25.wav */,
+				7916837227A9614500C66142 /* monkey31.wav */,
+				7916837327A9614500C66142 /* monkey19.wav */,
+				7916837427A9614500C66142 /* monkey18.wav */,
+				7916837527A9614500C66142 /* monkey30.wav */,
+				7916837627A9614500C66142 /* monkey24.wav */,
+				7916837727A9614500C66142 /* monkey32.wav */,
+				7916837827A9614500C66142 /* monkey26.wav */,
+				7916837927A9614500C66142 /* monkey27.wav */,
+				7916837A27A9614500C66142 /* monkey-background.wav */,
+				7916837B27A9614500C66142 /* monkey33.wav */,
+				7916837C27A9614500C66142 /* monkey54.wav */,
+				7916837D27A9614500C66142 /* monkey40.wav */,
+				7916837E27A9614500C66142 /* monkey41.wav */,
+				7916837F27A9614500C66142 /* monkey55.wav */,
+				7916838027A9614500C66142 /* monkey43.wav */,
+				7916838127A9614500C66142 /* monkey57.wav */,
+				7916838227A9614500C66142 /* monkey56.wav */,
+				7916838327A9614500C66142 /* monkey42.wav */,
+				7916838427A9614500C66142 /* monkey46.wav */,
+				7916838527A9614500C66142 /* monkey52.wav */,
+				7916838627A9614500C66142 /* monkey53.wav */,
+				7916838727A9614500C66142 /* monkey47.wav */,
+				7916838827A9614500C66142 /* monkey51.wav */,
+				7916838927A9614500C66142 /* monkey45.wav */,
+				7916838A27A9614500C66142 /* monkey44.wav */,
+				7916838B27A9614500C66142 /* monkey50.wav */,
+			);
+			path = "monkey mask 64";
 			sourceTree = "<group>";
 		};
 		79189DFE274672420023628A /* CodeDebug */ = {
@@ -562,6 +1030,140 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		79386C3E279F788300B98E02 /* Robot32 */ = {
+			isa = PBXGroup;
+			children = (
+				79386DB0279F7BCB00B98E02 /* robot-2-00.wav */,
+				79386DBB279F7BCC00B98E02 /* robot-2-01.wav */,
+				79386DB3279F7BCC00B98E02 /* robot-2-02.wav */,
+				79386DA8279F7BCA00B98E02 /* robot-2-03.wav */,
+				79386DAA279F7BCB00B98E02 /* robot-2-04.wav */,
+				79386DBA279F7BCC00B98E02 /* robot-2-05.wav */,
+				79386DC3279F7BCD00B98E02 /* robot-2-06.wav */,
+				79386DAF279F7BCB00B98E02 /* robot-2-07.wav */,
+				79386DBD279F7BCD00B98E02 /* robot-2-08.wav */,
+				79386DA9279F7BCA00B98E02 /* robot-2-09.wav */,
+				79386DB5279F7BCC00B98E02 /* robot-2-10.wav */,
+				79386DB8279F7BCC00B98E02 /* robot-2-11.wav */,
+				79386DC0279F7BCD00B98E02 /* robot-2-12.wav */,
+				79386DA7279F7BCA00B98E02 /* robot-2-13.wav */,
+				79386DBE279F7BCD00B98E02 /* robot-2-14.wav */,
+				79386DC6279F7BCD00B98E02 /* robot-2-15.wav */,
+				79386DC2279F7BCD00B98E02 /* robot-2-16.wav */,
+				79386DB4279F7BCC00B98E02 /* robot-2-17.wav */,
+				79386DC1279F7BCD00B98E02 /* robot-2-18.wav */,
+				79386DB9279F7BCC00B98E02 /* robot-2-19.wav */,
+				79386DC4279F7BCD00B98E02 /* robot-2-20.wav */,
+				79386DBF279F7BCD00B98E02 /* robot-2-21.wav */,
+				79386DAE279F7BCB00B98E02 /* robot-2-22.wav */,
+				79386DC5279F7BCD00B98E02 /* robot-2-23.wav */,
+				79386DAB279F7BCB00B98E02 /* robot-2-24.wav */,
+				79386DB1279F7BCB00B98E02 /* robot-2-25.wav */,
+				79386DB2279F7BCC00B98E02 /* robot-2-26.wav */,
+				79386DC7279F7BCE00B98E02 /* robot-2-27.wav */,
+				79386DAC279F7BCB00B98E02 /* robot-2-28.wav */,
+				79386DB6279F7BCC00B98E02 /* robot-2-29.wav */,
+				79386DBC279F7BCC00B98E02 /* robot-2-30.wav */,
+				79386DB7279F7BCC00B98E02 /* robot-2-31.wav */,
+				79386DAD279F7BCB00B98E02 /* robot-2-background.wav */,
+			);
+			path = Robot32;
+			sourceTree = "<group>";
+		};
+		79386C60279F788500B98E02 /* KUNG-FU 64 */ = {
+			isa = PBXGroup;
+			children = (
+				79386D4D279F7B5E00B98E02 /* kung-fu-background.wav */,
+				79386D5F279F7B5F00B98E02 /* kung-fu00.wav */,
+				79386D41279F7B5D00B98E02 /* kung-fu01.wav */,
+				79386D3E279F7B5C00B98E02 /* kung-fu02.wav */,
+				79386D60279F7B5F00B98E02 /* kung-fu03.wav */,
+				79386D3A279F7B5C00B98E02 /* kung-fu04.wav */,
+				79386D52279F7B5E00B98E02 /* kung-fu05.wav */,
+				79386D5A279F7B5F00B98E02 /* kung-fu06.wav */,
+				79386D49279F7B5D00B98E02 /* kung-fu07.wav */,
+				79386D29279F7B5B00B98E02 /* kung-fu08.wav */,
+				79386D5C279F7B5F00B98E02 /* kung-fu09.wav */,
+				79386D2D279F7B5B00B98E02 /* kung-fu10.wav */,
+				79386D58279F7B5F00B98E02 /* kung-fu11.wav */,
+				79386D4A279F7B5D00B98E02 /* kung-fu12.wav */,
+				79386D43279F7B5D00B98E02 /* kung-fu13.wav */,
+				79386D4B279F7B5E00B98E02 /* kung-fu14.wav */,
+				79386D46279F7B5D00B98E02 /* kung-fu15.wav */,
+				79386D50279F7B5E00B98E02 /* kung-fu16.wav */,
+				79386D51279F7B5E00B98E02 /* kung-fu17.wav */,
+				79386D4F279F7B5E00B98E02 /* kung-fu18.wav */,
+				79386D2B279F7B5B00B98E02 /* kung-fu19.wav */,
+				79386D26279F7B5B00B98E02 /* kung-fu20.wav */,
+				79386D3B279F7B5C00B98E02 /* kung-fu21.wav */,
+				79386D2F279F7B5B00B98E02 /* kung-fu22.wav */,
+				79386D61279F7B5F00B98E02 /* kung-fu23.wav */,
+				79386D65279F7B6000B98E02 /* kung-fu24.wav */,
+				79386D37279F7B5C00B98E02 /* kung-fu25.wav */,
+				79386D57279F7B5F00B98E02 /* kung-fu26.wav */,
+				79386D54279F7B5E00B98E02 /* kung-fu27.wav */,
+				79386D3D279F7B5C00B98E02 /* kung-fu28.wav */,
+				79386D5E279F7B5F00B98E02 /* kung-fu29.wav */,
+				79386D35279F7B5C00B98E02 /* kung-fu30.wav */,
+				79386D5D279F7B5F00B98E02 /* kung-fu31.wav */,
+				79386D63279F7B6000B98E02 /* kung-fu32.wav */,
+				79386D40279F7B5D00B98E02 /* kung-fu33.wav */,
+				79386D2E279F7B5B00B98E02 /* kung-fu34.wav */,
+				79386D36279F7B5C00B98E02 /* kung-fu35.wav */,
+				79386D45279F7B5D00B98E02 /* kung-fu36.wav */,
+				79386D39279F7B5C00B98E02 /* kung-fu37.wav */,
+				79386D27279F7B5B00B98E02 /* kung-fu38.wav */,
+				79386D38279F7B5C00B98E02 /* kung-fu39.wav */,
+				79386D30279F7B5B00B98E02 /* kung-fu40.wav */,
+				79386D44279F7B5D00B98E02 /* kung-fu41.wav */,
+				79386D2C279F7B5B00B98E02 /* kung-fu42.wav */,
+				79386D31279F7B5B00B98E02 /* kung-fu43.wav */,
+				79386D56279F7B5F00B98E02 /* kung-fu44.wav */,
+				79386D5B279F7B5F00B98E02 /* kung-fu45.wav */,
+				79386D59279F7B5F00B98E02 /* kung-fu46.wav */,
+				79386D32279F7B5C00B98E02 /* kung-fu47.wav */,
+				79386D48279F7B5D00B98E02 /* kung-fu48.wav */,
+				79386D62279F7B5F00B98E02 /* kung-fu49.wav */,
+				79386D53279F7B5E00B98E02 /* kung-fu50.wav */,
+				79386D34279F7B5C00B98E02 /* kung-fu51.wav */,
+				79386D3F279F7B5D00B98E02 /* kung-fu52.wav */,
+				79386D25279F7B5B00B98E02 /* kung-fu53.wav */,
+				79386D64279F7B6000B98E02 /* kung-fu54.wav */,
+				79386D55279F7B5E00B98E02 /* kung-fu55.wav */,
+				79386D4E279F7B5E00B98E02 /* kung-fu56.wav */,
+				79386D4C279F7B5E00B98E02 /* kung-fu57.wav */,
+				79386D33279F7B5C00B98E02 /* kung-fu58.wav */,
+				79386D28279F7B5B00B98E02 /* kung-fu59.wav */,
+				79386D47279F7B5D00B98E02 /* kung-fu60.wav */,
+				79386D3C279F7B5C00B98E02 /* kung-fu61.wav */,
+				79386D2A279F7B5B00B98E02 /* kung-fu62.wav */,
+				79386D42279F7B5D00B98E02 /* kung-fu63.wav */,
+			);
+			path = "KUNG-FU 64";
+			sourceTree = "<group>";
+		};
+		79386CA3279F788500B98E02 /* Lisa remix */ = {
+			isa = PBXGroup;
+			children = (
+				79386CA4279F788500B98E02 /* LisaRemix02.wav */,
+				79386CA5279F788500B98E02 /* LisaRemix13.wav */,
+				79386CA6279F788500B98E02 /* LisaRemix12.wav */,
+				79386CA7279F788500B98E02 /* LisaRemix03.wav */,
+				79386CA8279F788500B98E02 /* LisaRemix01.wav */,
+				79386CA9279F788500B98E02 /* LisaRemix10.wav */,
+				79386CAA279F788500B98E02 /* LisaRemix11.wav */,
+				79386CAB279F788500B98E02 /* LisaRemix04.wav */,
+				79386CAC279F788500B98E02 /* LisaRemix15.wav */,
+				79386CAD279F788500B98E02 /* LisaRemix14.wav */,
+				79386CAE279F788500B98E02 /* LisaRemix05.wav */,
+				79386CAF279F788500B98E02 /* LisaRemix07.wav */,
+				79386CB0279F788500B98E02 /* LisaRemix06.wav */,
+				79386CB1279F788500B98E02 /* LisaRemix08.wav */,
+				79386CB2279F788500B98E02 /* LisaRemix09.wav */,
+			);
+			path = "Lisa remix";
+			sourceTree = "<group>";
+		};
 		7938B51A27992BEB00F8B72D /* ErrorHandling */ = {
 			isa = PBXGroup;
 			children = (
@@ -601,6 +1203,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		794B79DC279E2F870037B6C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				794B79DD279E2FC70037B6C9 /* EditorDescriptionsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		795129D3279D1569002F746C /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,31 +1245,15 @@
 		795842FB2771451F00E0172C /* MasksSounds */ = {
 			isa = PBXGroup;
 			children = (
+				7916834A27A9614500C66142 /* monkey mask 64 */,
+				7916832327A9607200C66142 /* Drums */,
+				79386C60279F788500B98E02 /* KUNG-FU 64 */,
+				79386CA3279F788500B98E02 /* Lisa remix */,
+				79386C3E279F788300B98E02 /* Robot32 */,
 				79E04162279C828A00AB1390 /* Meditation64 */,
 				7983E210279786EF0098A2D7 /* Lightsaber64 */,
-				795842FC2771452800E0172C /* Robot */,
 			);
 			path = MasksSounds;
-			sourceTree = "<group>";
-		};
-		795842FC2771452800E0172C /* Robot */ = {
-			isa = PBXGroup;
-			children = (
-				795843092771453700E0172C /* 2021-11-10 14.13.06.jpg */,
-				795843042771453600E0172C /* robotDry1.wav */,
-				795842FE2771453400E0172C /* robotDry2.wav */,
-				795843082771453700E0172C /* robotDry3.wav */,
-				795843032771453500E0172C /* robotDry4.wav */,
-				795843022771453500E0172C /* robotDry5.wav */,
-				795843062771453600E0172C /* robotDry6.wav */,
-				795842FF2771453500E0172C /* robotDry7.wav */,
-				795843012771453500E0172C /* robotDry8.wav */,
-				795843072771453600E0172C /* robotDry9.wav */,
-				795843002771453500E0172C /* robotDry10.wav */,
-				795843052771453600E0172C /* robotDry11.wav */,
-				795842FD2771453400E0172C /* robotDry12.wav */,
-			);
-			path = Robot;
 			sourceTree = "<group>";
 		};
 		7963FC4427466F7C007B8449 /* Protocols */ = {
@@ -687,8 +1281,10 @@
 		7983E20D279758650098A2D7 /* MaskEditor */ = {
 			isa = PBXGroup;
 			children = (
+				794B79DC279E2F870037B6C9 /* Model */,
 				79ED1385278C8DD600A1F9BA /* EditorZoneSelection.swift */,
-				79EC56AC2796B0A600AEF729 /* EditorDescription.swift */,
+				794B79DA279E2F620037B6C9 /* EditorZonesInteractor.swift */,
+				79EC56AC2796B0A600AEF729 /* EditorSoundsInteractor.swift */,
 				795842F427713F0A00E0172C /* Mask */,
 			);
 			path = MaskEditor;
@@ -780,70 +1376,69 @@
 		79E04162279C828A00AB1390 /* Meditation64 */ = {
 			isa = PBXGroup;
 			children = (
-				79E04177279C829C00AB1390 /* meditation-00.wav */,
-				79E0416A279C829B00AB1390 /* meditation-01.wav */,
-				79E0419A279C829D00AB1390 /* meditation-02.wav */,
-				79E04193279C829D00AB1390 /* meditation-03.wav */,
-				79E0418B279C829D00AB1390 /* meditation-04.wav */,
-				79E04189279C829C00AB1390 /* meditation-05.wav */,
-				79E0418D279C829D00AB1390 /* meditation-06.wav */,
-				79E0418A279C829C00AB1390 /* meditation-07.wav */,
-				79E04195279C829D00AB1390 /* meditation-08.wav */,
-				79E0419B279C829D00AB1390 /* meditation-09.wav */,
-				79E0419D279C829D00AB1390 /* meditation-10.wav */,
-				79E04187279C829C00AB1390 /* meditation-11.wav */,
-				79E04175279C829C00AB1390 /* meditation-12.wav */,
-				79E04186279C829C00AB1390 /* meditation-13.wav */,
-				79E0416E279C829C00AB1390 /* meditation-14.wav */,
-				79E04181279C829C00AB1390 /* meditation-15.wav */,
-				79E04172279C829C00AB1390 /* meditation-16.wav */,
-				79E04192279C829D00AB1390 /* meditation-17.wav */,
-				79E0419F279C829D00AB1390 /* meditation-18.wav */,
-				79E04191279C829D00AB1390 /* meditation-19.wav */,
-				79E04184279C829C00AB1390 /* meditation-20.wav */,
-				79E0417B279C829C00AB1390 /* meditation-21.wav */,
-				79E04169279C829B00AB1390 /* meditation-22.wav */,
-				79E04166279C829B00AB1390 /* meditation-23.wav */,
-				79E04179279C829C00AB1390 /* meditation-24.wav */,
-				79E0417A279C829C00AB1390 /* meditation-25.wav */,
-				79E041A1279C829D00AB1390 /* meditation-26.wav */,
-				79E0416F279C829C00AB1390 /* meditation-27.wav */,
-				79E04188279C829C00AB1390 /* meditation-28.wav */,
-				79E0418C279C829D00AB1390 /* meditation-29.wav */,
-				79E0419C279C829D00AB1390 /* meditation-30.wav */,
-				79E04190279C829D00AB1390 /* meditation-31.wav */,
-				79E0418F279C829D00AB1390 /* meditation-32.wav */,
-				79E04196279C829D00AB1390 /* meditation-33.wav */,
-				79E04180279C829C00AB1390 /* meditation-34.wav */,
-				79E041A2279C829D00AB1390 /* meditation-35.wav */,
-				79E04185279C829C00AB1390 /* meditation-36.wav */,
-				79E0419E279C829D00AB1390 /* meditation-37.wav */,
-				79E0416D279C829C00AB1390 /* meditation-38.wav */,
-				79E04173279C829C00AB1390 /* meditation-39.wav */,
-				79E04194279C829D00AB1390 /* meditation-40.wav */,
-				79E04171279C829C00AB1390 /* meditation-41.wav */,
-				79E04164279C829B00AB1390 /* meditation-42.wav */,
-				79E04199279C829D00AB1390 /* meditation-43.wav */,
-				79E04168279C829B00AB1390 /* meditation-44.wav */,
-				79E04178279C829C00AB1390 /* meditation-45.wav */,
-				79E04197279C829D00AB1390 /* meditation-46.wav */,
-				79E0417F279C829C00AB1390 /* meditation-47.wav */,
-				79E04170279C829C00AB1390 /* meditation-48.wav */,
-				79E0418E279C829D00AB1390 /* meditation-49.wav */,
-				79E04165279C829B00AB1390 /* meditation-50.wav */,
-				79E0416B279C829B00AB1390 /* meditation-51.wav */,
-				79E041A0279C829D00AB1390 /* meditation-52.wav */,
-				79E0417E279C829C00AB1390 /* meditation-53.wav */,
-				79E04176279C829C00AB1390 /* meditation-54.wav */,
-				79E04163279C829B00AB1390 /* meditation-55.wav */,
-				79E0417C279C829C00AB1390 /* meditation-56.wav */,
-				79E0417D279C829C00AB1390 /* meditation-57.wav */,
-				79E04174279C829C00AB1390 /* meditation-58.wav */,
-				79E0416C279C829C00AB1390 /* meditation-59.wav */,
-				79E04183279C829C00AB1390 /* meditation-60.wav */,
-				79E04198279C829D00AB1390 /* meditation-61.wav */,
-				79E04167279C829B00AB1390 /* meditation-62.wav */,
-				79E04182279C829C00AB1390 /* meditation-63.wav */,
+				791682B027A9605F00C66142 /* meditation-00.wav */,
+				791682BF27A9605F00C66142 /* meditation-01.wav */,
+				791682CB27A9605F00C66142 /* meditation-02.wav */,
+				791682CE27A9606000C66142 /* meditation-03.wav */,
+				791682A927A9605E00C66142 /* meditation-04.wav */,
+				791682A627A9605E00C66142 /* meditation-05.wav */,
+				791682BA27A9605F00C66142 /* meditation-06.wav */,
+				791682AE27A9605F00C66142 /* meditation-07.wav */,
+				791682AA27A9605E00C66142 /* meditation-08.wav */,
+				791682D527A9606000C66142 /* meditation-09.wav */,
+				791682DC27A9606000C66142 /* meditation-10.wav */,
+				791682C627A9605F00C66142 /* meditation-11.wav */,
+				791682A827A9605E00C66142 /* meditation-12.wav */,
+				791682CD27A9606000C66142 /* meditation-13.wav */,
+				791682D627A9606000C66142 /* meditation-14.wav */,
+				791682C027A9605F00C66142 /* meditation-15.wav */,
+				791682AF27A9605F00C66142 /* meditation-16.wav */,
+				791682B327A9605F00C66142 /* meditation-17.wav */,
+				791682C527A9605F00C66142 /* meditation-18.wav */,
+				791682C327A9605F00C66142 /* meditation-19.wav */,
+				791682C227A9605F00C66142 /* meditation-20.wav */,
+				791682DB27A9606000C66142 /* meditation-21.wav */,
+				791682C127A9605F00C66142 /* meditation-22.wav */,
+				791682AC27A9605E00C66142 /* meditation-23.wav */,
+				791682A427A9605E00C66142 /* meditation-24.wav */,
+				791682B927A9605F00C66142 /* meditation-25.wav */,
+				791682B227A9605F00C66142 /* meditation-26.wav */,
+				791682D327A9606000C66142 /* meditation-27.wav */,
+				791682B827A9605F00C66142 /* meditation-28.wav */,
+				791682B627A9605F00C66142 /* meditation-29.wav */,
+				791682B527A9605F00C66142 /* meditation-30.wav */,
+				791682D227A9606000C66142 /* meditation-31.wav */,
+				791682DE27A9606000C66142 /* meditation-32.wav */,
+				791682E227A9606000C66142 /* meditation-33.wav */,
+				791682D127A9606000C66142 /* meditation-34.wav */,
+				791682C427A9605F00C66142 /* meditation-35.wav */,
+				791682C827A9605F00C66142 /* meditation-36.wav */,
+				791682E127A9606000C66142 /* meditation-37.wav */,
+				791682D827A9606000C66142 /* meditation-38.wav */,
+				791682AD27A9605E00C66142 /* meditation-39.wav */,
+				791682DA27A9606000C66142 /* meditation-40.wav */,
+				791682D027A9606000C66142 /* meditation-41.wav */,
+				791682B127A9605F00C66142 /* meditation-42.wav */,
+				791682DF27A9606000C66142 /* meditation-43.wav */,
+				791682BE27A9605F00C66142 /* meditation-44.wav */,
+				791682CA27A9605F00C66142 /* meditation-45.wav */,
+				791682C727A9605F00C66142 /* meditation-46.wav */,
+				791682DD27A9606000C66142 /* meditation-47.wav */,
+				791682BB27A9605F00C66142 /* meditation-48.wav */,
+				791682B427A9605F00C66142 /* meditation-49.wav */,
+				791682D727A9606000C66142 /* meditation-50.wav */,
+				791682C927A9605F00C66142 /* meditation-51.wav */,
+				791682BC27A9605F00C66142 /* meditation-53.wav */,
+				791682CC27A9606000C66142 /* meditation-54.wav */,
+				791682D927A9606000C66142 /* meditation-55.wav */,
+				791682BD27A9605F00C66142 /* meditation-56.wav */,
+				791682D427A9606000C66142 /* meditation-57.wav */,
+				791682AB27A9605E00C66142 /* meditation-58.wav */,
+				791682E027A9606000C66142 /* meditation-59.wav */,
+				791682B727A9605F00C66142 /* meditation-60.wav */,
+				791682CF27A9606000C66142 /* meditation-61.wav */,
+				791682A727A9605E00C66142 /* meditation-62.wav */,
+				791682A527A9605E00C66142 /* meditation-63.wav */,
 			);
 			path = Meditation64;
 			sourceTree = "<group>";
@@ -990,156 +1585,339 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7916830D27A9606000C66142 /* meditation-03.wav in Resources */,
+				791683BB27A9614500C66142 /* monkey-background.wav in Resources */,
 				7983E2A4279786F00098A2D7 /* Lightsaber50.wav in Resources */,
-				79E041D9279C829D00AB1390 /* meditation-43.wav in Resources */,
+				7916831827A9606000C66142 /* meditation-55.wav in Resources */,
+				7916839527A9614500C66142 /* monkey02.wav in Resources */,
 				7983E300279786F00098A2D7 /* Lightsaber48.wav in Resources */,
+				79386D96279F7B6000B98E02 /* kung-fu55.wav in Resources */,
 				7983E2F0279786F00098A2D7 /* Lightsaber05.wav in Resources */,
-				79E041A4279C829D00AB1390 /* meditation-42.wav in Resources */,
-				79E041D3279C829D00AB1390 /* meditation-03.wav in Resources */,
+				79386D22279F788500B98E02 /* LisaRemix06.wav in Resources */,
+				791683BA27A9614500C66142 /* monkey27.wav in Resources */,
+				791683C827A9614500C66142 /* monkey47.wav in Resources */,
+				791683A327A9614500C66142 /* monkey05.wav in Resources */,
 				7983E2D0279786F00098A2D7 /* Lightsaber25.wav in Resources */,
+				7916838D27A9614500C66142 /* monkey61.wav in Resources */,
+				79386DA5279F7B6000B98E02 /* kung-fu54.wav in Resources */,
+				7916831A27A9606000C66142 /* meditation-21.wav in Resources */,
+				79386D7F279F7B6000B98E02 /* kung-fu02.wav in Resources */,
+				7916831427A9606000C66142 /* meditation-09.wav in Resources */,
+				791683AD27A9614500C66142 /* monkey20.wav in Resources */,
+				791682FB27A9606000C66142 /* meditation-53.wav in Resources */,
+				791682F727A9606000C66142 /* meditation-28.wav in Resources */,
+				7916831227A9606000C66142 /* meditation-27.wav in Resources */,
+				79386DA3279F7B6000B98E02 /* kung-fu49.wav in Resources */,
 				7983E2BE279786F00098A2D7 /* Lightsaber23.wav in Resources */,
-				79E041E1279C829E00AB1390 /* meditation-26.wav in Resources */,
 				7983E2A9279786F00098A2D7 /* Lightsaber53.wav in Resources */,
-				79E041CA279C829D00AB1390 /* meditation-07.wav in Resources */,
-				79E041A6279C829D00AB1390 /* meditation-23.wav in Resources */,
-				79E041D6279C829D00AB1390 /* meditation-33.wav in Resources */,
+				7916839A27A9614500C66142 /* monkey15.wav in Resources */,
+				79386DD3279F7BCE00B98E02 /* robot-2-26.wav in Resources */,
 				7983E2A0279786F00098A2D7 /* Lightsaber40.wav in Resources */,
-				79E041AA279C829D00AB1390 /* meditation-01.wav in Resources */,
-				79E041AB279C829D00AB1390 /* meditation-51.wav in Resources */,
-				79E041D2279C829D00AB1390 /* meditation-17.wav in Resources */,
 				7983E29B279786F00098A2D7 /* Lightsaber41.wav in Resources */,
 				7983E306279786F00098A2D7 /* Lightsaber59.wav in Resources */,
-				7958430C2771453700E0172C /* robotDry7.wav in Resources */,
+				791683C227A9614500C66142 /* monkey57.wav in Resources */,
+				79386D1F279F788500B98E02 /* LisaRemix14.wav in Resources */,
+				7916831D27A9606000C66142 /* meditation-32.wav in Resources */,
 				7983E2A5279786F00098A2D7 /* Lightsaber51.wav in Resources */,
-				795843112771453700E0172C /* robotDry1.wav in Resources */,
-				7958430B2771453700E0172C /* robotDry2.wav in Resources */,
+				79386DE6279F7BCE00B98E02 /* robot-2-23.wav in Resources */,
+				79386D7C279F7B6000B98E02 /* kung-fu21.wav in Resources */,
+				79386D92279F7B6000B98E02 /* kung-fu17.wav in Resources */,
+				7916830727A9606000C66142 /* meditation-36.wav in Resources */,
+				79386D7B279F7B6000B98E02 /* kung-fu04.wav in Resources */,
+				791683B227A9614500C66142 /* monkey25.wav in Resources */,
+				79386D93279F7B6000B98E02 /* kung-fu05.wav in Resources */,
+				79386DE4279F7BCE00B98E02 /* robot-2-06.wav in Resources */,
+				79386DE3279F7BCE00B98E02 /* robot-2-16.wav in Resources */,
+				791682EF27A9606000C66142 /* meditation-00.wav in Resources */,
+				791683C727A9614500C66142 /* monkey53.wav in Resources */,
+				7916839427A9614500C66142 /* monkey16.wav in Resources */,
+				791683B727A9614500C66142 /* monkey24.wav in Resources */,
+				7916832027A9606000C66142 /* meditation-37.wav in Resources */,
+				791682FA27A9606000C66142 /* meditation-48.wav in Resources */,
+				79386D83279F7B6000B98E02 /* kung-fu63.wav in Resources */,
+				791682E727A9606000C66142 /* meditation-12.wav in Resources */,
 				7965FD01275E44D0002C1C1B /* CameraViewController.xib in Resources */,
+				79386D6F279F7B6000B98E02 /* kung-fu34.wav in Resources */,
 				7983E2C3279786F00098A2D7 /* Lightsaber27.wav in Resources */,
 				7983E2C4279786F00098A2D7 /* Lightsaber33.wav in Resources */,
-				79E041DE279C829E00AB1390 /* meditation-37.wav in Resources */,
-				79E041BE279C829D00AB1390 /* meditation-53.wav in Resources */,
-				79E041C9279C829D00AB1390 /* meditation-05.wav in Resources */,
+				79386D75279F7B6000B98E02 /* kung-fu51.wav in Resources */,
+				79386D19279F788500B98E02 /* LisaRemix03.wav in Resources */,
+				79386D80279F7B6000B98E02 /* kung-fu52.wav in Resources */,
+				7916833C27A9609E00C66142 /* IAR_Wet_Supraphonic400Undampened_Snare5.wav in Resources */,
+				79386D9D279F7B6000B98E02 /* kung-fu09.wav in Resources */,
 				7983E2D2279786F00098A2D7 /* Lightsaber19.wav in Resources */,
-				79E041AF279C829D00AB1390 /* meditation-27.wav in Resources */,
+				79386D1D279F788500B98E02 /* LisaRemix04.wav in Resources */,
+				791682E527A9606000C66142 /* meditation-05.wav in Resources */,
+				791682F027A9606000C66142 /* meditation-42.wav in Resources */,
+				79386DE5279F7BCE00B98E02 /* robot-2-20.wav in Resources */,
+				7916839027A9614500C66142 /* monkey62.wav in Resources */,
+				79386DA4279F7B6000B98E02 /* kung-fu32.wav in Resources */,
+				7916830027A9606000C66142 /* meditation-22.wav in Resources */,
+				7916830827A9606000C66142 /* meditation-51.wav in Resources */,
+				791683AE27A9614500C66142 /* monkey34.wav in Resources */,
+				7916831527A9606000C66142 /* meditation-14.wav in Resources */,
+				7916830527A9606000C66142 /* meditation-11.wav in Resources */,
+				7916834127A9609E00C66142 /* IAR_Wet_Kick4.wav in Resources */,
 				7983E2AA279786F00098A2D7 /* Lightsaber47.wav in Resources */,
-				79E041B6279C829D00AB1390 /* meditation-54.wav in Resources */,
+				791683AF27A9614500C66142 /* monkey35.wav in Resources */,
+				79386D8E279F7B6000B98E02 /* kung-fu-background.wav in Resources */,
 				7983E2A3279786F00098A2D7 /* Lightsaber44.wav in Resources */,
 				7983E29F279786F00098A2D7 /* Lightsaber54.wav in Resources */,
+				79386D7D279F7B6000B98E02 /* kung-fu61.wav in Resources */,
+				791682F827A9606000C66142 /* meditation-25.wav in Resources */,
+				791682EC27A9606000C66142 /* meditation-39.wav in Resources */,
 				7983E2F1279786F00098A2D7 /* Lightsaber04.wav in Resources */,
-				795843132771453700E0172C /* robotDry6.wav in Resources */,
-				79E041DF279C829E00AB1390 /* meditation-18.wav in Resources */,
-				79E041B0279C829D00AB1390 /* meditation-48.wav in Resources */,
+				79386D91279F7B6000B98E02 /* kung-fu16.wav in Resources */,
+				7916839B27A9614500C66142 /* monkey14.wav in Resources */,
+				79386D82279F7B6000B98E02 /* kung-fu01.wav in Resources */,
+				79386D24279F788500B98E02 /* LisaRemix09.wav in Resources */,
+				79386D1B279F788500B98E02 /* LisaRemix10.wav in Resources */,
+				791683B127A9614500C66142 /* monkey09.wav in Resources */,
 				795129D6279D1573002F746C /* CustomAlert.xib in Resources */,
-				79E041BA279C829D00AB1390 /* meditation-25.wav in Resources */,
-				79E041BF279C829D00AB1390 /* meditation-47.wav in Resources */,
+				791682FF27A9606000C66142 /* meditation-15.wav in Resources */,
+				7916834527A9609E00C66142 /* IAR_Wet_BlackBeauty_Snare5.wav in Resources */,
+				79386DD6279F7BCE00B98E02 /* robot-2-10.wav in Resources */,
+				79386D97279F7B6000B98E02 /* kung-fu44.wav in Resources */,
+				79386DDF279F7BCE00B98E02 /* robot-2-14.wav in Resources */,
 				7983E2B8279786F00098A2D7 /* Lightsaber08.wav in Resources */,
-				7958430F2771453700E0172C /* robotDry5.wav in Resources */,
-				79E041A8279C829D00AB1390 /* meditation-44.wav in Resources */,
+				791683A427A9614500C66142 /* monkey13.wav in Resources */,
+				791683B027A9614500C66142 /* monkey21.wav in Resources */,
 				7983E2B3279786F00098A2D7 /* Lightsaber35.wav in Resources */,
 				7983E2C6279786F00098A2D7 /* Lightsaber26.wav in Resources */,
-				79E041CD279C829D00AB1390 /* meditation-06.wav in Resources */,
-				79E041B4279C829D00AB1390 /* meditation-58.wav in Resources */,
-				79E041C4279C829D00AB1390 /* meditation-20.wav in Resources */,
-				79E041C8279C829D00AB1390 /* meditation-28.wav in Resources */,
-				79E041AC279C829D00AB1390 /* meditation-59.wav in Resources */,
-				79E041B2279C829D00AB1390 /* meditation-16.wav in Resources */,
+				791682F927A9606000C66142 /* meditation-06.wav in Resources */,
+				79386DD2279F7BCE00B98E02 /* robot-2-25.wav in Resources */,
+				7916833E27A9609E00C66142 /* IAR_Wet_Rack4.wav in Resources */,
+				79386DCD279F7BCE00B98E02 /* robot-2-28.wav in Resources */,
+				791683AA27A9614500C66142 /* monkey22.wav in Resources */,
+				79386D6D279F7B6000B98E02 /* kung-fu42.wav in Resources */,
+				791682F227A9606000C66142 /* meditation-17.wav in Resources */,
+				79386D67279F7B6000B98E02 /* kung-fu20.wav in Resources */,
+				79386DCA279F7BCE00B98E02 /* robot-2-09.wav in Resources */,
+				79386D94279F7B6000B98E02 /* kung-fu50.wav in Resources */,
+				791683C527A9614500C66142 /* monkey46.wav in Resources */,
+				7916831E27A9606000C66142 /* meditation-43.wav in Resources */,
+				79386D9B279F7B6000B98E02 /* kung-fu06.wav in Resources */,
+				7916833927A9609E00C66142 /* IAR_Wet_Acrolite_Dampened_Snare4.wav in Resources */,
+				79386D76279F7B6000B98E02 /* kung-fu30.wav in Resources */,
+				79386D86279F7B6000B98E02 /* kung-fu36.wav in Resources */,
+				79386D16279F788500B98E02 /* LisaRemix02.wav in Resources */,
+				791683A727A9614500C66142 /* monkey12.wav in Resources */,
+				791683B627A9614500C66142 /* monkey30.wav in Resources */,
+				79386D90279F7B6000B98E02 /* kung-fu18.wav in Resources */,
+				7916831627A9606000C66142 /* meditation-50.wav in Resources */,
+				791683A527A9614500C66142 /* monkey07.wav in Resources */,
+				7916830227A9606000C66142 /* meditation-19.wav in Resources */,
+				79386DE8279F7BCE00B98E02 /* robot-2-27.wav in Resources */,
 				7983E2D1279786F00098A2D7 /* Lightsaber31.wav in Resources */,
+				7916834427A9609E00C66142 /* IAR_Wet_Cowbell4.wav in Resources */,
+				7916839927A9614500C66142 /* monkey01.wav in Resources */,
+				7916833F27A9609E00C66142 /* IAR_Wet_RideBell3.wav in Resources */,
+				79386DA1279F7B6000B98E02 /* kung-fu03.wav in Resources */,
+				791683C127A9614500C66142 /* monkey43.wav in Resources */,
+				7916839E27A9614500C66142 /* monkey04.wav in Resources */,
 				7983E2DA279786F00098A2D7 /* Lightsaber29.wav in Resources */,
-				79E041C3279C829D00AB1390 /* meditation-60.wav in Resources */,
+				79386DDD279F7BCE00B98E02 /* robot-2-30.wav in Resources */,
+				79386D21279F788500B98E02 /* LisaRemix07.wav in Resources */,
+				791683BF27A9614500C66142 /* monkey41.wav in Resources */,
 				7983E2D5279786F00098A2D7 /* Lightsaber14.wav in Resources */,
+				7916839227A9614500C66142 /* monkey58.wav in Resources */,
 				7983E2D6279786F00098A2D7 /* Lightsaber00.wav in Resources */,
 				7983E2AD279786F00098A2D7 /* Lightsaber52.wav in Resources */,
 				7983E2BD279786F00098A2D7 /* Lightsaber37.wav in Resources */,
+				79386D8F279F7B6000B98E02 /* kung-fu56.wav in Resources */,
+				7916839127A9614500C66142 /* monkey63.wav in Resources */,
+				79386D18279F788500B98E02 /* LisaRemix12.wav in Resources */,
 				7983E2EA279786F00098A2D7 /* Lightsaber06.wav in Resources */,
+				791683C927A9614500C66142 /* monkey51.wav in Resources */,
 				796A5A1C2747A2A7008BA88B /* LaunchScreen.storyboard in Resources */,
-				79E041DD279C829E00AB1390 /* meditation-10.wav in Resources */,
-				79E041C5279C829D00AB1390 /* meditation-36.wav in Resources */,
-				79E041D5279C829D00AB1390 /* meditation-08.wav in Resources */,
+				79386DDB279F7BCE00B98E02 /* robot-2-05.wav in Resources */,
+				79386D77279F7B6000B98E02 /* kung-fu35.wav in Resources */,
 				7983E2E5279786F00098A2D7 /* Lightsaber02.wav in Resources */,
 				7983E2F3279786F00098A2D7 /* Lightsaber38.wav in Resources */,
-				79E041CC279C829D00AB1390 /* meditation-29.wav in Resources */,
+				79386D6B279F7B6000B98E02 /* kung-fu62.wav in Resources */,
+				79386D9C279F7B6000B98E02 /* kung-fu45.wav in Resources */,
+				7916833D27A9609E00C66142 /* IAR_Wet_PaisteGiantBeat16InchHats8.wav in Resources */,
 				7983E2DB279786F00098A2D7 /* Lightsaber01.wav in Resources */,
+				79386DA2279F7B6000B98E02 /* kung-fu23.wav in Resources */,
 				7983E2A6279786F00098A2D7 /* Lightsaber45.wav in Resources */,
-				79E041CE279C829D00AB1390 /* meditation-49.wav in Resources */,
+				791682F627A9606000C66142 /* meditation-60.wav in Resources */,
+				7916831B27A9606000C66142 /* meditation-10.wav in Resources */,
+				791683A627A9614500C66142 /* monkey06.wav in Resources */,
+				7916830127A9606000C66142 /* meditation-20.wav in Resources */,
+				7916830927A9606000C66142 /* meditation-45.wav in Resources */,
+				79386D1C279F788500B98E02 /* LisaRemix11.wav in Resources */,
+				791683BC27A9614500C66142 /* monkey33.wav in Resources */,
+				7916830F27A9606000C66142 /* meditation-41.wav in Resources */,
+				79386D8D279F7B6000B98E02 /* kung-fu57.wav in Resources */,
+				791682E927A9606000C66142 /* meditation-08.wav in Resources */,
+				791683BD27A9614500C66142 /* monkey54.wav in Resources */,
 				7983E2BB279786F00098A2D7 /* Lightsaber22.wav in Resources */,
+				791682EE27A9606000C66142 /* meditation-16.wav in Resources */,
 				7983E2FF279786F00098A2D7 /* Lightsaber60.wav in Resources */,
-				79E041D4279C829D00AB1390 /* meditation-40.wav in Resources */,
-				79E041A5279C829D00AB1390 /* meditation-50.wav in Resources */,
-				79E041B9279C829D00AB1390 /* meditation-24.wav in Resources */,
-				79E041D1279C829D00AB1390 /* meditation-19.wav in Resources */,
+				7916839C27A9614500C66142 /* monkey00.wav in Resources */,
+				791682E327A9606000C66142 /* meditation-24.wav in Resources */,
+				791683B427A9614500C66142 /* monkey19.wav in Resources */,
+				7916838C27A9614500C66142 /* monkey49.wav in Resources */,
+				791683C627A9614500C66142 /* monkey52.wav in Resources */,
 				798F2BBC2763968900A47CC2 /* MatrixNodeCell.xib in Resources */,
+				7916831927A9606000C66142 /* meditation-40.wav in Resources */,
+				791682F127A9606000C66142 /* meditation-26.wav in Resources */,
 				79F913BD2746501900771FFE /* Assets.xcassets in Resources */,
-				79E041E2279C829E00AB1390 /* meditation-35.wav in Resources */,
+				79386DC8279F7BCE00B98E02 /* robot-2-13.wav in Resources */,
 				7983E2B5279786F00098A2D7 /* Lightsaber09.wav in Resources */,
 				7983E292279786F00098A2D7 /* Lightsaber42.wav in Resources */,
-				79E041DC279C829E00AB1390 /* meditation-30.wav in Resources */,
-				79E041AD279C829D00AB1390 /* meditation-38.wav in Resources */,
-				79E041C7279C829D00AB1390 /* meditation-11.wav in Resources */,
-				79E041C2279C829D00AB1390 /* meditation-63.wav in Resources */,
+				79386DCE279F7BCE00B98E02 /* robot-2-background.wav in Resources */,
+				79386D17279F788500B98E02 /* LisaRemix13.wav in Resources */,
+				79386D85279F7B6000B98E02 /* kung-fu41.wav in Resources */,
 				7983E307279786F00098A2D7 /* Lightsaber58.wav in Resources */,
-				79E041B5279C829D00AB1390 /* meditation-12.wav in Resources */,
-				795843162771453700E0172C /* 2021-11-10 14.13.06.jpg in Resources */,
-				79E041BC279C829D00AB1390 /* meditation-56.wav in Resources */,
-				79E041CB279C829D00AB1390 /* meditation-04.wav in Resources */,
+				7916830427A9606000C66142 /* meditation-18.wav in Resources */,
+				79386DDE279F7BCE00B98E02 /* robot-2-08.wav in Resources */,
+				7916838E27A9614500C66142 /* monkey60.wav in Resources */,
+				791683CC27A9614500C66142 /* monkey50.wav in Resources */,
+				79386D84279F7B6000B98E02 /* kung-fu13.wav in Resources */,
+				7916833A27A9609E00C66142 /* IAR_Wet_Ride2.wav in Resources */,
+				791682F327A9606000C66142 /* meditation-49.wav in Resources */,
+				791683AC27A9614500C66142 /* monkey08.wav in Resources */,
+				791683A227A9614500C66142 /* monkey11.wav in Resources */,
+				79386DD5279F7BCE00B98E02 /* robot-2-17.wav in Resources */,
+				79386DD1279F7BCE00B98E02 /* robot-2-00.wav in Resources */,
 				7983E2B4279786F00098A2D7 /* Lightsaber21.wav in Resources */,
-				79E041DB279C829D00AB1390 /* meditation-09.wav in Resources */,
+				79386D7E279F7B6000B98E02 /* kung-fu28.wav in Resources */,
+				7916831F27A9606000C66142 /* meditation-59.wav in Resources */,
+				79386D8A279F7B6000B98E02 /* kung-fu07.wav in Resources */,
+				7916833B27A9609E00C66142 /* IAR_Wet_Supraphonic400Dampened_Snare5.wav in Resources */,
+				7916834627A9609E00C66142 /* IAR_Wet_PaisteDarkCrisp14InchHatsOpen10.wav in Resources */,
+				79386DD9279F7BCE00B98E02 /* robot-2-11.wav in Resources */,
+				79386D99279F7B6000B98E02 /* kung-fu11.wav in Resources */,
 				7983E2ED279786F00098A2D7 /* Lightsaber07.wav in Resources */,
+				79386DD4279F7BCE00B98E02 /* robot-2-02.wav in Resources */,
+				7916834227A9609E00C66142 /* IAR_Wet_PaisteGiantBeat16InchHatsHalfOpen12.wav in Resources */,
+				79386D6C279F7B6000B98E02 /* kung-fu19.wav in Resources */,
+				79386DE1279F7BCE00B98E02 /* robot-2-12.wav in Resources */,
+				79386D88279F7B6000B98E02 /* kung-fu60.wav in Resources */,
+				7916832127A9606000C66142 /* meditation-33.wav in Resources */,
 				7983E2B9279786F00098A2D7 /* Lightsaber20.wav in Resources */,
+				7916831727A9606000C66142 /* meditation-38.wav in Resources */,
 				7983E2FC279786F00098A2D7 /* Lightsaber62.wav in Resources */,
-				79E041BB279C829D00AB1390 /* meditation-21.wav in Resources */,
+				791683B927A9614500C66142 /* monkey26.wav in Resources */,
+				7916834327A9609E00C66142 /* IAR_Wet_PaisteDarkCrisp14InchHats4.wav in Resources */,
+				7916830627A9606000C66142 /* meditation-46.wav in Resources */,
 				7983E2EC279786F00098A2D7 /* Lightsaber13.wav in Resources */,
-				79E041C6279C829D00AB1390 /* meditation-13.wav in Resources */,
 				794B56FF276BFDAD001A7FE6 /* DebugMenuCell.xib in Resources */,
-				795843142771453700E0172C /* robotDry9.wav in Resources */,
+				7916839F27A9614500C66142 /* monkey10.wav in Resources */,
 				794B56F5276BE314001A7FE6 /* DebugWindow.xib in Resources */,
+				79386D68279F7B6000B98E02 /* kung-fu38.wav in Resources */,
+				791683A827A9614500C66142 /* monkey37.wav in Resources */,
 				7983E2EF279786F00098A2D7 /* Lightsaber11.wav in Resources */,
+				79386D1E279F788500B98E02 /* LisaRemix15.wav in Resources */,
+				791682ED27A9606000C66142 /* meditation-07.wav in Resources */,
 				7983E2AC279786F00098A2D7 /* Lightsaber46.wav in Resources */,
 				7983E294279786F00098A2D7 /* Lightsaber57.wav in Resources */,
+				79386DCC279F7BCE00B98E02 /* robot-2-24.wav in Resources */,
+				7916830A27A9606000C66142 /* meditation-02.wav in Resources */,
 				7983E2CE279786F00098A2D7 /* Lightsaber30.wav in Resources */,
-				79E041C0279C829D00AB1390 /* meditation-34.wav in Resources */,
-				79E041B1279C829D00AB1390 /* meditation-41.wav in Resources */,
-				79E041B3279C829D00AB1390 /* meditation-39.wav in Resources */,
+				791683A927A9614500C66142 /* monkey23.wav in Resources */,
+				79386D9F279F7B6000B98E02 /* kung-fu29.wav in Resources */,
+				79386D8B279F7B6000B98E02 /* kung-fu12.wav in Resources */,
+				791683C427A9614500C66142 /* monkey42.wav in Resources */,
+				7916833827A9609E00C66142 /* IAR_Wet_PaisteDarkCrisp14InchHatsBell1.wav in Resources */,
+				79386D69279F7B6000B98E02 /* kung-fu59.wav in Resources */,
+				7916839D27A9614500C66142 /* monkey28.wav in Resources */,
+				7916830327A9606000C66142 /* meditation-35.wav in Resources */,
+				791683B827A9614500C66142 /* monkey32.wav in Resources */,
+				7916831327A9606000C66142 /* meditation-57.wav in Resources */,
+				79386DD8279F7BCE00B98E02 /* robot-2-31.wav in Resources */,
+				791682F427A9606000C66142 /* meditation-30.wav in Resources */,
 				79035A622793D42F00DFFDB2 /* texture.png in Resources */,
-				79E041C1279C829D00AB1390 /* meditation-15.wav in Resources */,
+				7916830B27A9606000C66142 /* meditation-54.wav in Resources */,
+				7916839727A9614500C66142 /* monkey17.wav in Resources */,
+				79386D98279F7B6000B98E02 /* kung-fu26.wav in Resources */,
+				7916838F27A9614500C66142 /* monkey48.wav in Resources */,
 				7983E2D7279786F00098A2D7 /* Lightsaber28.wav in Resources */,
+				79386D95279F7B6000B98E02 /* kung-fu27.wav in Resources */,
 				7983E303279786F00098A2D7 /* Lightsaber61.wav in Resources */,
-				79E041D7279C829D00AB1390 /* meditation-46.wav in Resources */,
-				79E041A7279C829D00AB1390 /* meditation-62.wav in Resources */,
-				79E041D8279C829D00AB1390 /* meditation-61.wav in Resources */,
+				79386DA0279F7B6000B98E02 /* kung-fu00.wav in Resources */,
+				791682EA27A9606000C66142 /* meditation-58.wav in Resources */,
+				791682FE27A9606000C66142 /* meditation-01.wav in Resources */,
+				791682E827A9606000C66142 /* meditation-04.wav in Resources */,
 				79035A602793D40900DFFDB2 /* art.scnassets in Resources */,
+				79386DA6279F7B6000B98E02 /* kung-fu24.wav in Resources */,
+				79386D8C279F7B6000B98E02 /* kung-fu14.wav in Resources */,
+				79386DE0279F7BCE00B98E02 /* robot-2-21.wav in Resources */,
+				79386D73279F7B6000B98E02 /* kung-fu47.wav in Resources */,
+				79386D79279F7B6000B98E02 /* kung-fu39.wav in Resources */,
 				7983E2F9279786F00098A2D7 /* Lightsaber63.wav in Resources */,
-				79E041BD279C829D00AB1390 /* meditation-57.wav in Resources */,
+				7916831C27A9606000C66142 /* meditation-47.wav in Resources */,
+				79386D78279F7B6000B98E02 /* kung-fu25.wav in Resources */,
+				79386D9A279F7B6000B98E02 /* kung-fu46.wav in Resources */,
+				79386D89279F7B6000B98E02 /* kung-fu48.wav in Resources */,
+				7916834027A9609E00C66142 /* IAR_Wet_Floor4.wav in Resources */,
 				7983E29C279786F00098A2D7 /* Lightsaber55.wav in Resources */,
+				791683A127A9614500C66142 /* monkey39.wav in Resources */,
 				7983E2DC279786F00098A2D7 /* Lightsaber15.wav in Resources */,
+				7916830E27A9606000C66142 /* meditation-61.wav in Resources */,
+				79386D74279F7B6000B98E02 /* kung-fu58.wav in Resources */,
+				79386D7A279F7B6000B98E02 /* kung-fu37.wav in Resources */,
 				7983E2E1279786F00098A2D7 /* Lightsaber17.wav in Resources */,
-				79E041A3279C829D00AB1390 /* meditation-55.wav in Resources */,
+				791683AB27A9614500C66142 /* monkey36.wav in Resources */,
+				7916834727A9609E00C66142 /* IAR_Wet_Crash2_3.wav in Resources */,
+				79386D6E279F7B6000B98E02 /* kung-fu10.wav in Resources */,
 				7983E2EE279786F00098A2D7 /* Lightsaber39.wav in Resources */,
-				7958430E2771453700E0172C /* robotDry8.wav in Resources */,
-				79E041B7279C829D00AB1390 /* meditation-00.wav in Resources */,
-				7958430D2771453700E0172C /* robotDry10.wav in Resources */,
+				7916839627A9614500C66142 /* monkey03.wav in Resources */,
+				79386DCF279F7BCE00B98E02 /* robot-2-22.wav in Resources */,
+				791682EB27A9606000C66142 /* meditation-23.wav in Resources */,
+				79386DDA279F7BCE00B98E02 /* robot-2-19.wav in Resources */,
+				791682E627A9606000C66142 /* meditation-62.wav in Resources */,
 				7983E293279786F00098A2D7 /* Lightsaber43.wav in Resources */,
-				79E041AE279C829D00AB1390 /* meditation-14.wav in Resources */,
-				79E041E0279C829E00AB1390 /* meditation-52.wav in Resources */,
-				79E041A9279C829D00AB1390 /* meditation-22.wav in Resources */,
-				7958430A2771453700E0172C /* robotDry12.wav in Resources */,
+				79386D9E279F7B6000B98E02 /* kung-fu31.wav in Resources */,
+				791683C327A9614500C66142 /* monkey56.wav in Resources */,
+				79386D1A279F788500B98E02 /* LisaRemix01.wav in Resources */,
+				791683B527A9614500C66142 /* monkey18.wav in Resources */,
 				7983E291279786F00098A2D7 /* Lightsaber56.wav in Resources */,
+				791683CA27A9614500C66142 /* monkey45.wav in Resources */,
+				791683A027A9614500C66142 /* monkey38.wav in Resources */,
+				791682E427A9606000C66142 /* meditation-63.wav in Resources */,
 				7983E2CD279786F00098A2D7 /* Lightsaber18.wav in Resources */,
+				791683B327A9614500C66142 /* monkey31.wav in Resources */,
+				7916831127A9606000C66142 /* meditation-31.wav in Resources */,
+				79386D71279F7B6000B98E02 /* kung-fu40.wav in Resources */,
+				79386D87279F7B6000B98E02 /* kung-fu15.wav in Resources */,
 				7983E2CF279786F00098A2D7 /* Lightsaber24.wav in Resources */,
+				7916839327A9614500C66142 /* monkey59.wav in Resources */,
+				79386DD0279F7BCE00B98E02 /* robot-2-07.wav in Resources */,
 				7983E2EB279786F00098A2D7 /* Lightsaber12.wav in Resources */,
-				79E041DA279C829D00AB1390 /* meditation-02.wav in Resources */,
-				795843152771453700E0172C /* robotDry3.wav in Resources */,
+				7916831027A9606000C66142 /* meditation-34.wav in Resources */,
+				79386D66279F7B6000B98E02 /* kung-fu53.wav in Resources */,
 				7983E2BC279786F00098A2D7 /* Lightsaber36.wav in Resources */,
+				79386D72279F7B6000B98E02 /* kung-fu43.wav in Resources */,
+				79386DE7279F7BCE00B98E02 /* robot-2-15.wav in Resources */,
 				7983E2F2279786F00098A2D7 /* Lightsaber10.wav in Resources */,
 				7983E2BA279786F00098A2D7 /* Lightsaber34.wav in Resources */,
-				79E041B8279C829D00AB1390 /* meditation-45.wav in Resources */,
 				7983E2E4279786F00098A2D7 /* Lightsaber16.wav in Resources */,
+				79386DE2279F7BCE00B98E02 /* robot-2-18.wav in Resources */,
+				7916833727A9609E00C66142 /* IAR_Wet_DW_CraviottoMaple5.wav in Resources */,
+				7916839827A9614500C66142 /* monkey29.wav in Resources */,
+				791683BE27A9614500C66142 /* monkey40.wav in Resources */,
+				7916834827A9609E00C66142 /* IAR_Wet_Crash3.wav in Resources */,
+				79386D70279F7B6000B98E02 /* kung-fu22.wav in Resources */,
+				79386D81279F7B6000B98E02 /* kung-fu33.wav in Resources */,
 				7983E302279786F00098A2D7 /* Lightsaber49.wav in Resources */,
-				79E041D0279C829D00AB1390 /* meditation-31.wav in Resources */,
-				79E041CF279C829D00AB1390 /* meditation-32.wav in Resources */,
+				7916834927A9609E00C66142 /* IAR_Wet_Shaker3.wav in Resources */,
+				79386DD7279F7BCE00B98E02 /* robot-2-29.wav in Resources */,
+				791683C027A9614500C66142 /* monkey55.wav in Resources */,
+				791683CB27A9614500C66142 /* monkey44.wav in Resources */,
 				7983E2E0279786F00098A2D7 /* Lightsaber03.wav in Resources */,
+				79386DCB279F7BCE00B98E02 /* robot-2-04.wav in Resources */,
 				7983E2C5279786F00098A2D7 /* Lightsaber32.wav in Resources */,
-				795843122771453700E0172C /* robotDry11.wav in Resources */,
-				795843102771453700E0172C /* robotDry4.wav in Resources */,
+				791682F527A9606000C66142 /* meditation-29.wav in Resources */,
+				79386D6A279F7B6000B98E02 /* kung-fu08.wav in Resources */,
+				79386DDC279F7BCE00B98E02 /* robot-2-01.wav in Resources */,
+				79386D23279F788500B98E02 /* LisaRemix08.wav in Resources */,
+				79386D20279F788500B98E02 /* LisaRemix05.wav in Resources */,
+				7916830C27A9606000C66142 /* meditation-13.wav in Resources */,
+				79386DC9279F7BCE00B98E02 /* robot-2-03.wav in Resources */,
+				791682FC27A9606000C66142 /* meditation-56.wav in Resources */,
+				791682FD27A9606000C66142 /* meditation-44.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1243,7 +2021,7 @@
 				7965FCFE275E44D0002C1C1B /* CameraCoordinator.swift in Sources */,
 				795129DC279D16E1002F746C /* TapAnimatedButton.swift in Sources */,
 				79A6FFEC27629E50002E78E0 /* UtilsForDrawing.swift in Sources */,
-				79EC56AD2796B0A600AEF729 /* EditorDescription.swift in Sources */,
+				79EC56AD2796B0A600AEF729 /* EditorSoundsInteractor.swift in Sources */,
 				791B7BEF27469FFF00EF6886 /* UIView+Extensions.swift in Sources */,
 				7920E0CA275FFD5B001A8366 /* AnnotationsOverlayView.swift in Sources */,
 				794B56F7276BF962001A7FE6 /* DebugCollectionMenu.swift in Sources */,
@@ -1255,6 +2033,7 @@
 				791CC4542764CB5E00813FAC /* ZoneBasedMechanic.swift in Sources */,
 				791B7BEC27469FFF00EF6886 /* UIBarButtonItem+Extensions.swift in Sources */,
 				79ED1386278C8DD600A1F9BA /* EditorZoneSelection.swift in Sources */,
+				794B79DB279E2F620037B6C9 /* EditorZonesInteractor.swift in Sources */,
 				791B7BED27469FFF00EF6886 /* KeyedDecodingContainer+Extensions.swift in Sources */,
 				79E04159279B9E6E00AB1390 /* Dictionary+Extensions.swift in Sources */,
 				79E0415D279BC3E200AB1390 /* EditorMask.swift in Sources */,
@@ -1280,6 +2059,7 @@
 				798F5D87278F35460042BA98 /* MaskBase.swift in Sources */,
 				798F2BB52763939F00A47CC2 /* MatrixSection.swift in Sources */,
 				791B7BEE27469FFF00EF6886 /* Publisher+Extensions.swift in Sources */,
+				794B79DE279E2FC70037B6C9 /* EditorDescriptionsModel.swift in Sources */,
 				790CFEE6276A7BE000C355C5 /* PerformanceMeasurement.swift in Sources */,
 				791B7BE827469FFF00EF6886 /* Collection+Extensions.swift in Sources */,
 				795842F627713F3600E0172C /* SoundZone.swift in Sources */,
@@ -1414,13 +2194,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C23K8VGFDE;
+				DEVELOPMENT_TEAM = 476NTDT6B9;
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kefirtest4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kefirtest5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1436,13 +2216,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C23K8VGFDE;
+				DEVELOPMENT_TEAM = 476NTDT6B9;
 				INFOPLIST_FILE = "$(SRCROOT)/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kefirtest4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kefirtest5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

@@ -18,9 +18,8 @@ final class MaskAutoMapper {
     private var topPadding: Int!
     private var leftPadding: Int!
     private var soundFilesTotal: Int!
-    
     private var soundsPrefixList: [String]
-    private var template: Template
+    private var template: Template!
     
     init(template: Template, soundsPrefixList: [String]) {
         self.template = template
@@ -50,7 +49,7 @@ final class MaskAutoMapper {
                 let soundZone = SoundZone(
                     minX: x, maxX: x + rowWidth, minY: y, maxY: y + lineWidth)
                 let soundNameStr = counter >= 10 ? "\(soundPrefix)\(counter)" : "\(soundPrefix)0\(counter)"
-                let soundValue = ZoneValue(soundName: soundNameStr, color: .random.withAlphaComponent(0.5))
+                let soundValue = ZoneValue(soundName: soundNameStr, color: .random.withAlphaComponent(0.1))
                 zonePresets[soundZone] = soundValue
                 counter += 1
                 if counter == soundFilesTotal {
@@ -64,9 +63,6 @@ final class MaskAutoMapper {
         return MaskBase(zonePresets: zonePresets, createdWith: self.template.rawValue)
     }
 }
-
-// MARK: - Refucktor
-
 
 extension MaskAutoMapper {
     enum Template: String, CaseIterable, Codable {
@@ -91,13 +87,14 @@ extension MaskAutoMapper {
             case .sounds32equal:
                 rowsCount = 4
                 linesCount = 8
-                lineWidth = 4
+                lineWidth = 4   // MARK: -  You feel this smells, I know ;-) Refactor soon
                 rowWidth = 3
                 rowSpacing = 4
                 lineSpacing = 4
                 topPadding = 2
                 leftPadding = 2
                 soundFilesTotal = 32
+                template = templateType
                 soundsPrefixList.forEach { result.append(self.makeMask(with: $0)) }
             case .sounds32:
                 rowsCount = 4
@@ -109,6 +106,7 @@ extension MaskAutoMapper {
                 topPadding = 2
                 leftPadding = 0
                 soundFilesTotal = 32
+                template = templateType
                 soundsPrefixList.forEach { result.append(self.makeMask(with: $0)) }
             case .sounds32x2:
                 rowsCount = 4
@@ -120,6 +118,7 @@ extension MaskAutoMapper {
                 topPadding = 0
                 leftPadding = 1
                 soundFilesTotal = 32
+                template = templateType
                 soundsPrefixList.forEach { result.append(self.makeMask(with: $0)) }
             case .sounds32x2rowSpacing:
                 rowsCount = 4
@@ -131,6 +130,7 @@ extension MaskAutoMapper {
                 topPadding = 3
                 leftPadding = 0
                 soundFilesTotal = 32
+                template = templateType
                 soundsPrefixList.forEach { result.append(self.makeMask(with: $0)) }
             case .sounds32fillScreen:
                 rowsCount = 4
@@ -141,6 +141,7 @@ extension MaskAutoMapper {
                 lineSpacing = 0
                 topPadding = 0
                 leftPadding = 0
+                template = templateType
                 soundsPrefixList.forEach { result.append(self.makeMask(with: $0)) }
                 soundFilesTotal = 32
             case .sounds64:
@@ -153,6 +154,7 @@ extension MaskAutoMapper {
                 topPadding = 16
                 leftPadding = 1
                 soundFilesTotal = 64
+                template = templateType
                 soundsPrefixList.forEach { result.append(self.makeMask(with: $0)) }
             case .sounds64fillScreen:
                 rowsCount = 8
@@ -164,6 +166,7 @@ extension MaskAutoMapper {
                 topPadding = 0
                 leftPadding = 0
                 soundFilesTotal = 64
+                template = templateType
                 soundsPrefixList.forEach { result.append(self.makeMask(with: $0)) }
             case .sounds64x2:
                 rowsCount = 8
@@ -175,6 +178,7 @@ extension MaskAutoMapper {
                 topPadding = 5
                 leftPadding = 1
                 soundFilesTotal = 64
+                template = templateType
                 soundsPrefixList.forEach { result.append(self.makeMask(with: $0)) }
             case .sounds64x2fillScreen:
                 rowsCount = 8
@@ -186,6 +190,7 @@ extension MaskAutoMapper {
                 topPadding = 4
                 leftPadding = 0
                 soundFilesTotal = 64
+                template = templateType
                 soundsPrefixList.forEach { result.append(self.makeMask(with: $0)) }
             }
         }

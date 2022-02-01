@@ -20,11 +20,11 @@ struct ZoneValue: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         soundName = try container.decode(String.self, forKey: .soundName)
-        color = .random.withAlphaComponent(0.5)
+        color = .random.withAlphaComponent(0.3)
         emoji = .emojiString
         //color = try container.decode(Color.self, forKey: .color).uiColor
     }
-    init(soundName: String, emoji: String = .emojiString, color: UIColor = .random.withAlphaComponent(0.5)) {
+    init(soundName: String, emoji: String = .emojiString, color: UIColor = .random.withAlphaComponent(0.3)) {
         self.soundName = soundName
         self.color = color
         self.emoji = emoji

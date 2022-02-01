@@ -19,7 +19,10 @@ final class ServicesContainer {
     lazy var performanceMeasurment = PerfmormanceMeasurment()
     lazy var maskEditor = EditorZoneSelection()
     lazy var maskManager = MaskManager()
+    lazy var debugDatasource = DebugMenuSectionsDatasource()
 }
+
+
 
 /// Mask manager
 protocol MaskManagerProvider { }
@@ -49,6 +52,12 @@ extension SessionMediaServiceProvider {
 protocol PoseDetectorProvider { }
 extension PoseDetectorProvider {
     var poseDetector: PoseRecognizer { container.poseDetector }
+}
+
+/// Debug datasources
+protocol DatasourceForDebugProvider { }
+extension DatasourceForDebugProvider {
+    var debugDatasource: DebugMenuSectionsDatasource { container.debugDatasource }
 }
 
 // MARK: - Various application mechanics

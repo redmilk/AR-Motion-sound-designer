@@ -56,6 +56,7 @@ final class CameraViewModel {
       
       /// handle response from handpose mechanicsb
       handposeMechanics.output
+         .throttle(for: .milliseconds(250), scheduler: DispatchQueue.main, latest: true)
          .sink(receiveValue: { [weak self] response in
             switch response {
             case .playSoundForZone(let soundName):

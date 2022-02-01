@@ -14,7 +14,8 @@ import MLKit
 final class ZoneBasedMechanic: PoseDetectorProvider,
                                SessionMediaServiceProvider,
                                PerformanceMeasurmentProvider,
-                               MaskManagerProvider {
+                               MaskManagerProvider,
+                               MaskEditorProvider {
     enum Action {
         case configure(collection: UICollectionView,
                        videoPreview: CaptureVideoPreviewView,
@@ -53,8 +54,8 @@ final class ZoneBasedMechanic: PoseDetectorProvider,
                     self?.configuration = configuration
                     self?.poseDetector.input.send(.configure(configuration))
                     self?.sessionMediaService.input.send(.configure)
-                case .startSession: break
-                    //self?.sessionMediaService.input.send(.startSession)
+                case .startSession:
+                    self?.sessionMediaService.input.send(.startSession)
                 case .stopSession:
                     self?.sessionMediaService.input.send(.stopSession)
                 }
@@ -74,7 +75,7 @@ final class ZoneBasedMechanic: PoseDetectorProvider,
                            let cell = self?.matrixCollection.cellForItem(at: indexPath) as? MatrixNodeCell {
                             cell.trigger()
                             //self.output.send(.affectedNode(cell: cell, indePath: indexPath))
-                            if let soundName = self?.currentMask?.determinateSoundForZonesWithIndexPath(indexPath) {
+                            if let soundName = self?.editor.mask.determinateSoundForZonesWithIndexPath(indexPath) {
                                 self?.output.send(.playSoundForZone(soundName))
                             }
                         }

@@ -117,14 +117,14 @@ final class MatrixCollection: NSObject, MaskManagerProvider { /// NSObject for c
         let indexPathList = zone.getAllIndexPathesInside()
         reloadItemsAtIndexPathList(indexPathList)
     }
-    private func drawMask(_ zones: [SoundZone: ZoneValue]) {
+    private func drawMask(_ zones: [SoundZone: ZoneValue], isHiddenZones: Bool = false) {
         var currentSnapshot = dataSource.snapshot()
         for zone in zones {
             let key = zone.key
             var items: [MatrixNode] = []
             let indexPathList = key.getAllIndexPathesInside()
             items = indexPathList.compactMap { (self.collectionView.cellForItem(at: $0) as? MatrixNodeCell)?.node }
-            items.forEach { $0.painted = zone.value.color }
+            items.forEach { $0.painted = isHiddenZones ? .clear : zone.value.color }
             currentSnapshot.reloadItems(items)
         }
         dataSource.apply(currentSnapshot, animatingDifferences: true)
@@ -141,7 +141,7 @@ final class MatrixCollection: NSObject, MaskManagerProvider { /// NSObject for c
         var items: [MatrixNode] = []
         items = indexPathList.compactMap { (self.collectionView.cellForItem(at: $0) as? MatrixNodeCell)?.node }
         // MARK: - Zone pixels color
-        //items.forEach { $0.painted = isDeletion ? .clear : .random }
+        items.forEach { $0.painted = isDeletion ? .clear : .random }
         currentSnapshot.reloadItems(items)
         dataSource.apply(currentSnapshot, animatingDifferences: true)
     }

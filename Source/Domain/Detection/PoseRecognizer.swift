@@ -56,6 +56,8 @@ final class PoseRecognizer: ErrorHandlerProvider, PerformanceMeasurmentProvider 
             switch action {
             case .configure(let configuration):
                 self?.configuration = configuration
+                self?.queue = OperationQueue()
+                self?.queue.maxConcurrentOperationCount = 10
             case .buffer(let sampleBuffer):
                 self?.processFrameWithSampleBuffer(sampleBuffer)
             case .targetLandmarksToggle(let landmarks):
@@ -82,7 +84,8 @@ final class PoseRecognizer: ErrorHandlerProvider, PerformanceMeasurmentProvider 
     private var currentSkippedFrameNumber = 0
     private var isInferencing = false
     private let poseDetectorQueue = DispatchQueue(label: "com.google.mlkit.pose", qos: .userInteractive)
-    
+    private var queue: OperationQueue!
+
     private lazy var poseDetector: PoseDetector = {
         let options = AccuratePoseDetectorOptions()
         return PoseDetector.poseDetector(options: options)
@@ -95,7 +98,7 @@ final class PoseRecognizer: ErrorHandlerProvider, PerformanceMeasurmentProvider 
         }
     }
     
-    private var landmarks: [PoseLandmarkType] = []
+    private var landmarks: [PoseLandmarkType] = [.rightIndexFinger, .rightPinkyFinger]
     private var bag = Set<AnyCancellable>()
 }
 
@@ -127,7 +130,7 @@ private extension PoseRecognizer {
     // TODO: - try return dots one by one
     func detectPose(in image: VisionImage, width: CGFloat, height: CGFloat) throws {
         let landmarks = self.landmarks
-        poseDetectorQueue.async(qos: .userInteractive, flags: [.barrier]) { [weak self] in
+        queue.addOperation { [weak self] in
             guard let pose = try? self?.poseDetector.results(in: image).first, let self = self else { return }
             var dots = [CGPoint]()
             for landmark in landmarks {

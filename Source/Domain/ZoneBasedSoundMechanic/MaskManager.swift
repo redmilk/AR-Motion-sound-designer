@@ -33,7 +33,7 @@ final class MaskManager: MaskEditorProvider {
     var input = PassthroughSubject<Input, Never>()
     var output = PassthroughSubject<Response, Never>()
     var activeMask: MaskPreset? = .editor("Lightsaber")
-    var shouldForceplaySoundForCurrentMask: Bool { return false }
+    var shouldForceplaySoundForCurrentMask: Bool = false
     
     var activeMaskData: MaskProtocol? {
         guard let activeMask = activeMask else { return nil }
@@ -55,8 +55,8 @@ final class MaskManager: MaskEditorProvider {
     }
     
     init() {
-        let allPossibleMask = MaskAutoMapper(template: .unknown, soundsPrefixList: ["meditation-", "Lightsaber"]).generateAllTemplates()
-        let presets = allPossibleMask.map { MaskPreset.editor($0.zonePresets.values.first?.soundName ?? "Suck my ass") }
+        let allPossibleMask = MaskAutoMapper(template: .unknown, soundsPrefixList: ["kung-fu", "monkey", "robot-2-", "meditation-", "Lightsaber",  ]).generateAllTemplates()
+        let presets = allPossibleMask.map { MaskPreset.editor($0.zonePresets.values.first?.soundName ?? "Default") }
         var results = [MaskPreset: MaskBase]()
         for i in 0..<allPossibleMask.count {
             let preset = presets[i]
@@ -85,7 +85,7 @@ final class MaskManager: MaskEditorProvider {
         print(maskPresets.count)
         guard !maskListForEditor.isEmpty else { return }
         let mask = maskListForEditor.removeFirst()
-        var description = MaskDescription(orderNumber: maskListForEditor.count, masksTotal: maskPresets.count, currentMasksZonesTotal: mask.totalNumberOfZones, currentMasksUniqueSoundsTotal: mask.totalNumberOfUniqueSounds, createdWith: mask.createdWith ?? "", shouldForcePlayAll: mask.shouldForcaplaySounds)
+        let description = MaskDescription(orderNumber: maskListForEditor.count, masksTotal: maskPresets.count, currentMasksZonesTotal: mask.totalNumberOfZones, currentMasksUniqueSoundsTotal: mask.totalNumberOfUniqueSounds, createdWith: mask.createdWith ?? "", shouldForcePlayAll: mask.shouldForcaplaySounds)
         output.send(.nextMask(mask, description))
     }
 

@@ -40,13 +40,14 @@ class ZoneBaseAudio: NSObject, AVAudioPlayerDelegate, MaskManagerProvider {
     }
     
     func playSoundForZone(with fileName: String) {
+        Logger.log("PLAY SOUND: \(fileName)", type: .editor)
         guard !fileName.isEmpty else { return }
         var fileNameURL: URL?
         
         guard let bundle = Bundle.main.path(forResource: fileName.replacingOccurrences(of: ".wav", with: ""), ofType: "wav") else { return }
         fileNameURL = URL(fileURLWithPath: bundle)
 
-        let isForcePlayingSound = true//maskManager.shouldForceplaySoundForCurrentMask
+        let isForcePlayingSound = maskManager.shouldForceplaySoundForCurrentMask
         guard let soundFileNameURL = fileNameURL else { return }
         
         if let player = players[soundFileNameURL] { //player for sound has been found
@@ -57,7 +58,6 @@ class ZoneBaseAudio: NSObject, AVAudioPlayerDelegate, MaskManagerProvider {
                 player.play()
                 //makeTimestamp(with: soundFileNameURL, and: player.volume)
             } else if isForcePlaying || isForcePlayingSound { // player is in use, create a new, duplicate, player and use that instead
-
                 do {
                     let duplicatePlayer = try AVAudioPlayer(contentsOf: soundFileNameURL)
 
@@ -171,7 +171,6 @@ class ZoneBaseAudio: NSObject, AVAudioPlayerDelegate, MaskManagerProvider {
         if UserDefaults.standard.object(forKey: key) == nil {
             return 0.5
         }
-        
         let volume = UserDefaults.standard.float(forKey: key)
         return volume
     }

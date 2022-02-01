@@ -18,7 +18,6 @@ extension EditorZoneSelection {
         case clone(w: Int, h: Int)
         case draw
         case delete
-        case sounds
     }
     enum Input {
         case resetMask
@@ -49,8 +48,8 @@ final class EditorZoneSelection: NSObject, InteractionFeedbackService {
     let interactionFeedbackPub = PassthroughSubject<CGPoint, Never>()
     let openEditorPub = PassthroughSubject<(), Never>()
     let deleteZonePub = PassthroughSubject<[SoundZone: ZoneValue], Never>()
-    private var bag = Set<AnyCancellable>()
     
+    private var bag = Set<AnyCancellable>()
     private let panGestureRecognizer = UIPanGestureRecognizer()
     private let menuTapRecognizer = UITapGestureRecognizer()
     private let tapGestureRecognizer = UITapGestureRecognizer()
@@ -72,6 +71,7 @@ final class EditorZoneSelection: NSObject, InteractionFeedbackService {
                 scaleX: max(1, zone.maxX - zone.minX), scaleY: max(1, zone.maxY - zone.minY),
                 zonesTotal: mask.zonePresets.count, orderNumber: nil, zoneTitle: nil, sound: value.soundName)
             currentSelectedZoneInfoPub.send(zoneInfo)
+            guard mode == .idle else { return }
             ZoneBaseAudio.shared.playSoundForZone(with: value.soundName)
         }
     }
@@ -239,18 +239,18 @@ final class EditorZoneSelection: NSObject, InteractionFeedbackService {
             trySelectZoneWithPoint(point)
             ///openEditorPub.send()
         case .add, .draw:
-            guard let tapIndexPath = gridCollection.indexPathForItem(at: point) else { return }
-            addZone(minX: tapIndexPath.row,
-                    maxX: tapIndexPath.row + 2,
-                    minY: tapIndexPath.section,
-                    maxY: tapIndexPath.section + 2)
-            switchToCloneModeIfNeeded(w: 2, h: 2)
+//            guard let tapIndexPath = gridCollection.indexPathForItem(at: point) else { return }
+//            addZone(minX: tapIndexPath.row,
+//                    maxX: tapIndexPath.row,
+//                    minY: tapIndexPath.section,
+//                    maxY: tapIndexPath.section)
+            trySelectZoneWithPoint(point)
         case .clone(let width, let height):
             guard let tapIndexPath = gridCollection.indexPathForItem(at: point) else { return }
             addZone(minX: tapIndexPath.row,
-                    maxX: tapIndexPath.row + width,
+                    maxX: max(1, tapIndexPath.row + width - 1),
                     minY: tapIndexPath.section,
-                    maxY: tapIndexPath.section + height)
+                    maxY: max(1, tapIndexPath.section + height - 1))
             trySelectZoneWithPoint(point)
         case .delete:
             guard let indexPath = gridCollection.indexPathForItem(at: point),
@@ -260,8 +260,6 @@ final class EditorZoneSelection: NSObject, InteractionFeedbackService {
             currentZone = nil
             deleteZonePub.send(zone)
             recognizersContainer.layer.sublayers?.removeAll()
-        case .sounds:
-            trySelectZoneWithPoint(point)
         }
     }
     
@@ -281,7 +279,12 @@ final class EditorZoneSelection: NSObject, InteractionFeedbackService {
         case .changed:
             let gesturePoint = gestureRecognizer.location(in: recognizersContainer)
             self.interactionFeedbackPub.send(gesturePoint)
-            self.panGestureAnchorPoint = gesturePoint
+            panGestureAnchorPoint = gesturePoint
+            guard mode == .idle else { return }
+            if let indexPath = gridCollection.indexPathForItem(at: gesturePoint),
+               let soundName = mask.determinateSoundForZonesWithIndexPath(indexPath) {
+                ZoneBaseAudio.shared.playSoundForZone(with: soundName)
+            }
         case .cancelled, .ended:
             addZoneWithPanGestureResult()
             generateInteractionFeedback()
