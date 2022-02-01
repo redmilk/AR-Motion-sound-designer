@@ -55,7 +55,7 @@ final class MaskManager: MaskEditorProvider {
     }
     
     init() {
-        let allPossibleMask = MaskAutoMapper(template: .unknown, soundsPrefixList: ["kung-fu", "monkey", "robot-2-", "meditation-", "Lightsaber",  ]).generateAllTemplates()
+        let allPossibleMask = MaskAutoMapper(template: .unknown, soundsPrefixList: ["HarryPotter", "monkey", "Lightsaber"]).generateAllTemplates()
         let presets = allPossibleMask.map { MaskPreset.editor($0.zonePresets.values.first?.soundName ?? "Default") }
         var results = [MaskPreset: MaskBase]()
         for i in 0..<allPossibleMask.count {

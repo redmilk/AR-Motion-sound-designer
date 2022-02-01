@@ -11,69 +11,6 @@
 		79035A602793D40900DFFDB2 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 79035A5F2793D40800DFFDB2 /* art.scnassets */; };
 		79035A622793D42F00DFFDB2 /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 79035A612793D42F00DFFDB2 /* texture.png */; };
 		790CFEE6276A7BE000C355C5 /* PerformanceMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790CFEE5276A7BE000C355C5 /* PerformanceMeasurement.swift */; };
-		791682E327A9606000C66142 /* meditation-24.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682A427A9605E00C66142 /* meditation-24.wav */; };
-		791682E427A9606000C66142 /* meditation-63.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682A527A9605E00C66142 /* meditation-63.wav */; };
-		791682E527A9606000C66142 /* meditation-05.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682A627A9605E00C66142 /* meditation-05.wav */; };
-		791682E627A9606000C66142 /* meditation-62.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682A727A9605E00C66142 /* meditation-62.wav */; };
-		791682E727A9606000C66142 /* meditation-12.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682A827A9605E00C66142 /* meditation-12.wav */; };
-		791682E827A9606000C66142 /* meditation-04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682A927A9605E00C66142 /* meditation-04.wav */; };
-		791682E927A9606000C66142 /* meditation-08.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682AA27A9605E00C66142 /* meditation-08.wav */; };
-		791682EA27A9606000C66142 /* meditation-58.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682AB27A9605E00C66142 /* meditation-58.wav */; };
-		791682EB27A9606000C66142 /* meditation-23.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682AC27A9605E00C66142 /* meditation-23.wav */; };
-		791682EC27A9606000C66142 /* meditation-39.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682AD27A9605E00C66142 /* meditation-39.wav */; };
-		791682ED27A9606000C66142 /* meditation-07.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682AE27A9605F00C66142 /* meditation-07.wav */; };
-		791682EE27A9606000C66142 /* meditation-16.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682AF27A9605F00C66142 /* meditation-16.wav */; };
-		791682EF27A9606000C66142 /* meditation-00.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B027A9605F00C66142 /* meditation-00.wav */; };
-		791682F027A9606000C66142 /* meditation-42.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B127A9605F00C66142 /* meditation-42.wav */; };
-		791682F127A9606000C66142 /* meditation-26.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B227A9605F00C66142 /* meditation-26.wav */; };
-		791682F227A9606000C66142 /* meditation-17.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B327A9605F00C66142 /* meditation-17.wav */; };
-		791682F327A9606000C66142 /* meditation-49.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B427A9605F00C66142 /* meditation-49.wav */; };
-		791682F427A9606000C66142 /* meditation-30.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B527A9605F00C66142 /* meditation-30.wav */; };
-		791682F527A9606000C66142 /* meditation-29.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B627A9605F00C66142 /* meditation-29.wav */; };
-		791682F627A9606000C66142 /* meditation-60.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B727A9605F00C66142 /* meditation-60.wav */; };
-		791682F727A9606000C66142 /* meditation-28.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B827A9605F00C66142 /* meditation-28.wav */; };
-		791682F827A9606000C66142 /* meditation-25.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682B927A9605F00C66142 /* meditation-25.wav */; };
-		791682F927A9606000C66142 /* meditation-06.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682BA27A9605F00C66142 /* meditation-06.wav */; };
-		791682FA27A9606000C66142 /* meditation-48.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682BB27A9605F00C66142 /* meditation-48.wav */; };
-		791682FB27A9606000C66142 /* meditation-53.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682BC27A9605F00C66142 /* meditation-53.wav */; };
-		791682FC27A9606000C66142 /* meditation-56.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682BD27A9605F00C66142 /* meditation-56.wav */; };
-		791682FD27A9606000C66142 /* meditation-44.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682BE27A9605F00C66142 /* meditation-44.wav */; };
-		791682FE27A9606000C66142 /* meditation-01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682BF27A9605F00C66142 /* meditation-01.wav */; };
-		791682FF27A9606000C66142 /* meditation-15.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C027A9605F00C66142 /* meditation-15.wav */; };
-		7916830027A9606000C66142 /* meditation-22.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C127A9605F00C66142 /* meditation-22.wav */; };
-		7916830127A9606000C66142 /* meditation-20.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C227A9605F00C66142 /* meditation-20.wav */; };
-		7916830227A9606000C66142 /* meditation-19.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C327A9605F00C66142 /* meditation-19.wav */; };
-		7916830327A9606000C66142 /* meditation-35.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C427A9605F00C66142 /* meditation-35.wav */; };
-		7916830427A9606000C66142 /* meditation-18.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C527A9605F00C66142 /* meditation-18.wav */; };
-		7916830527A9606000C66142 /* meditation-11.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C627A9605F00C66142 /* meditation-11.wav */; };
-		7916830627A9606000C66142 /* meditation-46.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C727A9605F00C66142 /* meditation-46.wav */; };
-		7916830727A9606000C66142 /* meditation-36.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C827A9605F00C66142 /* meditation-36.wav */; };
-		7916830827A9606000C66142 /* meditation-51.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682C927A9605F00C66142 /* meditation-51.wav */; };
-		7916830927A9606000C66142 /* meditation-45.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682CA27A9605F00C66142 /* meditation-45.wav */; };
-		7916830A27A9606000C66142 /* meditation-02.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682CB27A9605F00C66142 /* meditation-02.wav */; };
-		7916830B27A9606000C66142 /* meditation-54.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682CC27A9606000C66142 /* meditation-54.wav */; };
-		7916830C27A9606000C66142 /* meditation-13.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682CD27A9606000C66142 /* meditation-13.wav */; };
-		7916830D27A9606000C66142 /* meditation-03.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682CE27A9606000C66142 /* meditation-03.wav */; };
-		7916830E27A9606000C66142 /* meditation-61.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682CF27A9606000C66142 /* meditation-61.wav */; };
-		7916830F27A9606000C66142 /* meditation-41.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D027A9606000C66142 /* meditation-41.wav */; };
-		7916831027A9606000C66142 /* meditation-34.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D127A9606000C66142 /* meditation-34.wav */; };
-		7916831127A9606000C66142 /* meditation-31.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D227A9606000C66142 /* meditation-31.wav */; };
-		7916831227A9606000C66142 /* meditation-27.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D327A9606000C66142 /* meditation-27.wav */; };
-		7916831327A9606000C66142 /* meditation-57.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D427A9606000C66142 /* meditation-57.wav */; };
-		7916831427A9606000C66142 /* meditation-09.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D527A9606000C66142 /* meditation-09.wav */; };
-		7916831527A9606000C66142 /* meditation-14.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D627A9606000C66142 /* meditation-14.wav */; };
-		7916831627A9606000C66142 /* meditation-50.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D727A9606000C66142 /* meditation-50.wav */; };
-		7916831727A9606000C66142 /* meditation-38.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D827A9606000C66142 /* meditation-38.wav */; };
-		7916831827A9606000C66142 /* meditation-55.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682D927A9606000C66142 /* meditation-55.wav */; };
-		7916831927A9606000C66142 /* meditation-40.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682DA27A9606000C66142 /* meditation-40.wav */; };
-		7916831A27A9606000C66142 /* meditation-21.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682DB27A9606000C66142 /* meditation-21.wav */; };
-		7916831B27A9606000C66142 /* meditation-10.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682DC27A9606000C66142 /* meditation-10.wav */; };
-		7916831C27A9606000C66142 /* meditation-47.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682DD27A9606000C66142 /* meditation-47.wav */; };
-		7916831D27A9606000C66142 /* meditation-32.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682DE27A9606000C66142 /* meditation-32.wav */; };
-		7916831E27A9606000C66142 /* meditation-43.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682DF27A9606000C66142 /* meditation-43.wav */; };
-		7916831F27A9606000C66142 /* meditation-59.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682E027A9606000C66142 /* meditation-59.wav */; };
-		7916832027A9606000C66142 /* meditation-37.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682E127A9606000C66142 /* meditation-37.wav */; };
-		7916832127A9606000C66142 /* meditation-33.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791682E227A9606000C66142 /* meditation-33.wav */; };
 		7916833727A9609E00C66142 /* IAR_Wet_DW_CraviottoMaple5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916832427A9609700C66142 /* IAR_Wet_DW_CraviottoMaple5.wav */; };
 		7916833827A9609E00C66142 /* IAR_Wet_PaisteDarkCrisp14InchHatsBell1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916832527A9609700C66142 /* IAR_Wet_PaisteDarkCrisp14InchHatsBell1.wav */; };
 		7916833927A9609E00C66142 /* IAR_Wet_Acrolite_Dampened_Snare4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916832627A9609800C66142 /* IAR_Wet_Acrolite_Dampened_Snare4.wav */; };
@@ -158,6 +95,71 @@
 		791683CA27A9614500C66142 /* monkey45.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916838927A9614500C66142 /* monkey45.wav */; };
 		791683CB27A9614500C66142 /* monkey44.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916838A27A9614500C66142 /* monkey44.wav */; };
 		791683CC27A9614500C66142 /* monkey50.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916838B27A9614500C66142 /* monkey50.wav */; };
+		7916840F27A96B1000C66142 /* HarryPotter03.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683CE27A96B0F00C66142 /* HarryPotter03.wav */; };
+		7916841027A96B1000C66142 /* HarryPotter17.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683CF27A96B0F00C66142 /* HarryPotter17.wav */; };
+		7916841127A96B1000C66142 /* HarryPotter16.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683D027A96B0F00C66142 /* HarryPotter16.wav */; };
+		7916841227A96B1000C66142 /* HarryPotter02.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683D127A96B0F00C66142 /* HarryPotter02.wav */; };
+		7916841327A96B1000C66142 /* HarryPotter14.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683D227A96B0F00C66142 /* HarryPotter14.wav */; };
+		7916841427A96B1000C66142 /* HarryPotter00.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683D327A96B0F00C66142 /* HarryPotter00.wav */; };
+		7916841527A96B1000C66142 /* HarryPotter28.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683D427A96B0F00C66142 /* HarryPotter28.wav */; };
+		7916841627A96B1000C66142 /* HarryPotter29.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683D527A96B0F00C66142 /* HarryPotter29.wav */; };
+		7916841727A96B1000C66142 /* HarryPotter01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683D627A96B0F00C66142 /* HarryPotter01.wav */; };
+		7916841827A96B1000C66142 /* HarryPotter15.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683D727A96B0F00C66142 /* HarryPotter15.wav */; };
+		7916841927A96B1000C66142 /* HarryPotter39.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683D827A96B0F00C66142 /* HarryPotter39.wav */; };
+		7916841A27A96B1000C66142 /* HarryPotter11.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683D927A96B0F00C66142 /* HarryPotter11.wav */; };
+		7916841B27A96B1000C66142 /* HarryPotter05.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683DA27A96B0F00C66142 /* HarryPotter05.wav */; };
+		7916841C27A96B1000C66142 /* HarryPotter04.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683DB27A96B0F00C66142 /* HarryPotter04.wav */; };
+		7916841D27A96B1000C66142 /* HarryPotter10.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683DC27A96B0F00C66142 /* HarryPotter10.wav */; };
+		7916841E27A96B1000C66142 /* HarryPotter38.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683DD27A96B0F00C66142 /* HarryPotter38.wav */; };
+		7916841F27A96B1000C66142 /* HarryPotter06.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683DE27A96B0F00C66142 /* HarryPotter06.wav */; };
+		7916842027A96B1000C66142 /* HarryPotter12.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683DF27A96B0F00C66142 /* HarryPotter12.wav */; };
+		7916842127A96B1000C66142 /* HarryPotter13.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683E027A96B0F00C66142 /* HarryPotter13.wav */; };
+		7916842227A96B1000C66142 /* HarryPotter07.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683E127A96B0F00C66142 /* HarryPotter07.wav */; };
+		7916842327A96B1000C66142 /* HarryPotter60.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683E227A96B0F00C66142 /* HarryPotter60.wav */; };
+		7916842427A96B1000C66142 /* HarryPotter48.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683E327A96B0F00C66142 /* HarryPotter48.wav */; };
+		7916842527A96B1000C66142 /* HarryPotter49.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683E427A96B0F00C66142 /* HarryPotter49.wav */; };
+		7916842627A96B1000C66142 /* HarryPotter61.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683E527A96B0F00C66142 /* HarryPotter61.wav */; };
+		7916842727A96B1000C66142 /* HarryPotter63.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683E627A96B0F00C66142 /* HarryPotter63.wav */; };
+		7916842827A96B1000C66142 /* HarryPotter62.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683E727A96B0F00C66142 /* HarryPotter62.wav */; };
+		7916842927A96B1000C66142 /* HarryPotter59.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683E827A96B0F00C66142 /* HarryPotter59.wav */; };
+		7916842A27A96B1000C66142 /* HarryPotter58.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683E927A96B0F00C66142 /* HarryPotter58.wav */; };
+		7916842B27A96B1000C66142 /* HarryPotter41.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683EA27A96B0F00C66142 /* HarryPotter41.wav */; };
+		7916842C27A96B1000C66142 /* HarryPotter55.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683EB27A96B0F00C66142 /* HarryPotter55.wav */; };
+		7916842D27A96B1000C66142 /* HarryPotter54.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683EC27A96B0F00C66142 /* HarryPotter54.wav */; };
+		7916842E27A96B1000C66142 /* HarryPotter40.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683ED27A96B0F00C66142 /* HarryPotter40.wav */; };
+		7916842F27A96B1000C66142 /* HarryPotter56.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683EE27A96B0F00C66142 /* HarryPotter56.wav */; };
+		7916843027A96B1000C66142 /* HarryPotter42.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683EF27A96B0F00C66142 /* HarryPotter42.wav */; };
+		7916843127A96B1000C66142 /* HarryPotterBackground.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683F027A96B0F00C66142 /* HarryPotterBackground.wav */; };
+		7916843227A96B1000C66142 /* HarryPotter43.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683F127A96B0F00C66142 /* HarryPotter43.wav */; };
+		7916843327A96B1000C66142 /* HarryPotter57.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683F227A96B0F00C66142 /* HarryPotter57.wav */; };
+		7916843427A96B1000C66142 /* HarryPotter53.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683F327A96B0F00C66142 /* HarryPotter53.wav */; };
+		7916843527A96B1000C66142 /* HarryPotter47.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683F427A96B0F00C66142 /* HarryPotter47.wav */; };
+		7916843627A96B1000C66142 /* HarryPotter46.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683F527A96B0F00C66142 /* HarryPotter46.wav */; };
+		7916843727A96B1000C66142 /* HarryPotter52.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683F627A96B0F00C66142 /* HarryPotter52.wav */; };
+		7916843827A96B1000C66142 /* HarryPotter44.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683F727A96B0F00C66142 /* HarryPotter44.wav */; };
+		7916843927A96B1000C66142 /* HarryPotter50.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683F827A96B0F00C66142 /* HarryPotter50.wav */; };
+		7916843A27A96B1000C66142 /* HarryPotter51.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683F927A96B0F00C66142 /* HarryPotter51.wav */; };
+		7916843B27A96B1000C66142 /* HarryPotter45.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683FA27A96B0F00C66142 /* HarryPotter45.wav */; };
+		7916843C27A96B1000C66142 /* HarryPotter22.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683FB27A96B0F00C66142 /* HarryPotter22.wav */; };
+		7916843D27A96B1000C66142 /* HarryPotter36.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683FC27A96B0F00C66142 /* HarryPotter36.wav */; };
+		7916843E27A96B1000C66142 /* HarryPotter37.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683FD27A96B0F00C66142 /* HarryPotter37.wav */; };
+		7916843F27A96B1000C66142 /* HarryPotter23.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683FE27A96B0F00C66142 /* HarryPotter23.wav */; };
+		7916844027A96B1000C66142 /* HarryPotter35.wav in Resources */ = {isa = PBXBuildFile; fileRef = 791683FF27A96B0F00C66142 /* HarryPotter35.wav */; };
+		7916844127A96B1000C66142 /* HarryPotter21.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916840027A96B0F00C66142 /* HarryPotter21.wav */; };
+		7916844227A96B1000C66142 /* HarryPotter09.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916840127A96B0F00C66142 /* HarryPotter09.wav */; };
+		7916844327A96B1000C66142 /* HarryPotter08.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916840227A96B0F00C66142 /* HarryPotter08.wav */; };
+		7916844427A96B1000C66142 /* HarryPotter20.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916840327A96B0F00C66142 /* HarryPotter20.wav */; };
+		7916844527A96B1000C66142 /* HarryPotter34.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916840427A96B0F00C66142 /* HarryPotter34.wav */; };
+		7916844627A96B1000C66142 /* HarryPotter18.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916840527A96B0F00C66142 /* HarryPotter18.wav */; };
+		7916844727A96B1000C66142 /* HarryPotter30.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916840627A96B0F00C66142 /* HarryPotter30.wav */; };
+		7916844827A96B1000C66142 /* HarryPotter24.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916840727A96B0F00C66142 /* HarryPotter24.wav */; };
+		7916844927A96B1000C66142 /* HarryPotter25.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916840827A96B0F00C66142 /* HarryPotter25.wav */; };
+		7916844A27A96B1000C66142 /* HarryPotter31.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916840927A96B0F00C66142 /* HarryPotter31.wav */; };
+		7916844B27A96B1000C66142 /* HarryPotter19.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916840A27A96B0F00C66142 /* HarryPotter19.wav */; };
+		7916844C27A96B1000C66142 /* HarryPotter27.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916840B27A96B0F00C66142 /* HarryPotter27.wav */; };
+		7916844D27A96B1000C66142 /* HarryPotter33.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916840C27A96B0F00C66142 /* HarryPotter33.wav */; };
+		7916844E27A96B1000C66142 /* HarryPotter32.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916840D27A96B0F00C66142 /* HarryPotter32.wav */; };
+		7916844F27A96B1000C66142 /* HarryPotter26.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7916840E27A96B0F00C66142 /* HarryPotter26.wav */; };
 		79189E00274672900023628A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79189DFF274672900023628A /* Logger.swift */; };
 		791B7BE727469FFF00EF6886 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B7BDE27469FFF00EF6886 /* UICollectionView+Extensions.swift */; };
 		791B7BE827469FFF00EF6886 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791B7BDF27469FFF00EF6886 /* Collection+Extensions.swift */; };
@@ -408,69 +410,6 @@
 		79035A5F2793D40800DFFDB2 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		79035A612793D42F00DFFDB2 /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
 		790CFEE5276A7BE000C355C5 /* PerformanceMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceMeasurement.swift; sourceTree = "<group>"; };
-		791682A427A9605E00C66142 /* meditation-24.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-24.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-24.wav"; sourceTree = "<group>"; };
-		791682A527A9605E00C66142 /* meditation-63.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-63.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-63.wav"; sourceTree = "<group>"; };
-		791682A627A9605E00C66142 /* meditation-05.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-05.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-05.wav"; sourceTree = "<group>"; };
-		791682A727A9605E00C66142 /* meditation-62.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-62.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-62.wav"; sourceTree = "<group>"; };
-		791682A827A9605E00C66142 /* meditation-12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-12.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-12.wav"; sourceTree = "<group>"; };
-		791682A927A9605E00C66142 /* meditation-04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-04.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-04.wav"; sourceTree = "<group>"; };
-		791682AA27A9605E00C66142 /* meditation-08.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-08.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-08.wav"; sourceTree = "<group>"; };
-		791682AB27A9605E00C66142 /* meditation-58.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-58.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-58.wav"; sourceTree = "<group>"; };
-		791682AC27A9605E00C66142 /* meditation-23.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-23.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-23.wav"; sourceTree = "<group>"; };
-		791682AD27A9605E00C66142 /* meditation-39.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-39.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-39.wav"; sourceTree = "<group>"; };
-		791682AE27A9605F00C66142 /* meditation-07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-07.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-07.wav"; sourceTree = "<group>"; };
-		791682AF27A9605F00C66142 /* meditation-16.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-16.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-16.wav"; sourceTree = "<group>"; };
-		791682B027A9605F00C66142 /* meditation-00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-00.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-00.wav"; sourceTree = "<group>"; };
-		791682B127A9605F00C66142 /* meditation-42.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-42.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-42.wav"; sourceTree = "<group>"; };
-		791682B227A9605F00C66142 /* meditation-26.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-26.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-26.wav"; sourceTree = "<group>"; };
-		791682B327A9605F00C66142 /* meditation-17.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-17.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-17.wav"; sourceTree = "<group>"; };
-		791682B427A9605F00C66142 /* meditation-49.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-49.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-49.wav"; sourceTree = "<group>"; };
-		791682B527A9605F00C66142 /* meditation-30.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-30.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-30.wav"; sourceTree = "<group>"; };
-		791682B627A9605F00C66142 /* meditation-29.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-29.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-29.wav"; sourceTree = "<group>"; };
-		791682B727A9605F00C66142 /* meditation-60.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-60.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-60.wav"; sourceTree = "<group>"; };
-		791682B827A9605F00C66142 /* meditation-28.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-28.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-28.wav"; sourceTree = "<group>"; };
-		791682B927A9605F00C66142 /* meditation-25.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-25.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-25.wav"; sourceTree = "<group>"; };
-		791682BA27A9605F00C66142 /* meditation-06.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-06.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-06.wav"; sourceTree = "<group>"; };
-		791682BB27A9605F00C66142 /* meditation-48.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-48.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-48.wav"; sourceTree = "<group>"; };
-		791682BC27A9605F00C66142 /* meditation-53.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-53.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-53.wav"; sourceTree = "<group>"; };
-		791682BD27A9605F00C66142 /* meditation-56.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-56.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-56.wav"; sourceTree = "<group>"; };
-		791682BE27A9605F00C66142 /* meditation-44.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-44.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-44.wav"; sourceTree = "<group>"; };
-		791682BF27A9605F00C66142 /* meditation-01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-01.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-01.wav"; sourceTree = "<group>"; };
-		791682C027A9605F00C66142 /* meditation-15.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-15.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-15.wav"; sourceTree = "<group>"; };
-		791682C127A9605F00C66142 /* meditation-22.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-22.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-22.wav"; sourceTree = "<group>"; };
-		791682C227A9605F00C66142 /* meditation-20.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-20.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-20.wav"; sourceTree = "<group>"; };
-		791682C327A9605F00C66142 /* meditation-19.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-19.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-19.wav"; sourceTree = "<group>"; };
-		791682C427A9605F00C66142 /* meditation-35.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-35.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-35.wav"; sourceTree = "<group>"; };
-		791682C527A9605F00C66142 /* meditation-18.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-18.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-18.wav"; sourceTree = "<group>"; };
-		791682C627A9605F00C66142 /* meditation-11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-11.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-11.wav"; sourceTree = "<group>"; };
-		791682C727A9605F00C66142 /* meditation-46.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-46.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-46.wav"; sourceTree = "<group>"; };
-		791682C827A9605F00C66142 /* meditation-36.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-36.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-36.wav"; sourceTree = "<group>"; };
-		791682C927A9605F00C66142 /* meditation-51.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-51.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-51.wav"; sourceTree = "<group>"; };
-		791682CA27A9605F00C66142 /* meditation-45.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-45.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-45.wav"; sourceTree = "<group>"; };
-		791682CB27A9605F00C66142 /* meditation-02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-02.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-02.wav"; sourceTree = "<group>"; };
-		791682CC27A9606000C66142 /* meditation-54.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-54.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-54.wav"; sourceTree = "<group>"; };
-		791682CD27A9606000C66142 /* meditation-13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-13.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-13.wav"; sourceTree = "<group>"; };
-		791682CE27A9606000C66142 /* meditation-03.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-03.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-03.wav"; sourceTree = "<group>"; };
-		791682CF27A9606000C66142 /* meditation-61.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-61.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-61.wav"; sourceTree = "<group>"; };
-		791682D027A9606000C66142 /* meditation-41.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-41.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-41.wav"; sourceTree = "<group>"; };
-		791682D127A9606000C66142 /* meditation-34.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-34.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-34.wav"; sourceTree = "<group>"; };
-		791682D227A9606000C66142 /* meditation-31.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-31.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-31.wav"; sourceTree = "<group>"; };
-		791682D327A9606000C66142 /* meditation-27.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-27.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-27.wav"; sourceTree = "<group>"; };
-		791682D427A9606000C66142 /* meditation-57.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-57.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-57.wav"; sourceTree = "<group>"; };
-		791682D527A9606000C66142 /* meditation-09.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-09.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-09.wav"; sourceTree = "<group>"; };
-		791682D627A9606000C66142 /* meditation-14.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-14.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-14.wav"; sourceTree = "<group>"; };
-		791682D727A9606000C66142 /* meditation-50.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-50.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-50.wav"; sourceTree = "<group>"; };
-		791682D827A9606000C66142 /* meditation-38.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-38.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-38.wav"; sourceTree = "<group>"; };
-		791682D927A9606000C66142 /* meditation-55.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-55.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-55.wav"; sourceTree = "<group>"; };
-		791682DA27A9606000C66142 /* meditation-40.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-40.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-40.wav"; sourceTree = "<group>"; };
-		791682DB27A9606000C66142 /* meditation-21.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-21.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-21.wav"; sourceTree = "<group>"; };
-		791682DC27A9606000C66142 /* meditation-10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-10.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-10.wav"; sourceTree = "<group>"; };
-		791682DD27A9606000C66142 /* meditation-47.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-47.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-47.wav"; sourceTree = "<group>"; };
-		791682DE27A9606000C66142 /* meditation-32.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-32.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-32.wav"; sourceTree = "<group>"; };
-		791682DF27A9606000C66142 /* meditation-43.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-43.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-43.wav"; sourceTree = "<group>"; };
-		791682E027A9606000C66142 /* meditation-59.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-59.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-59.wav"; sourceTree = "<group>"; };
-		791682E127A9606000C66142 /* meditation-37.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-37.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-37.wav"; sourceTree = "<group>"; };
-		791682E227A9606000C66142 /* meditation-33.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "meditation-33.wav"; path = "../../../../../Documents/MaskList/Meditation64/meditation-33.wav"; sourceTree = "<group>"; };
 		7916832427A9609700C66142 /* IAR_Wet_DW_CraviottoMaple5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_DW_CraviottoMaple5.wav; sourceTree = "<group>"; };
 		7916832527A9609700C66142 /* IAR_Wet_PaisteDarkCrisp14InchHatsBell1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_PaisteDarkCrisp14InchHatsBell1.wav; sourceTree = "<group>"; };
 		7916832627A9609800C66142 /* IAR_Wet_Acrolite_Dampened_Snare4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = IAR_Wet_Acrolite_Dampened_Snare4.wav; sourceTree = "<group>"; };
@@ -555,6 +494,71 @@
 		7916838927A9614500C66142 /* monkey45.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey45.wav; sourceTree = "<group>"; };
 		7916838A27A9614500C66142 /* monkey44.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey44.wav; sourceTree = "<group>"; };
 		7916838B27A9614500C66142 /* monkey50.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = monkey50.wav; sourceTree = "<group>"; };
+		791683CE27A96B0F00C66142 /* HarryPotter03.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter03.wav; sourceTree = "<group>"; };
+		791683CF27A96B0F00C66142 /* HarryPotter17.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter17.wav; sourceTree = "<group>"; };
+		791683D027A96B0F00C66142 /* HarryPotter16.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter16.wav; sourceTree = "<group>"; };
+		791683D127A96B0F00C66142 /* HarryPotter02.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter02.wav; sourceTree = "<group>"; };
+		791683D227A96B0F00C66142 /* HarryPotter14.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter14.wav; sourceTree = "<group>"; };
+		791683D327A96B0F00C66142 /* HarryPotter00.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter00.wav; sourceTree = "<group>"; };
+		791683D427A96B0F00C66142 /* HarryPotter28.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter28.wav; sourceTree = "<group>"; };
+		791683D527A96B0F00C66142 /* HarryPotter29.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter29.wav; sourceTree = "<group>"; };
+		791683D627A96B0F00C66142 /* HarryPotter01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter01.wav; sourceTree = "<group>"; };
+		791683D727A96B0F00C66142 /* HarryPotter15.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter15.wav; sourceTree = "<group>"; };
+		791683D827A96B0F00C66142 /* HarryPotter39.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter39.wav; sourceTree = "<group>"; };
+		791683D927A96B0F00C66142 /* HarryPotter11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter11.wav; sourceTree = "<group>"; };
+		791683DA27A96B0F00C66142 /* HarryPotter05.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter05.wav; sourceTree = "<group>"; };
+		791683DB27A96B0F00C66142 /* HarryPotter04.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter04.wav; sourceTree = "<group>"; };
+		791683DC27A96B0F00C66142 /* HarryPotter10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter10.wav; sourceTree = "<group>"; };
+		791683DD27A96B0F00C66142 /* HarryPotter38.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter38.wav; sourceTree = "<group>"; };
+		791683DE27A96B0F00C66142 /* HarryPotter06.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter06.wav; sourceTree = "<group>"; };
+		791683DF27A96B0F00C66142 /* HarryPotter12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter12.wav; sourceTree = "<group>"; };
+		791683E027A96B0F00C66142 /* HarryPotter13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter13.wav; sourceTree = "<group>"; };
+		791683E127A96B0F00C66142 /* HarryPotter07.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter07.wav; sourceTree = "<group>"; };
+		791683E227A96B0F00C66142 /* HarryPotter60.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter60.wav; sourceTree = "<group>"; };
+		791683E327A96B0F00C66142 /* HarryPotter48.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter48.wav; sourceTree = "<group>"; };
+		791683E427A96B0F00C66142 /* HarryPotter49.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter49.wav; sourceTree = "<group>"; };
+		791683E527A96B0F00C66142 /* HarryPotter61.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter61.wav; sourceTree = "<group>"; };
+		791683E627A96B0F00C66142 /* HarryPotter63.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter63.wav; sourceTree = "<group>"; };
+		791683E727A96B0F00C66142 /* HarryPotter62.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter62.wav; sourceTree = "<group>"; };
+		791683E827A96B0F00C66142 /* HarryPotter59.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter59.wav; sourceTree = "<group>"; };
+		791683E927A96B0F00C66142 /* HarryPotter58.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter58.wav; sourceTree = "<group>"; };
+		791683EA27A96B0F00C66142 /* HarryPotter41.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter41.wav; sourceTree = "<group>"; };
+		791683EB27A96B0F00C66142 /* HarryPotter55.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter55.wav; sourceTree = "<group>"; };
+		791683EC27A96B0F00C66142 /* HarryPotter54.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter54.wav; sourceTree = "<group>"; };
+		791683ED27A96B0F00C66142 /* HarryPotter40.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter40.wav; sourceTree = "<group>"; };
+		791683EE27A96B0F00C66142 /* HarryPotter56.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter56.wav; sourceTree = "<group>"; };
+		791683EF27A96B0F00C66142 /* HarryPotter42.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter42.wav; sourceTree = "<group>"; };
+		791683F027A96B0F00C66142 /* HarryPotterBackground.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotterBackground.wav; sourceTree = "<group>"; };
+		791683F127A96B0F00C66142 /* HarryPotter43.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter43.wav; sourceTree = "<group>"; };
+		791683F227A96B0F00C66142 /* HarryPotter57.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter57.wav; sourceTree = "<group>"; };
+		791683F327A96B0F00C66142 /* HarryPotter53.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter53.wav; sourceTree = "<group>"; };
+		791683F427A96B0F00C66142 /* HarryPotter47.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter47.wav; sourceTree = "<group>"; };
+		791683F527A96B0F00C66142 /* HarryPotter46.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter46.wav; sourceTree = "<group>"; };
+		791683F627A96B0F00C66142 /* HarryPotter52.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter52.wav; sourceTree = "<group>"; };
+		791683F727A96B0F00C66142 /* HarryPotter44.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter44.wav; sourceTree = "<group>"; };
+		791683F827A96B0F00C66142 /* HarryPotter50.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter50.wav; sourceTree = "<group>"; };
+		791683F927A96B0F00C66142 /* HarryPotter51.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter51.wav; sourceTree = "<group>"; };
+		791683FA27A96B0F00C66142 /* HarryPotter45.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter45.wav; sourceTree = "<group>"; };
+		791683FB27A96B0F00C66142 /* HarryPotter22.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter22.wav; sourceTree = "<group>"; };
+		791683FC27A96B0F00C66142 /* HarryPotter36.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter36.wav; sourceTree = "<group>"; };
+		791683FD27A96B0F00C66142 /* HarryPotter37.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter37.wav; sourceTree = "<group>"; };
+		791683FE27A96B0F00C66142 /* HarryPotter23.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter23.wav; sourceTree = "<group>"; };
+		791683FF27A96B0F00C66142 /* HarryPotter35.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter35.wav; sourceTree = "<group>"; };
+		7916840027A96B0F00C66142 /* HarryPotter21.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter21.wav; sourceTree = "<group>"; };
+		7916840127A96B0F00C66142 /* HarryPotter09.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter09.wav; sourceTree = "<group>"; };
+		7916840227A96B0F00C66142 /* HarryPotter08.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter08.wav; sourceTree = "<group>"; };
+		7916840327A96B0F00C66142 /* HarryPotter20.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter20.wav; sourceTree = "<group>"; };
+		7916840427A96B0F00C66142 /* HarryPotter34.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter34.wav; sourceTree = "<group>"; };
+		7916840527A96B0F00C66142 /* HarryPotter18.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter18.wav; sourceTree = "<group>"; };
+		7916840627A96B0F00C66142 /* HarryPotter30.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter30.wav; sourceTree = "<group>"; };
+		7916840727A96B0F00C66142 /* HarryPotter24.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter24.wav; sourceTree = "<group>"; };
+		7916840827A96B0F00C66142 /* HarryPotter25.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter25.wav; sourceTree = "<group>"; };
+		7916840927A96B0F00C66142 /* HarryPotter31.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter31.wav; sourceTree = "<group>"; };
+		7916840A27A96B0F00C66142 /* HarryPotter19.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter19.wav; sourceTree = "<group>"; };
+		7916840B27A96B0F00C66142 /* HarryPotter27.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter27.wav; sourceTree = "<group>"; };
+		7916840C27A96B0F00C66142 /* HarryPotter33.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter33.wav; sourceTree = "<group>"; };
+		7916840D27A96B0F00C66142 /* HarryPotter32.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter32.wav; sourceTree = "<group>"; };
+		7916840E27A96B0F00C66142 /* HarryPotter26.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HarryPotter26.wav; sourceTree = "<group>"; };
 		79189DFF274672900023628A /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		791B7BDE27469FFF00EF6886 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		791B7BDF27469FFF00EF6886 /* Collection+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
@@ -923,6 +927,78 @@
 			path = "monkey mask 64";
 			sourceTree = "<group>";
 		};
+		791683CD27A96B0F00C66142 /* HarryPotter64 */ = {
+			isa = PBXGroup;
+			children = (
+				791683CE27A96B0F00C66142 /* HarryPotter03.wav */,
+				791683CF27A96B0F00C66142 /* HarryPotter17.wav */,
+				791683D027A96B0F00C66142 /* HarryPotter16.wav */,
+				791683D127A96B0F00C66142 /* HarryPotter02.wav */,
+				791683D227A96B0F00C66142 /* HarryPotter14.wav */,
+				791683D327A96B0F00C66142 /* HarryPotter00.wav */,
+				791683D427A96B0F00C66142 /* HarryPotter28.wav */,
+				791683D527A96B0F00C66142 /* HarryPotter29.wav */,
+				791683D627A96B0F00C66142 /* HarryPotter01.wav */,
+				791683D727A96B0F00C66142 /* HarryPotter15.wav */,
+				791683D827A96B0F00C66142 /* HarryPotter39.wav */,
+				791683D927A96B0F00C66142 /* HarryPotter11.wav */,
+				791683DA27A96B0F00C66142 /* HarryPotter05.wav */,
+				791683DB27A96B0F00C66142 /* HarryPotter04.wav */,
+				791683DC27A96B0F00C66142 /* HarryPotter10.wav */,
+				791683DD27A96B0F00C66142 /* HarryPotter38.wav */,
+				791683DE27A96B0F00C66142 /* HarryPotter06.wav */,
+				791683DF27A96B0F00C66142 /* HarryPotter12.wav */,
+				791683E027A96B0F00C66142 /* HarryPotter13.wav */,
+				791683E127A96B0F00C66142 /* HarryPotter07.wav */,
+				791683E227A96B0F00C66142 /* HarryPotter60.wav */,
+				791683E327A96B0F00C66142 /* HarryPotter48.wav */,
+				791683E427A96B0F00C66142 /* HarryPotter49.wav */,
+				791683E527A96B0F00C66142 /* HarryPotter61.wav */,
+				791683E627A96B0F00C66142 /* HarryPotter63.wav */,
+				791683E727A96B0F00C66142 /* HarryPotter62.wav */,
+				791683E827A96B0F00C66142 /* HarryPotter59.wav */,
+				791683E927A96B0F00C66142 /* HarryPotter58.wav */,
+				791683EA27A96B0F00C66142 /* HarryPotter41.wav */,
+				791683EB27A96B0F00C66142 /* HarryPotter55.wav */,
+				791683EC27A96B0F00C66142 /* HarryPotter54.wav */,
+				791683ED27A96B0F00C66142 /* HarryPotter40.wav */,
+				791683EE27A96B0F00C66142 /* HarryPotter56.wav */,
+				791683EF27A96B0F00C66142 /* HarryPotter42.wav */,
+				791683F027A96B0F00C66142 /* HarryPotterBackground.wav */,
+				791683F127A96B0F00C66142 /* HarryPotter43.wav */,
+				791683F227A96B0F00C66142 /* HarryPotter57.wav */,
+				791683F327A96B0F00C66142 /* HarryPotter53.wav */,
+				791683F427A96B0F00C66142 /* HarryPotter47.wav */,
+				791683F527A96B0F00C66142 /* HarryPotter46.wav */,
+				791683F627A96B0F00C66142 /* HarryPotter52.wav */,
+				791683F727A96B0F00C66142 /* HarryPotter44.wav */,
+				791683F827A96B0F00C66142 /* HarryPotter50.wav */,
+				791683F927A96B0F00C66142 /* HarryPotter51.wav */,
+				791683FA27A96B0F00C66142 /* HarryPotter45.wav */,
+				791683FB27A96B0F00C66142 /* HarryPotter22.wav */,
+				791683FC27A96B0F00C66142 /* HarryPotter36.wav */,
+				791683FD27A96B0F00C66142 /* HarryPotter37.wav */,
+				791683FE27A96B0F00C66142 /* HarryPotter23.wav */,
+				791683FF27A96B0F00C66142 /* HarryPotter35.wav */,
+				7916840027A96B0F00C66142 /* HarryPotter21.wav */,
+				7916840127A96B0F00C66142 /* HarryPotter09.wav */,
+				7916840227A96B0F00C66142 /* HarryPotter08.wav */,
+				7916840327A96B0F00C66142 /* HarryPotter20.wav */,
+				7916840427A96B0F00C66142 /* HarryPotter34.wav */,
+				7916840527A96B0F00C66142 /* HarryPotter18.wav */,
+				7916840627A96B0F00C66142 /* HarryPotter30.wav */,
+				7916840727A96B0F00C66142 /* HarryPotter24.wav */,
+				7916840827A96B0F00C66142 /* HarryPotter25.wav */,
+				7916840927A96B0F00C66142 /* HarryPotter31.wav */,
+				7916840A27A96B0F00C66142 /* HarryPotter19.wav */,
+				7916840B27A96B0F00C66142 /* HarryPotter27.wav */,
+				7916840C27A96B0F00C66142 /* HarryPotter33.wav */,
+				7916840D27A96B0F00C66142 /* HarryPotter32.wav */,
+				7916840E27A96B0F00C66142 /* HarryPotter26.wav */,
+			);
+			path = HarryPotter64;
+			sourceTree = "<group>";
+		};
 		79189DFE274672420023628A /* CodeDebug */ = {
 			isa = PBXGroup;
 			children = (
@@ -1245,12 +1321,12 @@
 		795842FB2771451F00E0172C /* MasksSounds */ = {
 			isa = PBXGroup;
 			children = (
+				791683CD27A96B0F00C66142 /* HarryPotter64 */,
 				7916834A27A9614500C66142 /* monkey mask 64 */,
 				7916832327A9607200C66142 /* Drums */,
 				79386C60279F788500B98E02 /* KUNG-FU 64 */,
 				79386CA3279F788500B98E02 /* Lisa remix */,
 				79386C3E279F788300B98E02 /* Robot32 */,
-				79E04162279C828A00AB1390 /* Meditation64 */,
 				7983E210279786EF0098A2D7 /* Lightsaber64 */,
 			);
 			path = MasksSounds;
@@ -1371,76 +1447,6 @@
 				798F2BB6276393E200A47CC2 /* MatrixNode.swift */,
 			);
 			path = Matrix;
-			sourceTree = "<group>";
-		};
-		79E04162279C828A00AB1390 /* Meditation64 */ = {
-			isa = PBXGroup;
-			children = (
-				791682B027A9605F00C66142 /* meditation-00.wav */,
-				791682BF27A9605F00C66142 /* meditation-01.wav */,
-				791682CB27A9605F00C66142 /* meditation-02.wav */,
-				791682CE27A9606000C66142 /* meditation-03.wav */,
-				791682A927A9605E00C66142 /* meditation-04.wav */,
-				791682A627A9605E00C66142 /* meditation-05.wav */,
-				791682BA27A9605F00C66142 /* meditation-06.wav */,
-				791682AE27A9605F00C66142 /* meditation-07.wav */,
-				791682AA27A9605E00C66142 /* meditation-08.wav */,
-				791682D527A9606000C66142 /* meditation-09.wav */,
-				791682DC27A9606000C66142 /* meditation-10.wav */,
-				791682C627A9605F00C66142 /* meditation-11.wav */,
-				791682A827A9605E00C66142 /* meditation-12.wav */,
-				791682CD27A9606000C66142 /* meditation-13.wav */,
-				791682D627A9606000C66142 /* meditation-14.wav */,
-				791682C027A9605F00C66142 /* meditation-15.wav */,
-				791682AF27A9605F00C66142 /* meditation-16.wav */,
-				791682B327A9605F00C66142 /* meditation-17.wav */,
-				791682C527A9605F00C66142 /* meditation-18.wav */,
-				791682C327A9605F00C66142 /* meditation-19.wav */,
-				791682C227A9605F00C66142 /* meditation-20.wav */,
-				791682DB27A9606000C66142 /* meditation-21.wav */,
-				791682C127A9605F00C66142 /* meditation-22.wav */,
-				791682AC27A9605E00C66142 /* meditation-23.wav */,
-				791682A427A9605E00C66142 /* meditation-24.wav */,
-				791682B927A9605F00C66142 /* meditation-25.wav */,
-				791682B227A9605F00C66142 /* meditation-26.wav */,
-				791682D327A9606000C66142 /* meditation-27.wav */,
-				791682B827A9605F00C66142 /* meditation-28.wav */,
-				791682B627A9605F00C66142 /* meditation-29.wav */,
-				791682B527A9605F00C66142 /* meditation-30.wav */,
-				791682D227A9606000C66142 /* meditation-31.wav */,
-				791682DE27A9606000C66142 /* meditation-32.wav */,
-				791682E227A9606000C66142 /* meditation-33.wav */,
-				791682D127A9606000C66142 /* meditation-34.wav */,
-				791682C427A9605F00C66142 /* meditation-35.wav */,
-				791682C827A9605F00C66142 /* meditation-36.wav */,
-				791682E127A9606000C66142 /* meditation-37.wav */,
-				791682D827A9606000C66142 /* meditation-38.wav */,
-				791682AD27A9605E00C66142 /* meditation-39.wav */,
-				791682DA27A9606000C66142 /* meditation-40.wav */,
-				791682D027A9606000C66142 /* meditation-41.wav */,
-				791682B127A9605F00C66142 /* meditation-42.wav */,
-				791682DF27A9606000C66142 /* meditation-43.wav */,
-				791682BE27A9605F00C66142 /* meditation-44.wav */,
-				791682CA27A9605F00C66142 /* meditation-45.wav */,
-				791682C727A9605F00C66142 /* meditation-46.wav */,
-				791682DD27A9606000C66142 /* meditation-47.wav */,
-				791682BB27A9605F00C66142 /* meditation-48.wav */,
-				791682B427A9605F00C66142 /* meditation-49.wav */,
-				791682D727A9606000C66142 /* meditation-50.wav */,
-				791682C927A9605F00C66142 /* meditation-51.wav */,
-				791682BC27A9605F00C66142 /* meditation-53.wav */,
-				791682CC27A9606000C66142 /* meditation-54.wav */,
-				791682D927A9606000C66142 /* meditation-55.wav */,
-				791682BD27A9605F00C66142 /* meditation-56.wav */,
-				791682D427A9606000C66142 /* meditation-57.wav */,
-				791682AB27A9605E00C66142 /* meditation-58.wav */,
-				791682E027A9606000C66142 /* meditation-59.wav */,
-				791682B727A9605F00C66142 /* meditation-60.wav */,
-				791682CF27A9606000C66142 /* meditation-61.wav */,
-				791682A727A9605E00C66142 /* meditation-62.wav */,
-				791682A527A9605E00C66142 /* meditation-63.wav */,
-			);
-			path = Meditation64;
 			sourceTree = "<group>";
 		};
 		79F913A72746501500771FFE = {
@@ -1585,10 +1591,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7916830D27A9606000C66142 /* meditation-03.wav in Resources */,
 				791683BB27A9614500C66142 /* monkey-background.wav in Resources */,
 				7983E2A4279786F00098A2D7 /* Lightsaber50.wav in Resources */,
-				7916831827A9606000C66142 /* meditation-55.wav in Resources */,
 				7916839527A9614500C66142 /* monkey02.wav in Resources */,
 				7983E300279786F00098A2D7 /* Lightsaber48.wav in Resources */,
 				79386D96279F7B6000B98E02 /* kung-fu55.wav in Resources */,
@@ -1600,42 +1604,41 @@
 				7983E2D0279786F00098A2D7 /* Lightsaber25.wav in Resources */,
 				7916838D27A9614500C66142 /* monkey61.wav in Resources */,
 				79386DA5279F7B6000B98E02 /* kung-fu54.wav in Resources */,
-				7916831A27A9606000C66142 /* meditation-21.wav in Resources */,
 				79386D7F279F7B6000B98E02 /* kung-fu02.wav in Resources */,
-				7916831427A9606000C66142 /* meditation-09.wav in Resources */,
+				7916843727A96B1000C66142 /* HarryPotter52.wav in Resources */,
 				791683AD27A9614500C66142 /* monkey20.wav in Resources */,
-				791682FB27A9606000C66142 /* meditation-53.wav in Resources */,
-				791682F727A9606000C66142 /* meditation-28.wav in Resources */,
-				7916831227A9606000C66142 /* meditation-27.wav in Resources */,
+				7916841527A96B1000C66142 /* HarryPotter28.wav in Resources */,
 				79386DA3279F7B6000B98E02 /* kung-fu49.wav in Resources */,
 				7983E2BE279786F00098A2D7 /* Lightsaber23.wav in Resources */,
 				7983E2A9279786F00098A2D7 /* Lightsaber53.wav in Resources */,
+				7916844227A96B1000C66142 /* HarryPotter09.wav in Resources */,
 				7916839A27A9614500C66142 /* monkey15.wav in Resources */,
 				79386DD3279F7BCE00B98E02 /* robot-2-26.wav in Resources */,
 				7983E2A0279786F00098A2D7 /* Lightsaber40.wav in Resources */,
 				7983E29B279786F00098A2D7 /* Lightsaber41.wav in Resources */,
+				7916844427A96B1000C66142 /* HarryPotter20.wav in Resources */,
 				7983E306279786F00098A2D7 /* Lightsaber59.wav in Resources */,
 				791683C227A9614500C66142 /* monkey57.wav in Resources */,
 				79386D1F279F788500B98E02 /* LisaRemix14.wav in Resources */,
-				7916831D27A9606000C66142 /* meditation-32.wav in Resources */,
+				7916842827A96B1000C66142 /* HarryPotter62.wav in Resources */,
 				7983E2A5279786F00098A2D7 /* Lightsaber51.wav in Resources */,
 				79386DE6279F7BCE00B98E02 /* robot-2-23.wav in Resources */,
 				79386D7C279F7B6000B98E02 /* kung-fu21.wav in Resources */,
 				79386D92279F7B6000B98E02 /* kung-fu17.wav in Resources */,
-				7916830727A9606000C66142 /* meditation-36.wav in Resources */,
+				7916842E27A96B1000C66142 /* HarryPotter40.wav in Resources */,
 				79386D7B279F7B6000B98E02 /* kung-fu04.wav in Resources */,
 				791683B227A9614500C66142 /* monkey25.wav in Resources */,
 				79386D93279F7B6000B98E02 /* kung-fu05.wav in Resources */,
 				79386DE4279F7BCE00B98E02 /* robot-2-06.wav in Resources */,
+				7916844927A96B1000C66142 /* HarryPotter25.wav in Resources */,
+				7916844827A96B1000C66142 /* HarryPotter24.wav in Resources */,
 				79386DE3279F7BCE00B98E02 /* robot-2-16.wav in Resources */,
-				791682EF27A9606000C66142 /* meditation-00.wav in Resources */,
+				7916844727A96B1000C66142 /* HarryPotter30.wav in Resources */,
 				791683C727A9614500C66142 /* monkey53.wav in Resources */,
 				7916839427A9614500C66142 /* monkey16.wav in Resources */,
 				791683B727A9614500C66142 /* monkey24.wav in Resources */,
-				7916832027A9606000C66142 /* meditation-37.wav in Resources */,
-				791682FA27A9606000C66142 /* meditation-48.wav in Resources */,
 				79386D83279F7B6000B98E02 /* kung-fu63.wav in Resources */,
-				791682E727A9606000C66142 /* meditation-12.wav in Resources */,
+				7916843927A96B1000C66142 /* HarryPotter50.wav in Resources */,
 				7965FD01275E44D0002C1C1B /* CameraViewController.xib in Resources */,
 				79386D6F279F7B6000B98E02 /* kung-fu34.wav in Resources */,
 				7983E2C3279786F00098A2D7 /* Lightsaber27.wav in Resources */,
@@ -1646,26 +1649,23 @@
 				7916833C27A9609E00C66142 /* IAR_Wet_Supraphonic400Undampened_Snare5.wav in Resources */,
 				79386D9D279F7B6000B98E02 /* kung-fu09.wav in Resources */,
 				7983E2D2279786F00098A2D7 /* Lightsaber19.wav in Resources */,
+				7916844527A96B1000C66142 /* HarryPotter34.wav in Resources */,
 				79386D1D279F788500B98E02 /* LisaRemix04.wav in Resources */,
-				791682E527A9606000C66142 /* meditation-05.wav in Resources */,
-				791682F027A9606000C66142 /* meditation-42.wav in Resources */,
 				79386DE5279F7BCE00B98E02 /* robot-2-20.wav in Resources */,
 				7916839027A9614500C66142 /* monkey62.wav in Resources */,
 				79386DA4279F7B6000B98E02 /* kung-fu32.wav in Resources */,
-				7916830027A9606000C66142 /* meditation-22.wav in Resources */,
-				7916830827A9606000C66142 /* meditation-51.wav in Resources */,
+				7916840F27A96B1000C66142 /* HarryPotter03.wav in Resources */,
 				791683AE27A9614500C66142 /* monkey34.wav in Resources */,
-				7916831527A9606000C66142 /* meditation-14.wav in Resources */,
-				7916830527A9606000C66142 /* meditation-11.wav in Resources */,
+				7916841727A96B1000C66142 /* HarryPotter01.wav in Resources */,
 				7916834127A9609E00C66142 /* IAR_Wet_Kick4.wav in Resources */,
+				7916843C27A96B1000C66142 /* HarryPotter22.wav in Resources */,
 				7983E2AA279786F00098A2D7 /* Lightsaber47.wav in Resources */,
 				791683AF27A9614500C66142 /* monkey35.wav in Resources */,
 				79386D8E279F7B6000B98E02 /* kung-fu-background.wav in Resources */,
 				7983E2A3279786F00098A2D7 /* Lightsaber44.wav in Resources */,
 				7983E29F279786F00098A2D7 /* Lightsaber54.wav in Resources */,
 				79386D7D279F7B6000B98E02 /* kung-fu61.wav in Resources */,
-				791682F827A9606000C66142 /* meditation-25.wav in Resources */,
-				791682EC27A9606000C66142 /* meditation-39.wav in Resources */,
+				7916844D27A96B1000C66142 /* HarryPotter33.wav in Resources */,
 				7983E2F1279786F00098A2D7 /* Lightsaber04.wav in Resources */,
 				79386D91279F7B6000B98E02 /* kung-fu16.wav in Resources */,
 				7916839B27A9614500C66142 /* monkey14.wav in Resources */,
@@ -1674,7 +1674,7 @@
 				79386D1B279F788500B98E02 /* LisaRemix10.wav in Resources */,
 				791683B127A9614500C66142 /* monkey09.wav in Resources */,
 				795129D6279D1573002F746C /* CustomAlert.xib in Resources */,
-				791682FF27A9606000C66142 /* meditation-15.wav in Resources */,
+				7916841C27A96B1000C66142 /* HarryPotter04.wav in Resources */,
 				7916834527A9609E00C66142 /* IAR_Wet_BlackBeauty_Snare5.wav in Resources */,
 				79386DD6279F7BCE00B98E02 /* robot-2-10.wav in Resources */,
 				79386D97279F7B6000B98E02 /* kung-fu44.wav in Resources */,
@@ -1684,37 +1684,39 @@
 				791683B027A9614500C66142 /* monkey21.wav in Resources */,
 				7983E2B3279786F00098A2D7 /* Lightsaber35.wav in Resources */,
 				7983E2C6279786F00098A2D7 /* Lightsaber26.wav in Resources */,
-				791682F927A9606000C66142 /* meditation-06.wav in Resources */,
 				79386DD2279F7BCE00B98E02 /* robot-2-25.wav in Resources */,
 				7916833E27A9609E00C66142 /* IAR_Wet_Rack4.wav in Resources */,
 				79386DCD279F7BCE00B98E02 /* robot-2-28.wav in Resources */,
 				791683AA27A9614500C66142 /* monkey22.wav in Resources */,
 				79386D6D279F7B6000B98E02 /* kung-fu42.wav in Resources */,
-				791682F227A9606000C66142 /* meditation-17.wav in Resources */,
 				79386D67279F7B6000B98E02 /* kung-fu20.wav in Resources */,
+				7916844127A96B1000C66142 /* HarryPotter21.wav in Resources */,
 				79386DCA279F7BCE00B98E02 /* robot-2-09.wav in Resources */,
 				79386D94279F7B6000B98E02 /* kung-fu50.wav in Resources */,
+				7916842327A96B1000C66142 /* HarryPotter60.wav in Resources */,
 				791683C527A9614500C66142 /* monkey46.wav in Resources */,
-				7916831E27A9606000C66142 /* meditation-43.wav in Resources */,
 				79386D9B279F7B6000B98E02 /* kung-fu06.wav in Resources */,
 				7916833927A9609E00C66142 /* IAR_Wet_Acrolite_Dampened_Snare4.wav in Resources */,
 				79386D76279F7B6000B98E02 /* kung-fu30.wav in Resources */,
 				79386D86279F7B6000B98E02 /* kung-fu36.wav in Resources */,
+				7916842F27A96B1000C66142 /* HarryPotter56.wav in Resources */,
+				7916841627A96B1000C66142 /* HarryPotter29.wav in Resources */,
 				79386D16279F788500B98E02 /* LisaRemix02.wav in Resources */,
 				791683A727A9614500C66142 /* monkey12.wav in Resources */,
 				791683B627A9614500C66142 /* monkey30.wav in Resources */,
 				79386D90279F7B6000B98E02 /* kung-fu18.wav in Resources */,
-				7916831627A9606000C66142 /* meditation-50.wav in Resources */,
+				7916842D27A96B1000C66142 /* HarryPotter54.wav in Resources */,
 				791683A527A9614500C66142 /* monkey07.wav in Resources */,
-				7916830227A9606000C66142 /* meditation-19.wav in Resources */,
 				79386DE8279F7BCE00B98E02 /* robot-2-27.wav in Resources */,
 				7983E2D1279786F00098A2D7 /* Lightsaber31.wav in Resources */,
 				7916834427A9609E00C66142 /* IAR_Wet_Cowbell4.wav in Resources */,
+				7916843D27A96B1000C66142 /* HarryPotter36.wav in Resources */,
 				7916839927A9614500C66142 /* monkey01.wav in Resources */,
 				7916833F27A9609E00C66142 /* IAR_Wet_RideBell3.wav in Resources */,
 				79386DA1279F7B6000B98E02 /* kung-fu03.wav in Resources */,
 				791683C127A9614500C66142 /* monkey43.wav in Resources */,
 				7916839E27A9614500C66142 /* monkey04.wav in Resources */,
+				7916844C27A96B1000C66142 /* HarryPotter27.wav in Resources */,
 				7983E2DA279786F00098A2D7 /* Lightsaber29.wav in Resources */,
 				79386DDD279F7BCE00B98E02 /* robot-2-30.wav in Resources */,
 				79386D21279F788500B98E02 /* LisaRemix07.wav in Resources */,
@@ -1740,28 +1742,27 @@
 				7983E2DB279786F00098A2D7 /* Lightsaber01.wav in Resources */,
 				79386DA2279F7B6000B98E02 /* kung-fu23.wav in Resources */,
 				7983E2A6279786F00098A2D7 /* Lightsaber45.wav in Resources */,
-				791682F627A9606000C66142 /* meditation-60.wav in Resources */,
-				7916831B27A9606000C66142 /* meditation-10.wav in Resources */,
+				7916841827A96B1000C66142 /* HarryPotter15.wav in Resources */,
+				7916841E27A96B1000C66142 /* HarryPotter38.wav in Resources */,
 				791683A627A9614500C66142 /* monkey06.wav in Resources */,
-				7916830127A9606000C66142 /* meditation-20.wav in Resources */,
-				7916830927A9606000C66142 /* meditation-45.wav in Resources */,
+				7916842927A96B1000C66142 /* HarryPotter59.wav in Resources */,
 				79386D1C279F788500B98E02 /* LisaRemix11.wav in Resources */,
 				791683BC27A9614500C66142 /* monkey33.wav in Resources */,
-				7916830F27A9606000C66142 /* meditation-41.wav in Resources */,
 				79386D8D279F7B6000B98E02 /* kung-fu57.wav in Resources */,
-				791682E927A9606000C66142 /* meditation-08.wav in Resources */,
 				791683BD27A9614500C66142 /* monkey54.wav in Resources */,
 				7983E2BB279786F00098A2D7 /* Lightsaber22.wav in Resources */,
-				791682EE27A9606000C66142 /* meditation-16.wav in Resources */,
+				7916844327A96B1000C66142 /* HarryPotter08.wav in Resources */,
 				7983E2FF279786F00098A2D7 /* Lightsaber60.wav in Resources */,
 				7916839C27A9614500C66142 /* monkey00.wav in Resources */,
-				791682E327A9606000C66142 /* meditation-24.wav in Resources */,
+				7916842627A96B1000C66142 /* HarryPotter61.wav in Resources */,
 				791683B427A9614500C66142 /* monkey19.wav in Resources */,
 				7916838C27A9614500C66142 /* monkey49.wav in Resources */,
 				791683C627A9614500C66142 /* monkey52.wav in Resources */,
+				7916842127A96B1000C66142 /* HarryPotter13.wav in Resources */,
 				798F2BBC2763968900A47CC2 /* MatrixNodeCell.xib in Resources */,
-				7916831927A9606000C66142 /* meditation-40.wav in Resources */,
-				791682F127A9606000C66142 /* meditation-26.wav in Resources */,
+				7916844F27A96B1000C66142 /* HarryPotter26.wav in Resources */,
+				7916843027A96B1000C66142 /* HarryPotter42.wav in Resources */,
+				7916841B27A96B1000C66142 /* HarryPotter05.wav in Resources */,
 				79F913BD2746501900771FFE /* Assets.xcassets in Resources */,
 				79386DC8279F7BCE00B98E02 /* robot-2-13.wav in Resources */,
 				7983E2B5279786F00098A2D7 /* Lightsaber09.wav in Resources */,
@@ -1770,21 +1771,20 @@
 				79386D17279F788500B98E02 /* LisaRemix13.wav in Resources */,
 				79386D85279F7B6000B98E02 /* kung-fu41.wav in Resources */,
 				7983E307279786F00098A2D7 /* Lightsaber58.wav in Resources */,
-				7916830427A9606000C66142 /* meditation-18.wav in Resources */,
 				79386DDE279F7BCE00B98E02 /* robot-2-08.wav in Resources */,
 				7916838E27A9614500C66142 /* monkey60.wav in Resources */,
 				791683CC27A9614500C66142 /* monkey50.wav in Resources */,
 				79386D84279F7B6000B98E02 /* kung-fu13.wav in Resources */,
 				7916833A27A9609E00C66142 /* IAR_Wet_Ride2.wav in Resources */,
-				791682F327A9606000C66142 /* meditation-49.wav in Resources */,
+				7916844E27A96B1000C66142 /* HarryPotter32.wav in Resources */,
 				791683AC27A9614500C66142 /* monkey08.wav in Resources */,
 				791683A227A9614500C66142 /* monkey11.wav in Resources */,
 				79386DD5279F7BCE00B98E02 /* robot-2-17.wav in Resources */,
 				79386DD1279F7BCE00B98E02 /* robot-2-00.wav in Resources */,
 				7983E2B4279786F00098A2D7 /* Lightsaber21.wav in Resources */,
 				79386D7E279F7B6000B98E02 /* kung-fu28.wav in Resources */,
-				7916831F27A9606000C66142 /* meditation-59.wav in Resources */,
 				79386D8A279F7B6000B98E02 /* kung-fu07.wav in Resources */,
+				7916841927A96B1000C66142 /* HarryPotter39.wav in Resources */,
 				7916833B27A9609E00C66142 /* IAR_Wet_Supraphonic400Dampened_Snare5.wav in Resources */,
 				7916834627A9609E00C66142 /* IAR_Wet_PaisteDarkCrisp14InchHatsOpen10.wav in Resources */,
 				79386DD9279F7BCE00B98E02 /* robot-2-11.wav in Resources */,
@@ -1795,98 +1795,105 @@
 				79386D6C279F7B6000B98E02 /* kung-fu19.wav in Resources */,
 				79386DE1279F7BCE00B98E02 /* robot-2-12.wav in Resources */,
 				79386D88279F7B6000B98E02 /* kung-fu60.wav in Resources */,
-				7916832127A9606000C66142 /* meditation-33.wav in Resources */,
 				7983E2B9279786F00098A2D7 /* Lightsaber20.wav in Resources */,
-				7916831727A9606000C66142 /* meditation-38.wav in Resources */,
+				7916843227A96B1000C66142 /* HarryPotter43.wav in Resources */,
 				7983E2FC279786F00098A2D7 /* Lightsaber62.wav in Resources */,
 				791683B927A9614500C66142 /* monkey26.wav in Resources */,
 				7916834327A9609E00C66142 /* IAR_Wet_PaisteDarkCrisp14InchHats4.wav in Resources */,
-				7916830627A9606000C66142 /* meditation-46.wav in Resources */,
 				7983E2EC279786F00098A2D7 /* Lightsaber13.wav in Resources */,
 				794B56FF276BFDAD001A7FE6 /* DebugMenuCell.xib in Resources */,
 				7916839F27A9614500C66142 /* monkey10.wav in Resources */,
+				7916842727A96B1000C66142 /* HarryPotter63.wav in Resources */,
 				794B56F5276BE314001A7FE6 /* DebugWindow.xib in Resources */,
 				79386D68279F7B6000B98E02 /* kung-fu38.wav in Resources */,
 				791683A827A9614500C66142 /* monkey37.wav in Resources */,
 				7983E2EF279786F00098A2D7 /* Lightsaber11.wav in Resources */,
 				79386D1E279F788500B98E02 /* LisaRemix15.wav in Resources */,
-				791682ED27A9606000C66142 /* meditation-07.wav in Resources */,
 				7983E2AC279786F00098A2D7 /* Lightsaber46.wav in Resources */,
 				7983E294279786F00098A2D7 /* Lightsaber57.wav in Resources */,
 				79386DCC279F7BCE00B98E02 /* robot-2-24.wav in Resources */,
-				7916830A27A9606000C66142 /* meditation-02.wav in Resources */,
+				7916844B27A96B1000C66142 /* HarryPotter19.wav in Resources */,
 				7983E2CE279786F00098A2D7 /* Lightsaber30.wav in Resources */,
 				791683A927A9614500C66142 /* monkey23.wav in Resources */,
 				79386D9F279F7B6000B98E02 /* kung-fu29.wav in Resources */,
 				79386D8B279F7B6000B98E02 /* kung-fu12.wav in Resources */,
 				791683C427A9614500C66142 /* monkey42.wav in Resources */,
 				7916833827A9609E00C66142 /* IAR_Wet_PaisteDarkCrisp14InchHatsBell1.wav in Resources */,
+				7916843827A96B1000C66142 /* HarryPotter44.wav in Resources */,
 				79386D69279F7B6000B98E02 /* kung-fu59.wav in Resources */,
 				7916839D27A9614500C66142 /* monkey28.wav in Resources */,
-				7916830327A9606000C66142 /* meditation-35.wav in Resources */,
 				791683B827A9614500C66142 /* monkey32.wav in Resources */,
-				7916831327A9606000C66142 /* meditation-57.wav in Resources */,
+				7916841027A96B1000C66142 /* HarryPotter17.wav in Resources */,
 				79386DD8279F7BCE00B98E02 /* robot-2-31.wav in Resources */,
-				791682F427A9606000C66142 /* meditation-30.wav in Resources */,
+				7916841427A96B1000C66142 /* HarryPotter00.wav in Resources */,
 				79035A622793D42F00DFFDB2 /* texture.png in Resources */,
-				7916830B27A9606000C66142 /* meditation-54.wav in Resources */,
 				7916839727A9614500C66142 /* monkey17.wav in Resources */,
+				7916843A27A96B1000C66142 /* HarryPotter51.wav in Resources */,
+				7916841127A96B1000C66142 /* HarryPotter16.wav in Resources */,
 				79386D98279F7B6000B98E02 /* kung-fu26.wav in Resources */,
 				7916838F27A9614500C66142 /* monkey48.wav in Resources */,
 				7983E2D7279786F00098A2D7 /* Lightsaber28.wav in Resources */,
+				7916843527A96B1000C66142 /* HarryPotter47.wav in Resources */,
 				79386D95279F7B6000B98E02 /* kung-fu27.wav in Resources */,
 				7983E303279786F00098A2D7 /* Lightsaber61.wav in Resources */,
 				79386DA0279F7B6000B98E02 /* kung-fu00.wav in Resources */,
-				791682EA27A9606000C66142 /* meditation-58.wav in Resources */,
-				791682FE27A9606000C66142 /* meditation-01.wav in Resources */,
-				791682E827A9606000C66142 /* meditation-04.wav in Resources */,
+				7916842A27A96B1000C66142 /* HarryPotter58.wav in Resources */,
+				7916842527A96B1000C66142 /* HarryPotter49.wav in Resources */,
 				79035A602793D40900DFFDB2 /* art.scnassets in Resources */,
 				79386DA6279F7B6000B98E02 /* kung-fu24.wav in Resources */,
+				7916842027A96B1000C66142 /* HarryPotter12.wav in Resources */,
 				79386D8C279F7B6000B98E02 /* kung-fu14.wav in Resources */,
+				7916843427A96B1000C66142 /* HarryPotter53.wav in Resources */,
 				79386DE0279F7BCE00B98E02 /* robot-2-21.wav in Resources */,
 				79386D73279F7B6000B98E02 /* kung-fu47.wav in Resources */,
 				79386D79279F7B6000B98E02 /* kung-fu39.wav in Resources */,
 				7983E2F9279786F00098A2D7 /* Lightsaber63.wav in Resources */,
-				7916831C27A9606000C66142 /* meditation-47.wav in Resources */,
 				79386D78279F7B6000B98E02 /* kung-fu25.wav in Resources */,
+				7916844027A96B1000C66142 /* HarryPotter35.wav in Resources */,
 				79386D9A279F7B6000B98E02 /* kung-fu46.wav in Resources */,
 				79386D89279F7B6000B98E02 /* kung-fu48.wav in Resources */,
 				7916834027A9609E00C66142 /* IAR_Wet_Floor4.wav in Resources */,
 				7983E29C279786F00098A2D7 /* Lightsaber55.wav in Resources */,
 				791683A127A9614500C66142 /* monkey39.wav in Resources */,
+				7916841327A96B1000C66142 /* HarryPotter14.wav in Resources */,
 				7983E2DC279786F00098A2D7 /* Lightsaber15.wav in Resources */,
-				7916830E27A9606000C66142 /* meditation-61.wav in Resources */,
+				7916843E27A96B1000C66142 /* HarryPotter37.wav in Resources */,
 				79386D74279F7B6000B98E02 /* kung-fu58.wav in Resources */,
 				79386D7A279F7B6000B98E02 /* kung-fu37.wav in Resources */,
+				7916842427A96B1000C66142 /* HarryPotter48.wav in Resources */,
+				7916843327A96B1000C66142 /* HarryPotter57.wav in Resources */,
 				7983E2E1279786F00098A2D7 /* Lightsaber17.wav in Resources */,
 				791683AB27A9614500C66142 /* monkey36.wav in Resources */,
 				7916834727A9609E00C66142 /* IAR_Wet_Crash2_3.wav in Resources */,
+				7916843627A96B1000C66142 /* HarryPotter46.wav in Resources */,
+				7916842C27A96B1000C66142 /* HarryPotter55.wav in Resources */,
 				79386D6E279F7B6000B98E02 /* kung-fu10.wav in Resources */,
 				7983E2EE279786F00098A2D7 /* Lightsaber39.wav in Resources */,
 				7916839627A9614500C66142 /* monkey03.wav in Resources */,
 				79386DCF279F7BCE00B98E02 /* robot-2-22.wav in Resources */,
-				791682EB27A9606000C66142 /* meditation-23.wav in Resources */,
+				7916844A27A96B1000C66142 /* HarryPotter31.wav in Resources */,
 				79386DDA279F7BCE00B98E02 /* robot-2-19.wav in Resources */,
-				791682E627A9606000C66142 /* meditation-62.wav in Resources */,
 				7983E293279786F00098A2D7 /* Lightsaber43.wav in Resources */,
 				79386D9E279F7B6000B98E02 /* kung-fu31.wav in Resources */,
+				7916842B27A96B1000C66142 /* HarryPotter41.wav in Resources */,
 				791683C327A9614500C66142 /* monkey56.wav in Resources */,
 				79386D1A279F788500B98E02 /* LisaRemix01.wav in Resources */,
+				7916841227A96B1000C66142 /* HarryPotter02.wav in Resources */,
 				791683B527A9614500C66142 /* monkey18.wav in Resources */,
 				7983E291279786F00098A2D7 /* Lightsaber56.wav in Resources */,
 				791683CA27A9614500C66142 /* monkey45.wav in Resources */,
 				791683A027A9614500C66142 /* monkey38.wav in Resources */,
-				791682E427A9606000C66142 /* meditation-63.wav in Resources */,
+				7916844627A96B1000C66142 /* HarryPotter18.wav in Resources */,
+				7916842227A96B1000C66142 /* HarryPotter07.wav in Resources */,
 				7983E2CD279786F00098A2D7 /* Lightsaber18.wav in Resources */,
 				791683B327A9614500C66142 /* monkey31.wav in Resources */,
-				7916831127A9606000C66142 /* meditation-31.wav in Resources */,
 				79386D71279F7B6000B98E02 /* kung-fu40.wav in Resources */,
 				79386D87279F7B6000B98E02 /* kung-fu15.wav in Resources */,
+				7916841A27A96B1000C66142 /* HarryPotter11.wav in Resources */,
 				7983E2CF279786F00098A2D7 /* Lightsaber24.wav in Resources */,
 				7916839327A9614500C66142 /* monkey59.wav in Resources */,
 				79386DD0279F7BCE00B98E02 /* robot-2-07.wav in Resources */,
 				7983E2EB279786F00098A2D7 /* Lightsaber12.wav in Resources */,
-				7916831027A9606000C66142 /* meditation-34.wav in Resources */,
 				79386D66279F7B6000B98E02 /* kung-fu53.wav in Resources */,
 				7983E2BC279786F00098A2D7 /* Lightsaber36.wav in Resources */,
 				79386D72279F7B6000B98E02 /* kung-fu43.wav in Resources */,
@@ -1897,11 +1904,15 @@
 				79386DE2279F7BCE00B98E02 /* robot-2-18.wav in Resources */,
 				7916833727A9609E00C66142 /* IAR_Wet_DW_CraviottoMaple5.wav in Resources */,
 				7916839827A9614500C66142 /* monkey29.wav in Resources */,
+				7916841D27A96B1000C66142 /* HarryPotter10.wav in Resources */,
+				7916843127A96B1000C66142 /* HarryPotterBackground.wav in Resources */,
 				791683BE27A9614500C66142 /* monkey40.wav in Resources */,
 				7916834827A9609E00C66142 /* IAR_Wet_Crash3.wav in Resources */,
+				7916843F27A96B1000C66142 /* HarryPotter23.wav in Resources */,
 				79386D70279F7B6000B98E02 /* kung-fu22.wav in Resources */,
 				79386D81279F7B6000B98E02 /* kung-fu33.wav in Resources */,
 				7983E302279786F00098A2D7 /* Lightsaber49.wav in Resources */,
+				7916841F27A96B1000C66142 /* HarryPotter06.wav in Resources */,
 				7916834927A9609E00C66142 /* IAR_Wet_Shaker3.wav in Resources */,
 				79386DD7279F7BCE00B98E02 /* robot-2-29.wav in Resources */,
 				791683C027A9614500C66142 /* monkey55.wav in Resources */,
@@ -1909,15 +1920,12 @@
 				7983E2E0279786F00098A2D7 /* Lightsaber03.wav in Resources */,
 				79386DCB279F7BCE00B98E02 /* robot-2-04.wav in Resources */,
 				7983E2C5279786F00098A2D7 /* Lightsaber32.wav in Resources */,
-				791682F527A9606000C66142 /* meditation-29.wav in Resources */,
+				7916843B27A96B1000C66142 /* HarryPotter45.wav in Resources */,
 				79386D6A279F7B6000B98E02 /* kung-fu08.wav in Resources */,
 				79386DDC279F7BCE00B98E02 /* robot-2-01.wav in Resources */,
 				79386D23279F788500B98E02 /* LisaRemix08.wav in Resources */,
 				79386D20279F788500B98E02 /* LisaRemix05.wav in Resources */,
-				7916830C27A9606000C66142 /* meditation-13.wav in Resources */,
 				79386DC9279F7BCE00B98E02 /* robot-2-03.wav in Resources */,
-				791682FC27A9606000C66142 /* meditation-56.wav in Resources */,
-				791682FD27A9606000C66142 /* meditation-44.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
