@@ -20,9 +20,13 @@ final class ServicesContainer {
     lazy var maskEditor = EditorZoneSelection()
     lazy var maskManager = MaskManager()
     lazy var debugDatasource = DebugMenuSectionsDatasource()
+    lazy var soundDrop = SoundDropService()
 }
 
-
+protocol SoundDropProvidable { }
+extension SoundDropProvidable {
+    var soundDrop: SoundDropService { container.soundDrop }
+}
 
 /// Mask manager
 protocol MaskManagerProvider { }

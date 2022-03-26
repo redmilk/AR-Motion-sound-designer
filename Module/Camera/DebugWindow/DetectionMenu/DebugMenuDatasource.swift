@@ -34,9 +34,14 @@ final class DebugMenuSectionsDatasource {
 // MARK: - Menu section builder
 fileprivate enum DebugMenuSectionMaker {
     static func makeSoundfilesSection() -> DebugMenuSection? {
-        ((try? FileManager.default.contentsOfDirectory(atPath: Bundle.main.bundlePath)) ?? [])
+        let documentsUrl =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.path
+        let documentsFolder = ((try? FileManager.default.contentsOfDirectory(atPath: documentsUrl)) ?? [])
             .filter { $0.contains(".wav") || $0.contains(".mp3") }
-            .map { DebugMenuItem(landmark: .nose, soundForZone: $0) }
+        let bundeFolder = ((try? FileManager.default.contentsOfDirectory(atPath: Bundle.main.bundlePath)) ?? [])
+            .filter { $0.contains(".wav") || $0.contains(".mp3") }
+        let sounds = documentsFolder + bundeFolder
+        
+        return sounds.map { DebugMenuItem(landmark: .nose, soundForZone: $0) }
             .sorted { $0.soundForZone ?? "" < $1.soundForZone ?? "" }
             .reduce(into: DebugMenuSection(items: [], id: ""), { partialResult, item in
                 partialResult.items.append(item)

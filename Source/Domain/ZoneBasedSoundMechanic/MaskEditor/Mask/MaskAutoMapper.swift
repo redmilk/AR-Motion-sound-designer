@@ -57,7 +57,7 @@ final class MaskAutoMapper {
                 }
                 rowSounds += " " + soundNameStr
             }
-            print(rowSounds)
+            //print(rowSounds)
             prevRowX = nil
         }
         return MaskBase(zonePresets: zonePresets, createdWith: self.template.rawValue)

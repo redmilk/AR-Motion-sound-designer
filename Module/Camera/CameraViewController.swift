@@ -170,6 +170,7 @@ final class CameraViewController: UIViewController,
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         debugWindow.configure()
+        viewModel.input.send(.viewDidLoad)
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)

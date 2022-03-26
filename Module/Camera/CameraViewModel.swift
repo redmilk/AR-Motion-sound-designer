@@ -13,17 +13,18 @@ import AVFoundation
 import UIKit
 
 /// MARK: - Dependencies
-extension CameraViewModel: ErrorHandlerProvider, SoundWithHandposeMechanicsProvider { }
+extension CameraViewModel: ErrorHandlerProvider, SoundWithHandposeMechanicsProvider, SoundDropProvidable { }
 
 final class CameraViewModel {
    enum Action {
       /// entry point for module
-      case configureSession(videoPreview: CaptureVideoPreviewView,
-                            annotationsPreview: AnnotationsOverlayView,
-                            collectionMatrix: UICollectionView)
-      case startSession
-      case stopSession
+       case configureSession(videoPreview: CaptureVideoPreviewView,
+                             annotationsPreview: AnnotationsOverlayView,
+                             collectionMatrix: UICollectionView)
+       case startSession
+       case stopSession
        case toggleSession
+       case viewDidLoad
    }
    
    let input = PassthroughSubject<CameraViewModel.Action, Never>()
@@ -51,6 +52,7 @@ final class CameraViewModel {
              if let isRunning = self?.handposeMechanics.isSessionRunning {
                  self?.handposeMechanics.input.send(isRunning ? .stopSession : .startSession)
              }
+         case .viewDidLoad: break
          }
       }).store(in: &bag)
       

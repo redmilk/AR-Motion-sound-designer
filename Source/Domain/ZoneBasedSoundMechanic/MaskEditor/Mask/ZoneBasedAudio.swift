@@ -44,9 +44,14 @@ class ZoneBaseAudio: NSObject, AVAudioPlayerDelegate, MaskManagerProvider {
         guard !fileName.isEmpty else { return }
         var fileNameURL: URL?
         
-        guard let bundle = Bundle.main.path(forResource: fileName.replacingOccurrences(of: ".wav", with: ""), ofType: "wav") else { return }
-        fileNameURL = URL(fileURLWithPath: bundle)
-
+        if let bundle = Bundle.main.path(forResource: fileName.replacingOccurrences(of: ".wav", with: ""), ofType: "wav") {
+            fileNameURL = URL(fileURLWithPath: bundle)
+        } else {
+            let documentsUrl =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            let destURL = documentsUrl.appendingPathComponent(fileName)
+            fileNameURL = destURL
+        }
+        
         let isForcePlayingSound = maskManager.shouldForceplaySoundForCurrentMask
         guard let soundFileNameURL = fileNameURL else { return }
         

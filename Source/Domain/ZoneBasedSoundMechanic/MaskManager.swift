@@ -81,8 +81,8 @@ final class MaskManager: MaskEditorProvider {
     }
     
     private func respondWithNextMask() {
-        print(maskListForEditor.count)
-        print(maskPresets.count)
+        //print(maskListForEditor.count)
+        //print(maskPresets.count)
         guard !maskListForEditor.isEmpty else { return }
         let mask = maskListForEditor.removeFirst()
         let description = MaskDescription(orderNumber: maskListForEditor.count, masksTotal: maskPresets.count, currentMasksZonesTotal: mask.totalNumberOfZones, currentMasksUniqueSoundsTotal: mask.totalNumberOfUniqueSounds, createdWith: mask.createdWith ?? "", shouldForcePlayAll: mask.shouldForcaplaySounds)
@@ -104,7 +104,7 @@ final class MaskManager: MaskEditorProvider {
         isPrettyPrinted ? encoder.outputFormatting = .prettyPrinted : ()
         guard let data = try? encoder.encode(mask) else { return nil }
         let jsonString = String(data: data, encoding: .utf8)
-        print(jsonString)
+        //print(jsonString)
         return jsonString
     }
     

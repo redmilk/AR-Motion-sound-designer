@@ -1697,7 +1697,7 @@
                     </subviews>
                     <edgeInsets key="layoutMargins" top="2" left="0.0" bottom="0.0" right="0.0"/>
                 </stackView>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fd5-zh-sAo">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fd5-zh-sAo">
                     <rect key="frame" x="0.0" y="250" width="414" height="500"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5282947757701183" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
